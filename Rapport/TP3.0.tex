@@ -39,46 +39,19 @@ colorlinks=true}
 \begin{document}
 \maketitle
 
-\section{Partie Théorique}
+\section*{Introduction}
+
+\section{Présentation de la plateforme MetaCiv}
+
+\subsection{Principe}
+
+\subsection{Concepts}
+
+\section{Modélisations de civilisations}
 
 \subsection{Introduction}
-\label{introduction}
-Pour débuter, ce document explique le fonctionnement d'une modélisation ayant pour but de mettre en valeur l'émergence d'une civilisation. Cette implémentation se base sur MetaCiv, framework de modélisation de société humaine utilisant la technique des SMA. Toutes les constantes mentionnées dans ce document sont données dans la section "\hyperref[constantes]{Constantes}".
 
-\subsection{L'environment}
-\label{environment}
-En premier lieu, l'environnement dans lequel nos agents se déplacent est un espace fermé de $\mathbb{R}^{2}$. Il existe un total de quatre types de patches présents : Mer, Prairie, Terre Sterile et Forêt. Le modèle étant relativement basique, il n'existe que deux types de ressources disponibles : Les baies et le bois. Le tableau suivant donne le récapitulatif des différents patches et ressources disponibles.
-
-\begin{figure}[H]
-\center
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
-\hline
-\text{Patch} & \multicolumn{2}{|c|}{\text{Ressources} } & \multicolumn{2}{|c|}{\text{Valeur initiale}} & \multicolumn{2}{|c|}{\text{Croissance des ressources}} & \text{Passabilité}\\
-\hline
-\text{Mer} \includegraphics[height=0.5 cm]{img/mer.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Non} \\
-\hline 
-\text{Terre Sterile} \includegraphics[height=0.5 cm]{img/sterile.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Oui} \\
-\hline 
-\text{Prairie} \includegraphics[height=0.5 cm]{img/prairie.png}& \text{Baies} & \text{Bois} & 10 & 1 & 0.2 & 0 & \text{Oui} \\
-\hline
-\text{Forêts} \includegraphics[height=0.5 cm]{img/foret.png}& \text{Baies} & \text{Bois} & 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
-\hline
-\end{tabular}
-\caption{Tableau récapitulatif des patches et des ressources.}
-\end{figure}
-
-Un patch de terre stérile ne produit pas de ressources alors que les patches Prairie et Forêts produisent en permanence des baies. On pourra remarquer que seules les forêts produisent du bois même si les prairies possèdent une valeur en bois initiale. Un patch peut être récolté dès lors que les ressources en bois ou en baies sont supérieures ou égales à 1. Une ressource "baies" est alors transformée en un objet baie (de même pour le bois).
-
-Le point d'apparition des agents se situe au milieu de l'environment et plusieurs prairies sont présentes aux alentours. On peut aussi distinguer une grande forêt dans la partie droite de l'environment.
-\begin{figure}[H]
-\center
-\includegraphics[height=10 cm]{img/terrain.png}
-\caption{Environment de la modélisation}
-\end{figure}
-
-Il convient de remarquer que lorsque les agents apparaissent dans l'environnement, ils sont éparpillés autour du point d'apparition et non dessus.
-
-\subsection{Les agents}
+\subsubsection{Les agents}
 \label{agents}
 Un agent possède un ou plusieurs "Cognitons" qui permettent d'associer à chaque "plan", une importance. En effet, les cognitons peuvent influencer les plans de manière positive ou négative. De plus, chaque agent possède un certain nombre d'attributs représentant son état physique. Ils peuvent interagir avec leur environnement, manipuler des objets et construire des aménagements. Les agents sont initialement au nombre de $81$ lors du lancement de la modélisation.
 
@@ -190,6 +163,69 @@ Un plan est un ensemble de plusieurs actions génériques qui peuvent être partagé
 \includegraphics[width = 10cm] {img/plan.png}
 \caption{Exemple de l'interface du plan "DonnerNaissanceSiJ'aiPasFaim" dans MetaCiv. Les actions conditionnelles sont repérées par une icône en forme de processeur et les autres actions par une icône en forme de flèche.}
 \end{figure}
+
+\subsection{Le modèle "Cueilleur-Artisan-Agriculteur"}
+
+\subsection{Le modèle "Nomade-Sédentaire"}
+
+\subsection{Observations}
+
+\section{Le simulateur}
+
+\subsection{Introduction}
+
+\subsection{Fonctionnalités}
+
+\subsection{Stabilisation du noyau}
+
+\subsection{Autre}
+
+\subsection{Conclusion}
+
+\section{Gestion de projet}
+
+\section{Conclusion et perspectives}
+
+
+
+\subsection{Introduction}
+\label{introduction}
+Pour débuter, ce document explique le fonctionnement d'une modélisation ayant pour but de mettre en valeur l'émergence d'une civilisation. Cette implémentation se base sur MetaCiv, framework de modélisation de société humaine utilisant la technique des SMA. Toutes les constantes mentionnées dans ce document sont données dans la section "\hyperref[constantes]{Constantes}".
+
+\subsection{L'environment}
+\label{environment}
+En premier lieu, l'environnement dans lequel nos agents se déplacent est un espace fermé de $\mathbb{R}^{2}$. Il existe un total de quatre types de patches présents : Mer, Prairie, Terre Sterile et Forêt. Le modèle étant relativement basique, il n'existe que deux types de ressources disponibles : Les baies et le bois. Le tableau suivant donne le récapitulatif des différents patches et ressources disponibles.
+
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\text{Patch} & \multicolumn{2}{|c|}{\text{Ressources} } & \multicolumn{2}{|c|}{\text{Valeur initiale}} & \multicolumn{2}{|c|}{\text{Croissance des ressources}} & \text{Passabilité}\\
+\hline
+\text{Mer} \includegraphics[height=0.5 cm]{img/mer.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Non} \\
+\hline 
+\text{Terre Sterile} \includegraphics[height=0.5 cm]{img/sterile.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Oui} \\
+\hline 
+\text{Prairie} \includegraphics[height=0.5 cm]{img/prairie.png}& \text{Baies} & \text{Bois} & 10 & 1 & 0.2 & 0 & \text{Oui} \\
+\hline
+\text{Forêts} \includegraphics[height=0.5 cm]{img/foret.png}& \text{Baies} & \text{Bois} & 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
+\hline
+\end{tabular}
+\caption{Tableau récapitulatif des patches et des ressources.}
+\end{figure}
+
+Un patch de terre stérile ne produit pas de ressources alors que les patches Prairie et Forêts produisent en permanence des baies. On pourra remarquer que seules les forêts produisent du bois même si les prairies possèdent une valeur en bois initiale. Un patch peut être récolté dès lors que les ressources en bois ou en baies sont supérieures ou égales à 1. Une ressource "baies" est alors transformée en un objet baie (de même pour le bois).
+
+Le point d'apparition des agents se situe au milieu de l'environment et plusieurs prairies sont présentes aux alentours. On peut aussi distinguer une grande forêt dans la partie droite de l'environment.
+\begin{figure}[H]
+\center
+\includegraphics[height=10 cm]{img/terrain.png}
+\caption{Environment de la modélisation}
+\end{figure}
+
+Il convient de remarquer que lorsque les agents apparaissent dans l'environnement, ils sont éparpillés autour du point d'apparition et non dessus.
+
+
 
 \subsubsection{Les attributs}
 \label{attributs}
