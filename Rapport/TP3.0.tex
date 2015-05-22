@@ -85,7 +85,7 @@ colorlinks=true}
 \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} 
 \rule{\textwidth}{0.4pt}\\[\baselineskip] 
 % Title
-{ \huge \bfseries METACIV: DU CHASSEUR-CUEILLEUR AUX EMPIRES. \\[0.4cm] }
+{ \huge \bfseries MetaCiv: DU CHASSEUR-CUEILLEUR AUX EMPIRES. \\[0.4cm] }
 % horizontal line
 \rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} 
 \rule{\textwidth}{1.6pt}\\[\baselineskip] 
@@ -110,33 +110,34 @@ colorlinks=true}
 
 \section{Présentation de la plateforme MetaCiv}
 
-Il existe aujourd?hui de nombreuses plateformes de modØlisation de syst?mes complexes se basant sur la programmation par agents. Dans l?Øquipe de travail SMILE, plusieurs plateformes ont dØja ØtØ mises au point, Turtlekit [Mic02] et Madkit [GFM00] largement inspirØes des plateformes basØes sous StarLogo (http ://education.mit.edu/starlogo/). Nous travaillons depuis plus d?une annØe sur un plateforme spØci que dØnommØe Metaciv dont nous allons rappeler tr?s rapidement les principes et concepts.
+Il existe aujourd'hui de nombreuses plateformes de modélisation de systèmes complexes se basant sur la programmation par agents. Dans l'équipe de travail SMILE, plusieurs plateformes ont déjà été mises au point, Turtlekit [Mic02] et Madkit [GFM00] largement inspirées des plateformes basées sous StarLogo (http ://education.mit.edu/starlogo/). Cela fait bien plus d'une année qu'une plateforme spécifique dénommée MetaCiv à vu le jour. Nous allons rappeler très rapidement ses principes et concepts.
 
 
 \subsection{Principe}
 
-Metaciv est une plateforme de modØlisation par agents dØdiØe la conception de mod?les relatifs des syst?mes complexes (biologiques, environnementaux, etc...). Elle est basØe sur les fonctionnalitØs de la plateforme Turtlekit dØj existante. Elle bØnØ cie naturellement des fonctionnalitØs des plateformes prØcØdentes, notamment du concept Agent Group Role (AGR). De plus, elle int?gre les principes dits des quadrants [FST09]\\
+MetaCiv est une plateforme de modélisation par agents dédiée la conception de modèles relatifs des systèmes complexes (biologiques, environnementaux, etc...). Elle est basée sur les fonctionnalités de la plateforme Turtlekit déjà existante. Elle bénéficie naturellement des fonctionnalités des plateformes précédentes, notamment du concept Agent Group Role (AGR). De plus, elle intègre les principes dits des quadrants [FST09]\\
 
 \begin{figure}[H]
 \center
+\label{quadrant}
 \includegraphics[width = 10cm] {img/quadrants.png}
 \caption{Quadrants.}
 \end{figure}
 
 
-Un syst?me multi-agents selon le principe des quadrants est per u comme un ensemble de composants organisØs selon deux axes individuel-collectif d?une part et interioritØ-exterioritØ d?autre part. Ainsi le quadrant I-I dØnit ce qui constitue le fonctionnement interne de l?agent, sa mani?re de penser, ses idØes, ses croyances. Le quadrant E-I quand lui, dØ nit l?image que donne l?agent au monde, savoir son comportement, ses actions, ses possessions, son apparence. Ensuite, le quadrant I-C correspond aux idØes partagØes par un groupe d?individus, les normes et codes s?appliquant ce groupe, les valeurs communes et connaissances partagØes. En n, le quadrant E-C s?applique tout ce qui donne une reprØsentation de groupe sociaux, savoir, par exemple, les b timents publics, les monuments, les infrastructures. Metaciv est donc un framework de modØlisation de sociØtØ humaines dans lesquelles l?espace, la culture et la structure sociale jouent un r le important. On peut ainsi faire une reprØsentation globale de Metaciv en reprenant les quadrants de MASQ sous la forme MASQ-ML le langage de modØlisation de MASQ [FST09].
+Un système multi-agents selon le principe des quadrants est perçu comme un ensemble de composants organisés selon deux axe: individuel-collectif d'une part et interiorité-exteriorité d'autre part. Ainsi le quadrant I-I définit ce qui constitue le fonctionnement interne de l'agent, sa manière de penser, ses idées, ses croyances. Le quadrant E-I quand lui, définit l'image que donne l'agent au monde, savoir son comportement, ses actions, ses possessions, son apparence. Ensuite, le quadrant I-C correspond aux idées partagées par un groupe d'individus, les normes et codes s'appliquant ce groupe, les valeurs communes et connaissances partagées. Enfin, le quadrant E-C s'applique à tout ce qui donne une représentation de groupe sociaux, savoir, par exemple, les bâtiments publics, les monuments, les infrastructures. MetaCiv est donc un framework de modélisation de société humaines dans lesquelles l'espace, la culture et la structure sociale jouent un rôle important. On peut ainsi faire une représentation globale de MetaCiv en reprenant les quadrants de MASQ sous la forme MASQ-ML le langage de modélisation de MASQ [FST09].
 
 \begin{figure}[H]
 \center
-\includegraphics[width = 10cm] {img/MetacivMASQL.jpg}
-\caption{Metaciv exprimØ en MASQ-ML.}
+\includegraphics[width = 10cm] {img/MetaCivMASQL.jpg}
+\caption{MetaCiv exprimé en MASQ-ML.}
 \end{figure}
 
 \subsection{Concepts}
 
-Comme vu prØcØdemment Metaciv est une plateforme de simulation par agents dans laquelle nous postulons que chaque agent poss?de une cognition . De plus ces agents Øvoluent au sein d?un environnement Øvolutif qui impacte leurs dØcisions. Pour cela, dans la plateforme, chaque agent poss?de un "esprit" qui concentre les perceptions, la mØmoire (qui enregistre les actions e ectuØes ainsi que les in uences subies) ainsi qu?une facultØ de dØcision.
+Comme vu précédemment MetaCiv est une plateforme de simulation par agents dans laquelle nous postulons que chaque agent possède un cognition . De plus ces agents évoluent au sein d'un environnement évolutif qui impact leurs décisions. Pour cela, dans la plateforme, chaque agent possède un "esprit" qui concentre les perceptions, la mémoire (qui enregistre les actions effectuées ainsi que les influences subies) ainsi qu'une faculté de décision.
 
-La gure 1 rØsume le fonctionnement actuel et les extensions que nous souhaitons y apporter. Tout agent poss?de donc un esprit qui est un agrØgat de cognitons. Il dØcide d?exØcuter un plan, qui est un ensemble d?actions.
+La figure des \hyperref[quadrant]{quadrants} résume le fonctionnement actuel et les extensions que nous souhaitons y apporter. Tout agent possède donc un esprit qui est un agrégat de cognitons. Il décide d'exécuter un plan, qui est un ensemble d'actions.
 
 \begin{figure}[H]
 \center
@@ -144,8 +145,8 @@ La gure 1 rØsume le fonctionnement actuel et les extensions que nous souhaitons 
 \caption{Exemple de prise de décision.}
 \end{figure}
 
-Prenons un petit exemple (cf. Figure 4), dans une sociØtØ d?agents agriculteurs le modØlisateur prØvoit deux plans d?actions possibles, Cultiver et Chasser, les cognitons CompØtence Agriculture, Faim, et CompØtence chasse, ainsi que les liens entre cognitons et plans.
-Pour pouvoir exØcuter ces plans il faut disposer des cognitons CompØtence agriculture ou CompØtence chasse : ceci est exprimØ sous la forme de liens conditionnels. Les liens pondØrØs sont rajoutØs entre cognitons et plans d?actions pour exprimer l?in uence d?un cogniton sur un plan (un poids nØgatif traduisant un degrØ d?inhibition et un poids positif un degrØ de facilitation). Un agent qui poss?de les trois cognitons de la gure ci dessus dØcidera de Cultiver ou Chasser apr?s Øvaluation des liens pondØrØs ici Cultiver 7 et Chasser 12. Le choix entre ces deux plans est en fait dØpendant d?une randomisation prenant en compte les poids calculØs prØcØdemment, ceci a n de pallier les comportements majoritaires. Nous avons abstrait le schØma de fonctionnement de Metaciv (cf. Figure 5), en prØsentant les concepts existants et ceux qui constitueront les extensions visØes.
+Prenons l'exemple de la figure précédente, dans une société d'agents agriculteurs l'utilisateur prévoit deux plans d'actions possibles, Cultiver et Chasser, les cognitons Compétence Agriculture, Faim, et Compétence chasse, ainsi que les liens entre cognitons et plans.
+Pour pouvoir exécuter ces plans il faut disposer des cognitons Compétence agriculture ou Compétence chasse : ceci est exprimé sous la forme de liens conditionnels. Les liens pondérés sont rajoutés entre cognitons et plans d'actions pour exprimer l'influence d'un cogniton sur un plan (un poids négatif traduisant un degré d'inhibition et un poids positif un degré de facilitation). Un agent qui possède les trois cognitons de la figure ci-dessus décidera de Cultiver ou Chasser après évaluation des liens pondérés ici Cultiver 7 et Chasser 12. Le choix entre ces deux plans est en fait dépendant d'une randomisation prenant en compte les poids calculés précédemment, ceci afin de pallier les comportements majoritaires. Nous avons abstrait le schéma de fonctionnement de MetaCiv dans la figure suivante, en présentant les concepts existants et ceux qui constitueront les extensions visées.
 
 \begin{figure}[H]
 \center
@@ -153,7 +154,7 @@ Pour pouvoir exØcuter ces plans il faut disposer des cognitons CompØtence agricu
 \caption{Schéma de fonctionnement de MetaCiv.}
 \end{figure}
 
-Nous retrouvons donc le fait qu?un agent dispose d?un esprit constituØ de cognitons. Ceux ci sont liØs aux plans que peut exØcuter l?agent par des liens conditionnels ou d?in uences. Les actions prØl?vent des ressources dans les patchs et in uent sur les cognitons de l?agent. Les perceptions de l?environnement se font aussi gr ce aux cognitons. Les extensions sur lesquelles nous allons rØ Øchir, la lueur de la bibliographie, concernent le niveau groupe et la transmission de la connaissance communautaire d?une part, et d?autre part les relations spatio temporelles au niveau de l?environnement (celui ci ne se cantonnant plus au r le de support).
+Nous retrouvons donc le fait qu'un agent dispose d'un esprit constitué de cognitons. Ceux ci sont liés aux plans que peut exécuter l'agent par des liens conditionnels ou d'influences. Les actions prélèvent des ressources dans les patches et influent sur les cognitons de l'agent. Les perceptions de l'environnement se font aussi grâce aux cognitons. Les extensions sur lesquelles nous allons réfléchir, la lueur de la bibliographie, concernent le niveau groupe et la transmission de la connaissance communautaire d'une part, et d'autre part les relations spatio temporelles au niveau de l'environnement (celui ci ne se cantonnant plus au rôle de support).
 
 \section{Modélisations de civilisations}
 
@@ -304,9 +305,14 @@ Un plan est un ensemble de plusieurs actions génériques qui peuvent être partagé
 \caption{Exemple de l'interface du plan "DonnerNaissanceSiJ'aiPasFaim" dans MetaCiv. Les actions conditionnelles sont repérées par une icône en forme de processeur et les autres actions par une icône en forme de flèche.}
 \end{figure}
 
+\subsubsection{Les constantes}
+
+Les constantes peuvent être assimilés aux paramètres de la simulation. Elles peuvent être prise en paramètre d'une ou plusieurs actions mais ne peuvent être modifiés que par l'utilisateur du simulateur. La modification d'une constante est prise en compte même si le modèle est en cours d'exécution. Elles servent à modifier plus facilement les paramètres de la simulation dans toutes les actions dans lesquelles elles sont utilisées.
+
 \subsubsection{Les attributs}
 
-%% A RAJOUTER
+Les attributs sont des variables numériques personnelles à chaque agent. Elles peuvent être modifiés par des actions et leurs valeurs originales sont saisies par l'utilisateur. Elles servent à représenter les caractéristiques d'un agent.
+ 
 \subsubsection{Les groupes et les rôles}
 
 Lorsque plusieurs agents se rassemblent pour former un groupe, chaque agent de ce groupe possède un rôle. Chacun de ces rôles est défini de manière générique et ajoute des plans supplémentaires au moyen de nouveaux cognitons dits "culturons" et permettent ainsi la spécialisation de l'agent.
@@ -619,7 +625,7 @@ Le cueilleur possède donc cinq plans supplémentaires :
 \item Le plan "Cueillir" permet aux cueilleurs de partir à la recherche des baies et influence le cogniton "TropDansMonSac" pour le rapatriement des baies. Il est activé par le culturon "AllerChercherDesBaies".
 \item Le plan "recruter" permet aux agents de former des groupes. Il est activé par le culturon "Recruter".
 \item Le plan "Construire" permet aux agents de construire leur village, s'ils n'en possèdent pas. Il est activé par le culturon "ConstruireVillage". Une fois le village construit, le cogniton "PasBesoinDeVillage" est ajouté et inhibe le plan "Construire".`
-\item Le plan "DevenirAgriculteur" est activé par le cogniton "DevenirAgriculteur?" mais n'est influencé que par le cogniton "BonCueilleur", lui-même activé que lorsque l'agent à son attribut "CompetenceCueilleur" supérieure ou égale à la constante "SeuilBonCueilleur". Ainsi, un cueilleur n'est susceptible de devenir un agriculteur que lorsque les conditions sont satisfaites.
+\item Le plan "DevenirAgriculteur" est activé par le cogniton "DevenirAgriculteur'" mais n'est influencé que par le cogniton "BonCueilleur", lui-même activé que lorsque l'agent à son attribut "CompetenceCueilleur" supérieure ou égale à la constante "SeuilBonCueilleur". Ainsi, un cueilleur n'est susceptible de devenir un agriculteur que lorsque les conditions sont satisfaites.
 \item Le plan "DevenirArtisan" reprend le principe du plan "DevenirAgriculteur".
 \end{itemize}
 On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par le cogniton "DonnerNaissance" n'est activé que maintenant par le culturon "ReproduireCueilleur".
@@ -657,12 +663,12 @@ On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par
 
  \node [state,anchor=center, text width = 2cm, node distance=2.5 cm,below of =ReproduireCueilleur, draw, circle, minimum size = 10mm, fill=brown] (DevenirAgriculteur)
 {
-	\textbf{Devenir Agriculteur?}
+	\textbf{Devenir Agriculteur'}
 };
 
  \node [state,anchor=center, text width = 2cm, node distance=2.5 cm,below of =DevenirAgriculteur, draw, circle, minimum size = 10mm, fill=brown] (DevenirArtisan)
 {
-	\textbf{Devenir Artisan?}
+	\textbf{Devenir Artisan'}
 };
 
  \node [state,anchor=center, text width = 2cm, node distance=10 cm,right of =DevenirAgriculteur, draw, circle, minimum size = 10mm, fill=yellow] (BonCueilleur)
@@ -721,7 +727,7 @@ On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par
 {
 	\textbf{DevenirAgriculteur} \\
 	\begin{itemize}
-	\item Avec une certaine probabilité, changer de rôle pour "Agriculteur" et baisser le poids du cogniton "DevenirAgriculteur?".
+	\item Avec une certaine probabilité, changer de rôle pour "Agriculteur" et baisser le poids du cogniton "DevenirAgriculteur'".
 	\end{itemize}
 	
 };
@@ -730,7 +736,7 @@ On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par
 {
 	\textbf{DevenirArtisan} \\
 	\begin{itemize}
-	\item Changer de rôle pour "Artisan" et baisser le poids du cogniton "DevenirArtisan?".
+	\item Changer de rôle pour "Artisan" et baisser le poids du cogniton "DevenirArtisan'".
 	\end{itemize}
 };
 
