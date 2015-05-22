@@ -132,8 +132,8 @@ L'environnement ainsi que les actions effectuées peuvent affecter les caractéris
 \subsubsection{Notion de cognitons}
 \label{cognitons}
 
-Les agents étant amenés à  devoir opérer des choix dans un large panel d'actions ceux ci doivent donc disposer de capacité de réflexion et de choix suffisamment développée. 
-Dans cette optique, l'idée retenue consiste à  pondérer les différentes actions possibles pour les agents, et  ce afin de les faire choisir en fonction de ces poids. 
+Les agents étant amenés à  devoir opérer des choix dans un large panel d'actions ceux ci doivent donc disposer de capacité de réflexion et de choix suffisamment développée. 
+Dans cette optique, l'idée retenue consiste à  pondérer les différentes actions possibles pour les agents, et  ce afin de les faire choisir en fonction de ces poids. 
 Les poids des actions sont déterminés par différents facteurs : ce que voient, pensent, croient les agents... L'ensemble de ces facteurs est regroupé sous le terme de \textit{cogniton} dans ce projet, en reprenant le néologisme proposé par J. Ferber. Le cogniton est donc une "unité de pensée" qui influe sur les choix de l'agent. 	
 Les cognitons peuvent se cumuler, et ne sont donc pas des "états" mentaux. En fait, c'est la somme des cognitons qui représente réellement l'état mental de l'agent.
 
@@ -223,17 +223,17 @@ Les cognitons peuvent avoir un "trigger". Il s'agit d'un dispositif permettant d
 	\textit{Remarque : la catégorisation, pour l'instant, change la couleur d'un cogniton dans l'interface de MetaCiv et permet de mieux repérer le type du cogniton.}
 \begin{itemize}
 
-\item 	Les\textit{ Skills} (signifiant compétences en anglais) représentent les compétences, savoir-faire et connaissances techniques ou scientifiques des agents. Comme exemples de ce type de cognitons, on peut proposer : Agriculture, Navigation, Fabrication d'outils... La plupart des skills ont la particularité d'être transmissibles d'un agent à  l'autre, d'être permanents (ils ne disparaissent pas une fois acquis) et d'être des pré-requis indispensables à  certaines actions. 
+\item 	Les\textit{ Skills} (signifiant compétences en anglais) représentent les compétences, savoir-faire et connaissances techniques ou scientifiques des agents. Comme exemples de ce type de cognitons, on peut proposer : Agriculture, Navigation, Fabrication d'outils... La plupart des skills ont la particularité d'être transmissibles d'un agent à  l'autre, d'être permanents (ils ne disparaissent pas une fois acquis) et d'être des pré-requis indispensables à  certaines actions. 
 	
 	Par exemple, même si d'autres cognitons l'influencent, un agent ne peut pas fabriquer un outil s'il ne dispose pas de Fabrication d'outils. Enfin, les skills sont héréditaires. Ici, on parle de l'hérédité au sens de la transmission entre les générations, ce qui représente de manière simple l'apprentissage et la transmission des connaissances.
 
 \item 	Les \textit{Traits} représentent les spécificités individuelles de l'agent, ses traits de caractères, ses façons d'être. Des exemples possibles de ce type de cognitons sont : Ouvert, Renfermé, Paresseux...
 	
-	Cette catégorie n'est pas la plus importante du point de vue de la simulation et du réalisme, mais est un outil simple pour faire varier le comportement des agents si l'on veut envisager des scénarii spécifiques (des civilisations très agressives, des agents peu travailleurs, etc...). Les traits ne sont pas transmissibles d'agents à  agents, sauf de manière héréditaire occasionnellement, ce qui représente l'imitation et l'éducation.
+	Cette catégorie n'est pas la plus importante du point de vue de la simulation et du réalisme, mais est un outil simple pour faire varier le comportement des agents si l'on veut envisager des scénarii spécifiques (des civilisations très agressives, des agents peu travailleurs, etc...). Les traits ne sont pas transmissibles d'agents à  agents, sauf de manière héréditaire occasionnellement, ce qui représente l'imitation et l'éducation.
 
 \item 	Les \textit{Beliefs} (Croyances en anglais) représentent ce que l'agent sait ou croit savoir de son environnement et de lui même. Cette catégorie est vaste, et peut regrouper des cognitons aussi variés que : Je porte une pioche, Nous sommes en guerre avec la civilisation 3, Je possède un champ. Ces cognitons ne sont généralement pas transmissibles entre agents, et ne sont pas héréditaires.
 
-\item 	Les \textit{Percepts} représentent ce que l'agent voit, entend ou ressent (physiquement) au moment considéré. Des exemples de percepts sont : J'ai faim, Un ennemi est proche, Je suis près de l'eau. Ce type de cogniton est constamment retiré ou ajouté, contrairement aux autres types qui sont plus stables. Les percepts ne sont pas transmissibles, ils sont propres à  l'agent considéré.
+\item 	Les \textit{Percepts} représentent ce que l'agent voit, entend ou ressent (physiquement) au moment considéré. Des exemples de percepts sont : J'ai faim, Un ennemi est proche, Je suis près de l'eau. Ce type de cogniton est constamment retiré ou ajouté, contrairement aux autres types qui sont plus stables. Les percepts ne sont pas transmissibles, ils sont propres à  l'agent considéré.
 
 \item 	Les \textit{Mèmes} sont des croyances ou comportements culturels transmissibles. Ainsi, les mèmes pourraient être : Je crois que l'argent est une fin en soi, je crois en l'existence d'un dieu, je crois que la démocratie est une bonne chose. Typiquement, les opinions religieuses et politiques sont des mèmes. Par définition, les mèmes sont transmissibles, et ils sont potentiellement héréditaires.
 \end{itemize}
@@ -305,9 +305,9 @@ En premier lieu, l'environnement dans lequel nos agents se déplacent est un espa
 \hline 
 \text{Terre Sterile} \includegraphics[height=0.5 cm]{img/sterile.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Oui} \\
 \hline 
-\text{Prairie} \includegraphics[height=0.5 cm]{img/prairie.png}& \text{Baies} & \text{Bois} & 10 & 1 & 0.2 & 0 & \text{Oui} \\
+\text{Prairie} \includegraphics[height=0.5 cm]{img/prairie.png}& \text{Baies} & \text{Bois} & 10 & 1 & 0.2 & 0 & \text{Oui} \\
 \hline
-\text{Forêts} \includegraphics[height=0.5 cm]{img/foret.png}& \text{Baies} & \text{Bois} & 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
+\text{Forêts} \includegraphics[height=0.5 cm]{img/foret.png}& \text{Baies} & \text{Bois} & 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
 \hline
 \end{tabular}
 \caption{Tableau récapitulatif des patches et des ressources.}
@@ -1153,9 +1153,84 @@ AgeParTick & 0.02 \\
 
 \subsection{Introduction}
 
+    le programme MetaCiv , logiciel de modélisation de civilisation , est un projet qui a été développé par des groupes successifs d'étudiant. Développé autour de turtlekit et madkit , le programme possède une base solide , mais les ajouts successifs de fonctionnalités sans respect de normes et de méthodes on conduit à un logiciel instable et un code source chaotique.
+
+	nous avons essayé , lors de l'ajout de fonctionnalités , de produire un code plus clair , en séparant bien chaque chose (éviter les fonctions de plusieurs centaines de ligne), en utilisant une approche plus objet et en utilisant quelques design patterns.
+
+
 \subsection{Fonctionnalités}
 
+\subsubsection{Schéma cognitif}
+	besoins : 
+	- mettre en concurrence plusieurs civilisations ayant un fonctionnement différent dans le cadre d'un jeu ou d'une évaluation de modèles 
+	- modéliser les relations entre des espèces différentes, par exemple l'évolution des populations d'animaux sauvages à l'arrivée de l'homme
+	- de manière générale , manipuler ces schémas cognitifs comme des éléments du modèle et non plus comme le modèle lui-même (cloner le schéma pour essayer différentes solutions , importer des schémas d'autres modèles ..., le tout en conservant un environnement défini)
+	
+	pour ce faire nous avons crée une classe SchémaCognitif et nous y avons déporté tout ce qui relèves du comportement des agents.
+	
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{img/uml-SC.jpg}
+\caption{Diagramme simplifié du programme}
+\end{figure}
+
+l'esprit fait toujours apel à la civilisation pour s'alimenter en plans et cognitons , mais nous avons changé le code des accesseurs pour qu'ils renvoient les données du schéma cognitif contenu dans la civilisation
+
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{img/Dev-Civ-getPlan.png}
+\caption{exemple d'un accès à la liste des plans disponibles, cerveau est la référence vers le schéma cognitif}
+\end{figure}
+
+Pour permettre la gestion de ces schémas nous avons mis au point ce que nous appelons des fabriques , qui sont des classes à mi chemin entre le pattern fabrique abstraite et singleton. ces fabriques génèrent des objets Schémas cognitif et civilisation par des méthodes statiques et les conservent dans une liste statique. Nous pouvons créer de nouveaux objets , les charger à partir d?un chemin , les sauvegarder et les cloner en les renommant .
+
+enfin , nous avons crée les barres d'outils pour gérer l'édition des schémas cognitifs
+
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{img/interface_schema_cognitif-1.png}
+\caption{barre d'outil permettant de sélectionner le schéma cognitif en cours d'édition , avec des options de création , d'import et de supression}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=5cm]{img/interface_schema_cognitif-2.png}
+\caption{fenêtre de création d'un nouveau schéma cognitif , possibilité de cloner un schéma existant en le renommant}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=10cm]{img/interface_schema_cognitif-3.png}
+\caption{ajout d'un sélecteur du schéma cognitif à utiliser dans l'interface de gestion des civilisations}
+\end{figure}
+
+
+\subsubsection{Constantes}
+	besoins : - centraliser les constantes utilisés à plusieurs endroits dans les plans pour simplifier le travail de réglage du modèle
+	
+	
+
+
 \subsection{Stabilisation du noyau}
+	au cours de l'avancée des modélisateurs , quelques dizaines de bugs ont été découverts. Nous vous en présentons quelques uns en précisant le disfonctionnement constaté , sa raison et la correction effectuée
+
+
+gestion des plans : au chargement , certains plans sont ajoutés deux fois (mais la simulation fonctionne quand même)
+    -> un test toujours vrai dans le chainage des plans cause l?ajout en double
+    -> nettoyage du code , le problème apparait clairement et est résolu (note : amélioration sensible des performances)
+
+gestion des triggers : la modification des triggers ne semble pas avoir d?effet
+    -> présence de deux listes représentant les triggers : une est utilisé par les agents , l?autre par l?interface.
+    -> regroupement en une seule liste , modification de la liste au lieu de détruire et reconstruire (permet la modification des valeurs pendant l?éxécution)
+
+
+certain cognitons sont présent en double , ce qui fausse le calcul de l?action à effectuer
+        -> les Starting cognitons sont ajoutés en plus de la liste de tous les cognitons qui les contient déjà 
+        -> sécurisation de la liste des cognitons d?un agent à travers un accesseur , si le cogniton est déjà présent , l?ajout est ignoré
+
+la sauvegarde sous windows corrompt certain modèles (pas sur mac)
+    -> pas de vérification des caractères interdits dans le nom des éléments qui sont utilisés pour nommer le fichier correspondant
+-> utilisation de URLencoder sur toutes les chaines servant comme nom de fichier 
 
 \subsection{Autre}
 
