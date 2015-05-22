@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.6)  22 MAY 2015 12:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.6)  22 MAY 2015 13:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -985,88 +985,91 @@ Overfull \hbox (30.17398pt too wide) in paragraph at lines 46--47
 li-sa-tion. Cette impl^^Sementation
  []
 
-<mer.png, id=104, 24.09pt x 23.08624pt>
-File: mer.png Graphic file (type png)
- <use mer.png>
-Package pdftex.def Info: mer.png used on input line 58.
+<img/mer.png, id=104, 24.09pt x 23.08624pt>
+File: img/mer.png Graphic file (type png)
+ <use img/mer.png>
+Package pdftex.def Info: img/mer.png used on input line 58.
 (pdftex.def)             Requested size: 14.84483pt x 14.22636pt.
 
-<sterile.png, id=106, 29.10875pt x 28.105pt>
-File: sterile.png Graphic file (type png)
- <use sterile.png>
-Package pdftex.def Info: sterile.png used on input line 60.
+<img/sterile.png, id=106, 29.10875pt x 28.105pt>
+File: img/sterile.png Graphic file (type png)
+ <use img/sterile.png>
+Package pdftex.def Info: img/sterile.png used on input line 60.
 (pdftex.def)             Requested size: 14.73466pt x 14.22636pt.
 
-<prairie.png, id=107, 17.06375pt x 19.07124pt>
-File: prairie.png Graphic file (type png)
- <use prairie.png>
-Package pdftex.def Info: prairie.png used on input line 62.
+<img/prairie.png, id=107, 17.06375pt x 19.07124pt>
+File: img/prairie.png Graphic file (type png)
+ <use img/prairie.png>
+Package pdftex.def Info: img/prairie.png used on input line 62.
 (pdftex.def)             Requested size: 12.72928pt x 14.22636pt.
 
-<foret.png, id=108, 19.07124pt x 20.075pt>
-File: foret.png Graphic file (type png)
- <use foret.png>
-Package pdftex.def Info: foret.png used on input line 64.
+<img/foret.png, id=108, 19.07124pt x 20.075pt>
+File: img/foret.png Graphic file (type png)
+ <use img/foret.png>
+Package pdftex.def Info: img/foret.png used on input line 64.
 (pdftex.def)             Requested size: 13.51534pt x 14.22636pt.
 
 Overfull \hbox (63.72394pt too wide) in paragraph at lines 54--67
  [] 
  []
 
-<terrain.png, id=109, 252.945pt x 251.94125pt>
-File: terrain.png Graphic file (type png)
- <use terrain.png>
-Package pdftex.def Info: terrain.png used on input line 75.
+<img/terrain.png, id=109, 252.945pt x 251.94125pt>
+File: img/terrain.png Graphic file (type png)
+ <use img/terrain.png>
+Package pdftex.def Info: img/terrain.png used on input line 75.
 (pdftex.def)             Requested size: 285.66241pt x 284.52756pt.
- [1
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./mer.p
-ng> <./sterile.png> <./prairie.png> <./foret.png>] [2 <./terrain.png>] [3]
+[1
+
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/m
+er.png> <./img/sterile.png> <./img/prairie.png> <./img/foret.png>] [2 <./img/te
+rrain.png>] [3]
 Overfull \hbox (5.30606pt too wide) in paragraph at lines 172--173
 \OT1/cmr/m/n/10 routes, etc...). Le nom d'une telle ac-tion est de la forme : A
 []nomDeLAction. 
  []
 
-<Aaction.png, id=140, 437.635pt x 117.43875pt>
-File: Aaction.png Graphic file (type png)
- <use Aaction.png>
-Package pdftex.def Info: Aaction.png used on input line 178.
+<img/Aaction.png, id=140, 437.635pt x 117.43875pt>
+File: img/Aaction.png Graphic file (type png)
+ <use img/Aaction.png>
+Package pdftex.def Info: img/Aaction.png used on input line 178.
 (pdftex.def)             Requested size: 284.52756pt x 76.35397pt.
 
-<Laction.png, id=141, 482.80376pt x 128.48pt>
-File: Laction.png Graphic file (type png)
- <use Laction.png>
-Package pdftex.def Info: Laction.png used on input line 184.
+<img/Laction.png, id=141, 482.80376pt x 128.48pt>
+File: img/Laction.png Graphic file (type png)
+ <use img/Laction.png>
+Package pdftex.def Info: img/Laction.png used on input line 184.
 (pdftex.def)             Requested size: 284.52756pt x 75.71823pt.
 
-<plan.png, id=142, 268.00125pt x 252.945pt>
-File: plan.png Graphic file (type png)
- <use plan.png>
-Package pdftex.def Info: plan.png used on input line 190.
+<img/plan.png, id=142, 268.00125pt x 252.945pt>
+File: img/plan.png Graphic file (type png)
+ <use img/plan.png>
+Package pdftex.def Info: img/plan.png used on input line 190.
 (pdftex.def)             Requested size: 284.52756pt x 268.54112pt.
- [4 <./Aaction.png> <./Laction.png>]
+ [4 <./img/Aaction.png> <./img/Laction.png>]
 Overfull \hbox (83.11842pt too wide) in paragraph at lines 198--199
 []\OT1/cmr/m/n/10 L'attribut Ener-gie est baiss^^See chaque tour d'une cer-tain
 e quan-tit^^Se ($\OML/cmm/m/it/10 BaisseEnergieParTick$\OT1/cmr/m/n/10 ),
  []
 
-[5 <./plan.png>] <poisson.png, id=159, 608.2725pt x 464.73625pt>
-File: poisson.png Graphic file (type png)
+[5 <./img/plan.png>] <img/poisson.png, id=159, 608.2725pt x 464.73625pt>
+File: img/poisson.png Graphic file (type png)
 
-<use poisson.png>
-Package pdftex.def Info: poisson.png used on input line 207.
+<use img/poisson.png>
+Package pdftex.def Info: img/poisson.png used on input line 207.
 (pdftex.def)             Requested size: 199.16928pt x 152.165pt.
- <cumul.png, id=160, 590.205pt x 428.60126pt>
-File: cumul.png Graphic file (type png)
- <use cumul.png>
-Package pdftex.def Info: cumul.png used on input line 230.
+ <img/cumul.png, id=160, 590.205pt x 428.60126pt>
+File: img/cumul.png Graphic file (type png)
+
+<use img/cumul.png>
+Package pdftex.def Info: img/cumul.png used on input line 230.
 (pdftex.def)             Requested size: 284.52756pt x 206.62222pt.
+ [6 <./img/poisson.png>]
+<img/EsperanceDeVie.png, id=171, 610.28pt x 375.4025pt>
+File: img/EsperanceDeVie.png Graphic file (type png)
 
-[6 <./poisson.png>] <EsperanceDeVie.png, id=171, 610.28pt x 375.4025pt>
-File: EsperanceDeVie.png Graphic file (type png)
-
-<use EsperanceDeVie.png>
-Package pdftex.def Info: EsperanceDeVie.png used on input line 236.
+<use img/EsperanceDeVie.png>
+Package pdftex.def Info: img/EsperanceDeVie.png used on input line 236.
 (pdftex.def)             Requested size: 284.52756pt x 175.02434pt.
 
 Overfull \hbox (6.39162pt too wide) in paragraph at lines 240--241
@@ -1080,11 +1083,11 @@ Overfull \hbox (6.7517pt too wide) in paragraph at lines 240--241
 -ran-ce-De-Vie" sup^^Serieur
  []
 
-[7 <./cumul.png> <./EsperanceDeVie.png>]
-<default.png, id=181, 324.21124pt x 215.80624pt>
-File: default.png Graphic file (type png)
- <use default.png>
-Package pdftex.def Info: default.png used on input line 277.
+[7 <./img/cumul.png> <./img/EsperanceDeVie.png>]
+<img/default.png, id=181, 324.21124pt x 215.80624pt>
+File: img/default.png Graphic file (type png)
+ <use img/default.png>
+Package pdftex.def Info: img/default.png used on input line 277.
 (pdftex.def)             Requested size: 227.62204pt x 151.51447pt.
 Missing character: There is no ; in font nullfont!
 
@@ -1092,54 +1095,55 @@ Overfull \hbox (30.08578pt too wide) in paragraph at lines 337--338
 [][] 
  []
 
-[8 <./default.png>] [9]
+[8 <./img/default.png>] [9]
 Overfull \hbox (87.69543pt too wide) in paragraph at lines 424--425
 [][] 
  []
 
-[10] <hunger.png, id=201, 382.42876pt x 255.95625pt>
-File: hunger.png Graphic file (type png)
- <use hunger.png>
-Package pdftex.def Info: hunger.png used on input line 432.
+[10] <img/hunger.png, id=201, 382.42876pt x 255.95625pt>
+File: img/hunger.png Graphic file (type png)
+ <use img/hunger.png>
+Package pdftex.def Info: img/hunger.png used on input line 432.
 (pdftex.def)             Requested size: 284.52756pt x 190.43962pt.
- [11 <./hunger.png>]
+
+[11 <./img/hunger.png>]
 Overfull \hbox (0.14719pt too wide) in paragraph at lines 463--464
 \OT1/cmr/m/n/10 sup^^Serieure ou ^^Segale ^^Ra la constante "Seuil-Bon-Cueilleu
 r". Ainsi, un cueilleur
  []
 
-<cueilleur1.png, id=209, 365.365pt x 286.06876pt>
-File: cueilleur1.png Graphic file (type png)
- <use cueilleur1.png>
-Package pdftex.def Info: cueilleur1.png used on input line 470.
+<img/cueilleur1.png, id=209, 365.365pt x 286.06876pt>
+File: img/cueilleur1.png Graphic file (type png)
+ <use img/cueilleur1.png>
+Package pdftex.def Info: img/cueilleur1.png used on input line 470.
 (pdftex.def)             Requested size: 170.71652pt x 133.66661pt.
 
-<cueilleur2.png, id=210, 423.5825pt x 327.2225pt>
-File: cueilleur2.png Graphic file (type png)
- <use cueilleur2.png>
-Package pdftex.def Info: cueilleur2.png used on input line 471.
+<img/cueilleur2.png, id=210, 423.5825pt x 327.2225pt>
+File: img/cueilleur2.png Graphic file (type png)
+ <use img/cueilleur2.png>
+Package pdftex.def Info: img/cueilleur2.png used on input line 471.
 (pdftex.def)             Requested size: 170.71652pt x 131.88028pt.
 
 Overfull \hbox (106.6569pt too wide) in paragraph at lines 608--609
 [][] 
  []
 
-[12 <./cueilleur1.png> <./cueilleur2.png>] [13]
+[12 <./img/cueilleur1.png> <./img/cueilleur2.png>] [13]
 Overfull \hbox (6.1395pt too wide) in paragraph at lines 617--618
 []\OT1/cmr/m/n/10 Le plan "Ra-me-ner-Pel-leAu-Village" ram^^Rene l'agent au vil
 -lage pour y d^^Seposer
  []
 
-<artisan1.png, id=224, 313.17pt x 284.06125pt>
-File: artisan1.png Graphic file (type png)
- <use artisan1.png>
-Package pdftex.def Info: artisan1.png used on input line 624.
+<img/artisan1.png, id=224, 313.17pt x 284.06125pt>
+File: img/artisan1.png Graphic file (type png)
+ <use img/artisan1.png>
+Package pdftex.def Info: img/artisan1.png used on input line 624.
 (pdftex.def)             Requested size: 170.71652pt x 154.85147pt.
 
-<artisan2.png, id=225, 341.275pt x 193.72375pt>
-File: artisan2.png Graphic file (type png)
- <use artisan2.png>
-Package pdftex.def Info: artisan2.png used on input line 625.
+<img/artisan2.png, id=225, 341.275pt x 193.72375pt>
+File: img/artisan2.png Graphic file (type png)
+ <use img/artisan2.png>
+Package pdftex.def Info: img/artisan2.png used on input line 625.
 (pdftex.def)             Requested size: 170.71652pt x 96.90892pt.
 
 Overfull \hbox (2.8025pt too wide) in paragraph at lines 699--701
@@ -1151,20 +1155,21 @@ Overfull \hbox (64.93993pt too wide) in paragraph at lines 727--728
 [][] 
  []
 
-[14 <./artisan1.png> <./artisan2.png>]
-<agriculteur1.png, id=233, 320.69812pt x 63.73813pt>
-File: agriculteur1.png Graphic file (type png)
- <use agriculteur1.png>
-Package pdftex.def Info: agriculteur1.png used on input line 737.
+[14 <./img/artisan1.png> <./img/artisan2.png>]
+<img/agriculteur1.png, id=233, 320.69812pt x 63.73813pt>
+File: img/agriculteur1.png Graphic file (type png)
+
+<use img/agriculteur1.png>
+Package pdftex.def Info: img/agriculteur1.png used on input line 737.
 (pdftex.def)             Requested size: 170.71652pt x 33.92984pt.
 
-<agriculteur2.png, id=234, 389.455pt x 119.44624pt>
-File: agriculteur2.png Graphic file (type png)
- <use agriculteur2.png>
-Package pdftex.def Info: agriculteur2.png used on input line 738.
-(pdftex.def)             Requested size: 170.71652pt x 52.35783pt.
+<img/agriculteur2.png, id=234, 389.455pt x 119.44624pt>
+File: img/agriculteur2.png Graphic file (type png)
 
-[15]
+<use img/agriculteur2.png>
+Package pdftex.def Info: img/agriculteur2.png used on input line 738.
+(pdftex.def)             Requested size: 170.71652pt x 52.35783pt.
+ [15]
 Overfull \hbox (1.03172pt too wide) in paragraph at lines 747--749
  [][][][]\OT1/cmr/bx/n/10 Agriculteur 
  []
@@ -1174,167 +1179,172 @@ Overfull \hbox (64.93993pt too wide) in paragraph at lines 784--785
 [][] 
  []
 
-<village.png, id=240, 65.24374pt x 65.24374pt>
-File: village.png Graphic file (type png)
- <use village.png>
-Package pdftex.def Info: village.png used on input line 799.
+<img/village.png, id=240, 65.24374pt x 65.24374pt>
+File: img/village.png Graphic file (type png)
+ <use img/village.png>
+Package pdftex.def Info: img/village.png used on input line 799.
 (pdftex.def)             Requested size: 21.33936pt x 21.33955pt.
 
-<hutte.png, id=241, 83.31125pt x 80.3pt>
-File: hutte.png Graphic file (type png)
- <use hutte.png>
-Package pdftex.def Info: hutte.png used on input line 801.
+<img/hutte.png, id=241, 83.31125pt x 80.3pt>
+File: img/hutte.png Graphic file (type png)
+ <use img/hutte.png>
+Package pdftex.def Info: img/hutte.png used on input line 801.
 (pdftex.def)             Requested size: 22.13965pt x 21.33955pt.
 
-<champ.png, id=242, 104.39pt x 103.38625pt>
-File: champ.png Graphic file (type png)
- <use champ.png>
-Package pdftex.def Info: champ.png used on input line 803.
+<img/champ.png, id=242, 104.39pt x 103.38625pt>
+File: img/champ.png Graphic file (type png)
+ <use img/champ.png>
+Package pdftex.def Info: img/champ.png used on input line 803.
 (pdftex.def)             Requested size: 21.54662pt x 21.33955pt.
 
 Overfull \hbox (105.00073pt too wide) in paragraph at lines 795--806
  [] 
  []
 
-[16 <./agriculteur1.png> <./agriculteur2.png>]
-<initial.png, id=251, 449.68pt x 427.5975pt>
-File: initial.png Graphic file (type png)
- <use initial.png>
-Package pdftex.def Info: initial.png used on input line 815.
+[16 <./img/agriculteur1.png> <./img/agriculteur2.png>]
+<img/initial.png, id=251, 449.68pt x 427.5975pt>
+File: img/initial.png Graphic file (type png)
+ <use img/initial.png>
+Package pdftex.def Info: img/initial.png used on input line 815.
 (pdftex.def)             Requested size: 149.60934pt x 142.26378pt.
 
-<fondementGroupe.png, id=252, 529.98pt x 439.6425pt>
-File: fondementGroupe.png Graphic file (type png)
- <use fondementGroupe.png>
-Package pdftex.def Info: fondementGroupe.png used on input line 825.
-(pdftex.def)             Requested size: 171.48936pt x 142.26378pt.
+<img/fondementGroupe.png, id=252, 529.98pt x 439.6425pt>
+File: img/fondementGroupe.png Graphic file (type png)
 
-[17 <./village.png> <./hutte.png> <./champ.png> <./initial.png>]
-<cueillette.png, id=263, 287.0725pt x 273.02pt>
-File: cueillette.png Graphic file (type png)
- <use cueillette.png>
-Package pdftex.def Info: cueillette.png used on input line 835.
+<use img/fondementGroupe.png>
+Package pdftex.def Info: img/fondementGroupe.png used on input line 825.
+(pdftex.def)             Requested size: 171.48936pt x 142.26378pt.
+ [17 <./img/village.png> <./img/hutte.png> <./img/champ.png> <./img/initial.png
+>]
+<img/cueillette.png, id=263, 287.0725pt x 273.02pt>
+File: img/cueillette.png Graphic file (type png)
+ <use img/cueillette.png>
+Package pdftex.def Info: img/cueillette.png used on input line 835.
 (pdftex.def)             Requested size: 149.58517pt x 142.26378pt.
 
-<champs.png, id=264, 559.08875pt x 486.81876pt>
-File: champs.png Graphic file (type png)
- <use champs.png>
-Package pdftex.def Info: champs.png used on input line 845.
+<img/champs.png, id=264, 559.08875pt x 486.81876pt>
+File: img/champs.png Graphic file (type png)
+ <use img/champs.png>
+Package pdftex.def Info: img/champs.png used on input line 845.
 (pdftex.def)             Requested size: 163.3771pt x 142.26378pt.
- [18 <./fondementGroupe.png> <./cueillette.png>]
-<artisan.png, id=273, 366.36874pt x 345.29pt>
-File: artisan.png Graphic file (type png)
- <use artisan.png>
-Package pdftex.def Info: artisan.png used on input line 855.
+
+[18 <./img/fondementGroupe.png> <./img/cueillette.png>]
+<img/artisan.png, id=273, 366.36874pt x 345.29pt>
+File: img/artisan.png Graphic file (type png)
+ <use img/artisan.png>
+Package pdftex.def Info: img/artisan.png used on input line 855.
 (pdftex.def)             Requested size: 150.95007pt x 142.26378pt.
 
-<agriculteurPelle.png, id=274, 388.45125pt x 385.44pt>
-File: agriculteurPelle.png Graphic file (type png)
+<img/agriculteurPelle.png, id=274, 388.45125pt x 385.44pt>
+File: img/agriculteurPelle.png Graphic file (type png)
 
-<use agriculteurPelle.png>
-Package pdftex.def Info: agriculteurPelle.png used on input line 861.
+<use img/agriculteurPelle.png>
+Package pdftex.def Info: img/agriculteurPelle.png used on input line 861.
 (pdftex.def)             Requested size: 143.37498pt x 142.26378pt.
- [19 <./champs.png> <./artisan.png>]
-<pop.png, id=284, 762.34813pt x 142.5325pt>
-File: pop.png Graphic file (type png)
- <use pop.png>
-Package pdftex.def Info: pop.png used on input line 872.
+ [19 <./img/champs.png> <./img/artisan.png>]
+<img/pop.png, id=284, 762.34813pt x 142.5325pt>
+File: img/pop.png Graphic file (type png)
+ <use img/pop.png>
+Package pdftex.def Info: img/pop.png used on input line 872.
 (pdftex.def)             Requested size: 369.88582pt x 69.15427pt.
 
 Overfull \hbox (24.88582pt too wide) in paragraph at lines 872--873
  [] 
  []
 
-<poparti.png, id=285, 759.33687pt x 144.54pt>
-File: poparti.png Graphic file (type png)
- <use poparti.png>
-Package pdftex.def Info: poparti.png used on input line 879.
+<img/poparti.png, id=285, 759.33687pt x 144.54pt>
+File: img/poparti.png Graphic file (type png)
+ <use img/poparti.png>
+Package pdftex.def Info: img/poparti.png used on input line 879.
 (pdftex.def)             Requested size: 369.88582pt x 70.40837pt.
 
 Overfull \hbox (24.88582pt too wide) in paragraph at lines 879--880
  [] 
  []
 
-<popartiagri.png, id=286, 748.7975pt x 142.5325pt>
-File: popartiagri.png Graphic file (type png)
- <use popartiagri.png>
-Package pdftex.def Info: popartiagri.png used on input line 886.
+<img/popartiagri.png, id=286, 748.7975pt x 142.5325pt>
+File: img/popartiagri.png Graphic file (type png)
+
+<use img/popartiagri.png>
+Package pdftex.def Info: img/popartiagri.png used on input line 886.
 (pdftex.def)             Requested size: 369.88582pt x 70.40698pt.
 
 Overfull \hbox (24.88582pt too wide) in paragraph at lines 886--887
  [] 
  []
 
-[20 <./agriculteurPelle.png> <./pop.png> <./poparti.png>]
-<pop2.png, id=297, 761.34438pt x 145.04187pt>
-File: pop2.png Graphic file (type png)
- <use pop2.png>
-Package pdftex.def Info: pop2.png used on input line 897.
+[20 <./img/agriculteurPelle.png> <./img/pop.png> <./img/poparti.png>]
+<img/pop2.png, id=297, 761.34438pt x 145.04187pt>
+File: img/pop2.png Graphic file (type png)
+ <use img/pop2.png>
+Package pdftex.def Info: img/pop2.png used on input line 897.
 (pdftex.def)             Requested size: 369.88582pt x 70.46693pt.
 
 Overfull \hbox (24.88582pt too wide) in paragraph at lines 897--898
  [] 
  []
 
-<poparti2.png, id=298, 757.32938pt x 144.03813pt>
-File: poparti2.png Graphic file (type png)
- <use poparti2.png>
-Package pdftex.def Info: poparti2.png used on input line 906.
+<img/poparti2.png, id=298, 757.32938pt x 144.03813pt>
+File: img/poparti2.png Graphic file (type png)
+ <use img/poparti2.png>
+Package pdftex.def Info: img/poparti2.png used on input line 906.
 (pdftex.def)             Requested size: 369.88582pt x 70.35071pt.
 
 Overfull \hbox (24.88582pt too wide) in paragraph at lines 906--907
  [] 
  []
 
-[21 <./popartiagri.png> <./pop2.png>]
-<popartiagri2.png, id=307, 754.82pt x 143.53625pt>
-File: popartiagri2.png Graphic file (type png)
- <use popartiagri2.png>
-Package pdftex.def Info: popartiagri2.png used on input line 915.
+[21 <./img/popartiagri.png> <./img/pop2.png>]
+<img/popartiagri2.png, id=307, 754.82pt x 143.53625pt>
+File: img/popartiagri2.png Graphic file (type png)
+
+<use img/popartiagri2.png>
+Package pdftex.def Info: img/popartiagri2.png used on input line 915.
 (pdftex.def)             Requested size: 369.88582pt x 70.33775pt.
 
 Overfull \hbox (24.88582pt too wide) in paragraph at lines 915--916
  [] 
  []
 
-<pop3.png, id=308, 762.34813pt x 145.04187pt>
-File: pop3.png Graphic file (type png)
- <use pop3.png>
-Package pdftex.def Info: pop3.png used on input line 929.
+<img/pop3.png, id=308, 762.34813pt x 145.04187pt>
+File: img/pop3.png Graphic file (type png)
+ <use img/pop3.png>
+Package pdftex.def Info: img/pop3.png used on input line 929.
 (pdftex.def)             Requested size: 369.88582pt x 70.37177pt.
 
 Overfull \hbox (24.88582pt too wide) in paragraph at lines 929--930
  [] 
  []
 
-[22 <./poparti2.png> <./popartiagri2.png>]
-<poparti3.png, id=317, 747.29187pt x 143.53625pt>
-File: poparti3.png Graphic file (type png)
- <use poparti3.png>
-Package pdftex.def Info: poparti3.png used on input line 938.
+[22 <./img/poparti2.png> <./img/popartiagri2.png>]
+<img/poparti3.png, id=317, 747.29187pt x 143.53625pt>
+File: img/poparti3.png Graphic file (type png)
+ <use img/poparti3.png>
+Package pdftex.def Info: img/poparti3.png used on input line 938.
 (pdftex.def)             Requested size: 369.88582pt x 71.04518pt.
 
 Overfull \hbox (24.88582pt too wide) in paragraph at lines 938--939
  [] 
  []
 
-<popartiagri3.png, id=318, 766.865pt x 144.03813pt>
-File: popartiagri3.png Graphic file (type png)
- <use popartiagri3.png>
-Package pdftex.def Info: popartiagri3.png used on input line 947.
+<img/popartiagri3.png, id=318, 766.865pt x 144.03813pt>
+File: img/popartiagri3.png Graphic file (type png)
+
+<use img/popartiagri3.png>
+Package pdftex.def Info: img/popartiagri3.png used on input line 947.
 (pdftex.def)             Requested size: 369.88582pt x 69.47597pt.
 
 Overfull \hbox (24.88582pt too wide) in paragraph at lines 947--948
  [] 
  []
 
-
+[23 <./img/pop3.png> <./img/poparti3.png> <./img/popartiagri3.png>]
 Overfull \hbox (3.20369pt too wide) in paragraph at lines 955--956
 \OT1/cmr/m/n/10 entres mol^^Secules, soci^^Set^^Ses, etc...) si l'on est ca-pab
 le de co-der les ac-tions n^^Secessaires
  []
 
-[23 <./pop3.png> <./poparti3.png> <./popartiagri3.png>] [24] [25]
+[24] [25]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1030.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1030.
  (./TP3.0.aux)
@@ -1346,8 +1356,8 @@ Package rerunfilecheck Info: File `TP3.0.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1030.
  ) 
 Here is how much of TeX's memory you used:
- 31277 strings out of 493117
- 728163 string characters out of 6135433
+ 31278 strings out of 493117
+ 728759 string characters out of 6135433
  907663 words of memory out of 5000000
  34104 multiletter control sequences out of 15000+600000
  12793 words of font info for 52 fonts, out of 8000000 for 9000
@@ -1366,7 +1376,7 @@ al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
 xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texli
 ve/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on TP3.0.pdf (25 pages, 791541 bytes).
+Output written on TP3.0.pdf (25 pages, 783668 bytes).
 PDF statistics:
  403 PDF objects out of 1000 (max. 8388607)
  286 compressed objects within 3 object streams

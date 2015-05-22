@@ -55,13 +55,13 @@ En premier lieu, l'environnement dans lequel nos agents se déplacent est un espa
 \hline
 \text{Patch} & \multicolumn{2}{|c|}{\text{Ressources} } & \multicolumn{2}{|c|}{\text{Valeur initiale}} & \multicolumn{2}{|c|}{\text{Croissance des ressources}} & \text{Passabilité}\\
 \hline
-\text{Mer} \includegraphics[height=0.5 cm]{mer.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Non} \\
+\text{Mer} \includegraphics[height=0.5 cm]{img/mer.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Non} \\
 \hline 
-\text{Terre Sterile} \includegraphics[height=0.5 cm]{sterile.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Oui} \\
+\text{Terre Sterile} \includegraphics[height=0.5 cm]{img/sterile.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Oui} \\
 \hline 
-\text{Prairie} \includegraphics[height=0.5 cm]{prairie.png}& \text{Baies} & \text{Bois} & 10 & 1 & 0.2 & 0 & \text{Oui} \\
+\text{Prairie} \includegraphics[height=0.5 cm]{img/prairie.png}& \text{Baies} & \text{Bois} & 10 & 1 & 0.2 & 0 & \text{Oui} \\
 \hline
-\text{Forêts} \includegraphics[height=0.5 cm]{foret.png}& \text{Baies} & \text{Bois} & 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
+\text{Forêts} \includegraphics[height=0.5 cm]{img/foret.png}& \text{Baies} & \text{Bois} & 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
 \hline
 \end{tabular}
 \caption{Tableau récapitulatif des patches et des ressources.}
@@ -72,7 +72,7 @@ Un patch de terre stérile ne produit pas de ressources alors que les patches Pra
 Le point d'apparition des agents se situe au milieu de l'environment et plusieurs prairies sont présentes aux alentours. On peut aussi distinguer une grande forêt dans la partie droite de l'environment.
 \begin{figure}[H]
 \center
-\includegraphics[height=10 cm]{terrain.png}
+\includegraphics[height=10 cm]{img/terrain.png}
 \caption{Environment de la modélisation}
 \end{figure}
 
@@ -175,19 +175,19 @@ Un plan est un ensemble de plusieurs actions génériques qui peuvent être partagé
 
 \begin{figure}[H]
 \center
-\includegraphics[width = 10cm] {Aaction.png}
+\includegraphics[width = 10cm] {img/Aaction.png}
 \caption{Exemple de l'interface d'édition d'une A\_action dans MetaCiv}.
 \end{figure}
 
 \begin{figure}[H]
 \center
-\includegraphics[width = 10cm] {Laction.png}
+\includegraphics[width = 10cm] {img/Laction.png}
 \caption{Exemple de l'interface d'édition d'une L\_action dans MetaCiv}.
 \end{figure}
 
 \begin{figure}[H]
 \center
-\includegraphics[width = 10cm] {plan.png}
+\includegraphics[width = 10cm] {img/plan.png}
 \caption{Exemple de l'interface du plan "DonnerNaissanceSiJ'aiPasFaim" dans MetaCiv. Les actions conditionnelles sont repérées par une icône en forme de processeur et les autres actions par une icône en forme de flèche.}
 \end{figure}
 
@@ -204,7 +204,7 @@ Il existe six attributs dans ce modèle : Vie, Age, CompetenceArtisanat, Energie,
 
 \begin{figure}[H]
 \center
-\includegraphics[width = 7 cm]{poisson.png}
+\includegraphics[width = 7 cm]{img/poisson.png}
 \caption{Représentation de la fonction de masse de formule $P(k) = \frac{\lambda^{k}}{k!} e^{-k}$}
 \end{figure}
 
@@ -227,13 +227,13 @@ Enfin, pour avoir une espérance de vie plus acceptable, nous posons :
 
 \begin{figure}[H]
 \center
-\includegraphics[width = 10 cm]{cumul.png}
+\includegraphics[width = 10 cm]{img/cumul.png}
 \caption{Représentation de la fonction de répartition de la loi de Poisson de paramètre $\lambda = 10$ et $k=20$.}
 \end{figure}
 
 \begin{figure}[H]
 \center
-\includegraphics[width = 10 cm]{EsperanceDeVie.png}
+\includegraphics[width = 10 cm]{img/EsperanceDeVie.png}
 \caption{Représentation triée de la valeur de l'attribut "EsperanceDeVie" de 100 agents.}
 \end{figure}
 
@@ -274,7 +274,7 @@ Lorsque les agents arrivent dans l'environment, ils possèdent plusieurs plans pa
 
 \begin{figure}[h]
 \center
-\includegraphics[width = 8 cm]{default.png}
+\includegraphics[width = 8 cm]{img/default.png}
 \caption{Affichage des plans et cognitons associés dans MetaCiv (les couleurs des cognitons n'indiquent pas le type de cogniton).}
 \end{figure}
 
@@ -429,7 +429,7 @@ On remarquera que le plan "RamenerBaiesAuVillage" permet aux agriculteurs de réc
 
 \begin{figure}[h]
 \center
-\includegraphics[width = 10cm]{hunger.png}
+\includegraphics[width = 10cm]{img/hunger.png}
 \caption{Représentation des cognitons et plans associés dans MetaCiv.}
 \end{figure}
 
@@ -467,8 +467,8 @@ On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par
 
 \begin{figure}[H]
 \center
-\includegraphics[width = 6 cm]{cueilleur1.png}
-\includegraphics[width = 6 cm]{cueilleur2.png}
+\includegraphics[width = 6 cm]{img/cueilleur1.png}
+\includegraphics[width = 6 cm]{img/cueilleur2.png}
 \caption{Représentation des plan, culturons et cognitons du rôle cueilleur dans MetaCiv.}
 \end{figure}
 
@@ -621,8 +621,8 @@ Les artisans sont des agents qui construisent leurs huttes et partent à la reche
 
 \begin{figure}[H]
 \center
-\includegraphics[width = 6 cm] {artisan1.png}
-\includegraphics[width = 6 cm] {artisan2.png}
+\includegraphics[width = 6 cm] {img/artisan1.png}
+\includegraphics[width = 6 cm] {img/artisan2.png}
 \caption{Représentation des plans, culturons et cognitons du rôle artisan dans MetaCiv.}
 \end{figure}
 
@@ -734,8 +734,8 @@ La seule fonction des agriculteurs est de récolter des baies dans leurs champs o
  
 \begin{figure}[H]
 \center
-\includegraphics[width = 6 cm] {agriculteur1.png}
-\includegraphics[width = 6 cm] {agriculteur2.png}
+\includegraphics[width = 6 cm] {img/agriculteur1.png}
+\includegraphics[width = 6 cm] {img/agriculteur2.png}
 \caption{Représentation des plan, culturons et cognitons du rôle agriculteur dans MetaCiv.}
 \end{figure}
 
@@ -796,11 +796,11 @@ Les aménagements sont des marques déposées sur des patches et sont repérés par l
 \hline
 \text{Aménament} & \text{Apparence} & \text{Types d'agents qui utilisent l'aménagement} & \text{Utilisation de l'inventaire} \\
 \hline
-\text{Village} & \includegraphics[height=0.75 cm]{village.png} & Tout types d'agents & Oui\\
+\text{Village} & \includegraphics[height=0.75 cm]{img/village.png} & Tout types d'agents & Oui\\
 \hline
-\text{Hutte} & \includegraphics[height=0.75 cm]{hutte.png}  &  Artisans & Non\\
+\text{Hutte} & \includegraphics[height=0.75 cm]{img/hutte.png}  &  Artisans & Non\\
 \hline
-\text{Champs} & \includegraphics[height=0.75 cm]{champ.png}  & Agriculteurs & Non\\
+\text{Champs} & \includegraphics[height=0.75 cm]{img/champ.png}  & Agriculteurs & Non\\
 \hline
 \end{tabular}
 \caption{Tableau récapitulatif des aménagements.}
@@ -812,7 +812,7 @@ Au début de la modélisation, les agents sont dispersés autour du point d'apparit
 
 \begin{figure}[H]
 \center
-\includegraphics[height=5 cm]{initial.png}
+\includegraphics[height=5 cm]{img/initial.png}
 \caption{Situation initiale}
 \end{figure}
 
@@ -822,7 +822,7 @@ Au début de la modélisation, les agents sont dispersés autour du point d'apparit
  
  \begin{figure}[H]
 \center
-\includegraphics[height=5 cm]{fondementGroupe.png}
+\includegraphics[height=5 cm]{img/fondementGroupe.png}
 \caption{Fondement des groupes et création des villages}
 \end{figure}
 
@@ -832,7 +832,7 @@ Les cueilleurs ayant construit leur village, ils partent alors à la recherche de
 
  \begin{figure}[H]
 \center
-\includegraphics[height=5 cm]{cueillette.png}
+\includegraphics[height=5 cm]{img/cueillette.png}
 \caption{La recherche de nourriture}
 \end{figure}
  
@@ -842,7 +842,7 @@ Lorsque des cueilleurs ramènent des ressources au village, leurs attributs "Comp
 
  \begin{figure}[H]
 \center
-\includegraphics[height=5 cm]{champs.png}
+\includegraphics[height=5 cm]{img/champs.png}
 \caption{Apparition des premiers champs et agriculteurs}
 \end{figure}
 
@@ -852,13 +852,13 @@ Certains $Cueilleurs$ ont la possibilité de se convertir en $Artisan$. Leur rôle
 
  \begin{figure}[H]
 \center
-\includegraphics[height=5 cm]{artisan.png}
+\includegraphics[height=5 cm]{img/artisan.png}
 \caption{Un artisan (entouré en bleu) proche de sa hutte.}
 \end{figure}
 
  \begin{figure}[H]
 \center
-\includegraphics[height=5 cm]{agriculteurPelle.png}
+\includegraphics[height=5 cm]{img/agriculteurPelle.png}
 \caption{Exemple d'un agriculteur ayant récupéré une pelle au village.}
 \end{figure}
 
@@ -869,21 +869,21 @@ Certains $Cueilleurs$ ont la possibilité de se convertir en $Artisan$. Leur rôle
 Dans cette partie, la reproduction des agents ne produit que des cueilleurs. On effectue une première simulation qui ne contient que des cueilleurs.
 \begin{figure}[H]
 \center
-\includegraphics[width=13cm]{pop.png}
+\includegraphics[width=13cm]{img/pop.png}
 \caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs.}
 \end{figure}
 
 On rajoute ensuite la possibilité que certains cueilleurs deviennent des artisans.
 \begin{figure}[H]
 \center
-\includegraphics[width=13cm]{poparti.png}
+\includegraphics[width=13cm]{img/poparti.png}
 \caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs et des artisans.}
 \end{figure}
 
 Puis on rajoute la possibilité qu'un cueilleur devienne un agriculteur.
 \begin{figure}[H]
 \center
-\includegraphics[width=13cm]{popartiagri.png}
+\includegraphics[width=13cm]{img/popartiagri.png}
 \caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation contenant des cueilleurs, artisans et agriculteurs.}
 \end{figure}
 
@@ -894,7 +894,7 @@ Après observation de plusieurs graphes, on conclu que les graphes précédents ne 
 Dans cette partie, la reproduction des agents ne produit que des cueilleurs et la constante "ChancesAvoirDesEnfants" a été fixé à 1. On remarque après plusieurs lancements que cette modification de constante permet d'avoir des graphes plus significatifs et plus homogènes entre chaque simulation. On effectue une première simulation qui ne contient que des cueilleurs.
 \begin{figure}[H]
 \center
-\includegraphics[width=13cm]{pop2.png}
+\includegraphics[width=13cm]{img/pop2.png}
 \caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs.}
 \end{figure}
 
@@ -903,20 +903,20 @@ La population des cueilleurs augmente considérablement par rapport aux simulatio
 On rajoute ensuite la possibilité que certains cueilleurs deviennent des artisans.
 \begin{figure}[H]
 \center
-\includegraphics[width=13cm]{poparti2.png}
+\includegraphics[width=13cm]{img/poparti2.png}
 \caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs et des artisans.}
 \end{figure}
 
-On remarque qu'au lieu de diminuer à partir du tick 4500, la courbe du nombre d'agents par rapport au tick se stabilise. En fait, les artisans ayant ramenés des pelles au villages constituent une réserve de baies qui leurs permettent de survivre même lorsque la nourriture vient à manquer. Même si les autres agents meurent de famine, les artisans ayant encore des baies peuvent se reproduire et créer d'autres cueilleurs puisqu'ils ne possèdent pas du cogniton "Faim". La mortalité des cueilleurs et l'apparition de nouveaux agents explique la stabilisation de la courbe vers le tick 4500.
+On remarque qu'au lieu de diminuer à partir du tick 4500, la courbe du nombre d'agents par rapport au tick se stabilise. En fait, les artisans ayant ramenés des pelles au villages constituent une réserve de baies qui leurs permettent de survivre même lorsque la nourriture vient à manquer. Même si les autres agents meurent de famine, les artisans ayant encore des baies peuvent se reproduire et créer d'autres cueilleurs puisqu'ils ne possèdent pas du cogniton "Faim". La mortalité des cueilleurs et l'apparition de nouveaux agents explique la stabilisation de la courbe après le tick 4500.
 
 Puis on rajoute la possibilité qu'un cueilleur devienne un agriculteur.
 \begin{figure}[H]
 \center
-\includegraphics[width=13cm]{popartiagri2.png}
+\includegraphics[width=13cm]{img/popartiagri2.png}
 \caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation contenant des cueilleurs, artisans et agriculteurs.}
 \end{figure}
 
-On remarque que la diminution de la population due à la famine a été déplacée vers le tick 5700. Les agriculteurs apportant de la nourriture même lorsque l'environment est vide permet à la population de survivre plus longtemps. Cependant, une fois que ces agriculteurs meurent, le nombre d'agriculteur n'augmente plus. En effet, la condition pour qu'un cueilleur devienne un agriculteur est qu'il augmente son attribut "CompetenceCueilleur" et cela est difficile lorsque l'environment est vide.
+On remarque que la diminution de la population due à la famine a été déplacée vers le tick 5700. Les agriculteurs apportant de la nourriture même lorsque l'environment est vide permet à la population de survivre plus longtemps. Cependant, une fois que ces agriculteurs meurent, le nombre d'agriculteur n'est pas renouvelé. En effet, la condition pour qu'un cueilleur devienne un agriculteur est qu'il augmente son attribut "CompetenceCueilleur" et cela est difficile lorsque l'environment est vide.
 
 Une solution serait alors d'introduire le fait qu'un agent ait une probabilité que ses enfants aient le même rôle que lui, cela règlerait hypothétiquement le problème du manque d'agriculteurs.
 
@@ -926,29 +926,29 @@ Dans cette partie, les agents ont une probabilité (ChancesEnfantMemeRole) d'avoi
 
 \begin{figure}[H]
 \center
-\includegraphics[width=13cm]{pop3.png}
+\includegraphics[width=13cm]{img/pop3.png}
 \caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs.}
 \end{figure}
 
-On ne remarque aucune différence avec la simulation précédente.
+On ne remarque aucune différence avec la simulation précédente, ce qui est normal puisque le fait que la reproduction des cueilleurs donne des cueilleurs était déjà présente.
 On rajoute ensuite la possibilité que certains cueilleurs deviennent des artisans.
 
 \begin{figure}[H]
 \center
-\includegraphics[width=13cm]{poparti3.png}
+\includegraphics[width=13cm]{img/poparti3.png}
 \caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs et des artisans.}
 \end{figure}
 
-On remarque que ce qui semblait être un équilibre à partir du tick 4500 n'existe plus. Les artisans étant en trop grand nombre, ces derniers n'ont pas de quoi composer leurs réserves de baies. Toute la population est touchée par la famine.
+On remarque que ce qui semblait être un équilibre à partir du tick 4500 n'existe plus. La possibilité qu'un artisan se reproduise et donne un artisan implique une augmentation du nombre d'artisans, ces derniers étant en trop grand nombre n'ont pas de quoi composer leurs réserves de baies. Toute la population est touchée par la famine, même les artisans ce qui explique la baisse générale de population.
 Il convient donc de rajouter la possibilité qu'un cueilleur devienne un agriculteur.
 
 \begin{figure}[H]
 \center
-\includegraphics[width=13cm]{popartiagri3.png}
+\includegraphics[width=13cm]{img/popartiagri3.png}
 \caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation contenant des cueilleurs, artisans et agriculteurs}
 \end{figure}
 
-Ici encore, on ne remarque pas de changements majeurs par rapport à la modélisation précédente mise à part une augmentation de la population (1400 au lieu de 1200) mais finalement, le manque d'agriculteur se fait toujours ressentir.
+Ici encore, on ne remarque pas de changements majeurs par rapport à la modélisation précédente mise à part une augmentation de la population (1400 au lieu de 1200). En fait, les conditions d'apparition d'un agriculteur étant trop faible, il n'en existe que très peu (trois à quatre) par simulation et leur âges varie généralement entre 30 à 50 pour un attribut "EsperanceDeVie" de 40 à 60. Même avec un pourcentage d'avoir des enfants possédant le même rôle, le nombre d'agriculteur augmente difficilement et la population n'a plus de quoi se nourrir ce qui génère une baisse globale de la population.
 
 \subsection{Impressions sur l'utilisation de MetaCiv}
 
