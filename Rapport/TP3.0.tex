@@ -108,6 +108,8 @@ colorlinks=true}
 
 \section*{Introduction}
 
+%%A FAIRE
+
 \section{Présentation de la plateforme MetaCiv}
 
 Il existe aujourd'hui de nombreuses plateformes de modélisation de systèmes complexes se basant sur la programmation par agents. Dans l'équipe de travail SMILE, plusieurs plateformes ont déjà été mises au point, Turtlekit [Mic02] et Madkit [GFM00] largement inspirées des plateformes basées sous StarLogo (http ://education.mit.edu/starlogo/). Cela fait bien plus d'une année qu'une plateforme spécifique dénommée MetaCiv à vu le jour. Nous allons rappeler très rapidement ses principes et concepts.
@@ -1197,20 +1199,24 @@ Dans ce modèle, on réalise une émergence de civilisation à travers une société d
 
 \subsection{Introduction}
 
-    le programme MetaCiv , logiciel de modélisation de civilisation , est un projet qui a été développé par des groupes successifs d'étudiant. Développé autour de turtlekit et madkit , le programme possède une base solide , mais les ajouts successifs de fonctionnalités sans avoir établit de normes et de méthodes on conduit à un logiciel instable et un code source chaotique.
+	MetaCiv est un projet qui a été développé par des groupes successifs d'étudiants. Développé autour de Turtlekit et Madkit, le programme possède une base solide , mais les ajouts successifs de fonctionnalités sans avoir établit de normes et de méthodes au préalable a conduit à un logiciel instable et un code source peu compréhensible.
 
-	nous avons essayé , lors de l'ajout de fonctionnalités , de produire un code plus clair , en séparant bien chaque chose (éviter les fonctions de plusieurs centaines de ligne), en utilisant une approche plus objet et en utilisant quelques design patterns.
+	Nous avons essayé de produire un code plus clair lors de l'ajout de nos fonctionnalités en produisant un code réutilisable avec une approche plus orienté objet et en utilisant quelques design patterns.
 
 
 \subsection{Fonctionnalités}
 
 \subsubsection{Schéma cognitif}
-	besoins : 
-	- mettre en concurrence plusieurs civilisations ayant un fonctionnement différent dans le cadre d'un jeu ou d'une évaluation de modèles 
-	- modéliser les relations entre des espèces différentes, par exemple l'évolution des populations d'animaux sauvages à l'arrivée de l'homme
-	- de manière générale , manipuler ces schémas cognitifs comme des éléments du modèle et non plus comme le modèle lui-même (cloner le schéma pour essayer différentes solutions , importer des schémas d'autres modèles ..., le tout en conservant un environnement défini)
-	
-	pour ce faire nous avons crée une classe SchémaCognitif et nous y avons déporté tout ce qui relèves du comportement des agents.
+
+Un schéma cognitif est ................. . C'est une nouvelle fonctionnalité permettant notamment de:
+\begin{itemize}
+\item Mettre en concurrence plusieurs civilisations ayant un fonctionnement différent dans le cadre d'un jeu ou d'une évaluation de modèles.
+\item Modéliser les relations entre ces différentes civilisation, par exemple l'évolution des populations d'animaux sauvages à l'arrivée de l'homme.
+\end{itemize}
+
+%Ranger sa autre part
+Manipuler ces schémas cognitifs comme des éléments du modèle et non plus comme le modèle lui-même (cloner le schéma pour essayer différentes solutions , importer des schémas d'autres modèles ..., le tout en conservant un environnement défini)
+pour ce faire nous avons crée une classe SchémaCognitif et nous y avons déporté tout ce qui relèves du comportement des agents.
 	
 \begin{figure}[H]
 \center
