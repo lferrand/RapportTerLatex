@@ -43,9 +43,50 @@ colorlinks=true}
 
 \section{PrÈsentation de la plateforme MetaCiv}
 
+Il existe aujourd?hui de nombreuses plateformes de modÿlisation de syst?mes complexes se basant sur la programmation par agents. Dans l?ÿquipe de travail SMILE, plusieurs plateformes ont dÿja ÿtÿ mises au point, Turtlekit [Mic02] et Madkit [GFM00] largement inspirÿes des plateformes basÿes sous StarLogo (http ://education.mit.edu/starlogo/). Nous travaillons depuis plus d?une annÿe sur un plateforme spÿci que dÿnommÿe Metaciv dont nous allons rappeler tr?s rapidement les principes et concepts.
+
+
 \subsection{Principe}
 
+Metaciv est une plateforme de modÿlisation par agents dÿdiÿe la conception de mod?les relatifs des syst?mes complexes (biologiques, environnementaux, etc...). Elle est basÿe sur les fonctionnalitÿs de la plateforme Turtlekit dÿj existante. Elle bÿnÿ cie naturellement des fonctionnalitÿs des plateformes prÿcÿdentes, notamment du concept Agent Group Role (AGR). De plus, elle int?gre les principes dits des quadrants [FST09]\\
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {img/quadrants.png}
+\caption{Quadrants.}
+\end{figure}
+
+
+Un syst?me multi-agents selon le principe des quadrants est per u comme un ensemble de composants organisÿs selon deux axes individuel-collectif d?une part et interioritÿ-exterioritÿ d?autre part. Ainsi le quadrant I-I dÿnit ce qui constitue le fonctionnement interne de l?agent, sa mani?re de penser, ses idÿes, ses croyances. Le quadrant E-I quand lui, dÿ nit l?image que donne l?agent au monde, savoir son comportement, ses actions, ses possessions, son apparence. Ensuite, le quadrant I-C correspond aux idÿes partagÿes par un groupe d?individus, les normes et codes s?appliquant ce groupe, les valeurs communes et connaissances partagÿes. En n, le quadrant E-C s?applique tout ce qui donne une reprÿsentation de groupe sociaux, savoir, par exemple, les b timents publics, les monuments, les infrastructures. Metaciv est donc un framework de modÿlisation de sociÿtÿ humaines dans lesquelles l?espace, la culture et la structure sociale jouent un r le important. On peut ainsi faire une reprÿsentation globale de Metaciv en reprenant les quadrants de MASQ sous la forme MASQ-ML le langage de modÿlisation de MASQ [FST09].
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {img/MetacivMASQL.jpg}
+\caption{Metaciv exprimÿ en MASQ-ML.}
+\end{figure}
+
 \subsection{Concepts}
+
+Comme vu prÿcÿdemment Metaciv est une plateforme de simulation par agents dans laquelle nous postulons que chaque agent poss?de une cognition . De plus ces agents ÿvoluent au sein d?un environnement ÿvolutif qui impacte leurs dÿcisions. Pour cela, dans la plateforme, chaque agent poss?de un "esprit" qui concentre les perceptions, la mÿmoire (qui enregistre les actions e ectuÿes ainsi que les in uences subies) ainsi qu?une facultÿ de dÿcision.
+
+La gure 1 rÿsume le fonctionnement actuel et les extensions que nous souhaitons y apporter. Tout agent poss?de donc un esprit qui est un agrÿgat de cognitons. Il dÿcide d?exÿcuter un plan, qui est un ensemble d?actions.
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {img/exdecision.PNG}
+\caption{Exemple de prise de dÈcision.}
+\end{figure}
+
+Prenons un petit exemple (cf. Figure 4), dans une sociÿtÿ d?agents agriculteurs le modÿlisateur prÿvoit deux plans d?actions possibles, Cultiver et Chasser, les cognitons Compÿtence Agriculture, Faim, et Compÿtence chasse, ainsi que les liens entre cognitons et plans.
+Pour pouvoir exÿcuter ces plans il faut disposer des cognitons Compÿtence agriculture ou Compÿtence chasse : ceci est exprimÿ sous la forme de liens conditionnels. Les liens pondÿrÿs sont rajoutÿs entre cognitons et plans d?actions pour exprimer l?in uence d?un cogniton sur un plan (un poids nÿgatif traduisant un degrÿ d?inhibition et un poids positif un degrÿ de facilitation). Un agent qui poss?de les trois cognitons de la gure ci dessus dÿcidera de Cultiver ou Chasser apr?s ÿvaluation des liens pondÿrÿs ici Cultiver 7 et Chasser 12. Le choix entre ces deux plans est en fait dÿpendant d?une randomisation prenant en compte les poids calculÿs prÿcÿdemment, ceci a n de pallier les comportements majoritaires. Nous avons abstrait le schÿma de fonctionnement de Metaciv (cf. Figure 5), en prÿsentant les concepts existants et ceux qui constitueront les extensions visÿes.
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {img/fonctionnementMetaCiv.png}
+\caption{SchÈma de fonctionnement de MetaCiv.}
+\end{figure}
+
+Nous retrouvons donc le fait qu?un agent dispose d?un esprit constituÿ de cognitons. Ceux ci sont liÿs aux plans que peut exÿcuter l?agent par des liens conditionnels ou d?in uences. Les actions prÿl?vent des ressources dans les patchs et in uent sur les cognitons de l?agent. Les perceptions de l?environnement se font aussi gr ce aux cognitons. Les extensions sur lesquelles nous allons rÿ ÿchir, la lueur de la bibliographie, concernent le niveau groupe et la transmission de la connaissance communautaire d?une part, et d?autre part les relations spatio temporelles au niveau de l?environnement (celui ci ne se cantonnant plus au r le de support).
 
 \section{ModÈlisations de civilisations}
 
@@ -54,6 +95,10 @@ colorlinks=true}
 \subsubsection{Les agents}
 \label{agents}
 Un agent possËde un ou plusieurs "Cognitons" qui permettent d'associer ‡ chaque "plan", une importance. En effet, les cognitons peuvent influencer les plans de maniËre positive ou nÈgative. De plus, chaque agent possËde un certain nombre d'attributs reprÈsentant son Ètat physique. Ils peuvent interagir avec leur environnement, manipuler des objets et construire des amÈnagements. Les agents sont initialement au nombre de $81$ lors du lancement de la modÈlisation.
+
+schema\\
+
+Nous retrouvons donc le fait qu?un agent dispose d?un esprit constituÿ de cognitons. Ceux ci sont liÿs aux plans que peut exÿcuter l?agent par des liens conditionnels ou d?in uences. Les actions prÿl?vent des ressources dans les patchs et in uent sur les cognitons de l?agent. Les perceptions de l?environnement se font aussi gr ce aux cognitons. Les extensions sur lesquelles nous allons rÿ ÿchir, la lueur de la bibliographie, concernent le niveau groupe et la transmission de la connaissance communautaire d?une part, et d?autre part les relations spatio temporelles au niveau de l?environnement (celui ci ne se cantonnant plus au r le de support).
 
 \subsubsection{Les cognitons}
 \label{cognitons}
@@ -206,9 +251,9 @@ En premier lieu, l'environnement dans lequel nos agents se dÈplacent est un espa
 \hline 
 \text{Terre Sterile} \includegraphics[height=0.5 cm]{img/sterile.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Oui} \\
 \hline 
-\text{Prairie} \includegraphics[height=0.5 cm]{img/prairie.png}& \text{Baies} & \text{Bois}†& 10 & 1 & 0.2 & 0 & \text{Oui} \\
+\text{Prairie} \includegraphics[height=0.5 cm]{img/prairie.png}& \text{Baies} & \text{Bois} & 10 & 1 & 0.2 & 0 & \text{Oui} \\
 \hline
-\text{ForÍts} \includegraphics[height=0.5 cm]{img/foret.png}& \text{Baies} & \text{Bois}†& 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
+\text{ForÍts} \includegraphics[height=0.5 cm]{img/foret.png}& \text{Baies} & \text{Bois} & 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
 \hline
 \end{tabular}
 \caption{Tableau rÈcapitulatif des patches et des ressources.}
