@@ -106,7 +106,6 @@ colorlinks=true}
 \end{center}
 \end{titlepage}
 
-
 \section*{Introduction}
 
 \section{Présentation de la plateforme MetaCiv}
@@ -160,19 +159,25 @@ Nous retrouvons donc le fait qu?un agent dispose d?un esprit constituØ de cognit
 
 \subsection{Introduction}
 
+Le but de nos modélisation est de construire un ensemble de modèles de développement de civilisations (IA de développement), allant du chasseur-cueilleur à l'empire. C'est en essayant d'imiter les civilisations humaines et leurs évolutions à travers le temps que l'on sera amené à mettre en valeur les aspects d'émergence dans les systèmes multi-agents. Nous expliciterons les différentes notions nécessaires à la compréhension de nos modélisations.
+Créer une modélisation de civilisation humaine allant du chasseur-cueilleur à l'empire étant trop complexe, nous avons favorisés la création de deux modèles distincts qui chercherons à répondre de manière différente à l'émergence.
+Le premier modèle, "Cueilleur-Artisan-Agriculteur" va chercher à faire fonctionner une transition entre deux âges à travers l'utilisation de notions de groupes alors que le modèle "Nomade-Sédentaire" recherchera à induire une émergence à travers l'environnement dans lequel évoluent les agents.
+
 \subsubsection{Les agents}
 \label{agents}
-Un agent possède un ou plusieurs "Cognitons" qui permettent d'associer à chaque "plan", une importance. En effet, les cognitons peuvent influencer les plans de manière positive ou négative. De plus, chaque agent possède un certain nombre d'attributs représentant son état physique. Ils peuvent interagir avec leur environnement, manipuler des objets et construire des aménagements. Les agents sont initialement au nombre de $81$ lors du lancement de la modélisation.
+Les agents sont vus sous l'angle \textit{intériorité }comme dotés d'un esprit (ensemble de cognitons) qui leur permet d'établir des plans (ensemble d'actions) ;  vus sous l'angle \textit{extériorité} ils sont dotés d'un ensemble de caractéristiques (corps) et peuvent manipuler des objets, interagir avec leur environnement et construire des aménagements. Ils évoluent dans un environnement collectif agrégat de \textit{patches}.
+Les cognitions vont influencer les plans, de manière pondérée (selon l'importance que l'utilisateur leur accorde), de manière positive (renforcement) ou négative (affaiblissement). 
+L'environnement ainsi que les actions effectuées peuvent affecter les caractéristiques d'un agent et de ce fait influer sur ses cognitons. De même les actions peuvent directement ou indirectement via les objets ajouter ou influer les cognitons. 
 
-schema\\
-
-Nous retrouvons donc le fait qu?un agent dispose d?un esprit constituØ de cognitons. Ceux ci sont liØs aux plans que peut exØcuter l?agent par des liens conditionnels ou d?in uences. Les actions prØl?vent des ressources dans les patchs et in uent sur les cognitons de l?agent. Les perceptions de l?environnement se font aussi gr ce aux cognitons. Les extensions sur lesquelles nous allons rØ Øchir, la lueur de la bibliographie, concernent le niveau groupe et la transmission de la connaissance communautaire d?une part, et d?autre part les relations spatio temporelles au niveau de l?environnement (celui ci ne se cantonnant plus au r le de support).
-
-\subsubsection{Les cognitons}
+\subsubsection{Notion de cognitons}
 \label{cognitons}
-Afin de décider quel plan choisir parmi l'ensemble des plans possibles, un système de pondération des plans a été mis en place : les cognitons. Chaque agent possède un ensemble de cognitons qui représentent ce que l'agent aime, voit ou pense. Il existe deux interactions entre un cogniton et un plan. La première rend un plan "accessible" par l'agent et la deuxième influence l'envie (ou la répulsion) d'effectuer un plan. 
 
+Les agents étant amenés à  devoir opérer des choix dans un large panel d'actions ceux ci doivent donc disposer de capacité de réflexion et de choix suffisamment développée. 
+Dans cette optique, l'idée retenue consiste à  pondérer les différentes actions possibles pour les agents, et  ce afin de les faire choisir en fonction de ces poids. 
+Les poids des actions sont déterminés par différents facteurs : ce que voient, pensent, croient les agents... L'ensemble de ces facteurs est regroupé sous le terme de \textit{cogniton} dans ce projet, en reprenant le néologisme proposé par J. Ferber. Le cogniton est donc une "unité de pensée" qui influe sur les choix de l'agent. 	
+Les cognitons peuvent se cumuler, et ne sont donc pas des "états" mentaux. En fait, c'est la somme des cognitons qui représente réellement l'état mental de l'agent.
 
+Il existe deux interactions entre un cogniton et un plan. La première rend un plan "accessible" par l'agent et la deuxième influence l'envie (ou la répulsion) d'effectuer un plan. 
 
 \begin{figure}[h]
 \center
@@ -251,6 +256,28 @@ Les cognitons peuvent avoir un "trigger". Il s'agit d'un dispositif permettant d
 \caption{Exemple des différents types de cognitons: Starting cogniton (en orange), cogniton activé par trigger (en jaune) et les cognitons ajoutés par des plans (en vert).}
 \end{figure}
 
+\subsubsection{Catégorisation des cognitons}
+
+	Pour mieux structurer l'organisation des cognitons, ceux-ci sont catégorisés en cinq types :\textit{ Skills, Traits, Beliefs, Percepts, Mèmes}. Cette distinction permet de séparer des comportements différents entre ces cognitons, et de les traiter au mieux par la suite.
+	
+	\textit{Remarque : la catégorisation, pour l'instant, change la couleur d'un cogniton dans l'interface de MetaCiv et permet de mieux repérer le type du cogniton.}
+\begin{itemize}
+
+\item 	Les\textit{ Skills} (signifiant compétences en anglais) représentent les compétences, savoir-faire et connaissances techniques ou scientifiques des agents. Comme exemples de ce type de cognitons, on peut proposer : Agriculture, Navigation, Fabrication d'outils... La plupart des skills ont la particularité d'être transmissibles d'un agent à  l'autre, d'être permanents (ils ne disparaissent pas une fois acquis) et d'être des pré-requis indispensables à  certaines actions. 
+	
+	Par exemple, même si d'autres cognitons l'influencent, un agent ne peut pas fabriquer un outil s'il ne dispose pas de Fabrication d'outils. Enfin, les skills sont héréditaires. Ici, on parle de l'hérédité au sens de la transmission entre les générations, ce qui représente de manière simple l'apprentissage et la transmission des connaissances.
+
+\item 	Les \textit{Traits} représentent les spécificités individuelles de l'agent, ses traits de caractères, ses façons d'être. Des exemples possibles de ce type de cognitons sont : Ouvert, Renfermé, Paresseux...
+	
+	Cette catégorie n'est pas la plus importante du point de vue de la simulation et du réalisme, mais est un outil simple pour faire varier le comportement des agents si l'on veut envisager des scénarii spécifiques (des civilisations très agressives, des agents peu travailleurs, etc...). Les traits ne sont pas transmissibles d'agents à  agents, sauf de manière héréditaire occasionnellement, ce qui représente l'imitation et l'éducation.
+
+\item 	Les \textit{Beliefs} (Croyances en anglais) représentent ce que l'agent sait ou croit savoir de son environnement et de lui même. Cette catégorie est vaste, et peut regrouper des cognitons aussi variés que : Je porte une pioche, Nous sommes en guerre avec la civilisation 3, Je possède un champ. Ces cognitons ne sont généralement pas transmissibles entre agents, et ne sont pas héréditaires.
+
+\item 	Les \textit{Percepts} représentent ce que l'agent voit, entend ou ressent (physiquement) au moment considéré. Des exemples de percepts sont : J'ai faim, Un ennemi est proche, Je suis près de l'eau. Ce type de cogniton est constamment retiré ou ajouté, contrairement aux autres types qui sont plus stables. Les percepts ne sont pas transmissibles, ils sont propres à  l'agent considéré.
+
+\item 	Les \textit{Mèmes} sont des croyances ou comportements culturels transmissibles. Ainsi, les mèmes pourraient être : Je crois que l'argent est une fin en soi, je crois en l'existence d'un dieu, je crois que la démocratie est une bonne chose. Typiquement, les opinions religieuses et politiques sont des mèmes. Par définition, les mèmes sont transmissibles, et ils sont potentiellement héréditaires.
+\end{itemize}
+
 \subsubsection{Les plans et les actions}
 
 Un plan est un ensemble de plusieurs actions génériques qui peuvent être partagées par un ou plusieurs plans. Une action peut prendre en entrée des paramètres (groupe, rôle, constante, attribut, nombre, aménagement, objet, etc..). Il existe deux types d'actions: 
@@ -277,36 +304,35 @@ Un plan est un ensemble de plusieurs actions génériques qui peuvent être partagé
 \caption{Exemple de l'interface du plan "DonnerNaissanceSiJ'aiPasFaim" dans MetaCiv. Les actions conditionnelles sont repérées par une icône en forme de processeur et les autres actions par une icône en forme de flèche.}
 \end{figure}
 
+\subsubsection{Les attributs}
+
+%% A RAJOUTER
+\subsubsection{Les groupes et les rôles}
+
+Lorsque plusieurs agents se rassemblent pour former un groupe, chaque agent de ce groupe possède un rôle. Chacun de ces rôles est défini de manière générique et ajoute des plans supplémentaires au moyen de nouveaux cognitons dits "culturons" et permettent ainsi la spécialisation de l'agent.
+
+\begin{figure}[H]
+\center
+\begin{tikzpicture}[->,>=stealth']
+ 
+ \node [state,anchor=center, node distance = 3.5 cm, text width = 2cm, draw, circle, minimum size = 10mm, fill=brown] (Culturon)
+{
+	\textbf{Culturon}
+};
+
+
+\end{tikzpicture}
+\caption{Exemple de culturon (en marron).}
+\end{figure}
+
 \subsection{Le modèle "Cueilleur-Artisan-Agriculteur"}
 
-\subsection{Le modèle "Nomade-Sédentaire"}
-
-\subsection{Observations}
-
-\section{Le simulateur}
-
-\subsection{Introduction}
-
-\subsection{Fonctionnalités}
-
-\subsection{Stabilisation du noyau}
-
-\subsection{Autre}
-
-\subsection{Conclusion}
-
-\section{Gestion de projet}
-
-\section{Conclusion et perspectives}
-
-
-
-\subsection{Introduction}
-\label{introduction}
+%% A REFAIRE INTRO
 Pour débuter, ce document explique le fonctionnement d'une modélisation ayant pour but de mettre en valeur l'émergence d'une civilisation. Cette implémentation se base sur MetaCiv, framework de modélisation de société humaine utilisant la technique des SMA. Toutes les constantes mentionnées dans ce document sont données dans la section "\hyperref[constantes]{Constantes}".
+Les agents sont initialement au nombre de $81$ lors du lancement de la modélisation.
 
-\subsection{L'environment}
-\label{environment}
+\subsubsection{L'environnement}
+\label{environnement}
 En premier lieu, l'environnement dans lequel nos agents se déplacent est un espace fermé de $\mathbb{R}^{2}$. Il existe un total de quatre types de patches présents : Mer, Prairie, Terre Sterile et Forêt. Le modèle étant relativement basique, il n'existe que deux types de ressources disponibles : Les baies et le bois. Le tableau suivant donne le récapitulatif des différents patches et ressources disponibles.
 
 \begin{figure}[H]
@@ -329,11 +355,11 @@ En premier lieu, l'environnement dans lequel nos agents se déplacent est un espa
 
 Un patch de terre stérile ne produit pas de ressources alors que les patches Prairie et Forêts produisent en permanence des baies. On pourra remarquer que seules les forêts produisent du bois même si les prairies possèdent une valeur en bois initiale. Un patch peut être récolté dès lors que les ressources en bois ou en baies sont supérieures ou égales à 1. Une ressource "baies" est alors transformée en un objet baie (de même pour le bois).
 
-Le point d'apparition des agents se situe au milieu de l'environment et plusieurs prairies sont présentes aux alentours. On peut aussi distinguer une grande forêt dans la partie droite de l'environment.
+Le point d'apparition des agents se situe au milieu de l'environnement et plusieurs prairies sont présentes aux alentours. On peut aussi distinguer une grande forêt dans la partie droite de l'environnement.
 \begin{figure}[H]
 \center
 \includegraphics[height=10 cm]{img/terrain.png}
-\caption{Environment de la modélisation}
+\caption{environnement de la modélisation}
 \end{figure}
 
 Il convient de remarquer que lorsque les agents apparaissent dans l'environnement, ils sont éparpillés autour du point d'apparition et non dessus.
@@ -413,7 +439,7 @@ Ainsi, sur les cents agents, trois ont un attribut "EsperanceDeVie" inférieur ou
 
 \subsubsection{Les plans par défaut}
 \label{plandefaut}
-Lorsque les agents arrivent dans l'environment, ils possèdent plusieurs plans par défauts. Il en existe quatre : Birthplan, Standard, Ne rien faire et DonnerNaissanceSiJ'aiPasFaim. 
+Lorsque les agents arrivent dans l'environnement, ils possèdent plusieurs plans par défauts. Il en existe quatre : Birthplan, Standard, Ne rien faire et DonnerNaissanceSiJ'aiPasFaim. 
 \begin{itemize}
 \item Le plan "Standard" est effectué par chaque agent à chaque tick et gère tout ce qui relève de la physiologie de l'agent. Elle modifie donc les attributs: âge et Energie. Elle est également responsable des tests pour détruire les agents. On peut également remarquer la présence de la ligne "Créer Un Groupe" dans le plan standard, cette ligne crée un groupe et donne à l'agent courant le rôle de "Cueilleur".
 \item Le plan "Birthplan" qui est lancé à chaque fois qu'un agent est crée ne sert qu'à initialiser l'attribut "EsperanceDeVie".
@@ -582,23 +608,7 @@ On remarquera que le plan "RamenerBaiesAuVillage" permet aux agriculteurs de réc
 \caption{Représentation des cognitons et plans associés dans MetaCiv.}
 \end{figure}
 
-\subsection{Les rôles}
-\label{roles}
-Lorsque plusieurs agents se rassemblent pour former un groupe, chaque agent de ce groupe possède un rôle. Dans notre modélisation, nous pouvons distinguer trois rôles : $Cueilleur$, $Agriculteur$ et $Artisan$. Chacun de ces rôles ajoute des plans supplémentaires au moyen de nouveaux cognitons dits "culturons" et permettent ainsi la spécialisation de l'agent.
 
-\begin{figure}[H]
-\center
-\begin{tikzpicture}[->,>=stealth']
- 
- \node [state,anchor=center, below of= Consommer, node distance = 3.5 cm, text width = 2cm, draw, circle, minimum size = 10mm, fill=brown] (Culturon)
-{
-	\textbf{Culturon}
-};
-
-
-\end{tikzpicture}
-\caption{Exemple de culturon (en marron).}
-\end{figure}
 
 \subsubsection{Le cueilleur}
 \label{cueilleur}
@@ -1047,7 +1057,7 @@ Dans cette partie, la reproduction des agents ne produit que des cueilleurs et l
 \caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs.}
 \end{figure}
 
-La population des cueilleurs augmente considérablement par rapport aux simulations précédentes. Elle croît jusqu'au tick 4500 puis décroît. En effet, la population augmentant dans un environment pauvre en ressource génère l'apparition du cogniton "Faim" dans l'esprit des agents, les empêchant ainsi de se reproduire ce qui explique la baisse de population.
+La population des cueilleurs augmente considérablement par rapport aux simulations précédentes. Elle croît jusqu'au tick 4500 puis décroît. En effet, la population augmentant dans un environnement pauvre en ressource génère l'apparition du cogniton "Faim" dans l'esprit des agents, les empêchant ainsi de se reproduire ce qui explique la baisse de population.
 
 On rajoute ensuite la possibilité que certains cueilleurs deviennent des artisans.
 \begin{figure}[H]
@@ -1065,7 +1075,7 @@ Puis on rajoute la possibilité qu'un cueilleur devienne un agriculteur.
 \caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation contenant des cueilleurs, artisans et agriculteurs.}
 \end{figure}
 
-On remarque que la diminution de la population due à la famine a été déplacée vers le tick 5700. Les agriculteurs apportant de la nourriture même lorsque l'environment est vide permet à la population de survivre plus longtemps. Cependant, une fois que ces agriculteurs meurent, le nombre d'agriculteur n'est pas renouvelé. En effet, la condition pour qu'un cueilleur devienne un agriculteur est qu'il augmente son attribut "CompetenceCueilleur" et cela est difficile lorsque l'environment est vide.
+On remarque que la diminution de la population due à la famine a été déplacée vers le tick 5700. Les agriculteurs apportant de la nourriture même lorsque l'environnement est vide permet à la population de survivre plus longtemps. Cependant, une fois que ces agriculteurs meurent, le nombre d'agriculteur n'est pas renouvelé. En effet, la condition pour qu'un cueilleur devienne un agriculteur est qu'il augmente son attribut "CompetenceCueilleur" et cela est difficile lorsque l'environnement est vide.
 
 Une solution serait alors d'introduire le fait qu'un agent ait une probabilité que ses enfants aient le même rôle que lui, cela règlerait hypothétiquement le problème du manque d'agriculteurs.
 
@@ -1174,6 +1184,28 @@ AgeParTick & 0.02 \\
 \end{tabular}
 \caption{Tableau récapitulatif des constantes de la modélisation.}
 \end{figure}
+
+\subsection{Le modèle "Nomade-Sédentaire"}
+
+\subsection{Observations}
+
+\section{Le simulateur}
+
+\subsection{Introduction}
+
+\subsection{Fonctionnalités}
+
+\subsection{Stabilisation du noyau}
+
+\subsection{Autre}
+
+\subsection{Conclusion}
+
+\section{Gestion de projet}
+
+\section{Conclusion et perspectives}
+
+
 
 
 \end{document}
