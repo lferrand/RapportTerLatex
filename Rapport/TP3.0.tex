@@ -309,10 +309,12 @@ Un plan est un ensemble de plusieurs actions génériques qui peuvent être partagé
 
 Les constantes peuvent être assimilés aux paramètres de la simulation. Elles peuvent être prise en paramètre d'une ou plusieurs actions mais ne peuvent être modifiés que par l'utilisateur du simulateur. La modification d'une constante est prise en compte même si le modèle est en cours d'exécution. Elles servent à modifier plus facilement les paramètres de la simulation dans toutes les actions dans lesquelles elles sont utilisées.
 
+%a rajouter images
 \subsubsection{Les attributs}
 
 Les attributs sont des variables numériques personnelles à chaque agent. Elles peuvent être modifiés par des actions et leurs valeurs originales sont saisies par l'utilisateur. Elles servent à représenter les caractéristiques d'un agent.
  
+ %a rajotuer images
 \subsubsection{Les groupes et les rôles}
 
 Lorsque plusieurs agents se rassemblent pour former un groupe, chaque agent de ce groupe possède un rôle. Chacun de ces rôles est défini de manière générique et ajoute des plans supplémentaires au moyen de nouveaux cognitons dits "culturons" et permettent ainsi la spécialisation de l'agent.
@@ -333,8 +335,10 @@ Lorsque plusieurs agents se rassemblent pour former un groupe, chaque agent de c
 
 \subsection{Le modèle "Cueilleur-Artisan-Agriculteur"}
 
-%% A REFAIRE INTRO
-Pour débuter, ce document explique le fonctionnement d'une modélisation ayant pour but de mettre en valeur l'émergence d'une civilisation. Cette implémentation se base sur MetaCiv, framework de modélisation de société humaine utilisant la technique des SMA. Toutes les constantes mentionnées dans ce document sont données dans la section "\hyperref[constantes]{Constantes}".
+Ce modèle va servir à générer une société basée sur la cueillette, l'artisanat et l'agriculture. Elle aura comme particularité d'attribuer un rôle spécifique à chacun des agents dans le but d'observer l'émergence d'un comportement collaboratif au sein même d'une civilisation et ses conséquences sur la population.
+
+
+Toutes les constantes mentionnées dans ce modèle sont données dans la section "\hyperref[constantes]{Constantes}".
 Les agents sont initialement au nombre de $81$ lors du lancement de la modélisation.
 
 \subsubsection{L'environnement}
@@ -1115,18 +1119,6 @@ Il convient donc de rajouter la possibilité qu'un cueilleur devienne un agricult
 
 Ici encore, on ne remarque pas de changements majeurs par rapport à la modélisation précédente mise à part une augmentation de la population (1400 au lieu de 1200). En fait, les conditions d'apparition d'un agriculteur étant trop faible, il n'en existe que très peu (trois à quatre) par simulation et leur âges varie généralement entre 30 à 50 pour un attribut "EsperanceDeVie" de 40 à 60. Même avec un pourcentage d'avoir des enfants possédant le même rôle, le nombre d'agriculteur augmente difficilement et la population n'a plus de quoi se nourrir ce qui génère une baisse globale de la population.
 
-\subsection{Impressions sur l'utilisation de MetaCiv}
-
-MetaCiv permet de modéliser un grand nombre de situation (interactions entres molécules, sociétés, etc...) si l'on est capable de coder les actions nécessaires et la gestion des plans par des cognitons est une alternative originale à la modélisation des modèles par la subsomption. Voici quelques remarques que nous avons eu tout au long de notre modélisation: 
-\begin{itemize}
-\item L'ajout des constantes est un atout majeur pour l'utilisateur facilitant ainsi la modification des paramètres de la simulation. On peut ainsi voir en temps réel l'impact d'un paramètre sur la simulation.
-\item La sauvegarde automatique des dernières versions fonctionnelles d'un modèle permet d'économiser énormément de temps lorsque l'on travaille sur une modélisation. En effet, il n'est pas rare de changer un paramètre, sauvegarder et de ne plus être capable de lancer son modèle, le rendant alors inutilisable.
-\item L'interface de gestion des agents est un outil agréable à utiliser, on voit directement les paramètres importants de chaque agent: cognitons, plans, attributs, groupe. Il n'est cependant pas assez efficace si l'on veut observer un type d'agent particulier dans une grande population.
-\item Il serait intéressant de pouvoir sauvegarder la modélisation à un instant donné et ainsi pouvoir la relancer avec différents paramètres. En effet, lorsque l'on modélise une société avec plusieurs niveaux technologiques, on perd énormément de temps à repasser le début du modèle pour observer l'impact d'un changement.
-\item La construction d'un plan est très intuitive, on imbrique des actions les unes dans les autres. Les descriptions des actions sont claires et précises. Il n'en reste que construire un plan ou le modifier prend beaucoup de temps puisqu'il faut à chaque fois sélectionner l'action dans un menu déroulant. Une autre interface serait à envisager.
-\end{itemize}
-
-MetaCiv possède de grande possibilités d'évolution, nous sommes conscient que l'ajout de nouvelle fonctionnalité ne doit pas rendre le logiciel plus complexe mais le rendre plus simple et facile d'utilisation pour le grand public.
 
 \subsection{Les constantes de la modélisation}
 \label{constantes}
@@ -1191,7 +1183,13 @@ AgeParTick & 0.02 \\
 \caption{Tableau récapitulatif des constantes de la modélisation.}
 \end{figure}
 
+\subsubsection{Conclusion}
+
+On constate que le modèle est non seulement cohérent mais permet également d'observer des comportement de groupe. L'émergence de certains individus ayant différents rôles permet à toute la société de survivre plus longtemps. C'est en attribuant de façon permanent un rôle à un individu que l'on est capable d'obtenir une civilisation efficace. Cette modélisation a un niveau de paramétrage élevé qui laisse peu de place au hasard. En effet, on constate que puisque les agents sont enfermés dans leurs plans, il y a peu d'hésitation dans ce qu'il y a a faire pour que la société fonctionne. Du coup, elle est pratique pour observer un comportement voulu et est très sensible à la modification de ses paramètres.
+
 \subsection{Le modèle "Nomade-Sédentaire"}
+
+Dans ce modèle, on réalise une émergence de civilisation à travers une société dépendante de son environnement. L'objectif est de montrer qu'une société peut à travers l'observation et l'adaptation à son environnement survivre, s'adapter et évoluer. Pour ce faire, on a décidé de simuler une société nomade sans chefs et très dépendante de son environnement. La spécialisation des agents sera basé sur le renforcement de leurs cognitons à travers l'expérience de la réalisation ou de l'échec de leurs plans.
 
 \subsection{Observations}
 
@@ -1211,6 +1209,16 @@ AgeParTick & 0.02 \\
 
 \section{Conclusion et perspectives}
 
+MetaCiv permet de modéliser un grand nombre de situation (interactions entres molécules, sociétés, etc...) si l'on est capable de coder les actions nécessaires et la gestion des plans par des cognitons est une alternative originale à la modélisation des modèles par la subsomption. Voici quelques remarques que nous avons eu tout au long de notre modélisation: 
+\begin{itemize}
+\item L'ajout des constantes est un atout majeur pour l'utilisateur facilitant ainsi la modification des paramètres de la simulation. On peut ainsi voir en temps réel l'impact d'un paramètre sur la simulation.
+\item La sauvegarde automatique des dernières versions fonctionnelles d'un modèle permet d'économiser énormément de temps lorsque l'on travaille sur une modélisation. En effet, il n'est pas rare de changer un paramètre, sauvegarder et de ne plus être capable de lancer son modèle, le rendant alors inutilisable.
+\item L'interface de gestion des agents est un outil agréable à utiliser, on voit directement les paramètres importants de chaque agent: cognitons, plans, attributs, groupe. Il n'est cependant pas assez efficace si l'on veut observer un type d'agent particulier dans une grande population.
+\item Il serait intéressant de pouvoir sauvegarder la modélisation à un instant donné et ainsi pouvoir la relancer avec différents paramètres. En effet, lorsque l'on modélise une société avec plusieurs niveaux technologiques, on perd énormément de temps à repasser le début du modèle pour observer l'impact d'un changement.
+\item La construction d'un plan est très intuitive, on imbrique des actions les unes dans les autres. Les descriptions des actions sont claires et précises. Il n'en reste que construire un plan ou le modifier prend beaucoup de temps puisqu'il faut à chaque fois sélectionner l'action dans un menu déroulant. Une autre interface serait à envisager.
+\end{itemize}
+
+MetaCiv possède de grande possibilités d'évolution, nous sommes conscient que l'ajout de nouvelle fonctionnalité ne doit pas rendre le logiciel plus complexe mais le rendre plus simple et facile d'utilisation pour le grand public.
 
 
 
