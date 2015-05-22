@@ -1,0 +1,1030 @@
+\documentclass{article}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{array}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes, backgrounds}
+\usetikzlibrary{positioning,chains,fit}
+\usetikzlibrary{arrows}
+\usepackage{mathrsfs}
+\usepackage{pgf}
+\usetikzlibrary{arrows,automata}
+\usetikzlibrary{positioning}
+\usepackage{float}
+\usepackage{pgfplots}
+\usepackage{enumerate}
+\usepackage{caption}
+\newcommand*{\h}{\hspace{5pt}}% for indentation
+\newcommand*{\hh}{\h\h}% double indentation
+\usepackage[ruled,vlined,french,onelanguage]{algorithm2e}
+\usepackage{hyperref}
+\hypersetup{backref,  
+pdfpagemode=FullScreen,  
+colorlinks=true}
+\tikzset{
+    state/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           minimum height=2em,
+           inner sep=2pt,
+           text centered,
+           },
+}
+
+\title{TER 2015 - Rapport de modélisation}
+\author{Bruno Y., Lionel F., François S., Alexandre V.}
+
+\begin{document}
+\maketitle
+
+\section{Partie Théorique}
+
+\subsection{Introduction}
+\label{introduction}
+Pour débuter, ce document explique le fonctionnement d'une modélisation ayant pour but de mettre en valeur l'émergence d'une civilisation. Cette implémentation se base sur MetaCiv, framework de modélisation de société humaine utilisant la technique des SMA. Toutes les constantes mentionnées dans ce document sont données dans la section "\hyperref[constantes]{Constantes}".
+
+\subsection{L'environment}
+\label{environment}
+En premier lieu, l'environnement dans lequel nos agents se déplacent est un espace fermé de $\mathbb{R}^{2}$. Il existe un total de quatre types de patches présents : Mer, Prairie, Terre Sterile et Forêt. Le modèle étant relativement basique, il n'existe que deux types de ressources disponibles : Les baies et le bois. Le tableau suivant donne le récapitulatif des différents patches et ressources disponibles.
+
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\text{Patch} & \multicolumn{2}{|c|}{\text{Ressources} } & \multicolumn{2}{|c|}{\text{Valeur initiale}} & \multicolumn{2}{|c|}{\text{Croissance des ressources}} & \text{Passabilité}\\
+\hline
+\text{Mer} \includegraphics[height=0.5 cm]{mer.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Non} \\
+\hline 
+\text{Terre Sterile} \includegraphics[height=0.5 cm]{sterile.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Oui} \\
+\hline 
+\text{Prairie} \includegraphics[height=0.5 cm]{prairie.png}& \text{Baies} & \text{Bois} & 10 & 1 & 0.2 & 0 & \text{Oui} \\
+\hline
+\text{Forêts} \includegraphics[height=0.5 cm]{foret.png}& \text{Baies} & \text{Bois} & 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
+\hline
+\end{tabular}
+\caption{Tableau récapitulatif des patches et des ressources.}
+\end{figure}
+
+Un patch de terre stérile ne produit pas de ressources alors que les patches Prairie et Forêts produisent en permanence des baies. On pourra remarquer que seules les forêts produisent du bois même si les prairies possèdent une valeur en bois initiale. Un patch peut être récolté dès lors que les ressources en bois ou en baies sont supérieures ou égales à 1. Une ressource "baies" est alors transformée en un objet baie (de même pour le bois).
+
+Le point d'apparition des agents se situe au milieu de l'environment et plusieurs prairies sont présentes aux alentours. On peut aussi distinguer une grande forêt dans la partie droite de l'environment.
+\begin{figure}[H]
+\center
+\includegraphics[height=10 cm]{terrain.png}
+\caption{Environment de la modélisation}
+\end{figure}
+
+Il convient de remarquer que lorsque les agents apparaissent dans l'environnement, ils sont éparpillés autour du point d'apparition et non dessus.
+
+\subsection{Les agents}
+\label{agents}
+Un agent possède un ou plusieurs "Cognitons" qui permettent d'associer à chaque "plan", une importance. En effet, les cognitons peuvent influencer les plans de manière positive ou négative. De plus, chaque agent possède un certain nombre d'attributs représentant son état physique. Ils peuvent interagir avec leur environnement, manipuler des objets et construire des aménagements. Les agents sont initialement au nombre de $81$ lors du lancement de la modélisation.
+
+\subsubsection{Les cognitons}
+\label{cognitons}
+Afin de décider quel plan choisir parmi l'ensemble des plans possibles, un système de pondération des plans a été mis en place : les cognitons. Chaque agent possède un ensemble de cognitons qui représentent ce que l'agent aime, voit ou pense. Il existe deux interactions entre un cogniton et un plan. La première rend un plan "accessible" par l'agent et la deuxième influence l'envie (ou la répulsion) d'effectuer un plan. 
+
+
+
+\begin{figure}[h]
+\center
+\begin{tikzpicture}[->,>=stealth']
+ 
+\node [state,anchor=center, text width = 1.5cm, draw, circle, minimum size = 10mm, fill=orange] (EnvieDeDanser)
+{
+	Envie de danser
+};
+
+ \node[state, right of= EnvieDeDanser, node distance = 3 cm] (Danser) 
+ {
+ 	Danser
+ };
+ % draw the paths and and print some Text below/above the graph
+ \path (EnvieDeDanser) 	edge[bend left=20]  node[anchor=south,above]{$+$} (Danser);
+\end{tikzpicture}
+\caption{Exemple d'un cogniton renforçant un plan (flèche positive).}
+\end{figure}
+
+Dans l'exemple précédent, on peut remarquer que le cogniton "Envie de danser" influence positivement l'envie de l'agent à effectuer le plan "Danser", mais ce dernier n'étant pas accessible à l'agent, il ne peut l'effectuer. On rajoute alors un lien "conditionnel" (qui peut éventuellement venir du même cogniton) permettant d'activer le plan.
+
+\begin{figure}[h]
+\center
+\begin{tikzpicture}[->,>=stealth']
+ 
+\node [state,anchor=center, text width = 1.5cm, draw, circle, minimum size = 10mm, fill=orange] (EnvieDeDanser)
+{
+	Envie de danser
+};
+
+ \node[state, right of= EnvieDeDanser, node distance = 3 cm] (Danser) 
+ {
+ 	Danser
+ };
+ 
+\node [state, below of = EnvieDeDanser, node distance = 2cm, anchor=center, text width = 1.5cm, draw, circle, minimum size = 10mm, fill=orange] (Je sais danser)
+{
+	Je sais danser
+};
+ % draw the paths and and print some Text below/above the graph
+ \path (EnvieDeDanser) 	edge[bend left=20]  node[anchor=south,above]{$+$} (Danser)
+  (Je sais danser) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (Danser);
+\end{tikzpicture}
+\caption{Exemple d'un cogniton renforçant un plan (flèche positive) et d'un deuxième cogniton qui rend le plan accessible (trait rouge).}
+\end{figure}
+
+Les cognitons peuvent avoir un "trigger". Il s'agit d'un dispositif permettant d'apparaître ou de disparaître le cogniton en question selon la valeur d'un attribut. Dans le cas contraire, les cognitons sont soit des "Starting cognitons", c'est à dire des cognitons présent dès le début de la simulation, soit des cognitons qui n'apparaissent qu'en réponse d'un plan.
+
+\begin{figure}[H]
+\center
+\begin{tikzpicture}[->,>=stealth']
+ 
+\node [state,anchor=center, text width = 1.5cm, draw, circle, minimum size = 10mm, fill=orange] (Cogniton1)
+{
+	Starting cogniton
+};
+
+ \node [state,anchor=center, right of = Cogniton1, node distance = 3cm, text width = 1.5cm, draw, circle, minimum size = 10mm, fill=yellow] (Cogniton2)
+{
+	Cogniton (trigger)
+};
+
+ \node [draw, rectangle,  above of = Cogniton2, node distance = 2cm] (trigger)
+{
+	Condition sur attribut
+};
+
+ \node [state,anchor=center, right of = Cogniton2, node distance = 3cm, text width = 1.5cm, draw, circle, minimum size = 10mm, fill=green] (Cogniton3)
+{
+	Cogniton (autre)
+};
+
+\path (Cogniton2) 	edge[-, line width= 1pt,right]  node[anchor=south,above]{} (trigger);
+\end{tikzpicture}
+\caption{Exemple des différents types de cognitons: Starting cogniton (en orange), cogniton activé par trigger (en jaune) et les cognitons ajoutés par des plans (en vert).}
+\end{figure}
+
+\subsubsection{Les plans et les actions}
+
+Un plan est un ensemble de plusieurs actions génériques qui peuvent être partagées par un ou plusieurs plans. Une action peut prendre en entrée des paramètres (groupe, rôle, constante, attribut, nombre, aménagement, objet, etc..). Il existe deux types d'actions: 
+\begin{itemize}
+\item Les actions qui modifient les paramètres d'un agent (attributs, position, inventaire, cognitons) ou l'environnement (récolte, construction de routes, etc...). Le nom d'une telle action est de la forme: A\_nomDeLAction.
+\item Les actions conditionnelles sont généralement composées de deux actions internes. Elles exécutent la première action si la condition passée en paramètre est satisfaite et la seconde action sinon. Le nom d'une telle action est de la forme: L\_nomDeLAction.
+\end{itemize}
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {Aaction.png}
+\caption{Exemple de l'interface d'édition d'une A\_action dans MetaCiv}.
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {Laction.png}
+\caption{Exemple de l'interface d'édition d'une L\_action dans MetaCiv}.
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {plan.png}
+\caption{Exemple de l'interface du plan "DonnerNaissanceSiJ'aiPasFaim" dans MetaCiv. Les actions conditionnelles sont repérées par une icône en forme de processeur et les autres actions par une icône en forme de flèche.}
+\end{figure}
+
+\subsubsection{Les attributs}
+\label{attributs}
+Il existe six attributs dans ce modèle : Vie, Age, CompetenceArtisanat, Energie, CompetenceCueilleur et EsperanceDeVie.
+\begin{itemize}
+\item L'attribut Energie est baissée chaque tour d'une certaine quantité ($BaisseEnergieParTick$), et n'est remontée qu'en mangeant de la nourriture (Baies). 
+\item L'âge d'un individu est augmenté à chaque tick ($AgeParTick$).
+\item La compétence en artisanat reflette la dextérité d'un individu pour l'artisanat et n'est augmentée qu'après avoir fabriqué divers objets.
+\item L'attribut "CompetenceCueilleur" reflette l'aptitude d'un individu pour la recherche et la récolte de baies et n'est augmentée qu'après avoir ramené des baies au village.
+\item La vie d'un individu est utilisée lors des combats entre deux agents. (Non implémentée pour l'instant).
+\item \label{EsperanceDeVie}L'attribut EsperanceDeVie est initialisée dans le "BirthPlan". Ce plan est lancé automatiquement à la création d'un agent et permet l'initialisation de plusieurs paramètres. Cet attribut fixe l'âge à partir duquel l'agent est susceptible de mourir. Afin de donner une espérance de vie à chacun des agents, nous générons la fonction de masse de la loi de Poisson de paramètre $k$ = 20 et $\lambda = 10$.
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 7 cm]{poisson.png}
+\caption{Représentation de la fonction de masse de formule $P(k) = \frac{\lambda^{k}}{k!} e^{-k}$}
+\end{figure}
+
+On calcule ensuite sa fonction de répartition et on génère une variable suivant cette loi de Poisson en deux étapes :
+\begin{itemize}
+\item On tire un nombre $r$ entre $0$ et $1$.
+\item On trouve l'entier $i$ tel que $P(X \leq i-1 ) \leq r \leq P(X \leq i )$.
+\end{itemize}
+
+Pour avoir une valeur légèrement plus précise, on trouve le nombre approché $i'$ tel que :
+\begin{equation*}
+	i' = \frac{r}{\alpha} - \frac{P(X\leq i)}{\alpha} + i \\
+	\text{ avec } \alpha = P(X \leq i) - P(X \leq i-1).
+\end{equation*}
+
+Enfin, pour avoir une espérance de vie plus acceptable, nous posons :
+\begin{equation*}
+	EsperanceDeVie = 5 * i'
+\end{equation*}
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10 cm]{cumul.png}
+\caption{Représentation de la fonction de répartition de la loi de Poisson de paramètre $\lambda = 10$ et $k=20$.}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10 cm]{EsperanceDeVie.png}
+\caption{Représentation triée de la valeur de l'attribut "EsperanceDeVie" de 100 agents.}
+\end{figure}
+
+Ainsi, sur les cents agents, trois ont un attribut "EsperanceDeVie" inférieur ou égal à 20, vingt-trois agents ont un attribut "EsperanceDeVie" supérieur ou égal à 60 et le reste des soixante-quatorze agents ont une "EsperanceDeVie" comprise entre 20 et 60.
+\end{itemize}
+
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|c|}
+\hline
+\text{Attribut} & \text{Valeur par défaut}\\
+\hline
+\text{Vie} & 50 \\
+\hline
+\text{Age} & 0 \\
+\hline
+\text{CompetenceArtisanat} & 0 \\
+\hline
+\text{CompetenceCueilleur} & 0 \\
+\hline
+\text{Energie} & 100 \\
+\hline
+\text{EsperanceDeVie} & \text{Valeur initialisé par le "BirthPlan".} \\
+\hline
+\end{tabular}
+\caption{Tableau récapitulatif des attributs d'un agent et de leurs valeurs par défauts.}
+\end{figure}
+
+\subsubsection{Les plans par défaut}
+\label{plandefaut}
+Lorsque les agents arrivent dans l'environment, ils possèdent plusieurs plans par défauts. Il en existe quatre : Birthplan, Standard, Ne rien faire et DonnerNaissanceSiJ'aiPasFaim. 
+\begin{itemize}
+\item Le plan "Standard" est effectué par chaque agent à chaque tick et gère tout ce qui relève de la physiologie de l'agent. Elle modifie donc les attributs: âge et Energie. Elle est également responsable des tests pour détruire les agents. On peut également remarquer la présence de la ligne "Créer Un Groupe" dans le plan standard, cette ligne crée un groupe et donne à l'agent courant le rôle de "Cueilleur".
+\item Le plan "Birthplan" qui est lancé à chaque fois qu'un agent est crée ne sert qu'à initialiser l'attribut "EsperanceDeVie".
+\item Le plan "Ne rien faire" permet aux agents ayant du bois d'augmenter leurs attributs CompetenceEnArtisanat (avec une certaine probabilité).
+\item Le plan "DonnerNaissanceSiJ'aiPasFaim" permet à un agent de créer un autre agent (avec une certaine probabilité ) s'il n'a pas le cogniton "Faim".
+\end{itemize}
+
+\begin{figure}[h]
+\center
+\includegraphics[width = 8 cm]{default.png}
+\caption{Affichage des plans et cognitons associés dans MetaCiv (les couleurs des cognitons n'indiquent pas le type de cogniton).}
+\end{figure}
+
+\begin{figure}[H]
+
+\begin{tikzpicture}[->,>=stealth']
+ 
+\node [state,anchor=center, text width = 6 cm] (Standard)
+{
+	\textbf{Standard} \\
+	\begin{itemize}
+      \item Si ($Energie = 0$) alors $Mourir$.
+      \item Si (Age $>$ EsperanceDeVie) alors $Mourir$ (avec une certaine probabilité).
+      \item Baisser $Energie$ de $BaisseEnergieParTick$.
+      \item Augmenter $Age$ de $AgeParTick$.
+      \item Créer un groupe et s'attribuer le rôle de $cueilleur$ si je n'ai pas de groupe (avec une certaine probabilité).
+      \end{itemize}
+};
+
+ \node[state, right of= Standard, node distance = 7 cm, text width = 6 cm] (BirthPlan) 
+ {
+ 	\textbf{Birthplan} \\
+	\hyperref[EsperanceDeVie]{Initialiser l'attribut EsperanceDeVie}
+ };
+ 
+\node [state, below of = Standard, node distance = 5cm, anchor=center, text width = 6 cm] (Ne rien faire)
+{
+	\textbf{Ne rien faire} \\
+	 \begin{itemize}
+      \item Si j'ai du bois, fabriquer une sculpture et augmenter $CompetenceEnArtisanat$ de $CompetenceParSculture$(avec une certaine probabilité).
+      \end{itemize}
+};
+
+ \node[state, below of= BirthPlan, node distance = 3 cm, text width = 6 cm] (DonnerNaissanceSiJ'aiPasFaim) 
+ {
+ 	\textbf{DonnerNaissanceSiJ'aiPasFaim} \\
+	\begin{itemize}
+	\item Si je possède le cogniton "Faim", alors ne rien faire.
+	\item Sinon donner naissance à un agent (avec une certaine probabilité)
+	\begin{itemize}
+		\item Avec une certaine probabilité, lui donner le même rôle.
+		\item Sinon lui donner le rôle de Cueilleur.
+	\end{itemize}
+	\end{itemize}
+ };
+ 
+\node [state,anchor=center, below of= DonnerNaissanceSiJ'aiPasFaim, node distance = 4 cm, text width = 2cm, draw, circle, minimum size = 10mm, fill=orange] (DonnerNaissance)
+{
+	\textbf{Donner Naissance}
+};
+ 
+ \node [state,anchor=center, below of= Ne rien faire, node distance = 3 cm, text width = 2cm, draw, circle, minimum size = 10mm, fill=orange] (Oisif)
+{
+	\textbf{Oisif}
+};
+
+  \path (DonnerNaissance) 	edge[bend left=20]  node[anchor=south,left]{$+$} (DonnerNaissanceSiJ'aiPasFaim)
+  (Oisif) 	edge[bend left=20]  node[anchor=south,left]{$+$} (Ne rien faire)
+  (Oisif) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (Ne rien faire);;
+\end{tikzpicture}
+\caption{Figure des plans "Ne Rien Faire", "Standard", "DonnerNaissanceSiJ'aiPasFaim" et "Birthplan".}
+\end{figure}
+
+On remarquera que les plans "Birthplan" et "Standard" n'ont pas besoin de cognitons pour être effectués. Le plan "Ne rien faire" est accessible dès le lancement de la simulation puisqu'il est activé par le cogniton "Oisif". Même si le plan "DonnerNaissanceSiJ'aiPasFaim" est influencé, il n'est pas activé.
+
+En plus de ces deux plans, nous avons aussi plusieurs plans qui permettent de gérer la $Faim$ mais aussi le rapatriement des $Baies$ au village : "Consommer", "AllerChercherAuVillage" et "RamenerBaiesAuVillage".
+\begin{itemize}
+\item Le plan "Consommer" utilise une baie de l'inventaire de l'agent pour remonter ses vies s'il en possède ou augmente le poids du cogniton "FaimEtRienDansMonSac" dans le cas contraire.
+\item Le plan "AllerChercherAuVillage" ramène l'agent au village du groupe pour récupérer des baies. Si des baies sont présentes dans l'inventaire du village, il baisse le poids du cogniton "FaimEtRienDansMonSac".
+\item Le plan "RamenerBaiesAuVillage" ramène l'agent au village du groupe afin qu'il y dépose son surplus de baies. Une fois cette opération effectuée, son cogniton "TropDansMonSac" est baissé.
+\end{itemize}
+
+
+\begin{figure}[H]
+
+\begin{tikzpicture}[->,>=stealth']
+ 
+  \node[state, node distance = 3 cm, text width = 6 cm] (DonnerNaissanceSiJ'aiPasFaim) 
+ {
+ 	\textbf{DonnerNaissanceSiJ'aiPasFaim} \\
+ };
+ 
+\node [state,right of = DonnerNaissanceSiJ'aiPasFaim, node distance= 7cm, anchor=center, text width = 6 cm] (RamenerBaiesAuVillage)
+{
+	\textbf{RamenerBaiesAuVillage} \\
+	\begin{itemize}
+	\item Aller au village
+  	\item Déposer "NombreDeBaiesDeposeeParTick" baies au village.
+     	 \item Si je suis un $agriculteur$ sans $Pelles$ alors s'il y en a, prendre une $Pelle$.
+	 \item Si j'ai moins de baies que "SeuilNePlusRamenerAuVillage", baisser le poids du cogniton "TropDansMonSac".
+      \end{itemize}
+};
+
+
+ 
+ \node [state,anchor=center, below of= DonnerNaissanceSiJ'aiPasFaim, node distance = 2 cm, text width = 2cm, draw, circle, minimum size = 10mm, fill=yellow] (Faim)
+{
+	\textbf{Faim}
+};
+
+\node [state,below of = Faim, node distance= 3.5 cm, anchor=center, text width = 6 cm] (Consommer)
+{
+	\textbf{Consommer} \\
+	\begin{itemize}
+	\item Si j'ai au moins une baie dans mon inventaire, utiliser une baie pour remonter son $Energie$ de $NombreEnergieParBaie$.
+	\item Sinon augmenter le poids du cogniton "FaimEtRienDansMonSac".
+	\end{itemize}
+};
+
+ \node [state,anchor=center, below of= RamenerBaiesAuVillage, node distance = 4 cm, text width = 2cm, draw, circle, minimum size = 10mm, fill=green] (TropDansMonSac)
+{
+	\textbf{TropDans MonSac}
+};
+
+ \node [state,anchor=center, below of= Consommer, node distance = 3.5 cm, text width = 2cm, draw, circle, minimum size = 10mm, fill=green] (FaimEtRienDansMonSac)
+{
+	\textbf{FaimEt RienDans MonSac}
+};
+
+\node [draw, rectangle, left of= Faim, node distance = 3.2cm] (trigger)
+{
+	Si Energie $<$ SeuilFaim
+};
+
+\node [state,below of = FaimEtRienDansMonSac, node distance= 3cm, anchor=center, text width = 6 cm] (AllerChercherAuVillage)
+{
+	\textbf{AllerChercherAuVilage} \\
+	\begin{itemize}
+	\item Aller au village
+	\item S'il y a des baies retirer "NombreBaiesRetirerAuVillageSiFaim" baies du village et baisser le cogniton "FaimEtRienDansMonSac".
+	\end{itemize}
+};
+
+  \path (Faim) 	edge[bend left=20]  node[anchor=south,right]{$+$} (Consommer)
+   (Faim) 	edge[bend left=20]  node[anchor=south,right]{$-$} (DonnerNaissanceSiJ'aiPasFaim)
+    (Faim) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (Consommer)
+       (FaimEtRienDansMonSac) 	edge[bend left=20]  node[anchor=south,right]{$-$} (Consommer)
+       (FaimEtRienDansMonSac) 	edge[bend left=20]  node[anchor=south,right]{$+$} (AllerChercherAuVillage)
+           (FaimEtRienDansMonSac) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (AllerChercherAuVillage)
+           (TropDansMonSac) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (RamenerBaiesAuVillage)
+           (TropDansMonSac) 	edge[bend left=20]  node[anchor=south,right]{$+$} (RamenerBaiesAuVillage)
+            (RamenerBaiesAuVillage.west) 	edge[bend right=60, line width = 1pt, color = blue]  node[anchor=south,left]{$-$} (TropDansMonSac)
+            (Consommer.west) 	edge[bend right=60, line width = 1pt, color = blue]  node[anchor=south,left]{$+$} (FaimEtRienDansMonSac)
+            (AllerChercherAuVillage.east) 	edge[bend right=60, line width = 1pt, color = blue]  node[anchor=south,left]{$-$} (FaimEtRienDansMonSac)
+           (trigger) 	edge[-]  node[anchor=south,right]{} (Faim);
+           
+\end{tikzpicture}
+\caption{Figure des plans "DonnerNaissanceSiJ'aiPasFaim", "Consommer", "AllerChercherAuVillage" et "RamenerBaiesAuVillage".}
+\end{figure}
+
+On remarquera que le plan "RamenerBaiesAuVillage" permet aux agriculteurs de récupérer des pelles au village (s'il y en a) lorsque ceux-ci viennent déposer des baies.
+
+\begin{figure}[h]
+\center
+\includegraphics[width = 10cm]{hunger.png}
+\caption{Représentation des cognitons et plans associés dans MetaCiv.}
+\end{figure}
+
+\subsection{Les rôles}
+\label{roles}
+Lorsque plusieurs agents se rassemblent pour former un groupe, chaque agent de ce groupe possède un rôle. Dans notre modélisation, nous pouvons distinguer trois rôles : $Cueilleur$, $Agriculteur$ et $Artisan$. Chacun de ces rôles ajoute des plans supplémentaires au moyen de nouveaux cognitons dits "culturons" et permettent ainsi la spécialisation de l'agent.
+
+\begin{figure}[H]
+\center
+\begin{tikzpicture}[->,>=stealth']
+ 
+ \node [state,anchor=center, below of= Consommer, node distance = 3.5 cm, text width = 2cm, draw, circle, minimum size = 10mm, fill=brown] (Culturon)
+{
+	\textbf{Culturon}
+};
+
+
+\end{tikzpicture}
+\caption{Exemple de culturon (en marron).}
+\end{figure}
+
+\subsubsection{Le cueilleur}
+\label{cueilleur}
+Lorsqu'un groupe est créé, le premier individu de ce groupe est un $cueilleur$. La fonction principale de cet agent est bien sûr de cueillir mais aussi de recruter d'autres agents n'ayant pas de groupe et de construire le village du groupe (s'il n'y en a pas déjà un). Il possède également la capacité de devenir un $Agriculteur$ ou un $Artisan$. 
+
+Le cueilleur possède donc cinq plans supplémentaires :
+\begin{itemize}
+\item Le plan "Cueillir" permet aux cueilleurs de partir à la recherche des baies et influence le cogniton "TropDansMonSac" pour le rapatriement des baies. Il est activé par le culturon "AllerChercherDesBaies".
+\item Le plan "recruter" permet aux agents de former des groupes. Il est activé par le culturon "Recruter".
+\item Le plan "Construire" permet aux agents de construire leur village, s'ils n'en possèdent pas. Il est activé par le culturon "ConstruireVillage". Une fois le village construit, le cogniton "PasBesoinDeVillage" est ajouté et inhibe le plan "Construire".`
+\item Le plan "DevenirAgriculteur" est activé par le cogniton "DevenirAgriculteur?" mais n'est influencé que par le cogniton "BonCueilleur", lui-même activé que lorsque l'agent à son attribut "CompetenceCueilleur" supérieure ou égale à la constante "SeuilBonCueilleur". Ainsi, un cueilleur n'est susceptible de devenir un agriculteur que lorsque les conditions sont satisfaites.
+\item Le plan "DevenirArtisan" reprend le principe du plan "DevenirAgriculteur".
+\end{itemize}
+On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par le cogniton "DonnerNaissance" n'est activé que maintenant par le culturon "ReproduireCueilleur".
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 6 cm]{cueilleur1.png}
+\includegraphics[width = 6 cm]{cueilleur2.png}
+\caption{Représentation des plan, culturons et cognitons du rôle cueilleur dans MetaCiv.}
+\end{figure}
+
+\begin{figure}[H]
+
+\begin{tikzpicture}[->,>=stealth']
+ 
+ \node [state,anchor=center, text width = 2cm, draw, circle, minimum size = 10mm, fill=brown] (AllerChercherDesBaies)
+{
+	\textbf{Aller Chercher DesBaies}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=2.5 cm, below of =AllerChercherDesBaies, draw, circle, minimum size = 10mm, fill=brown] (Recruter)
+{
+	\textbf{Recruter}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=2.5 cm,below of =Recruter, draw, circle, minimum size = 10mm, fill=brown] (ConstruireVillage)
+{
+	\textbf{Construire Village}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=2.5 cm,below of =ConstruireVillage, draw, circle, minimum size = 10mm, fill=brown] (ReproduireCueilleur)
+{
+	\textbf{Reproduire Cueilleur}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=2.5 cm,below of =ReproduireCueilleur, draw, circle, minimum size = 10mm, fill=brown] (DevenirAgriculteur)
+{
+	\textbf{Devenir Agriculteur?}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=2.5 cm,below of =DevenirAgriculteur, draw, circle, minimum size = 10mm, fill=brown] (DevenirArtisan)
+{
+	\textbf{Devenir Artisan?}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=10 cm,right of =DevenirAgriculteur, draw, circle, minimum size = 10mm, fill=yellow] (BonCueilleur)
+{
+	\textbf{Bon Cueilleur}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=10 cm,right of =DevenirArtisan, draw, circle, minimum size = 10mm, fill=yellow] (BonEnArtisanat)
+{
+	\textbf{BonEn Artisanat}
+};
+
+
+
+\node [state, right of= AllerChercherDesBaies, node distance = 5cm, text width = 6cm] (Cueillir)
+{
+	\textbf{Cueillir} \\
+	\begin{itemize}
+	\item Se diriger vers des baies
+	\item Avec une certaine probabilité, les ramasser.
+	\item Si j'ai plus de baies que "SeuilRamenerBaiesCueilleur", Augmenter le cogniton "TropDansMonSac".
+	\end{itemize}
+};
+
+\node [state, right of= Recruter , node distance = 5cm, text width = 6cm] (recruter)
+{
+	\textbf{recruter} \\
+	S'il y a un agent sans groupe sur mon patch, le recruter dans mon groupe.
+};
+
+\node [state, right of= ConstruireVillage, node distance = 5cm, text width = 6cm] (Construire)
+{
+	\textbf{Construire}\\
+	\begin{itemize}
+	\item Si j'ai un village, ajouter le cogniton "PasBesoinDeVillage".
+	\item Sinon créer un village.
+	\end{itemize}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=5 cm,right of =Construire, draw, circle, minimum size = 10mm, fill=green] (PasBesoinDeVillage)
+{
+	\textbf{PasBesoin DeVillage}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=5 cm,right of =Cueillir, draw, circle, minimum size = 10mm, fill=green] (TropDansMonSac)
+{
+	\textbf{TropDans MonSac}
+};
+
+\node [state, right of= ReproduireCueilleur, node distance = 5cm, text width = 6cm] (DonnerNaissanceSiJ'aiPasFaim)
+{
+	\textbf{DonnerNaissanceSiJ'aiPasFaim}
+};
+
+\node [state, right of= DevenirAgriculteur, node distance = 5cm, text width = 6cm] (DevenirAgriculteur2)
+{
+	\textbf{DevenirAgriculteur} \\
+	\begin{itemize}
+	\item Avec une certaine probabilité, changer de rôle pour "Agriculteur" et baisser le poids du cogniton "DevenirAgriculteur?".
+	\end{itemize}
+	
+};
+
+\node [state, right of= DevenirArtisan, node distance = 5cm, text width = 6cm] (DevenirArtisan2)
+{
+	\textbf{DevenirArtisan} \\
+	\begin{itemize}
+	\item Changer de rôle pour "Artisan" et baisser le poids du cogniton "DevenirArtisan?".
+	\end{itemize}
+};
+
+\node [draw, rectangle, text width = 4cm, above of= BonCueilleur, node distance = 2.5cm, xshift = 0.5 cm] (trigger1)
+{
+	Si CompetenceCueilleur $\geq$ \\SeuilBonCueilleur
+};
+
+\node [draw, rectangle, text width = 11cm, below of= BonEnArtisanat, node distance = 2cm, xshift=-1cm] (trigger2)
+{
+	Si CompetenceArtisanat $\geq$
+	NombreDeSculpturePourDevenirUnArtisan
+};
+  \path (AllerChercherDesBaies) 	edge[bend left=20]  node[anchor=south,right]{$+$} (Cueillir)
+	(Recruter) 	edge[bend left=20]  node[anchor=south,right]{$+$} (recruter.west)
+	(ConstruireVillage) 	edge[bend left=20]  node[anchor=south,right]{$+$} (Construire.west)
+    (ReproduireCueilleur) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (DonnerNaissanceSiJ'aiPasFaim.west)
+     (DevenirAgriculteur) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (DevenirAgriculteur2.west)
+     (DevenirArtisan) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (DevenirArtisan2.west)
+     (AllerChercherDesBaies) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (Cueillir.west)
+     (Recruter) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (recruter.south west)
+          (ConstruireVillage) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (Construire.south west)
+          (BonCueilleur) 	edge[bend left=30]  node[anchor=south,right]{$+$} (DevenirAgriculteur2.east)
+          (BonEnArtisanat) 	edge[bend left=30]  node[anchor=south,right]{$+$} (DevenirArtisan2.east)
+          (PasBesoinDeVillage) 	edge[bend left=30]  node[anchor=south,right]{$-$} (Construire.east)
+          (TropDansMonSac) 	edge[bend left=30]  node[anchor=south,right]{$-$} (Cueillir.east)
+          (Cueillir) 	edge[bend left=20, color = blue , line width = 1pt]  node[anchor=south,right]{$+$} (TropDansMonSac)
+          (Construire.north east) 	edge[bend left=20, color = blue, line width=1pt]  node[anchor=south,right]{} (PasBesoinDeVillage)
+           (DevenirAgriculteur2.north west) 	edge[bend right=10, color = blue, line width=1pt]  node[anchor=south,right]{$-$} (DevenirAgriculteur)
+           (DevenirArtisan2.north west) 	edge[bend right=7, color = blue, line width=1pt]  node[anchor=south,right]{$-$} (DevenirArtisan)
+            (BonCueilleur) 	edge[-]  node[anchor=south,right]{} (trigger1)
+            (BonEnArtisanat) 	edge[-]  node[anchor=south,right]{} (trigger2)
+   ;
+\end{tikzpicture}
+\caption{Figure des plans d'un cueilleur et des interactions avec les cognitons associés.}
+\end{figure}
+
+\subsubsection{Les artisans}
+\label{artisans}
+Les artisans sont des agents qui construisent leurs huttes et partent à la recherche de bois pour construire des outils (ici des pelles) pour augmenter la production des agriculteurs. En contre-partie, ceux-ci reçoivent des baies supplémentaires du village. Ils possèdent quatre plans qui leurs sont associés: ChercherBois, RamenerPelleAuVillage, ConstruirePelle et ConstruireHutte.
+\begin{itemize}
+\item Le plan "ChercherBois" consiste à se déplacer vers les patches les plus riches en bois et à transformer cette ressource en objet bois.
+\item Le plan "RamenerPelleAuVillage" ramène l'agent au village pour y déposer la ou les pelles que l'agent possède. Il retire ensuite un bonus de baies en contre-parti et baisse le cogniton "JaiUnePelle".
+\item Le plan "ConstruirePelle" fait construire une pelle à l'agent s'il possède au moins NombreDeBoisPourFaireUnePelle unités de bois dans son inventaire. S'il dispose d'une pelle, le cogniton "JaiUnePelle" est augmenté.
+\item Si l'agent possède une hutte, le cogniton "PasBesoinHutte" est ajouté sinon une hutte est construite sur un emplacement libre.
+\end{itemize}
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 6 cm] {artisan1.png}
+\includegraphics[width = 6 cm] {artisan2.png}
+\caption{Représentation des plans, culturons et cognitons du rôle artisan dans MetaCiv.}
+\end{figure}
+
+\begin{figure}[H]
+
+\begin{tikzpicture}[->,>=stealth']
+ 
+ \node [state,anchor=center, text width = 2cm, draw, circle, minimum size = 10mm, fill=brown] (AllerChercherDuBois)
+{
+	\textbf{Aller Chercher DuBois}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=2.5 cm, below of =AllerChercherDesBaies, draw, circle, minimum size = 10mm, fill=brown] (BesoinHutte)
+{
+	\textbf{Besoin Hutte}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=3 cm,below of =Recruter, draw, circle, minimum size = 10mm, fill=brown] (FaireUnePelle)
+{
+	\textbf{FaireUne Pelle}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=3.2 cm,below of =ConstruireVillage, draw, circle, minimum size = 10mm, fill=brown] (ReproduireArtisan)
+{
+	\textbf{Reproduire Artisan}
+};
+
+\node [state, right of= AllerChercherDesBaies, node distance = 5cm, text width = 6cm] (ChercherBois)
+{
+	\textbf{ChercherBois} \\
+	\begin{itemize}
+	\item Se déplacer vers les patches ayant plus de bois.
+	\item Récolter le bois.
+	\end{itemize}
+};
+
+\node [state, below of=ChercherBois , node distance = 2cm, text width = 6cm] (ConstruireHutte)
+{
+	\textbf{ConstruireHutte} \\
+	\begin{itemize}
+	\item Si j'ai une hutte, rajouter le cogniton "PasBesoinHutte".
+	\item Sinon trouver un emplacement libre et construire une hutte.
+	\end{itemize}
+
+};
+
+\node [state,  below of=ConstruireHutte , node distance = 3.5cm, text width = 6cm] (ConstruirePelle)
+{
+	\textbf{ConstruirePelle}\\
+	\begin{itemize}
+	\item Si j'ai "NombreDeBoisPourFaireUnePelle" bois dans mon inventaire, je les utilise pour faire une pelle et j'augmente mon attribut CompetenceArtisanat.
+	\item Si j'ai une pelle, augmenter le poids du cogniton "J'aiUnePelle".
+	\end{itemize}
+};
+
+
+\node [state, below of= ConstruirePelle, node distance = 3cm, text width = 6cm] (DonnerNaissanceSiJ'aiPasFaim)
+{
+	\textbf{DonnerNaissanceSiJ'aiPasFaim}
+};
+
+\node [state, below of= DonnerNaissanceSiJ'aiPasFaim, node distance = 2cm, text width = 6cm] (RamenerPelleAuVillage)
+{
+	\textbf{RamenerPelleAuVillage} \\
+	\begin{itemize}
+	\item Aller au village
+	\item Déposer une pelle et retirer des baies en contre-parti.
+	\item Si je n'ai plus de pelle, baisser le poids du cogniton "J'aiUnePelle".
+	\end{itemize}
+	
+};
+
+ \node [state,anchor=center, right of = RamenerPelleAuVillage, node distance = 7cm, text width = 2cm, draw, circle, minimum size = 10mm, fill=green] (JaiUnePelle)
+{
+	\textbf{JaiUnePelle}
+};
+
+ \node [state,anchor=center, right of = ConstruireHutte, node distance = 7cm, text width = 2cm, draw, circle, minimum size = 10mm, fill=green] (PasBesoinHutte)
+{
+	\textbf{PasBesoin Hutte}
+};
+
+  \path (AllerChercherDuBois) 	edge[bend left=20]  node[anchor=south,right]{$+$} (ChercherBois.west)
+	(BesoinHutte) 	edge[bend left=20]  node[anchor=south,right]{$+$} (ConstruireHutte)
+	(FaireUnePelle) 	edge[bend left=20]  node[anchor=south,right]{$+$} (ConstruirePelle)
+    (ReproduireArtisan) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (DonnerNaissanceSiJ'aiPasFaim.west)
+     (FaireUnePelle) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (ConstruirePelle)
+     (BesoinHutte) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (ConstruireHutte.south west)
+     (AllerChercherDuBois) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (ChercherBois.south west)
+   
+     (JaiUnePelle) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (RamenerPelleAuVillage)
+     
+             (JaiUnePelle) 	edge[bend left=30]  node[anchor=south,right]{$+$} (RamenerPelleAuVillage)
+          (JaiUnePelle) 	edge[bend right=30]  node[anchor=south,right]{$-$} (ChercherBois.east)
+          (JaiUnePelle) 	edge[bend right=30]  node[anchor=south,right]{$-$} (ConstruirePelle.east)
+          (PasBesoinHutte) 	edge[bend left=40]  node[anchor=south,left]{$-$} (ConstruireHutte.east)
+          (ConstruireHutte.north east) edge[bend left=40, color = blue, line width = 1pt]  node[anchor=south,left]{} (PasBesoinHutte)
+          (ConstruirePelle.south east) edge[bend left=40, color = blue, line width = 1pt]  node[anchor=south,left]{$+$} (JaiUnePelle)
+          (RamenerPelleAuVillage.east) edge[bend left=40, color = blue, line width = 1pt]  node[anchor=south,left]{$-$} (JaiUnePelle)
+            ;
+   
+\end{tikzpicture}
+\caption{Figure des plans d'un artisan et des interactions avec les cognitons associés.}
+\end{figure}
+
+\subsubsection{Les agriculteurs}
+\label{agriculteurs}
+La seule fonction des agriculteurs est de récolter des baies dans leurs champs ou de construire un champs s'ils n'en possèdent pas. Ils ont donc un seul plan: Agriculter. Si l'agent n'a pas d'aménagement "Champs", il choisi un emplacement libre pour en construire un. Sinon, il se positionne sur son champ pour récolter "NombreDeBaiesRecolteesParTick" baies s'il n'a pas de pelles et "NombreDeBaiesSupplementairesPelles" baies s'il en a une. Lorsque l'agent possède plus de "SeuilRamenerBaiesAgriculteur" baies dans son inventaire, le poids du cogniton "TropDansMonSac" est augmenté.
+ 
+\begin{figure}[H]
+\center
+\includegraphics[width = 6 cm] {agriculteur1.png}
+\includegraphics[width = 6 cm] {agriculteur2.png}
+\caption{Représentation des plan, culturons et cognitons du rôle agriculteur dans MetaCiv.}
+\end{figure}
+
+\begin{figure}[H]
+
+\begin{tikzpicture}[->,>=stealth']
+ 
+ \node [state,anchor=center, text width = 2cm, draw, circle, minimum size = 10mm, fill=brown] (Agriculteur)
+{
+	\textbf{Agriculteur}
+};
+
+ \node [state,anchor=center, text width = 2cm, node distance=4 cm, below of =Agriculteur, draw, circle, minimum size = 10mm, fill=brown] (ReproduireAgriculteur)
+{
+	\textbf{Reproduire Agriculteur}
+};
+
+\node [state, right of= Agriculteur, node distance = 5cm, text width = 6cm] (Agriculter)
+{
+	\textbf{Agriculter} \\
+	\begin{itemize}
+	\item Si j'ai un champ et que je suis sur mon champs, récolter "NombreDeBaiesRecolteesParTick" baies si je n'ai pas de pelles et "NombreDeBaisSupplementairePelles" si j'ai une pelle.
+	\item Sinon si j'ai un champs et que je ne suis pas dessus, y aller.
+	\item Si je n'ai pas de champs, trouver un emplacement libre pour y placer mon champs.
+	\item Si le nombre de baies dans mon inventaire dépasse "SeuilRamenerBaiesAgriculteur", augmenter le poids du cogniton "TropDansMonSac".
+	\end{itemize}
+};
+
+\node [state, below of=Agriculter , node distance = 5cm, text width = 6cm] (DonnerNaissanceSiJ'aiPasFaim)
+{
+	\textbf{DonnerNaissanceSiJaiPasFaim} 
+
+};
+
+ \node [state,anchor=center, right of = Agriculter, node distance = 7cm, text width = 2cm, draw, circle, minimum size = 10mm, fill=green] (TropDansMonSac)
+{
+	\textbf{TropDans MonSac}
+};
+
+  \path (Agriculteur) 	edge[bend left=20]  node[anchor=south,right]{$+$} (Agriculter)
+	(TropDansMonSac) 	edge[bend left=20]  node[anchor=south,right]{$-$} (Agriculter)
+    (Agriculteur) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (Agriculter)
+     (ReproduireAgriculteur) 	edge[-, line width= 1pt,bend right=20, color = red]  node[anchor=south,above]{} (DonnerNaissanceSiJ'aiPasFaim.west)
+     (Agriculter) 	edge[bend left=20, line width = 1pt, color=blue]  node[anchor=south,right]{$+$} (TropDansMonSac);
+            
+\end{tikzpicture}
+\caption{Figure des plans d'un agriculteur et des interactions avec les cognitons associés.}
+\end{figure}
+
+
+\subsection{Les aménagement}
+\label{amenagements}
+Les aménagements sont des marques déposées sur des patches et sont repérés par leurs positions. Ils ont un inventaire qui permet aux agents de déposer ou retirer des objets à l'intérieur. Le tableau suivant récapitule les aménagements de la modélisation.
+
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|c|c|c|}
+\hline
+\text{Aménament} & \text{Apparence} & \text{Types d'agents qui utilisent l'aménagement} & \text{Utilisation de l'inventaire} \\
+\hline
+\text{Village} & \includegraphics[height=0.75 cm]{village.png} & Tout types d'agents & Oui\\
+\hline
+\text{Hutte} & \includegraphics[height=0.75 cm]{hutte.png}  &  Artisans & Non\\
+\hline
+\text{Champs} & \includegraphics[height=0.75 cm]{champ.png}  & Agriculteurs & Non\\
+\hline
+\end{tabular}
+\caption{Tableau récapitulatif des aménagements.}
+\end{figure}
+
+\subsection{Les étapes de la modélisation}
+\label{etapesmodelisation}
+Au début de la modélisation, les agents sont dispersés autour du point d'apparition. Ils sont immobiles puisqu'ils ne possèdent aucun plan permettant le mouvement (on peut facilement l'ajouter).
+
+\begin{figure}[H]
+\center
+\includegraphics[height=5 cm]{initial.png}
+\caption{Situation initiale}
+\end{figure}
+
+\subsubsection{La création des groupes et des villages}
+\label{apparitionvillages}
+ Puis, grâce à leurs plans "Standard", certains agents fondent leur groupe en partant à la recherche d'autres agents. Bien sûr, lorsque les agents détectent qu'ils n'ont pas de village, ils en construisent un.
+ 
+ \begin{figure}[H]
+\center
+\includegraphics[height=5 cm]{fondementGroupe.png}
+\caption{Fondement des groupes et création des villages}
+\end{figure}
+
+\subsubsection{La cueillette}
+\label{cueillette}
+Les cueilleurs ayant construit leur village, ils partent alors à la recherche de ressources dans les zones avoisinantes pour remplir le village en ressources. Ceux n'ayant pas réussi à en trouver survivent en se fournissant au village.
+
+ \begin{figure}[H]
+\center
+\includegraphics[height=5 cm]{cueillette.png}
+\caption{La recherche de nourriture}
+\end{figure}
+ 
+\subsubsection{L'apparition de l'agriculture}
+\label{appartionagriculture}
+Lorsque des cueilleurs ramènent des ressources au village, leurs attributs "CompetenceCueilleur" augmente et à partir d'un certain seuil, ils deviennent des agriculteurs. Leur rôle se réduit alors à récolter des baies dans leurs champs, puis les ramener au village.
+
+ \begin{figure}[H]
+\center
+\includegraphics[height=5 cm]{champs.png}
+\caption{Apparition des premiers champs et agriculteurs}
+\end{figure}
+
+\subsubsection{L'apparition des artisans}
+\label{apparitionartisans}
+Certains $Cueilleurs$ ont la possibilité de se convertir en $Artisan$. Leur rôle est de récolter du bois et de revenir à leurs huttes pour produire des outils, ici, des pelles. Ils ramènent ensuite ces pelles au villages pour que les agriculteurs puissent s'en servir.
+
+ \begin{figure}[H]
+\center
+\includegraphics[height=5 cm]{artisan.png}
+\caption{Un artisan (entouré en bleu) proche de sa hutte.}
+\end{figure}
+
+ \begin{figure}[H]
+\center
+\includegraphics[height=5 cm]{agriculteurPelle.png}
+\caption{Exemple d'un agriculteur ayant récupéré une pelle au village.}
+\end{figure}
+
+\subsection{L'évolution de la population selon les âges.}
+\label{evolutionpop}
+\subsubsection{L'évolution de la population avec la constante "ChancesAvoirDesEnfants" égale à 0.5}
+
+Dans cette partie, la reproduction des agents ne produit que des cueilleurs. On effectue une première simulation qui ne contient que des cueilleurs.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{pop.png}
+\caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs.}
+\end{figure}
+
+On rajoute ensuite la possibilité que certains cueilleurs deviennent des artisans.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{poparti.png}
+\caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs et des artisans.}
+\end{figure}
+
+Puis on rajoute la possibilité qu'un cueilleur devienne un agriculteur.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{popartiagri.png}
+\caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation contenant des cueilleurs, artisans et agriculteurs.}
+\end{figure}
+
+Après observation de plusieurs graphes, on conclu que les graphes précédents ne donnent pas de résultats significatifs car la population est trop peu nombreuse et le taux de reproduction trop faible. Une modification de la constante "ChancesAvoirDesEnfants" pourrait potentiellement résoudre ce problème.
+
+\subsubsection{L'évolution de la population avec la constante "ChancesAvoirDesEnfants" égale à 1.}
+
+Dans cette partie, la reproduction des agents ne produit que des cueilleurs et la constante "ChancesAvoirDesEnfants" a été fixé à 1. On remarque après plusieurs lancements que cette modification de constante permet d'avoir des graphes plus significatifs et plus homogènes entre chaque simulation. On effectue une première simulation qui ne contient que des cueilleurs.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{pop2.png}
+\caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs.}
+\end{figure}
+
+La population des cueilleurs augmente considérablement par rapport aux simulations précédentes. Elle croît jusqu'au tick 4500 puis décroît. En effet, la population augmentant dans un environment pauvre en ressource génère l'apparition du cogniton "Faim" dans l'esprit des agents, les empêchant ainsi de se reproduire ce qui explique la baisse de population.
+
+On rajoute ensuite la possibilité que certains cueilleurs deviennent des artisans.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{poparti2.png}
+\caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs et des artisans.}
+\end{figure}
+
+On remarque qu'au lieu de diminuer à partir du tick 4500, la courbe du nombre d'agents par rapport au tick se stabilise. En fait, les artisans ayant ramenés des pelles au villages constituent une réserve de baies qui leurs permettent de survivre même lorsque la nourriture vient à manquer. Même si les autres agents meurent de famine, les artisans ayant encore des baies peuvent se reproduire et créer d'autres cueilleurs puisqu'ils ne possèdent pas du cogniton "Faim". La mortalité des cueilleurs et l'apparition de nouveaux agents explique la stabilisation de la courbe vers le tick 4500.
+
+Puis on rajoute la possibilité qu'un cueilleur devienne un agriculteur.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{popartiagri2.png}
+\caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation contenant des cueilleurs, artisans et agriculteurs.}
+\end{figure}
+
+On remarque que la diminution de la population due à la famine a été déplacée vers le tick 5700. Les agriculteurs apportant de la nourriture même lorsque l'environment est vide permet à la population de survivre plus longtemps. Cependant, une fois que ces agriculteurs meurent, le nombre d'agriculteur n'augmente plus. En effet, la condition pour qu'un cueilleur devienne un agriculteur est qu'il augmente son attribut "CompetenceCueilleur" et cela est difficile lorsque l'environment est vide.
+
+Une solution serait alors d'introduire le fait qu'un agent ait une probabilité que ses enfants aient le même rôle que lui, cela règlerait hypothétiquement le problème du manque d'agriculteurs.
+
+\subsubsection{L'évolution de la population avec la constante "ChancesAvoirDesEnfants" égale à 1 et l'héritage des rôles.}
+
+Dans cette partie, les agents ont une probabilité (ChancesEnfantMemeRole) d'avoir un enfant ayant le même rôle. On effectue une première simulation qui ne comporte que des cueilleurs.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{pop3.png}
+\caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs.}
+\end{figure}
+
+On ne remarque aucune différence avec la simulation précédente.
+On rajoute ensuite la possibilité que certains cueilleurs deviennent des artisans.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{poparti3.png}
+\caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation ne contenant que des cueilleurs et des artisans.}
+\end{figure}
+
+On remarque que ce qui semblait être un équilibre à partir du tick 4500 n'existe plus. Les artisans étant en trop grand nombre, ces derniers n'ont pas de quoi composer leurs réserves de baies. Toute la population est touchée par la famine.
+Il convient donc de rajouter la possibilité qu'un cueilleur devienne un agriculteur.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{popartiagri3.png}
+\caption{Graphe représentant l'évolution de la population en fonction du temps dans une civilisation contenant des cueilleurs, artisans et agriculteurs}
+\end{figure}
+
+Ici encore, on ne remarque pas de changements majeurs par rapport à la modélisation précédente mise à part une augmentation de la population (1400 au lieu de 1200) mais finalement, le manque d'agriculteur se fait toujours ressentir.
+
+\subsection{Impressions sur l'utilisation de MetaCiv}
+
+MetaCiv permet de modéliser un grand nombre de situation (interactions entres molécules, sociétés, etc...) si l'on est capable de coder les actions nécessaires et la gestion des plans par des cognitons est une alternative originale à la modélisation des modèles par la subsomption. Voici quelques remarques que nous avons eu tout au long de notre modélisation: 
+\begin{itemize}
+\item L'ajout des constantes est un atout majeur pour l'utilisateur facilitant ainsi la modification des paramètres de la simulation. On peut ainsi voir en temps réel l'impact d'un paramètre sur la simulation.
+\item La sauvegarde automatique des dernières versions fonctionnelles d'un modèle permet d'économiser énormément de temps lorsque l'on travaille sur une modélisation. En effet, il n'est pas rare de changer un paramètre, sauvegarder et de ne plus être capable de lancer son modèle, le rendant alors inutilisable.
+\item L'interface de gestion des agents est un outil agréable à utiliser, on voit directement les paramètres importants de chaque agent: cognitons, plans, attributs, groupe. Il n'est cependant pas assez efficace si l'on veut observer un type d'agent particulier dans une grande population.
+\item Il serait intéressant de pouvoir sauvegarder la modélisation à un instant donné et ainsi pouvoir la relancer avec différents paramètres. En effet, lorsque l'on modélise une société avec plusieurs niveaux technologiques, on perd énormément de temps à repasser le début du modèle pour observer l'impact d'un changement.
+\item La construction d'un plan est très intuitive, on imbrique des actions les unes dans les autres. Les descriptions des actions sont claires et précises. Il n'en reste que construire un plan ou le modifier prend beaucoup de temps puisqu'il faut à chaque fois sélectionner l'action dans un menu déroulant. Une autre interface serait à envisager.
+\end{itemize}
+
+MetaCiv possède de grande possibilités d'évolution, nous sommes conscient que l'ajout de nouvelle fonctionnalité ne doit pas rendre le logiciel plus complexe mais le rendre plus simple et facile d'utilisation pour le grand public.
+
+\subsection{Les constantes de la modélisation}
+\label{constantes}
+
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|c|}
+\hline
+SeuilRamenerBaiesCueilleur & 50 \\
+\hline
+SeuilRamenerBaiesAgriculteur & 50 \\
+\hline
+SeuilNePlusRamenerDePellesAuVillage & 0 \\
+\hline
+SeuilNePlusRamenerAuVillage & 30 \\
+\hline
+SeuilEnergiePourMourir & 0 \\
+\hline
+SeuilConsommationDeBaies & 1 \\
+\hline
+SeuilBonCueilleur & 5 \\
+\hline
+SeuilFaim & 50 \\
+\hline
+NombreEnergieParBaies & 8 \\
+\hline
+NombreDeSculpturesPourDevenirUnArtisan & 5 \\
+\hline
+NombreDeSculpturesAjoutee & 1 \\
+\hline
+NombreDePelleAvantDeRamenerAuVillage & 1 \\
+\hline
+NombreDePelleAjoute & 1 \\
+\hline
+NombreDeChefParVillage & 1\\
+\hline
+NombreDeBoisParSculpture & 1 \\
+\hline
+NombreDeBoisPourFaireUnePelle & 5 \\
+\hline
+NombreDeBaiesRecolteesParTick & 5 \\
+\hline
+NombreDeBaiesRecolteesAvecPelle & 10 \\
+\hline
+NombreDeBaiesDeposeesParTick & 10 \\
+\hline
+NombreBaiesRetireesAuVillageSiFaim & 6 \\
+\hline
+CompetenceParSculpture & 1 \\
+\hline
+CompetenceParPelle & 1 \\
+\hline
+ChancesEnfantMemeRole & 30 \\
+\hline
+ChancesAvoirDesEnfants & 1\\
+\hline
+BaisseEnergieParTick & -0.1 \\
+\hline
+AgeParTick & 0.02 \\
+\hline
+\end{tabular}
+\caption{Tableau récapitulatif des constantes de la modélisation.}
+\end{figure}
+
+
+\end{document}
