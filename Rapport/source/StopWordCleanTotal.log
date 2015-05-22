@@ -1,0 +1,1810 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.20)  17 APR 2014 14:51
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**StopWordCleanTotal.tex
+(./StopWordCleanTotal.tex
+LaTeX2e <2011/06/27>
+Babel <3.9j> and hyphenation patterns for 78 languages loaded.
+
+! LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 \begin{figure}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment Verbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 \begin{Verbatim}
+                     [commandchars=\\\{\}]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 \begin{Verbatim}[
+                      commandchars=\\\{\}]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 99.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.50,0.00}{#1}
+l.100 \PY{k+kn}{import}
+                        \PY{n+nn}{os}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.00,1.00}{#1}
+l.100 \PY{k+kn}{import} \PY{n+nn}{os}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.50,0.00}{#1}
+l.101 \PY{k+kn}{import}
+                        \PY{n+nn}{collections}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.00,1.00}{#1}
+l.101 \PY{k+kn}{import} \PY{n+nn}{collections}
+                                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (95.36128pt too wide) in paragraph at lines 99--102
+[]\OT1/cmr/m/n/10 [commandchars= 
+ []
+
+
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 99--102
+\OMS/cmsy/m/n/10 fg\OT1/cmr/m/n/10 ]
+ []
+
+
+Overfull \hbox (113.36118pt too wide) in paragraph at lines 99--102
+\OT1/cmr/m/n/10 [rgb]0.00,0.50,0.00\OT1/cmr/bx/n/10 import
+ []
+
+
+Overfull \hbox (89.20294pt too wide) in paragraph at lines 99--102
+\OT1/cmr/m/n/10 [rgb]0.00,0.00,1.00\OT1/cmr/bx/n/10 os
+ []
+
+
+Overfull \hbox (113.36118pt too wide) in paragraph at lines 99--102
+\OT1/cmr/m/n/10 [rgb]0.00,0.50,0.00\OT1/cmr/bx/n/10 import
+ []
+
+
+Overfull \hbox (130.89023pt too wide) in paragraph at lines 99--102
+\OT1/cmr/m/n/10 [rgb]0.00,0.00,1.00\OT1/cmr/bx/n/10 collections 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.103 \PY{n}{stop\PYZus{}words}
+                                \PY{o}{=} \PY{p}{[} \PY{n}{word} \PY{k}{for}...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.103 \PY{n}{stop\PYZus{}words} \PY{o}{=}
+                                          \PY{p}{[} \PY{n}{word} \PY{k}{for}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.50,0.00}{#1}
+l.103 ...{o}{=} \PY{p}{[} \PY{n}{word} \PY{k}{for}
+                                                   \PY{n}{word} \PY{o+ow}{in...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.67,0.13,1.00}{#1}
+l.103 ...d} \PY{k}{for} \PY{n}{word} \PY{o+ow}{in}
+                                                   \PY{n+nb}{open}\PY{p}{(}\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.50,0.00}{#1}
+l.103 ...PY{n}{word} \PY{o+ow}{in} \PY{n+nb}{open}
+                                                  \PY{p}{(}\PY{l+s}{\PYZdq{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.103 ...PY{n+nb}{open}\PY{p}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{C:}\PY{l+s+se}{\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.103 ...n}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{C:}
+                                                  \PY{l+s+se}{\PYZbs{}\PYZbs...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.40,0.13}{#1}
+l.103 ...\PY{l+s}{C:}\PY{l+s+se}{\PYZbs{}\PYZbs{}}
+                                                  \PY{l+s}{stop\PYZus{}words...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.103 ...}\PYZbs{}}\PY{l+s}{stop\PYZus{}words.txt}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.103 ...{stop\PYZus{}words.txt}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{,} \PY{l+s}{\PYZsq{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.103 ...+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}
+                                                  \PY{l+s}{r}\PY{l+s}{\PYZsq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.103 ...}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{r}
+                                                  \PY{l+s}{\PYZsq{}}\PY{p}{)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.103 ...s}{\PYZsq{}}\PY{l+s}{r}\PY{l+s}{\PYZsq{}}
+                                                  \PY{p}{)} \PY{p}{]}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (66.52786pt too wide) in paragraph at lines 103--104
+[]\OT1/cmr/m/n/10 stop_words
+ []
+
+
+Overfull \hbox (86.6947pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/10 [rgb]0.40,0.40,0.40=
+ []
+
+
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/10 [
+ []
+
+
+Overfull \hbox (21.4167pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/10 word
+ []
+
+
+Overfull \hbox (92.91684pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/10 [rgb]0.00,0.50,0.00\OT1/cmr/bx/n/10 for
+ []
+
+
+Overfull \hbox (21.4167pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/10 word
+ []
+
+
+Overfull \hbox (88.50018pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/10 [rgb]0.67,0.13,1.00\OT1/cmr/bx/n/10 in
+ []
+
+
+Overfull \hbox (595.41829pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/10 [rgb]0.00,0.50,0.00open([rgb]0.73,0.13,0.13"[rgb]0.73,0.13,0.13
+C:[rgb]0.73,0.40,0.13\OT1/cmr/bx/n/10 \\\OT1/cmr/m/n/10 [rgb]0.73,0.13,0.13stop
+_words.txt[rgb]0.73,0.13,0.13",
+ []
+
+
+Overfull \hbox (250.11185pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/10 [rgb]0.73,0.13,0.13'[rgb]0.73,0.13,0.13r[rgb]0.73,0.13,0.13')
+ []
+
+
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/10 ] 
+ []
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.50,0.00}{#1}
+l.105 \PY{k}{def}
+                  \PY{n+nf}{deleteStopWords}\PY{p}{(}\PY{n}{in\PYZus{}path}\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.105 \PY{k}{def}
+                  \PY{n+nf}{deleteStopWords}\PY{p}{(}\PY{n}{in\PYZus{}path}\...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.00,1.00}{#1}
+l.105 \PY{k}{def} \PY{n+nf}{deleteStopWords}
+                                            \PY{p}{(}\PY{n}{in\PYZus{}path}\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.25,0.50,0.50}{#1}
+l.106 ...contenant tous les fichiers utilisateurs}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Ã in font cmti10!
+Missing character: There is no © in font cmti10!
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.107     \PY{n}{reviewNames} \PY{o}{=}
+                                        \PY{p}{(}\PY{n}{os}\PY{o}{.}\PY{n}{l...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.107 ...s} \PY{o}{=} \PY{p}{(}\PY{n}{os}\PY{o}{.}
+                                                  \PY{n}{listdir}\PY{p}{(}\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.50,0.00}{#1}
+l.108     \PY{k}{for}
+                      \PY{n}{review} \PY{o+ow}{in} \PY{n}{reviewNames}\PY{p}{:}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.67,0.13,1.00}{#1}
+l.108     \PY{k}{for} \PY{n}{review} \PY{o+ow}{in}
+                                                   \PY{n}{reviewNames}\PY{p}{:}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.25,0.50,0.50}{#1}
+l.109 ...rcours de tous les utilisateurs un Ã  un}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Ã in font cmti10!
+Missing character: There is no   in font cmti10!
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.110         \PY{n}{infile} \PY{o}{=}
+                                       \PY{n}{in\PYZus{}path} \PY{o}{+} \PY{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.110 ...PY{o}{=} \PY{n}{in\PYZus{}path} \PY{o}{+}
+                                                   \PY{n}{review}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.111         \PY{n}{outfile} \PY{o}{=}
+                                        \PY{n}{out\PYZus{}path} \PY{o}{+} \P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.111 ...Y{o}{=} \PY{n}{out\PYZus{}path} \PY{o}{+}
+                                                   \PY{n}{review}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (114.09044pt too wide) in paragraph at lines 105--112
+[]\OT1/cmr/m/n/10 [rgb]0.00,0.50,0.00\OT1/cmr/bx/n/10 def
+ []
+
+
+Overfull \hbox (234.00063pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 [rgb]0.00,0.00,1.00deleteStopWords(in_path,out_path):
+ []
+
+
+Overfull \hbox (127.61098pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 [rgb]0.25,0.50,0.50\OT1/cmr/m/it/10 #Rpertoire
+ []
+
+
+Overfull \hbox (18.39986pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 con-
+ []
+
+
+Overfull \hbox (27.59981pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 tenant
+ []
+
+
+Overfull \hbox (17.88878pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 tous
+ []
+
+
+Overfull \hbox (11.24437pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 les
+ []
+
+
+Overfull \hbox (31.30534pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 fichiers
+ []
+
+
+Overfull \hbox (17.88876pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 util-
+ []
+
+
+Overfull \hbox (15.84435pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 isa-
+ []
+
+
+Overfull \hbox (21.59428pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 teurs
+ []
+
+
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 re-
+ []
+
+
+Overfull \hbox (23.05559pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 view-
+ []
+
+
+Overfull \hbox (29.22227pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 Names
+ []
+
+
+Overfull \hbox (86.6947pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 [rgb]0.40,0.40,0.40=
+ []
+
+
+Overfull \hbox (162.9449pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 (os[rgb]0.40,0.40,0.40.listdir(in_path))
+ []
+
+
+Overfull \hbox (92.91684pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 [rgb]0.00,0.50,0.00\OT1/cmr/bx/n/10 for
+ []
+
+
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 re-
+ []
+
+
+Overfull \hbox (19.72226pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 view
+ []
+
+
+Overfull \hbox (88.50018pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 [rgb]0.67,0.13,1.00\OT1/cmr/bx/n/10 in
+ []
+
+
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 re-
+ []
+
+
+Overfull \hbox (23.05559pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 view-
+ []
+
+
+Overfull \hbox (32.00006pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 Names:
+ []
+
+
+Overfull \hbox (125.56657pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 [rgb]0.25,0.50,0.50\OT1/cmr/m/it/10 #Parcours
+ []
+
+
+Overfull \hbox (9.71104pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 de
+ []
+
+
+Overfull \hbox (17.88878pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 tous
+ []
+
+
+Overfull \hbox (11.24437pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 les
+ []
+
+
+Overfull \hbox (17.88876pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 util-
+ []
+
+
+Overfull \hbox (15.84435pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 isa-
+ []
+
+
+Overfull \hbox (21.59428pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 teurs
+ []
+
+
+Overfull \hbox (10.98883pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 un
+ []
+
+
+Overfull \hbox (10.98883pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/it/10 un
+ []
+
+
+Overfull \hbox (11.66669pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 in-
+ []
+
+
+Overfull \hbox (12.7778pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 file
+ []
+
+
+Overfull \hbox (86.6947pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 [rgb]0.40,0.40,0.40=
+ []
+
+
+Overfull \hbox (31.1112pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 in_path
+ []
+
+
+Overfull \hbox (86.6947pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 [rgb]0.40,0.40,0.40+
+ []
+
+
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 re-
+ []
+
+
+Overfull \hbox (19.72226pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 view
+ []
+
+
+Overfull \hbox (17.77782pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 out-
+ []
+
+
+Overfull \hbox (12.7778pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 file
+ []
+
+
+Overfull \hbox (86.6947pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 [rgb]0.40,0.40,0.40=
+ []
+
+
+Overfull \hbox (37.22234pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 out_path
+ []
+
+
+Overfull \hbox (86.6947pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 [rgb]0.40,0.40,0.40+
+ []
+
+
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 re-
+ []
+
+
+Overfull \hbox (19.72226pt too wide) in paragraph at lines 105--112
+\OT1/cmr/m/n/10 view 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.113         \PY{n}{fin}
+                          \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{n}{infile}\P...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.113         \PY{n}{fin} \PY{o}{=}
+                                    \PY{n+nb}{open}\PY{p}{(}\PY{n}{infile}\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.50,0.00}{#1}
+l.113 ...    \PY{n}{fin} \PY{o}{=} \PY{n+nb}{open}
+                                                  \PY{p}{(}\PY{n}{infile}\PY...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.114         \PY{n}{fout} \PY{o}{=}
+                                     \PY{n+nb}{open}\PY{p}{(}\PY{n}{outfile}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.50,0.00}{#1}
+l.114 ...   \PY{n}{fout} \PY{o}{=} \PY{n+nb}{open}
+                                                  \PY{p}{(}\PY{n}{outfile}\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.114 ...Y{n}{outfile}\PY{p}{,} \PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{w+}\PY{l+s}{\PYZd...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.114 ...}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{w+}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{)}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.114 ...}{\PYZdq{}}\PY{l+s}{w+}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{)}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.50,0.00}{#1}
+l.115         \PY{k}{for}
+                          \PY{n}{line} \PY{o+ow}{in} \PY{n}{fin}\PY{p}{:}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.67,0.13,1.00}{#1}
+l.115 ...   \PY{k}{for} \PY{n}{line} \PY{o+ow}{in}
+                                                   \PY{n}{fin}\PY{p}{:}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.00,0.50,0.00}{#1}
+l.116             \PY{k}{for}
+                              \PY{n}{word} \PY{o+ow}{in} \PY{n}{stop\PYZus{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.67,0.13,1.00}{#1}
+l.116 ...   \PY{k}{for} \PY{n}{word} \PY{o+ow}{in}
+                                                   \PY{n}{stop\PYZus{}words}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.117                 \PY{n}{line} \PY{o}{=}
+                                             \PY{l+s}{\PYZdq{}}\PY{l+s}{ }\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.117 ...\PY{n}{line} \PY{o}{=} \PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{ }\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.117 ...} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{ }
+                                                  \PY{l+s}{\PYZdq{}}\PY{o}{+...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.117 ...s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+                                                  \PY{o}{+}\PY{n}{line}\PY{o...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.117 ...{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{o}{+}
+                                                  \PY{n}{line}\PY{o}{+}\PY{l...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.117 ...}{\PYZdq{}}\PY{o}{+}\PY{n}{line}\PY{o}{+}
+                                                  \PY{l+s}{\PYZdq{}}\PY{l+s}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.117 ...+}\PY{n}{line}\PY{o}{+}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.117 ...ne}\PY{o}{+}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }
+                                                  \PY{l+s}{\PYZdq{}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.117 ...s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.118                 \PY{n}{line} \PY{o}{=}
+                                             \PY{n}{line}\PY{o}{.}\PY{n}{low...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.118 ...{n}{line} \PY{o}{=} \PY{n}{line}\PY{o}{.}
+                                                  \PY{n}{lower}\PY{p}{(}\PY{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.118 ...}\PY{n}{lower}\PY{p}{(}\PY{p}{)}\PY{o}{.}
+                                                  \PY{n}{replace}\PY{p}{(}\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.118 ...PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{.}\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.118 ...ce}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{.}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.118 ...s}{\PYZdq{}}\PY{l+s}{.}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{,}\PY{l+s}{\PYZdq{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.118 ...l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{ }\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.118 ...{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.118 ...s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{)}\PY{o}{.}\PY{n}{r...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.118 ...s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}
+                                                  \PY{n}{replace}\PY{p}{(}\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.118 ...PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{,}\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.118 ...ce}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{,}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.118 ...s}{\PYZdq{}}\PY{l+s}{,}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{,}\PY{l+s}{\PYZdq{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.118 ...l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{ }\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.118 ...{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.118 ...s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{)}\PY{o}{.}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.118 ...s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.119 ...PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{;}\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.119 ...ce}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{;}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.119 ...s}{\PYZdq{}}\PY{l+s}{;}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{,}\PY{l+s}{\PYZdq{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.119 ...l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{ }\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.119 ...{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.119 ...s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{)}\PY{o}{.}\PY{n}{r...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.119 ...s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}
+                                                  \PY{n}{replace}\PY{p}{(}\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.119 ...PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{\PYZsq{}}\PY{l+s}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.119 ...p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZsq{}}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.119 ...dq{}}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{,}\PY{l+s}{\PYZdq{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.119 ...l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.119 ...p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{)}\PY{o}{.}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.119 ...dq{}}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.120 ...PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{!}\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.120 ...ce}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{!}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.120 ...s}{\PYZdq{}}\PY{l+s}{!}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{,}\PY{l+s}{\PYZdq{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.120 ...l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{ }\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.120 ...{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.120 ...s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{)}\PY{o}{.}\PY{n}{r...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.120 ...s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}
+                                                  \PY{n}{replace}\PY{p}{(}\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.120 ...PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{(}\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.120 ...ce}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{(}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.120 ...s}{\PYZdq{}}\PY{l+s}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{,}\PY{l+s}{\PYZdq{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.120 ...l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{ }\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.120 ...{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.120 ...s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{)}\PY{o}{.}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.120 ...s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.121 ...PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{:}\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.121 ...ce}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{:}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.121 ...s}{\PYZdq{}}\PY{l+s}{:}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{,}\PY{l+s}{\PYZdq{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.121 ...l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{ }\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.121 ...{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.121 ...s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{)}\PY{o}{.}\PY{n}{r...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.121 ...s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}
+                                                  \PY{n}{replace}\PY{p}{(}\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.121 ...PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{)}\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.121 ...ce}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{)}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.121 ...s}{\PYZdq{}}\PY{l+s}{)}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{,}\PY{l+s}{\PYZdq{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.121 ...l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{ }\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.121 ...{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.121 ...s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{)}\PY{o}{.}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.121 ...s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.122 ...PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{\PYZsh{}}\PY{l+s}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.122 ...p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZsh{}}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.122 ...dq{}}\PY{l+s}{\PYZsh{}}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{,}\PY{l+s}{\PYZdq{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.122 ...l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{ }\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.122 ...{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.122 ...s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{)}\PY{o}{.}\PY{n}{r...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.122 ...s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}
+                                                  \PY{n}{replace}\PY{p}{(}\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.122 ...PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{/}\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.122 ...ce}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{/}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.122 ...s}{\PYZdq{}}\PY{l+s}{/}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{,}\PY{l+s}{\PYZdq{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.122 ...l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{ }\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.122 ...{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.122 ...s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{)}\PY{p}{;}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.123                 \PY{n}{line} \PY{o}{=}
+                                             \PY{n}{line}\PY{o}{.}\PY{n}{rep...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.40,0.40,0.40}{#1}
+l.123 ...{n}{line} \PY{o}{=} \PY{n}{line}\PY{o}{.}
+                                                  \PY{n}{replace}\PY{p}{(}\P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.123 ...PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s+se}{\PYZbs{}n}\PY{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.40,0.13}{#1}
+l.123 ...}\PY{l+s}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.123 ...}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{,}\PY{l+s}{\PYZdq{}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.123 ...l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}
+                                                  \PY{l+s}{ }\PY{l+s}{\PYZdq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.123 ...{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }
+                                                  \PY{l+s}{\PYZdq{}}\PY{p}{)}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\PY@tc #1->\textcolor 
+                      [rgb]{0.73,0.13,0.13}{#1}
+l.123 ...s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}
+                                                  \PY{p}{)}
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 124 strings out of 493308
+ 1278 string characters out of 6137816
+ 54856 words of memory out of 5000000
+ 3678 multiletter control sequences out of 15000+600000
+ 4294 words of font info for 16 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 18i,0n,15p,424b,136s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+!  ==> Fatal error occurred, no output PDF file produced!

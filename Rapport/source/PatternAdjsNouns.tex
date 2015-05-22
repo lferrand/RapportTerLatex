@@ -1,0 +1,40 @@
+\begin{Verbatim}[frame=single,commandchars=\\\{\}]
+\PY{k+kn}{import} \PY{n+nn}{nltk}
+\PY{k+kn}{import} \PY{n+nn}{os}
+
+\PY{n}{pattern\PYZus{}grammar} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{CHUNK: \PYZob{}\PYZlt{}JJ.*\PYZgt{}+\PYZlt{}NN.*\PYZgt{}\PYZcb{}}\PY{l+s}{\PYZdq{}}
+
+\PY{k}{def} \PY{n+nf}{ie\PYZus{}preprocess}\PY{p}{(}\PY{n}{document}\PY{p}{)}\PY{p}{:}
+
+    \PY{n}{sentences} \PY{o}{=} \PY{n}{nltk}\PY{o}{.}\PY{n}{sent\PYZus{}tokenize}\PY{p}{(}\PY{n}{document}\PY{p}{)}
+    \PY{n}{sentences} \PY{o}{=} \PY{p}{[}\PY{n}{nltk}\PY{o}{.}\PY{n}{word\PYZus{}tokenize}\PY{p}{(}\PY{n}{sent}\PY{p}{)} \PY{k}{for} \PY{n}{sent} \PY{o+ow}{in} \PY{n}{sentences}\PY{p}{]}
+    \PY{n}{taggers} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+    \PY{k}{for} \PY{n}{sent} \PY{o+ow}{in} \PY{n}{sentences}\PY{p}{:}
+        \PY{n}{taggers}\PY{o}{.}\PY{n}{extend}\PY{p}{(}\PY{n}{nltk}\PY{o}{.}\PY{n}{pos\PYZus{}tag}\PY{p}{(}\PY{n}{sent}\PY{p}{)}\PY{p}{)}
+
+    \PY{n}{parser} \PY{o}{=} \PY{n}{nltk}\PY{o}{.}\PY{n}{RegexpParser}\PY{p}{(}\PY{n}{pattern\PYZus{}grammar}\PY{p}{)}
+    \PY{n}{tree} \PY{o}{=} \PY{n}{parser}\PY{o}{.}\PY{n}{parse}\PY{p}{(}\PY{n}{taggers}\PY{p}{)}
+    \PY{n}{data} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}\PY{p}{;}
+    \PY{k}{for} \PY{n}{subtree} \PY{o+ow}{in} \PY{n}{tree}\PY{o}{.}\PY{n}{subtrees}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n}{subtree}\PY{o}{.}\PY{n}{node} \PY{o}{==} \PY{l+s}{\PYZsq{}}\PY{l+s}{CHUNK}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+            \PY{k}{for} \PY{p}{(}\PY{n}{v}\PY{p}{,}\PY{n}{t}\PY{p}{)} \PY{o+ow}{in} \PY{n}{subtree}\PY{o}{.}\PY{n}{leaves}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+                \PY{n}{data} \PY{o}{+}\PY{o}{=} \PY{n}{v} \PY{o}{+} \PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{;}
+
+    \PY{k}{return} \PY{n}{data}
+
+\PY{k}{def} \PY{n+nf}{preprocesing}\PY{p}{(}\PY{n}{inpath}\PY{p}{,}\PY{n}{outpath}\PY{p}{)}\PY{p}{:}
+    \PY{n}{array\PYZus{}files} \PY{o}{=} \PY{p}{[} \PY{n}{f} \PY{k}{for} \PY{n}{f} \PY{o+ow}{in} \PY{n}{os}\PY{o}{.}\PY{n}{listdir}\PY{p}{(}\PY{n}{inpath}\PY{p}{)} 
+            \PY{k}{if} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{isfile}\PY{p}{(}\PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{inpath}\PY{p}{,}\PY{n}{f}\PY{p}{)}\PY{p}{)} \PY{p}{]}
+    \PY{k}{for} \PY{n+nb}{file} \PY{o+ow}{in} \PY{n}{array\PYZus{}files}\PY{p}{:}
+        \PY{n}{buff} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}
+        \PY{k}{for} \PY{n}{line} \PY{o+ow}{in} \PY{n+nb}{open}\PY{p}{(}\PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{inpath}\PY{p}{,}\PY{n+nb}{file}\PY{p}{)}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{r}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+            \PY{n}{buff} \PY{o}{+}\PY{o}{=}  \PY{n}{line}\PY{p}{;}
+
+        \PY{n+nb}{file} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{outpath}\PY{p}{,}\PY{n+nb}{file}\PY{p}{)}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{w+}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n+nb}{file}\PY{o}{.}\PY{n}{write}\PY{p}{(}\PY{n}{ie\PYZus{}preprocess}\PY{p}{(}\PY{n}{buff}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{file}\PY{o}{.}\PY{n}{close}\PY{p}{(}\PY{p}{)}
+
+\PY{c}{\PYZsh{} Test to execute the pattern grammar: Adjetive+ Noun(singular/plural)}
+\PY{n}{preprocesing}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{/Users/user/.../AVIS\PYZus{}HOTELS\PYZus{}Tripadvisor2/Moyen/}\PY{l+s}{\PYZdq{}}\PY{p}{,}
+    \PY{l+s}{\PYZdq{}}\PY{l+s}{/Users/user/.../AVIS\PYZus{}HOTELS\PYZus{}Tripadvisor2/Moyen\PYZus{}CLEAN/}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
