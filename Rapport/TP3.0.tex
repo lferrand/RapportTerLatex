@@ -32,12 +32,80 @@ colorlinks=true}
            text centered,
            },
 }
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{titlesec, blindtext, color}
+\usepackage[left=2.5cm]{geometry}
+\usepackage{fancyvrb}
 
-\title{TER 2015 - Rapport de modélisation}
-\author{Bruno Y., Lionel F., François S., Alexandre V.}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+% Email
+\catcode`\_=11\relax
+\newcommand\email[1]{\_email #1\q_nil}
+\def\_email#1@#2\q_nil{%
+  \href{mailto:#1@#2}{{\emailfont #1\emailampersat #2}}
+}
+\newcommand\emailfont{\normalsize}
+\newcommand\emailampersat{{\color{black}\small@}}
+\catcode`\_=8\relax  
+
+% brace of right for inequalities
+\newenvironment{rcases}
+  {\left.\begin{aligned}}
+  {\end{aligned}\right\rbrace}
+  
+\include{source/configuration_style}
 
 \begin{document}
-\maketitle
+\begin{titlepage}
+\begin{center}
+
+\textsc{\LARGE Université Montpellier II}\\[1.5cm]
+
+\textsc{\LARGE Sciences et Techniques du Languedoc }\\[1cm]
+
+\includegraphics[width=0.6\textwidth]{img/logo}~\\[1cm]
+
+\textsc{\Large Rapport de Travail Encadré de Recherche}\\[0.5cm]
+
+% horizontal line
+\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} 
+\rule{\textwidth}{0.4pt}\\[\baselineskip] 
+% Title
+{ \huge \bfseries METACIV: DU CHASSEUR-CUEILLEUR AUX EMPIRES. \\[0.4cm] }
+% horizontal line
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} 
+\rule{\textwidth}{1.6pt}\\[\baselineskip] 
+
+% Author and supervisor
+\textbf{Auteurs}:\\[0.5cm]  
+\begin{tabular}{cc}
+   \textsc{Bruno YUN} & \textsc{Lionel FERRAND}  \\
+   \email{Bruno.yun@etud.univ-montp2.fr} & \email{Lionel.ferrand@etud.univ-montp2.fr}  \\
+   \textsc{François SURO} & \textsc{Alexandre VALIERE}  \\
+   \email{Francois.suro@etud.univ-montp2.fr} & \email{Alexandre.valiere@etud.univ-montp2.fr}  \\
+\end{tabular} \\[1cm] 
+\textbf{Encadré par}: \\
+\textsc{Jacques Ferber, Mathieu Lafourcade}\\[0.5cm] 
+\vfill
+% Bottom of the page
+{\large \today}
+\end{center}
+\end{titlepage}
+
 
 \section*{Introduction}
 

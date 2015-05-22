@@ -1,0 +1,43 @@
+\begin{Verbatim}[frame=single,commandchars=\\\{\}]
+\PY{k+kd}{public} \PY{k+kd}{class} \PY{n+nc}{Lemmatisation}\PY{o}{\PYZob{}}
+    \PY{c+c1}{//....}
+    \PY{k+kd}{public} \PY{n}{List}\PY{o}{\PYZlt{}}\PY{n}{TreeTaggerWordWrapper}\PY{o}{\PYZgt{}} \PY{n+nf}{execution}\PY{o}{(}\PY{n}{String} \PY{n}{pathFile}\PY{o}{)} 
+    \PY{k+kd}{throws} \PY{n}{IOException}\PY{o}{,} \PY{n}{TreeTaggerException} \PY{o}{\PYZob{}}
+        \PY{n}{TreeTaggerWrapper} \PY{n}{taggerWrapper} \PY{o}{=} \PY{o}{.}\PY{o}{.}\PY{o}{.}\PY{o}{.}
+        \PY{k+kd}{final} \PY{n}{List}\PY{o}{\PYZlt{}}\PY{n}{TreeTaggerWordWrapper}\PY{o}{\PYZgt{}} \PY{n}{wordWrappers} \PY{o}{=} \PY{o}{.}\PY{o}{.}\PY{o}{.}\PY{o}{.}
+        \PY{k}{try} \PY{o}{\PYZob{}}
+            \PY{n}{taggerWrapper}\PY{o}{.}\PY{n+na}{setModel}\PY{o}{(}\PY{n}{Constants}\PY{o}{.}\PY{n+na}{TREETAGGER\PYZus{}LANGUAGE}\PY{o}{)}\PY{o}{;}
+            \PY{n}{taggerWrapper}\PY{o}{.}\PY{n+na}{setHandler}\PY{o}{(}\PY{k}{new} \PY{n}{TokenHandler}\PY{o}{\PYZlt{}}\PY{n}{String}\PY{o}{\PYZgt{}}\PY{o}{(}\PY{o}{)} \PY{o}{\PYZob{}}
+                \PY{k+kd}{public} \PY{k+kt}{void} \PY{n+nf}{token}\PY{o}{(}\PY{n}{String} \PY{n}{token}\PY{o}{,} \PY{n}{String} \PY{n}{tag}\PY{o}{,} \PY{n}{String} \PY{n}{lemma}\PY{o}{)} \PY{o}{\PYZob{}}
+                    \PY{n}{TreeTaggerWordWrapper} \PY{n}{word} \PY{o}{=} 
+                        \PY{k}{new} \PY{n+nf}{TreeTaggerWordWrapper}\PY{o}{(}\PY{n}{token}\PY{o}{,} \PY{n}{tag}\PY{o}{,} \PY{n}{lemma}\PY{o}{)}\PY{o}{;}
+                    \PY{n}{wordWrappers}\PY{o}{.}\PY{n+na}{add}\PY{o}{(}\PY{n}{word}\PY{o}{)}\PY{o}{;}
+                \PY{o}{\PYZcb{}}
+            \PY{o}{\PYZcb{}}\PY{o}{)}\PY{o}{;}
+            \PY{n}{taggerWrapper}\PY{o}{.}\PY{n+na}{process}\PY{o}{(}\PY{n}{readLinesOfFile}\PY{o}{(}\PY{n}{pathFile}\PY{o}{)}\PY{o}{)}\PY{o}{;}
+        \PY{o}{\PYZcb{}} \PY{k}{finally} \PY{o}{\PYZob{}}
+            \PY{n}{taggerWrapper}\PY{o}{.}\PY{n+na}{destroy}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+        \PY{o}{\PYZcb{}}
+        \PY{k}{return} \PY{n}{wordWrappers}\PY{o}{;}
+    \PY{o}{\PYZcb{}}
+    \PY{c+c1}{//.....}
+\PY{o}{\PYZcb{}}
+
+\PY{k+kd}{public} \PY{k+kd}{class} \PY{n+nc}{TreeTaggerWordWrapper} \PY{o}{\PYZob{}}
+    \PY{c+c1}{//.....}
+    \PY{k+kd}{public} \PY{n+nf}{TreeTaggerWordWrapper}\PY{o}{(}\PY{n}{String} \PY{n}{word}\PY{o}{,} \PY{n}{String} \PY{n}{tag}\PY{o}{,} \PY{n}{String} \PY{n}{lemma}\PY{o}{)} \PY{o}{\PYZob{}}
+        \PY{c+c1}{//....}
+        \PY{n}{preprocessing}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+    \PY{o}{\PYZcb{}}
+
+    \PY{k+kd}{private} \PY{k+kt}{void} \PY{n+nf}{preprocessing}\PY{o}{(}\PY{o}{)}\PY{o}{\PYZob{}}
+        \PY{n}{String} \PY{o}{[}\PY{o}{]}\PY{n}{tags} \PY{o}{=} \PY{k}{this}\PY{o}{.}\PY{n+na}{tag}\PY{o}{.}\PY{n+na}{split}\PY{o}{(}\PY{l+s}{\PYZdq{}:\PYZdq{}}\PY{o}{)}\PY{o}{;}
+        \PY{k}{if} \PY{o}{(}\PY{n}{tags}\PY{o}{.}\PY{n+na}{length} \PY{o}{\PYZgt{}} \PY{l+m+mi}{1}\PY{o}{)}\PY{o}{\PYZob{}}
+            \PY{k}{this}\PY{o}{.}\PY{n+na}{tag} \PY{o}{=} \PY{n}{tags}\PY{o}{[}\PY{l+m+mi}{0}\PY{o}{]}\PY{o}{;} \PY{k}{this}\PY{o}{.}\PY{n+na}{subTag} \PY{o}{=} \PY{n}{tags}\PY{o}{[}\PY{l+m+mi}{1}\PY{o}{]}\PY{o}{;}
+        \PY{o}{\PYZcb{}}
+        \PY{k}{this}\PY{o}{.}\PY{n+na}{word} \PY{o}{=} \PY{o}{(}\PY{k}{this}\PY{o}{.}\PY{n+na}{lemma}\PY{o}{.}\PY{n+na}{equals}\PY{o}{(}\PY{l+s}{\PYZdq{}\PYZlt{}unknown\PYZgt{}\PYZdq{}}\PY{o}{)} \PY{o}{?} \PY{k}{this}\PY{o}{.}\PY{n+na}{word}\PY{o}{)} \PY{o}{:} 
+            \PY{o}{(}\PY{o}{!}\PY{n}{lemma}\PY{o}{.}\PY{n+na}{contains}\PY{o}{(}\PY{l+s}{\PYZdq{}|\PYZdq{}}\PY{o}{)} \PY{o}{?} \PY{k}{this}\PY{o}{.}\PY{n+na}{lemma} \PY{o}{:} \PY{k}{this}\PY{o}{.}\PY{n+na}{lemma}\PY{o}{.}\PY{n+na}{split}\PY{o}{(}\PY{l+s}{\PYZdq{}\PYZbs{}\PYZbs{}|\PYZdq{}}\PY{o}{)}\PY{o}{[}\PY{l+m+mi}{1}\PY{o}{]}\PY{o}{)}\PY{o}{;}
+     \PY{o}{\PYZcb{}}  
+    \PY{c+c1}{//.....}
+\PY{o}{\PYZcb{}}
+\end{Verbatim}
