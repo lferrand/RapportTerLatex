@@ -1208,44 +1208,43 @@ Dans ce modèle, on réalise une émergence de civilisation à travers une société d
 
 \subsubsection{Schéma cognitif}
 
-Un schéma cognitif est ................. . C'est une nouvelle fonctionnalité permettant notamment de:
+Un schéma cognitif est une nouvelle classe qui englobe tout ce qui relève du comportement des agents. L'implémentation d'une telle classe permet d'introduire plusieurs nouvelles fonctionnalités:
 \begin{itemize}
 \item Mettre en concurrence plusieurs civilisations ayant un fonctionnement différent dans le cadre d'un jeu ou d'une évaluation de modèles.
 \item Modéliser les relations entre ces différentes civilisation, par exemple l'évolution des populations d'animaux sauvages à l'arrivée de l'homme.
+\item Modéliser différents comportements au sein même d'un modèle tout en conservant un environment défini.
 \end{itemize}
-
-%Ranger sa autre part
-Manipuler ces schémas cognitifs comme des éléments du modèle et non plus comme le modèle lui-même (cloner le schéma pour essayer différentes solutions , importer des schémas d'autres modèles ..., le tout en conservant un environnement défini)
-pour ce faire nous avons crée une classe SchémaCognitif et nous y avons déporté tout ce qui relèves du comportement des agents.
 	
 \begin{figure}[H]
 \center
-\includegraphics[width=13cm]{img/uml-SC.jpg}
-\caption{Diagramme simplifié du programme}
+\includegraphics[width=14cm]{img/uml-SC.jpg}
+\caption{Diagramme simplifié du programme avec l'introduction du schéma cognitif.}
 \end{figure}
 
-l'esprit fait toujours appel à la civilisation pour s'alimenter en plans et cognitons , mais nous avons changé le code des accesseurs pour qu'ils renvoient les données du schéma cognitif contenu dans la civilisation
+Pour implémenter cette architecture de schéma cognitifs, nous avons procédés en trois étapes :
+\begin{itemize}
+\item Nous avons changé le code des accesseurs de la classe "Civilisation" pour qu'ils renvoient les données du schéma cognitif contenu dans la civilisation. C'est à dire que que la classe "Esprit" d'un agent fait toujours appel à la classe "Civilisation" pour s'alimenter en plans et cognitons.
 
 \begin{figure}[H]
 \center
-\includegraphics[width=13cm]{img/Dev-Civ-getPlan.png}
-\caption{exemple d'un accès à la liste des plans disponibles, cerveau est la référence vers le schéma cognitif}
+\includegraphics[width=8cm]{img/Dev-Civ-getPlan.png}
+\caption{Exemple d'un accès à la liste des plans disponibles. "Cerveau" est la référence vers le schéma cognitif}
 \end{figure}
 
-Pour permettre la gestion de ces schémas nous avons mis au point ce que nous appelons des fabriques , qui sont des classes à mi chemin entre le pattern fabrique abstraite et singleton. ces fabriques génèrent des objets Schémas cognitif et civilisation par des méthodes statiques et les conservent dans une liste statique. Nous pouvons créer de nouveaux objets , les charger à partir d?un chemin , les sauvegarder et les cloner en les renommant .
-
-enfin , nous avons crée les barres d'outils pour gérer l'édition des schémas cognitifs
+\item Nous avons mis au point ce que nous appelons des fabriques pour permettre la gestion de ces schémas. Ces fabriques sont des classes à mi-chemin entre le pattern fabrique abstraite et singleton. Elles génèrent des objets schémas cognitifs et civilisation par des méthodes statiques et les conservent dans une liste statique. Nous pouvons maintenant créer de nouveaux objets, les charger à partir d'un répertoire, les sauvegarder et les cloner en les renommant .
+\item Nous avons modifié l'interface de MetaCiv pour rajouter les barres d'outils permettant de gérer l'édition des schémas cognitifs
+\end{itemize}
 
 \begin{figure}[H]
 \center
-\includegraphics[width=13cm]{img/interface_schema_cognitif-1.png}
-\caption{barre d'outil permettant de sélectionner le schéma cognitif en cours d'édition , avec des options de création , d'import et de supression}
+\includegraphics[width=14cm]{img/interface_schema_cognitif-1.png}
+\caption{Barre d'outils permettant de sélectionner, créer, importer ou supprimer un schéma cognitif.}
 \end{figure}
 
 \begin{figure}[H]
 \center
-\includegraphics[width=5cm]{img/interface_schema_cognitif-2.png}
-\caption{fenêtre de création d'un nouveau schéma cognitif , possibilité de cloner un schéma existant en le renommant}
+\includegraphics[width=6cm]{img/interface_schema_cognitif-2.png}
+\caption{Fenêtre de création d'un nouveau schéma cognitif , possibilité de cloner un schéma existant en le renommant}
 \end{figure}
 
 \begin{figure}[H]
