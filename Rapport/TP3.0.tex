@@ -110,9 +110,50 @@ colorlinks=true}
 
 \section{Présentation de la plateforme MetaCiv}
 
+Il existe aujourd?hui de nombreuses plateformes de modØlisation de syst?mes complexes se basant sur la programmation par agents. Dans l?Øquipe de travail SMILE, plusieurs plateformes ont dØja ØtØ mises au point, Turtlekit [Mic02] et Madkit [GFM00] largement inspirØes des plateformes basØes sous StarLogo (http ://education.mit.edu/starlogo/). Nous travaillons depuis plus d?une annØe sur un plateforme spØci que dØnommØe Metaciv dont nous allons rappeler tr?s rapidement les principes et concepts.
+
+
 \subsection{Principe}
 
+Metaciv est une plateforme de modØlisation par agents dØdiØe la conception de mod?les relatifs des syst?mes complexes (biologiques, environnementaux, etc...). Elle est basØe sur les fonctionnalitØs de la plateforme Turtlekit dØj existante. Elle bØnØ cie naturellement des fonctionnalitØs des plateformes prØcØdentes, notamment du concept Agent Group Role (AGR). De plus, elle int?gre les principes dits des quadrants [FST09]\\
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {img/quadrants.png}
+\caption{Quadrants.}
+\end{figure}
+
+
+Un syst?me multi-agents selon le principe des quadrants est per u comme un ensemble de composants organisØs selon deux axes individuel-collectif d?une part et interioritØ-exterioritØ d?autre part. Ainsi le quadrant I-I dØnit ce qui constitue le fonctionnement interne de l?agent, sa mani?re de penser, ses idØes, ses croyances. Le quadrant E-I quand lui, dØ nit l?image que donne l?agent au monde, savoir son comportement, ses actions, ses possessions, son apparence. Ensuite, le quadrant I-C correspond aux idØes partagØes par un groupe d?individus, les normes et codes s?appliquant ce groupe, les valeurs communes et connaissances partagØes. En n, le quadrant E-C s?applique tout ce qui donne une reprØsentation de groupe sociaux, savoir, par exemple, les b timents publics, les monuments, les infrastructures. Metaciv est donc un framework de modØlisation de sociØtØ humaines dans lesquelles l?espace, la culture et la structure sociale jouent un r le important. On peut ainsi faire une reprØsentation globale de Metaciv en reprenant les quadrants de MASQ sous la forme MASQ-ML le langage de modØlisation de MASQ [FST09].
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {img/MetacivMASQL.jpg}
+\caption{Metaciv exprimØ en MASQ-ML.}
+\end{figure}
+
 \subsection{Concepts}
+
+Comme vu prØcØdemment Metaciv est une plateforme de simulation par agents dans laquelle nous postulons que chaque agent poss?de une cognition . De plus ces agents Øvoluent au sein d?un environnement Øvolutif qui impacte leurs dØcisions. Pour cela, dans la plateforme, chaque agent poss?de un "esprit" qui concentre les perceptions, la mØmoire (qui enregistre les actions e ectuØes ainsi que les in uences subies) ainsi qu?une facultØ de dØcision.
+
+La gure 1 rØsume le fonctionnement actuel et les extensions que nous souhaitons y apporter. Tout agent poss?de donc un esprit qui est un agrØgat de cognitons. Il dØcide d?exØcuter un plan, qui est un ensemble d?actions.
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {img/exdecision.PNG}
+\caption{Exemple de prise de décision.}
+\end{figure}
+
+Prenons un petit exemple (cf. Figure 4), dans une sociØtØ d?agents agriculteurs le modØlisateur prØvoit deux plans d?actions possibles, Cultiver et Chasser, les cognitons CompØtence Agriculture, Faim, et CompØtence chasse, ainsi que les liens entre cognitons et plans.
+Pour pouvoir exØcuter ces plans il faut disposer des cognitons CompØtence agriculture ou CompØtence chasse : ceci est exprimØ sous la forme de liens conditionnels. Les liens pondØrØs sont rajoutØs entre cognitons et plans d?actions pour exprimer l?in uence d?un cogniton sur un plan (un poids nØgatif traduisant un degrØ d?inhibition et un poids positif un degrØ de facilitation). Un agent qui poss?de les trois cognitons de la gure ci dessus dØcidera de Cultiver ou Chasser apr?s Øvaluation des liens pondØrØs ici Cultiver 7 et Chasser 12. Le choix entre ces deux plans est en fait dØpendant d?une randomisation prenant en compte les poids calculØs prØcØdemment, ceci a n de pallier les comportements majoritaires. Nous avons abstrait le schØma de fonctionnement de Metaciv (cf. Figure 5), en prØsentant les concepts existants et ceux qui constitueront les extensions visØes.
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {img/fonctionnementMetaCiv.png}
+\caption{Schéma de fonctionnement de MetaCiv.}
+\end{figure}
+
+Nous retrouvons donc le fait qu?un agent dispose d?un esprit constituØ de cognitons. Ceux ci sont liØs aux plans que peut exØcuter l?agent par des liens conditionnels ou d?in uences. Les actions prØl?vent des ressources dans les patchs et in uent sur les cognitons de l?agent. Les perceptions de l?environnement se font aussi gr ce aux cognitons. Les extensions sur lesquelles nous allons rØ Øchir, la lueur de la bibliographie, concernent le niveau groupe et la transmission de la connaissance communautaire d?une part, et d?autre part les relations spatio temporelles au niveau de l?environnement (celui ci ne se cantonnant plus au r le de support).
 
 \section{Modélisations de civilisations}
 
@@ -128,12 +169,11 @@ Les agents sont vus sous l'angle \textit{intériorité }comme dotés d'un esprit (e
 Les cognitions vont influencer les plans, de manière pondérée (selon l'importance que l'utilisateur leur accorde), de manière positive (renforcement) ou négative (affaiblissement). 
 L'environnement ainsi que les actions effectuées peuvent affecter les caractéristiques d'un agent et de ce fait influer sur ses cognitons. De même les actions peuvent directement ou indirectement via les objets ajouter ou influer les cognitons. 
 
-
 \subsubsection{Notion de cognitons}
 \label{cognitons}
 
-Les agents étant amenés à  devoir opérer des choix dans un large panel d'actions ceux ci doivent donc disposer de capacité de réflexion et de choix suffisamment développée. 
-Dans cette optique, l'idée retenue consiste à  pondérer les différentes actions possibles pour les agents, et  ce afin de les faire choisir en fonction de ces poids. 
+Les agents étant amenés à  devoir opérer des choix dans un large panel d'actions ceux ci doivent donc disposer de capacité de réflexion et de choix suffisamment développée. 
+Dans cette optique, l'idée retenue consiste à  pondérer les différentes actions possibles pour les agents, et  ce afin de les faire choisir en fonction de ces poids. 
 Les poids des actions sont déterminés par différents facteurs : ce que voient, pensent, croient les agents... L'ensemble de ces facteurs est regroupé sous le terme de \textit{cogniton} dans ce projet, en reprenant le néologisme proposé par J. Ferber. Le cogniton est donc une "unité de pensée" qui influe sur les choix de l'agent. 	
 Les cognitons peuvent se cumuler, et ne sont donc pas des "états" mentaux. En fait, c'est la somme des cognitons qui représente réellement l'état mental de l'agent.
 
@@ -223,17 +263,17 @@ Les cognitons peuvent avoir un "trigger". Il s'agit d'un dispositif permettant d
 	\textit{Remarque : la catégorisation, pour l'instant, change la couleur d'un cogniton dans l'interface de MetaCiv et permet de mieux repérer le type du cogniton.}
 \begin{itemize}
 
-\item 	Les\textit{ Skills} (signifiant compétences en anglais) représentent les compétences, savoir-faire et connaissances techniques ou scientifiques des agents. Comme exemples de ce type de cognitons, on peut proposer : Agriculture, Navigation, Fabrication d'outils... La plupart des skills ont la particularité d'être transmissibles d'un agent à  l'autre, d'être permanents (ils ne disparaissent pas une fois acquis) et d'être des pré-requis indispensables à  certaines actions. 
+\item 	Les\textit{ Skills} (signifiant compétences en anglais) représentent les compétences, savoir-faire et connaissances techniques ou scientifiques des agents. Comme exemples de ce type de cognitons, on peut proposer : Agriculture, Navigation, Fabrication d'outils... La plupart des skills ont la particularité d'être transmissibles d'un agent à  l'autre, d'être permanents (ils ne disparaissent pas une fois acquis) et d'être des pré-requis indispensables à  certaines actions. 
 	
 	Par exemple, même si d'autres cognitons l'influencent, un agent ne peut pas fabriquer un outil s'il ne dispose pas de Fabrication d'outils. Enfin, les skills sont héréditaires. Ici, on parle de l'hérédité au sens de la transmission entre les générations, ce qui représente de manière simple l'apprentissage et la transmission des connaissances.
 
 \item 	Les \textit{Traits} représentent les spécificités individuelles de l'agent, ses traits de caractères, ses façons d'être. Des exemples possibles de ce type de cognitons sont : Ouvert, Renfermé, Paresseux...
 	
-	Cette catégorie n'est pas la plus importante du point de vue de la simulation et du réalisme, mais est un outil simple pour faire varier le comportement des agents si l'on veut envisager des scénarii spécifiques (des civilisations très agressives, des agents peu travailleurs, etc...). Les traits ne sont pas transmissibles d'agents à  agents, sauf de manière héréditaire occasionnellement, ce qui représente l'imitation et l'éducation.
+	Cette catégorie n'est pas la plus importante du point de vue de la simulation et du réalisme, mais est un outil simple pour faire varier le comportement des agents si l'on veut envisager des scénarii spécifiques (des civilisations très agressives, des agents peu travailleurs, etc...). Les traits ne sont pas transmissibles d'agents à  agents, sauf de manière héréditaire occasionnellement, ce qui représente l'imitation et l'éducation.
 
 \item 	Les \textit{Beliefs} (Croyances en anglais) représentent ce que l'agent sait ou croit savoir de son environnement et de lui même. Cette catégorie est vaste, et peut regrouper des cognitons aussi variés que : Je porte une pioche, Nous sommes en guerre avec la civilisation 3, Je possède un champ. Ces cognitons ne sont généralement pas transmissibles entre agents, et ne sont pas héréditaires.
 
-\item 	Les \textit{Percepts} représentent ce que l'agent voit, entend ou ressent (physiquement) au moment considéré. Des exemples de percepts sont : J'ai faim, Un ennemi est proche, Je suis près de l'eau. Ce type de cogniton est constamment retiré ou ajouté, contrairement aux autres types qui sont plus stables. Les percepts ne sont pas transmissibles, ils sont propres à  l'agent considéré.
+\item 	Les \textit{Percepts} représentent ce que l'agent voit, entend ou ressent (physiquement) au moment considéré. Des exemples de percepts sont : J'ai faim, Un ennemi est proche, Je suis près de l'eau. Ce type de cogniton est constamment retiré ou ajouté, contrairement aux autres types qui sont plus stables. Les percepts ne sont pas transmissibles, ils sont propres à  l'agent considéré.
 
 \item 	Les \textit{Mèmes} sont des croyances ou comportements culturels transmissibles. Ainsi, les mèmes pourraient être : Je crois que l'argent est une fin en soi, je crois en l'existence d'un dieu, je crois que la démocratie est une bonne chose. Typiquement, les opinions religieuses et politiques sont des mèmes. Par définition, les mèmes sont transmissibles, et ils sont potentiellement héréditaires.
 \end{itemize}
@@ -305,9 +345,9 @@ En premier lieu, l'environnement dans lequel nos agents se déplacent est un espa
 \hline 
 \text{Terre Sterile} \includegraphics[height=0.5 cm]{img/sterile.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Oui} \\
 \hline 
-\text{Prairie} \includegraphics[height=0.5 cm]{img/prairie.png}& \text{Baies} & \text{Bois} & 10 & 1 & 0.2 & 0 & \text{Oui} \\
+\text{Prairie} \includegraphics[height=0.5 cm]{img/prairie.png}& \text{Baies} & \text{Bois} & 10 & 1 & 0.2 & 0 & \text{Oui} \\
 \hline
-\text{Forêts} \includegraphics[height=0.5 cm]{img/foret.png}& \text{Baies} & \text{Bois} & 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
+\text{Forêts} \includegraphics[height=0.5 cm]{img/foret.png}& \text{Baies} & \text{Bois} & 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
 \hline
 \end{tabular}
 \caption{Tableau récapitulatif des patches et des ressources.}
