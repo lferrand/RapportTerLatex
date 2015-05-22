@@ -85,7 +85,7 @@ colorlinks=true}
 \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} 
 \rule{\textwidth}{0.4pt}\\[\baselineskip] 
 % Title
-{ \huge \bfseries METACIV: DU CHASSEUR-CUEILLEUR AUX EMPIRES. \\[0.4cm] }
+{ \huge \bfseries MetaCiv: DU CHASSEUR-CUEILLEUR AUX EMPIRES. \\[0.4cm] }
 % horizontal line
 \rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} 
 \rule{\textwidth}{1.6pt}\\[\baselineskip] 
@@ -110,9 +110,51 @@ colorlinks=true}
 
 \section{Présentation de la plateforme MetaCiv}
 
+Il existe aujourd'hui de nombreuses plateformes de modélisation de systèmes complexes se basant sur la programmation par agents. Dans l'équipe de travail SMILE, plusieurs plateformes ont déjà été mises au point, Turtlekit [Mic02] et Madkit [GFM00] largement inspirées des plateformes basées sous StarLogo (http ://education.mit.edu/starlogo/). Cela fait bien plus d'une année qu'une plateforme spécifique dénommée MetaCiv à vu le jour. Nous allons rappeler très rapidement ses principes et concepts.
+
+
 \subsection{Principe}
 
+MetaCiv est une plateforme de modélisation par agents dédiée la conception de modèles relatifs des systèmes complexes (biologiques, environnementaux, etc...). Elle est basée sur les fonctionnalités de la plateforme Turtlekit déjà existante. Elle bénéficie naturellement des fonctionnalités des plateformes précédentes, notamment du concept Agent Group Role (AGR). De plus, elle intègre les principes dits des quadrants [FST09]\\
+
+\begin{figure}[H]
+\center
+\label{quadrant}
+\includegraphics[width = 10cm] {img/quadrants.png}
+\caption{Quadrants.}
+\end{figure}
+
+
+Un système multi-agents selon le principe des quadrants est perçu comme un ensemble de composants organisés selon deux axe: individuel-collectif d'une part et interiorité-exteriorité d'autre part. Ainsi le quadrant I-I définit ce qui constitue le fonctionnement interne de l'agent, sa manière de penser, ses idées, ses croyances. Le quadrant E-I quand lui, définit l'image que donne l'agent au monde, savoir son comportement, ses actions, ses possessions, son apparence. Ensuite, le quadrant I-C correspond aux idées partagées par un groupe d'individus, les normes et codes s'appliquant ce groupe, les valeurs communes et connaissances partagées. Enfin, le quadrant E-C s'applique à tout ce qui donne une représentation de groupe sociaux, savoir, par exemple, les bâtiments publics, les monuments, les infrastructures. MetaCiv est donc un framework de modélisation de société humaines dans lesquelles l'espace, la culture et la structure sociale jouent un rôle important. On peut ainsi faire une représentation globale de MetaCiv en reprenant les quadrants de MASQ sous la forme MASQ-ML le langage de modélisation de MASQ [FST09].
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {img/MetaCivMASQL.jpg}
+\caption{MetaCiv exprimé en MASQ-ML.}
+\end{figure}
+
 \subsection{Concepts}
+
+Comme vu précédemment MetaCiv est une plateforme de simulation par agents dans laquelle nous postulons que chaque agent possède un cognition . De plus ces agents évoluent au sein d'un environnement évolutif qui impact leurs décisions. Pour cela, dans la plateforme, chaque agent possède un "esprit" qui concentre les perceptions, la mémoire (qui enregistre les actions effectuées ainsi que les influences subies) ainsi qu'une faculté de décision.
+
+La figure des \hyperref[quadrant]{quadrants} résume le fonctionnement actuel et les extensions que nous souhaitons y apporter. Tout agent possède donc un esprit qui est un agrégat de cognitons. Il décide d'exécuter un plan, qui est un ensemble d'actions.
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {img/exdecision.PNG}
+\caption{Exemple de prise de décision.}
+\end{figure}
+
+Prenons l'exemple de la figure précédente, dans une société d'agents agriculteurs l'utilisateur prévoit deux plans d'actions possibles, Cultiver et Chasser, les cognitons Compétence Agriculture, Faim, et Compétence chasse, ainsi que les liens entre cognitons et plans.
+Pour pouvoir exécuter ces plans il faut disposer des cognitons Compétence agriculture ou Compétence chasse : ceci est exprimé sous la forme de liens conditionnels. Les liens pondérés sont rajoutés entre cognitons et plans d'actions pour exprimer l'influence d'un cogniton sur un plan (un poids négatif traduisant un degré d'inhibition et un poids positif un degré de facilitation). Un agent qui possède les trois cognitons de la figure ci-dessus décidera de Cultiver ou Chasser après évaluation des liens pondérés ici Cultiver 7 et Chasser 12. Le choix entre ces deux plans est en fait dépendant d'une randomisation prenant en compte les poids calculés précédemment, ceci afin de pallier les comportements majoritaires. Nous avons abstrait le schéma de fonctionnement de MetaCiv dans la figure suivante, en présentant les concepts existants et ceux qui constitueront les extensions visées.
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm] {img/fonctionnementMetaCiv.png}
+\caption{Schéma de fonctionnement de MetaCiv.}
+\end{figure}
+
+Nous retrouvons donc le fait qu'un agent dispose d'un esprit constitué de cognitons. Ceux ci sont liés aux plans que peut exécuter l'agent par des liens conditionnels ou d'influences. Les actions prélèvent des ressources dans les patches et influent sur les cognitons de l'agent. Les perceptions de l'environnement se font aussi grâce aux cognitons. Les extensions sur lesquelles nous allons réfléchir, la lueur de la bibliographie, concernent le niveau groupe et la transmission de la connaissance communautaire d'une part, et d'autre part les relations spatio temporelles au niveau de l'environnement (celui ci ne se cantonnant plus au rôle de support).
 
 \section{Modélisations de civilisations}
 
@@ -127,7 +169,6 @@ Le premier modèle, "Cueilleur-Artisan-Agriculteur" va chercher à faire fonctionn
 Les agents sont vus sous l'angle \textit{intériorité }comme dotés d'un esprit (ensemble de cognitons) qui leur permet d'établir des plans (ensemble d'actions) ;  vus sous l'angle \textit{extériorité} ils sont dotés d'un ensemble de caractéristiques (corps) et peuvent manipuler des objets, interagir avec leur environnement et construire des aménagements. Ils évoluent dans un environnement collectif agrégat de \textit{patches}.
 Les cognitions vont influencer les plans, de manière pondérée (selon l'importance que l'utilisateur leur accorde), de manière positive (renforcement) ou négative (affaiblissement). 
 L'environnement ainsi que les actions effectuées peuvent affecter les caractéristiques d'un agent et de ce fait influer sur ses cognitons. De même les actions peuvent directement ou indirectement via les objets ajouter ou influer les cognitons. 
-
 
 \subsubsection{Notion de cognitons}
 \label{cognitons}
@@ -264,9 +305,16 @@ Un plan est un ensemble de plusieurs actions génériques qui peuvent être partagé
 \caption{Exemple de l'interface du plan "DonnerNaissanceSiJ'aiPasFaim" dans MetaCiv. Les actions conditionnelles sont repérées par une icône en forme de processeur et les autres actions par une icône en forme de flèche.}
 \end{figure}
 
+\subsubsection{Les constantes}
+
+Les constantes peuvent être assimilés aux paramètres de la simulation. Elles peuvent être prise en paramètre d'une ou plusieurs actions mais ne peuvent être modifiés que par l'utilisateur du simulateur. La modification d'une constante est prise en compte même si le modèle est en cours d'exécution. Elles servent à modifier plus facilement les paramètres de la simulation dans toutes les actions dans lesquelles elles sont utilisées.
+
+%a rajouter images
 \subsubsection{Les attributs}
 
-%% A RAJOUTER
+Les attributs sont des variables numériques personnelles à chaque agent. Elles peuvent être modifiés par des actions et leurs valeurs originales sont saisies par l'utilisateur. Elles servent à représenter les caractéristiques d'un agent.
+ 
+ %a rajotuer images
 \subsubsection{Les groupes et les rôles}
 
 Lorsque plusieurs agents se rassemblent pour former un groupe, chaque agent de ce groupe possède un rôle. Chacun de ces rôles est défini de manière générique et ajoute des plans supplémentaires au moyen de nouveaux cognitons dits "culturons" et permettent ainsi la spécialisation de l'agent.
@@ -287,8 +335,10 @@ Lorsque plusieurs agents se rassemblent pour former un groupe, chaque agent de c
 
 \subsection{Le modèle "Cueilleur-Artisan-Agriculteur"}
 
-%% A REFAIRE INTRO
-Pour débuter, ce document explique le fonctionnement d'une modélisation ayant pour but de mettre en valeur l'émergence d'une civilisation. Cette implémentation se base sur MetaCiv, framework de modélisation de société humaine utilisant la technique des SMA. Toutes les constantes mentionnées dans ce document sont données dans la section "\hyperref[constantes]{Constantes}".
+Ce modèle va servir à générer une société basée sur la cueillette, l'artisanat et l'agriculture. Elle aura comme particularité d'attribuer un rôle spécifique à chacun des agents dans le but d'observer l'émergence d'un comportement collaboratif au sein même d'une civilisation et ses conséquences sur la population.
+
+
+Toutes les constantes mentionnées dans ce modèle sont données dans la section "\hyperref[constantes]{Constantes}".
 Les agents sont initialement au nombre de $81$ lors du lancement de la modélisation.
 
 \subsubsection{L'environnement}
@@ -579,7 +629,7 @@ Le cueilleur possède donc cinq plans supplémentaires :
 \item Le plan "Cueillir" permet aux cueilleurs de partir à la recherche des baies et influence le cogniton "TropDansMonSac" pour le rapatriement des baies. Il est activé par le culturon "AllerChercherDesBaies".
 \item Le plan "recruter" permet aux agents de former des groupes. Il est activé par le culturon "Recruter".
 \item Le plan "Construire" permet aux agents de construire leur village, s'ils n'en possèdent pas. Il est activé par le culturon "ConstruireVillage". Une fois le village construit, le cogniton "PasBesoinDeVillage" est ajouté et inhibe le plan "Construire".`
-\item Le plan "DevenirAgriculteur" est activé par le cogniton "DevenirAgriculteur?" mais n'est influencé que par le cogniton "BonCueilleur", lui-même activé que lorsque l'agent à son attribut "CompetenceCueilleur" supérieure ou égale à la constante "SeuilBonCueilleur". Ainsi, un cueilleur n'est susceptible de devenir un agriculteur que lorsque les conditions sont satisfaites.
+\item Le plan "DevenirAgriculteur" est activé par le cogniton "DevenirAgriculteur'" mais n'est influencé que par le cogniton "BonCueilleur", lui-même activé que lorsque l'agent à son attribut "CompetenceCueilleur" supérieure ou égale à la constante "SeuilBonCueilleur". Ainsi, un cueilleur n'est susceptible de devenir un agriculteur que lorsque les conditions sont satisfaites.
 \item Le plan "DevenirArtisan" reprend le principe du plan "DevenirAgriculteur".
 \end{itemize}
 On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par le cogniton "DonnerNaissance" n'est activé que maintenant par le culturon "ReproduireCueilleur".
@@ -617,12 +667,12 @@ On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par
 
  \node [state,anchor=center, text width = 2cm, node distance=2.5 cm,below of =ReproduireCueilleur, draw, circle, minimum size = 10mm, fill=brown] (DevenirAgriculteur)
 {
-	\textbf{Devenir Agriculteur?}
+	\textbf{Devenir Agriculteur'}
 };
 
  \node [state,anchor=center, text width = 2cm, node distance=2.5 cm,below of =DevenirAgriculteur, draw, circle, minimum size = 10mm, fill=brown] (DevenirArtisan)
 {
-	\textbf{Devenir Artisan?}
+	\textbf{Devenir Artisan'}
 };
 
  \node [state,anchor=center, text width = 2cm, node distance=10 cm,right of =DevenirAgriculteur, draw, circle, minimum size = 10mm, fill=yellow] (BonCueilleur)
@@ -681,7 +731,7 @@ On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par
 {
 	\textbf{DevenirAgriculteur} \\
 	\begin{itemize}
-	\item Avec une certaine probabilité, changer de rôle pour "Agriculteur" et baisser le poids du cogniton "DevenirAgriculteur?".
+	\item Avec une certaine probabilité, changer de rôle pour "Agriculteur" et baisser le poids du cogniton "DevenirAgriculteur'".
 	\end{itemize}
 	
 };
@@ -690,7 +740,7 @@ On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par
 {
 	\textbf{DevenirArtisan} \\
 	\begin{itemize}
-	\item Changer de rôle pour "Artisan" et baisser le poids du cogniton "DevenirArtisan?".
+	\item Changer de rôle pour "Artisan" et baisser le poids du cogniton "DevenirArtisan'".
 	\end{itemize}
 };
 
@@ -1069,18 +1119,6 @@ Il convient donc de rajouter la possibilité qu'un cueilleur devienne un agricult
 
 Ici encore, on ne remarque pas de changements majeurs par rapport à la modélisation précédente mise à part une augmentation de la population (1400 au lieu de 1200). En fait, les conditions d'apparition d'un agriculteur étant trop faible, il n'en existe que très peu (trois à quatre) par simulation et leur âges varie généralement entre 30 à 50 pour un attribut "EsperanceDeVie" de 40 à 60. Même avec un pourcentage d'avoir des enfants possédant le même rôle, le nombre d'agriculteur augmente difficilement et la population n'a plus de quoi se nourrir ce qui génère une baisse globale de la population.
 
-\subsection{Impressions sur l'utilisation de MetaCiv}
-
-MetaCiv permet de modéliser un grand nombre de situation (interactions entres molécules, sociétés, etc...) si l'on est capable de coder les actions nécessaires et la gestion des plans par des cognitons est une alternative originale à la modélisation des modèles par la subsomption. Voici quelques remarques que nous avons eu tout au long de notre modélisation: 
-\begin{itemize}
-\item L'ajout des constantes est un atout majeur pour l'utilisateur facilitant ainsi la modification des paramètres de la simulation. On peut ainsi voir en temps réel l'impact d'un paramètre sur la simulation.
-\item La sauvegarde automatique des dernières versions fonctionnelles d'un modèle permet d'économiser énormément de temps lorsque l'on travaille sur une modélisation. En effet, il n'est pas rare de changer un paramètre, sauvegarder et de ne plus être capable de lancer son modèle, le rendant alors inutilisable.
-\item L'interface de gestion des agents est un outil agréable à utiliser, on voit directement les paramètres importants de chaque agent: cognitons, plans, attributs, groupe. Il n'est cependant pas assez efficace si l'on veut observer un type d'agent particulier dans une grande population.
-\item Il serait intéressant de pouvoir sauvegarder la modélisation à un instant donné et ainsi pouvoir la relancer avec différents paramètres. En effet, lorsque l'on modélise une société avec plusieurs niveaux technologiques, on perd énormément de temps à repasser le début du modèle pour observer l'impact d'un changement.
-\item La construction d'un plan est très intuitive, on imbrique des actions les unes dans les autres. Les descriptions des actions sont claires et précises. Il n'en reste que construire un plan ou le modifier prend beaucoup de temps puisqu'il faut à chaque fois sélectionner l'action dans un menu déroulant. Une autre interface serait à envisager.
-\end{itemize}
-
-MetaCiv possède de grande possibilités d'évolution, nous sommes conscient que l'ajout de nouvelle fonctionnalité ne doit pas rendre le logiciel plus complexe mais le rendre plus simple et facile d'utilisation pour le grand public.
 
 \subsection{Les constantes de la modélisation}
 \label{constantes}
@@ -1145,7 +1183,13 @@ AgeParTick & 0.02 \\
 \caption{Tableau récapitulatif des constantes de la modélisation.}
 \end{figure}
 
+\subsubsection{Conclusion}
+
+On constate que le modèle est non seulement cohérent mais permet également d'observer des comportement de groupe. L'émergence de certains individus ayant différents rôles permet à toute la société de survivre plus longtemps. C'est en attribuant de façon permanent un rôle à un individu que l'on est capable d'obtenir une civilisation efficace. Cette modélisation a un niveau de paramétrage élevé qui laisse peu de place au hasard. En effet, on constate que puisque les agents sont enfermés dans leurs plans, il y a peu d'hésitation dans ce qu'il y a a faire pour que la société fonctionne. Du coup, elle est pratique pour observer un comportement voulu et est très sensible à la modification de ses paramètres.
+
 \subsection{Le modèle "Nomade-Sédentaire"}
+
+Dans ce modèle, on réalise une émergence de civilisation à travers une société dépendante de son environnement. L'objectif est de montrer qu'une société peut à travers l'observation et l'adaptation à son environnement survivre, s'adapter et évoluer. Pour ce faire, on a décidé de simuler une société nomade sans chefs et très dépendante de son environnement. La spécialisation des agents sera basé sur le renforcement de leurs cognitons à travers l'expérience de la réalisation ou de l'échec de leurs plans.
 
 \subsection{Observations}
 
@@ -1240,6 +1284,16 @@ la sauvegarde sous windows corrompt certain modèles (pas sur mac)
 
 \section{Conclusion et perspectives}
 
+MetaCiv permet de modéliser un grand nombre de situation (interactions entres molécules, sociétés, etc...) si l'on est capable de coder les actions nécessaires et la gestion des plans par des cognitons est une alternative originale à la modélisation des modèles par la subsomption. Voici quelques remarques que nous avons eu tout au long de notre modélisation: 
+\begin{itemize}
+\item L'ajout des constantes est un atout majeur pour l'utilisateur facilitant ainsi la modification des paramètres de la simulation. On peut ainsi voir en temps réel l'impact d'un paramètre sur la simulation.
+\item La sauvegarde automatique des dernières versions fonctionnelles d'un modèle permet d'économiser énormément de temps lorsque l'on travaille sur une modélisation. En effet, il n'est pas rare de changer un paramètre, sauvegarder et de ne plus être capable de lancer son modèle, le rendant alors inutilisable.
+\item L'interface de gestion des agents est un outil agréable à utiliser, on voit directement les paramètres importants de chaque agent: cognitons, plans, attributs, groupe. Il n'est cependant pas assez efficace si l'on veut observer un type d'agent particulier dans une grande population.
+\item Il serait intéressant de pouvoir sauvegarder la modélisation à un instant donné et ainsi pouvoir la relancer avec différents paramètres. En effet, lorsque l'on modélise une société avec plusieurs niveaux technologiques, on perd énormément de temps à repasser le début du modèle pour observer l'impact d'un changement.
+\item La construction d'un plan est très intuitive, on imbrique des actions les unes dans les autres. Les descriptions des actions sont claires et précises. Il n'en reste que construire un plan ou le modifier prend beaucoup de temps puisqu'il faut à chaque fois sélectionner l'action dans un menu déroulant. Une autre interface serait à envisager.
+\end{itemize}
+
+MetaCiv possède de grande possibilités d'évolution, nous sommes conscient que l'ajout de nouvelle fonctionnalité ne doit pas rendre le logiciel plus complexe mais le rendre plus simple et facile d'utilisation pour le grand public.
 
 
 
