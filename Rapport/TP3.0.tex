@@ -1197,7 +1197,7 @@ Dans ce modèle, on réalise une émergence de civilisation à travers une société d
 
 \subsection{Introduction}
 
-    le programme MetaCiv , logiciel de modélisation de civilisation , est un projet qui a été développé par des groupes successifs d'étudiant. Développé autour de turtlekit et madkit , le programme possède une base solide , mais les ajouts successifs de fonctionnalités sans respect de normes et de méthodes on conduit à un logiciel instable et un code source chaotique.
+    le programme MetaCiv , logiciel de modélisation de civilisation , est un projet qui a été développé par des groupes successifs d'étudiant. Développé autour de turtlekit et madkit , le programme possède une base solide , mais les ajouts successifs de fonctionnalités sans avoir établit de normes et de méthodes on conduit à un logiciel instable et un code source chaotique.
 
 	nous avons essayé , lors de l'ajout de fonctionnalités , de produire un code plus clair , en séparant bien chaque chose (éviter les fonctions de plusieurs centaines de ligne), en utilisant une approche plus objet et en utilisant quelques design patterns.
 
@@ -1218,7 +1218,7 @@ Dans ce modèle, on réalise une émergence de civilisation à travers une société d
 \caption{Diagramme simplifié du programme}
 \end{figure}
 
-l'esprit fait toujours apel à la civilisation pour s'alimenter en plans et cognitons , mais nous avons changé le code des accesseurs pour qu'ils renvoient les données du schéma cognitif contenu dans la civilisation
+l'esprit fait toujours appel à la civilisation pour s'alimenter en plans et cognitons , mais nous avons changé le code des accesseurs pour qu'ils renvoient les données du schéma cognitif contenu dans la civilisation
 
 \begin{figure}[H]
 \center
@@ -1252,33 +1252,60 @@ enfin , nous avons crée les barres d'outils pour gérer l'édition des schémas cog
 \subsubsection{Constantes}
 	besoins : - centraliser les constantes utilisés à plusieurs endroits dans les plans pour simplifier le travail de réglage du modèle
 	
+\subsubsection{Sauvegarde incrémentale}
+	besoins : - lol
 	
+\subsubsection{Defines}
+	besoins : - lol
+	
+\subsubsection{Autres}
+\begin{itemize}
+ \item Permettre la suppression d'éléments du schéma cognitif
+ \item Ajout d'un bouton qui permet une fermeture propre du programme (sans laisser de zombies)
+ \item barres de scroll pour les listes d'éléments (attributs , constantes , actions d'un plan ...)
+\end{itemize}
 
+		
+\subsection{Fonctionnalités envisagés}
 
+	
 \subsection{Stabilisation du noyau}
-	au cours de l'avancée des modélisateurs , quelques dizaines de bugs ont été découverts. Nous vous en présentons quelques uns en précisant le disfonctionnement constaté , sa raison et la correction effectuée
+	au cours de l'avancée de la modélisation , quelques dizaines de bugs ont été découverts. Nous vous en présentons quelques uns en précisant le dysfonctionnement constaté , sa raison et la correction effectuée
 
+\begin{itemize}
+\item gestion des plans : au chargement , certains plans sont ajoutés deux fois (mais la simulation fonctionne quand même)
+	\begin{itemize}    
+    \item un test toujours vrai dans le chainage des plans cause l'ajout en double
+    \item nettoyage du code , le problème apparait clairement et est résolu (note : amélioration sensible des performances)
 
-gestion des plans : au chargement , certains plans sont ajoutés deux fois (mais la simulation fonctionne quand même)
-    -> un test toujours vrai dans le chainage des plans cause l?ajout en double
-    -> nettoyage du code , le problème apparait clairement et est résolu (note : amélioration sensible des performances)
+\end{itemize}
 
-gestion des triggers : la modification des triggers ne semble pas avoir d?effet
-    -> présence de deux listes représentant les triggers : une est utilisé par les agents , l?autre par l?interface.
-    -> regroupement en une seule liste , modification de la liste au lieu de détruire et reconstruire (permet la modification des valeurs pendant l?éxécution)
+\item gestion des triggers : la modification des triggers ne semble pas avoir d'effet
+	\begin{itemize}    
+    \item présence de deux listes représentant les triggers : une est utilisé par les agents , l'autre par l'interface.
+    \item regroupement en une seule liste , modification de la liste au lieu de détruire et reconstruire (permet la modification des valeurs pendant l'exécution)
 
+\end{itemize}
 
-certain cognitons sont présent en double , ce qui fausse le calcul de l?action à effectuer
-        -> les Starting cognitons sont ajoutés en plus de la liste de tous les cognitons qui les contient déjà 
-        -> sécurisation de la liste des cognitons d?un agent à travers un accesseur , si le cogniton est déjà présent , l?ajout est ignoré
+\item esprit de l'agent : certain cognitons sont présent en double , ce qui fausse le calcul de l'action à effectuer
+     \begin{itemize}   
+     \item les Starting cognitons sont ajoutés en plus de la liste de tous les cognitons qui les contient déjà 
+     \item sécurisation de la liste des cognitons d'un agent à travers un accesseur , si le cogniton est déjà présent , l'ajout est ignoré
 
-la sauvegarde sous windows corrompt certain modèles (pas sur mac)
-    -> pas de vérification des caractères interdits dans le nom des éléments qui sont utilisés pour nommer le fichier correspondant
--> utilisation de URLencoder sur toutes les chaines servant comme nom de fichier 
+\end{itemize}
 
-\subsection{Autre}
+\item Sauvegarde : la sauvegarde sous windows corrompt certain modèles (pas sur mac)
+	\begin{itemize}    
+    \item pas de vérification des caractères interdits dans le nom des éléments qui sont utilisés pour nommer le fichier correspondant
+	\item utilisation de URLencoder sur toutes les chaines servant comme nom de fichier 
+
+\end{itemize}
+\end{itemize}
 
 \subsection{Conclusion}
+	Metaciv est un logiciel puissant qui repose sur de bonnes bases ,par exemple le système d'injection d'actions personnalisée sous forme de code java est très bien conçut et le moteur du simulateur est fiable, ce qui encourage à enrichir le projet de nouvelles fonctionnalités dans l'avenir. 
+	En revanche, le code des interfaces est très désorganisé dû aux ajouts des différents groupes qui se sont succédés (dont le notre) et devrait être repris avec de bonnes méthodes.
+	du point de vue de l'utilisation , l'interface manque de sécurisation et de retour utilisateur en cas de commande invalide , ce qui causait bien souvent la corruption du modèle sans que l'on comprenne pourquoi. Régler ce problème de retour d'information à l'utilisateur est une étape très importante pour pouvoir amener MetaCiv à un plus grand public.
 
 \section{Gestion de projet}
 
