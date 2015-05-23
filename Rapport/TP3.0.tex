@@ -1553,13 +1553,53 @@ Pour implémenter cette architecture de schéma cognitifs, nous avons procédés en 
 
 
 \subsubsection{Constantes}
+
 	besoins : - centraliser les constantes utilisés à plusieurs endroits dans les plans pour simplifier le travail de réglage du modèle
+	- permettre la mise à jour de la valeur des constantes pendant l'exécution de la simulation
+	- permettre de choisir entre l'utilisation des constantes et l'utilisation d'une valeur unique
+	- assurer la rétro-compatibilité des actions tout en donnant la possibilité de les adapter avec un minimum de changements	
 	
+	Nous avons décidé d'implanter le design pattern Observateur.
+	Pour ce faire, nous avons crée une classe MCConstant qui hérite de Observable et contient la valeur numérique de la constante, cette classe est manipulée directement par l'interface de gestion des constantes.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=8cm]{img/DEV-interfaceConstant.jpg}
+\caption{Interface de gestion des constantes, agit directement sur les variables de type MCConstant}
+\end{figure}
+
+	Nous avons ensuite crée les classes MCDoubleParameter et MCIntegerParameter qui implémentent l'interface Observer. Ces classes sont utilisés dans le code des actions et remplacent les variables double et int. Elles sont initialisés à l'aide de la méthode loadParam de la classe Action , dont toutes les actions héritent.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{img/DEV-Const-LoadParam.png}
+\caption{Méthode d'initialisation, on peut voir l'initialisation avec la valeur numérique , puis si le lien à une constante à été spécifié , la valeur est changé pour celle de la constante et le lien Observable-Observer est mis en place}
+\end{figure} 
+
+	pour ne pas avoir à dupliquer les actions , celles qui utilisent les constantes et celles qui utilisent les valeurs directes , nous proposons systématiquement l'utilisation d'une constante dans l'interface pour tout les paramètres de type numériques. Si l'action n'a pas été mise à niveau , la constante sera simplement ignorée et la valeur directe sera prise en compte ce qui assure la rétro-compatibilité.
+	
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{img/DEV-Const-InterfaceAction.png}
+\caption{interface de paramètrage d'une action, on peut choisir l'utilisation de la valeur directe ou d'une constante à l'aide du bouton radio, la combo box "linked constant" propose toutes les constantes du schéma cognitif en cours d'édition}
+\end{figure} 
+
+A FAIRE : PARLER DES CONSTANTES DANS LES TRIGGERS
+		
 \subsubsection{Sauvegarde incrémentale}
 	besoins : - lol
 	
 \subsubsection{Defines}
-	besoins : - lol
+	besoins : - centraliser les valeurs constantes utilisés dans le code du programme afin de faciliter les modifications éventuelles
+	
+	Dans le but de favoriser les développements futurs, nous avons crée des classes Define contenant des variables statiques qui sont apellés à différents endroits du programme.
+	
+\begin{figure}[H]
+\center
+\includegraphics[width=10cm]{img/DEV-DefinePath.png}
+\caption{capture partielle de la classe DefinePath qui liste les chemins d'accès aux ressources}
+\end{figure} 
+	
 	
 \subsubsection{Autres}
 \begin{itemize}
@@ -1570,6 +1610,28 @@ Pour implémenter cette architecture de schéma cognitifs, nous avons procédés en 
 
 		
 \subsection{Fonctionnalités envisagés}
+
+\subsubsection{Init-plan}
+introduire un plan qui s'exécuterait au premiers instants de la simulation , pour chaque agent. une des applications serait de modifier l'âge de départ des agents de manière aléatoire pour représenter le fait que la population de départ a déjà vécu un certain temps et est composée d'individus d'ages différents.
+
+\subsubsection{Hiérarchie de cognitons}
+création d'un type de plan spécial qui conduit à l'évaluation d'un nouveau groupe de cognitons. Les applications d'un tel système sont multiples
+	
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{img/DEV-ID-strategies.jpg}
+\caption{appliqué à une répartition en sous rôles : si l'action chasser est décidé, l'agent va ensuite décider si il sera archer ou rabatteur}
+\end{figure} 
+	
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{img/DEV-ID-reflexes.jpg}
+\caption{utilisé comme système de subsomption : les besoins essentiels sont évalués à la première étape comme la faim ou le sommeil, si ces besoins sont satisfaits , le cogniton satisfait prends le dessus et déclenche le mode 2 qui évalue des actions plus complexes}
+\end{figure} 
+	
+\subsubsection{Objets uniques / stackables}
+Séparer les Objets en deux catégories : 
+- A FAIRE
 
 	
 \subsection{Stabilisation du noyau}
