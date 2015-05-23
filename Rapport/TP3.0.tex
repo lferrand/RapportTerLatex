@@ -1123,7 +1123,7 @@ Il convient donc de rajouter la possibilité qu'un cueilleur devienne un agricult
 Ici encore, on ne remarque pas de changements majeurs par rapport à la modélisation précédente mise à part une augmentation de la population (1400 au lieu de 1200). En fait, les conditions d'apparition d'un agriculteur étant trop faible, il n'en existe que très peu (trois à quatre) par simulation et leur âges varie généralement entre 30 à 50 pour un attribut "EsperanceDeVie" de 40 à 60. Même avec un pourcentage d'avoir des enfants possédant le même rôle, le nombre d'agriculteur augmente difficilement et la population n'a plus de quoi se nourrir ce qui génère une baisse globale de la population.
 
 
-\subsection{Les constantes de la modélisation}
+\subsubsection{Les constantes de la modélisation}
 \label{constantes}
 
 \begin{figure}[H]
@@ -1193,6 +1193,291 @@ On constate que le modèle est non seulement cohérent mais permet également d'obs
 \subsection{Le modèle "Nomade-Sédentaire"}
 
 Dans ce modèle, on réalise une émergence de civilisation à travers une société dépendante de son environnement. L'objectif est de montrer qu'une société peut à travers l'observation et l'adaptation à son environnement survivre, s'adapter et évoluer. Pour ce faire, on a décidé de simuler une société nomade sans chefs et très dépendante de son environnement. La spécialisation des agents sera basé sur le renforcement de leurs cognitons à travers l'expérience de la réalisation ou de l'échec de leurs plans.
+
+\subsubsection{Introduction}
+
+Ce document expliquera le fonctionnement d'une modélisation qui a pour but de mettre en valeur l'émergence d'une civilisation a travers une société nomade jusqu'à l'étape d'agriculture. Cette implémentation se base sur MetaCiv, framework de modélisation de sociétés humaines utilisant la technique des SMA. Toutes les constantes mentionnées dans ce documents sont données dans la section "\hyperref[constantes]{Constantes}".
+
+L'objectif de cette modélisation est d'observer comment une société sans chef a proprement nommer va conduire sa population a survivre dans un environnement avec différente façon d'obtenir des ressource et de faire naitre le besoin de faire de l'agriculture une fois que la population devient trop élever pour être soutenu par un système nomade.
+
+\subsubsection{L'environnement}
+
+L'environnement dans lequel nos agents se déplacent est un espace fermé de $\mathbb{R}^{2}$. Il y a en tout 6 types de patches présents : Mer, Prairie, Forêt, Littoral et Montagne. Le modèle étant relativement basique, il n' y a que trois types de ressources disponibles : Les baies, le poisson et le gibier. Le tableau suivant donne le récapitulatif des différents patches et des ressources disponibles.
+
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\text{Patch} & \multicolumn{2}{|c|}{\text{Ressources} } & \multicolumn{2}{|c|}{\text{Valeur initiale}} & \multicolumn{2}{|c|}{\text{Croissance des ressources}} & \text{Passabilité}\\
+\hline
+\text{Mer} \includegraphics[height=0.5 cm]{img/mer.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Non} \\
+\hline 
+\text{Montagne} \includegraphics[height=0.5 cm]{img/montagne.png}& \multicolumn{2}{|c|}{\text{Aucunes}} &  \multicolumn{2}{|c|}{0}& \multicolumn{2}{|c|}{0} & \text{Oui} \\
+\hline 
+\text{Prairie} \includegraphics[height=0.5 cm]{img/prairie.png}& \text{Baies} & \text{Gibier} & 10 & 1 & 0.2 & 0 & \text{Oui} \\
+\hline
+\text{Forêts} \includegraphics[height=0.5 cm]{img/foret.png}& \text{Baies} & \text{Gibier} & 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
+\hline
+\text{Littoral} \includegraphics[height=0.5 cm]{img/littoral.PNG}& \multicolumn{2}{|c|}{\text{Poisson}} &  \multicolumn{2}{|c|}{10} & \multicolumn{2}{|c|}{0.2} & \text{Oui} 	\\
+\hline
+\end{tabular}
+\caption{Tableau récapitulatif des patches et des ressources.}
+\end{figure}
+
+
+Il y a trois type de patch qui sont capable d'offrir des ressources. Mais chaque type de patch produit une ressource en priorité. Ce qui forcera les agents a optimiser leur méthodes de récolte en fonction de leur environnement.Un patch ne peut être récolter seulement si les pheromone de la ressource pressente sur le patch sont supérieur a 1, si c'est le cas alors cette pheromone est transformer en un objet. Les baies en baies, les poissons en poissons et les gibiers en viandes.
+
+
+Le point d'apparition des agents se situe au milieu d'une foret. Les agents pour optimiser leur récolte de ressources devront se mettre très rapidement a la chasse.
+
+\begin{figure}[H]
+\center
+\caption{Environnement de la modélisation}
+\end{figure}
+
+On peut aussi noter que lorsque les agents apparaissent dans l'environnement, ils sont éparpillés autour du point d'apparition et non dessus.
+
+\subsubsection{Les attributs}
+
+Il y a pour l'instant six attributs dans ce modèle : Faim, Age, Charisme, Santé.
+\begin{itemize}
+\item L'attribut Faim est baissé chaque tour d'une certaine quantité ($BaisseFaimParTick$), et n'est remonté qu'en mangeant de la nourriture (Baies ou Viande). Cet attribut va nous servir a simuler la faim chez nos agents. 
+\item L'âge d'un individu est augmenté à chaque tick ($AgeParTick$). Dans cette simulation l'age d'un agent est d'environ 1000 tick.
+\item L'attribut "Charisme" comme son nom l'indique reflète le charisme d'un individu. Certain humain ayant naturellement une intelligence social et un charisme naturel cela nous servira lors des phase migratoire de nos agents. Cet attribut sera initialise dans le "Birth Plan".
+\item L'attribut "Santé" reflète l'état physique d'un individu. Lorsque un agent est blesse, affame ou bien vieux l'attribut "Santé" sera diminuer et sera une composante importante de déterminer la vie ou la mort d'un agent.
+\end{itemize}
+
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|c|}
+\hline
+\text{Attribut} & \text{Valeur par défaut}\\
+\hline
+\text{Faim} & 300 \\
+\hline
+\text{Santé} & 20 \\
+\hline
+\text{Age} & 0 \\
+\hline
+\text{Charisme} & \text{Valeur initialisé par le "BirthPlan" entre 0 et 5.} \\
+\hline
+\end{tabular}
+\caption{Tableau récapitulatif des attributs d'un agent et de leurs valeurs par défauts.}
+\end{figure}
+
+\subsubsection{Les actions par défaut}
+
+Lorsque les agents arrivent dans l'environnement, ils possèdent plusieurs actions par défauts. Il y en a quatre : Birth Plan, Auto Plan, Cueillir et Chasser, Ramener Ressource ainsi que Manger. 
+\begin{itemize}
+\item Le plan "Birthplan" est le plan qui est lance a chaque fois qu'un agent est cree. Dans cette simulation le Birthplan va surtout servir a initialiser les attribut qui son obtenu a la naissance tel que le Charisme.
+\item Le plan "Auto Plan" est effectuée par chaque agent à chaque tick et gère tout ce qui relève de la physiologie de l'agent. Il modifie donc les attributs: age et faim. Il va aussi servir a réguler la population en décidant a chaque tick si un agent doit mourir ou enfanter un nouvelle agent. L'Auto Plan va aussi être charger de la perception de l'agent et détecter dans quel type d'environnement l'agent se trouve.
+\item Le plan Cueillir va permettre au agent de récolter des baies.
+\item Le plan Chasser va permettre au agent de chasser du gibier pour de la viande.
+\item Le plan Ramener Ressource va permettre au agent de rapporter les ressources qu'ils ont sur eux a l'aménagement le plus proche.
+\item Le plan Manger est le plan qui va augmenter l'attribut de faim lorsque c'elle ci est trop basse. Pour manger l'agent mangera une ressources de type nourriture qu'il possédé. S'il n'en possédé il ira en chercher a l'aménagement le plus proche. \\
+\end{itemize}
+
+
+\begin{figure}[h]
+\center
+\includegraphics[width = 10cm]{img/planDansMetaciv.png}
+\caption{Représentation des cognitons et plans par default associés dans MetaCiv.}
+\end{figure}
+
+schema des birthplan autoplan chasse\\
+
+On remarquera que les plan "Birthplan" et "Standard" n'ont pas besoin de cognitons pour être effectués. Les plan "Cueillir",Chasser, Ramener Ressource  sont accessible dès le lancement de la simulation puisqu'ils sont activé par les cognitons "Chasse", "Recolte" et "SacPlein".\\
+
+schema Faim et manger\\
+
+On remarquera cette foi que le cogniton "Faim" a un trigger qui permettra d'enclencher l'action lorsque l'agent en a vraiment besoin.\\
+
+ 
+En plus de ces Plan, nous avons aussi plusieurs plan qui permettent de gérer l'émergence de nouvelle compétence et la migration de la communauté lorsque les ressources autour de leur campement commence a manquer.\\
+
+\begin{itemize}
+\item Le plan "Pêcher" va permettre au agent de pêcher des poissons qui est elle aussi une ressource que les agents peuvent utiliser pour se nourrir.
+\item Le plan "Agriculture" va permettre au agent de faire de l'agriculture. Crée des fermes ainsi que de récolter les ressources produite par ces fermes.
+\item Le plan "Déménager" qui va permettre au agent de lancer une élection pour savoir si la communauté est favorable pour déplacer le campement. Si ce vote est positif alors un groupe de nomade est crée. Nous présenterons comment le vote est effectuer lors de la présentation du groupe.\\
+\end{itemize}
+
+schema Peche / agriculture / Déménager\\
+
+On remarquera que le plan "Pêcher" et "Agriculture" sont bien relier a un cogniton pourtant ont ne les a pas nommer lors des plan originaux. En effet ces plan vont être découvert. Cette découverte s'effectue dans le "Auto Plan", lorsque un agent se déplace sur un littoral il a une chance de découvrir la compétence permet "peche" activant son cogniton du même nom. A la découverte de ce Cogniton le plan est activer et utilisable par l'agent. Il en va de même pour "Agriculture" lorsque un agent se trouve sur un patch de type prairie.
+
+\begin{figure}[h]
+\center
+\includegraphics[width = 10cm]{img/planDansMetaciv2.png}
+\caption{Représentation des cognitons et plans associés dans MetaCiv pour la Pêche, agriculture et déménager.}
+\end{figure}
+
+\subsubsection{Les groupes - Les Nomades}
+
+Lorsque plusieurs agents ont besoin de réaliser une taches a plusieurs ou bien ont besoin d'obtenir un rôle spécifique dans la communauté ont peut utiliser l'outil de groupe. Dans le cas de cette modélisation nous avons voulu limiter le plus possible l'utilisation de ces groupes pour observer comment les agents aller se spécialiser eux même en fonction de leur environnement. Il y a tout de même une action de groupe qui nécessite cette notion. Lorsque le groupe décide qu'il faut déplacer le campement.
+
+
+\subsubsection*{"Leader"}
+
+Dans les societes nomade il a exister beaucoups de modele d'organisation different par le passer et aujourd'hui encore ou 1,4\% de la population mondiale serait nomade.
+
+Dans le cas de cette modelisation nous avons decider d'avoir une organisation diriger vers une societer sans veritable chef mais plutot des individue qui se demarque en proposant des initiatives et en fonction de leur qualite ( charisme, competence) les autres membres de la tribu vont decider de les suivres ou pas.
+
+On a vu que lorsque un agent enclanche le plan demenager il va y avoir un vote. Celui-ci est la pour decider si la tribu deplace le campement ou pas. Pour ce faire le vote se deroule comme suit :\\
+
+\begin{itemize}
+\item L'agent demande a tout les agents situer dans un radius autour de sa position si ils veulent le rejoindre ou pas.
+\item Le calcul pour chaque votant est le suivant : \\
+\begin{itemize}
+\item On récupéré le cogniton de type "compétence" le plus élever du votant et on la compare avec ce même cogniton chez le demandeur. Si le cogniton du demandeur est plus élevé alors le bonus du vote est incrémenter de la constante voteBonusValue.
+\begin{equation*}
+	\text{Si } highestSkillVoter < skillAsker \text{ alors } \\
+\end{equation*}
+\begin{equation*}
+		bonus = bonus + voteBonusValue;
+\end{equation*}
+\item Le vote porte sur une perception de l'environnement, ici du manque de Nourriture. On ajoute donc le poids du cogniton qui est tester, "ManqueResource", a une variable bonusCogniton.
+\begin{equation*}
+	bonusCogniton = ManqueResourceWeight;
+\end{equation*}
+\item On ajoute la valeur d'un attribue au bonus, ici dans cette modélisation se sera le Charisme du demandeur.
+\begin{equation*}
+	bonus = bonus + CharismeValue;
+\end{equation*}
+\item On lance un des entre 0 et 15.
+\item On compare le jet de des a l'addition des deux deux bonus. Si celui ci est plus petit on comptabilise un vote positif.
+\begin{equation*}
+	\text{Si } dice < (bonus + bonusCogniton) \text{ alors } \\
+\end{equation*}
+\begin{equation*}
+		vote++;
+\end{equation*} 
+\end{itemize}
+
+\item Lorsque chaque agent dans le radius a été interroge on procède au comptage des voix positive. Si elle représente plus de la moitié de la population interroger alors on considère l'élection remporter.
+\item Le groupe est créé.\\
+\end{itemize}
+
+Lorsque le groupe est crée, le demandeur du vote devient le leader du groupe obtiens le rôle de "leader". La fonction principale de cet agent est de récupérer les stocks de ressources restante et de guider son groupe vers un nouveaux lieu.\\ 
+
+Schema\\
+
+
+\subsubsection*{Les "Follower"}
+
+Lorsque l'élection est réussite les votant rejoignent aussi le groupe, mais en tant que "follower". Les "follower" ont un rôle relativement simpliste. Leur seul objectif étant de suivre le leader et de se maintenir en vie.\\
+
+schema\\
+
+\subsubsection{Les aménagement}
+
+Les aménagements sont des marques déposées sur des patches et sont repérés par leurs positions. Ils ont un inventaire qui permet aux agents de déposer ou retirer des objets à l'intérieur. Le tableau suivant récapitule les aménagements de la modélisation.
+
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|c|c|c|}
+\hline
+\text{Aménament} & \text{Apparence} & \text{Types d'agents qui utilisent l'aménagement} & \text{Utilisation de l'inventaire} \\
+\hline
+\text{Campement} & \includegraphics[height=0.75 cm]{img/village.png} & Tout types d'agents & Oui\\
+\hline
+\text{Ferme} & \includegraphics[height=0.75 cm]{img/champ.png}  & Agriculteurs & Non\\
+\hline
+\end{tabular}
+\caption{Tableau récapitulatif des aménagements de la modélisation Nomade-Sédentaire.}
+\end{figure}
+
+\subsubsection{Les étapes de la modélisation}
+
+Au début de la modélisation, les agents sont dispersés autour du point d'apparition. Ils sont immobiles puisqu'ils ne possèdent aucun plan permettant le mouvement (on peut facilement l'ajouter).
+
+\begin{figure}[H]
+\center
+\includegraphics[height=5 cm]{img/initialNomade.PNG}
+\caption{Situation initiale}
+\end{figure}
+
+\subsubsection*{La récolte de ressource}
+
+ Une fois que la communauté a été initialiser, puisque les agents possèdent les compétences nécessaire, ils se mettents dirrectement a faire de la cueillette et de la chasse.
+ 
+ \begin{figure}[H]
+\center
+\includegraphics[height=5 cm]{img/recolte.PNG}
+\caption{La récolte de ressource}
+\end{figure}
+
+\subsubsection*{Le manque de ressources, le début de la migration}
+
+Les agants ayant de plus en plus de mal a trouver de resources leur perception du manque de resources augmante et par consequent les chances que le vote pour determiner le demenagement du camps soit accepter. Le leader detruit alors le campement en prennant toute les ressources.
+
+ \begin{figure}[H]
+\center
+\includegraphics[height=5 cm]{img/migration.PNG}
+\caption{Le début de la migration}
+\end{figure}
+ 
+\subsubsection*{La migration}
+
+Le leader se déplace aléatoirement sur la carte a la recherche d'un nouvelle endroit ou refaire leur campement. Pendant ce temps les autres agents suivent et font de leur mieux pour survivre.
+
+ \begin{figure}[H]
+\center
+\includegraphics[height=5 cm]{img/migration.PNG}
+\caption{La migration}
+\end{figure}
+
+\subsubsection*{Fin de migration}
+
+Les agents ayant fini leur migration un campement est a nouveau construit. Leur manque de ressource a disparu et recommence a nouveaux leur récolte de ressources pour pouvoir se nourrir et faire suffisamment de stock pour survivre la prochaine migration.
+
+ \begin{figure}[H]
+\center
+\includegraphics[height=5 cm]{img/finMigration.PNG}
+\caption{Fin de migration.}
+\end{figure}
+
+\subsubsection*{Découverte de l'agriculture}
+
+Un agent découvre l'agriculture. Son manque personnel de ressource diminue, malgré cela les migrations vont continuer quelque temps. Mais puisqu'il manque moins souvent de nourriture il a plus de chance de se reproduire souvent et par conséquent puisque ses enfants auront la compétence d'agriculture il y aura de plus en plus d'agriculteur. Plus y aura d'agriculteur moins de chance le vote de migration sera accepter et celle-ci arrêteront.
+
+ \begin{figure}[H]
+\center
+\caption{Découverte de l'agriculture.}
+\end{figure}
+
+\subsubsection*{Debut de village}
+
+On observe que la population a exploser mais que les agents étant tous regrouper autour du campement font que toutes ces fermes ressemble a un début de village.
+
+
+\subsubsection{Les constantes de la modélisation}
+\label{constantes}
+
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|c|}
+\hline
+ChanceDecouvertePeche & 0.1 \\
+\hline
+ChanceDecouverteAgriculture & 0.001 \\
+\hline
+SeuilFaim & 50 \\
+\hline
+SeuilAge & 1000 \\
+\hline
+voteBonusValue & 1 \\
+\hline
+NombreEnergieParBaies & 2 \\
+\hline
+NombreEnergieParViandes & 15 \\
+\hline
+BaisseFaimParTick & -0.1 \\
+\hline
+AgeParTick & 0.02 \\
+\hline
+\end{tabular}
+\caption{Tableau récapitulatif des constantes de la modélisation.}
+\end{figure}
 
 \subsection{Observations}
 
