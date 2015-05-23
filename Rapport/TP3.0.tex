@@ -1204,13 +1204,8 @@ On constate que le modèle est non seulement cohérent mais permet également d'"Ob
 
 \subsection{Le modèle "Nomade-Sédentaire"}
 
-Dans ce modèle, on réalise une émergence de civilisation à travers une société dépendante de son environnement. L'objectif est de montrer qu'une société peut à travers l'observation et l'adaptation à son environnement survivre, s'adapter et évoluer. Pour ce faire, on a décidé de simuler une société nomade sans chefs et très dépendante de son environnement. La spécialisation des agents sera basé sur le renforcement de leurs cognitons à travers l'expérience de la réalisation ou de l'échec de leurs plans.
 
-\subsubsection{Introduction}
-
-Ce document expliquera le fonctionnement d'une modélisation qui a pour but de mettre en valeur l'émergence d'une civilisation a travers une société nomade jusqu'à l'étape d'agriculture. Cette implémentation se base sur MetaCiv, framework de modélisation de sociétés humaines utilisant la technique des SMA. Toutes les constantes mentionnées dans ce documents sont données dans la section "\hyperref[constantes]{Constantes}".
-
-L'objectif de cette modélisation est d'"Observer" comment une société sans chef a proprement nommer va conduire sa population a survivre dans un environnement avec différente façon d'obtenir des ressource et de faire naitre le besoin de faire de l'agriculture une fois que la population devient trop élever pour être soutenu par un système nomade.
+Dans ce modèle, on réalise une émergence de civilisation à travers une société dépendante de son environnement. L'objectif est de montrer qu'une société peut à travers l'observation et l'adaptation à son environnement survivre, s'adapter et évoluer. Pour ce faire, on a décidé de simuler une société nomade sans chefs et très dépendante de son environnement, on devra réussir a faire naitre le besoin de faire de l'agriculture une fois que la population devient trop élever pour être soutenu par un système nomade. La spécialisation des agents sera basé sur le renforcement de leurs cognitons à travers l'expérience de la réalisation ou de l'échec de leurs plans.
 
 \subsubsection{L'environnement}
 
@@ -1239,13 +1234,13 @@ L'environnement dans lequel nos agents se déplacent est un espace fermé de $\mat
 
 Il y a trois type de patch qui sont capable d'offrir des ressources. Mais chaque type de patch produit une ressource en priorité. Ce qui forcera les agents a optimiser leur méthodes de récolte en fonction de leur environnement.Un patch ne peut être récolter seulement si les pheromone de la ressource pressente sur le patch sont supérieur a 1, si c'est le cas alors cette pheromone est transformer en un objet. Les baies en baies, les poissons en poissons et les gibiers en viandes.
 
-
-Le point d'apparition des agents se situe au milieu d'une foret. Les agents pour optimiser leur récolte de ressources devront se mettre très rapidement a la chasse.
-
 \begin{figure}[H]
 \center
-\caption{Environnement de la modélisation}
+\includegraphics[height=8 cm]{img/environnement.PNG}
+\caption{environnement de la modélisation Nomade-Sédentaire}
 \end{figure}
+
+Le point d'apparition des agents se situe au milieu d'une foret. Les agents pour optimiser leur récolte de ressources devront se mettre très rapidement a la chasse.\\
 
 On peut aussi noter que lorsque les agents apparaissent dans l'environnement, ils sont éparpillés autour du point d'apparition et non dessus.
 
@@ -1277,7 +1272,7 @@ Il y a pour l'instant six attributs dans ce modèle : Faim, Age, Charisme, Santé.
 \caption{Tableau récapitulatif des attributs d'un agent et de leurs valeurs par défauts.}
 \end{figure}
 
-\subsubsection{Les actions par défaut}
+\subsubsection{Les plans par défaut}
 
 Lorsque les agents arrivent dans l'environnement, ils possèdent plusieurs actions par défauts. Il y en a quatre : Birth Plan, Auto Plan, Cueillir et Chasser, Ramener Ressource ainsi que Manger. 
 \begin{itemize}
@@ -1289,18 +1284,20 @@ Lorsque les agents arrivent dans l'environnement, ils possèdent plusieurs action
 \item Le plan Manger est le plan qui va augmenter l'attribut de faim lorsque c'elle ci est trop basse. Pour manger l'agent mangera une ressources de type nourriture qu'il possédé. S'il n'en possédé il ira en chercher a l'aménagement le plus proche. \\
 \end{itemize}
 
-
-\begin{figure}[h]
+\begin{figure}[H]
 \center
 \includegraphics[width = 10cm]{img/planDansMetaciv.png}
 \caption{Représentation des cognitons et plans par default associés dans MetaCiv.}
 \end{figure}
 
-schema des birthplan autoplan chasse\\
 
 On remarquera que les plan "Birthplan" et "Standard" n'ont pas besoin de cognitons pour être effectués. Les plan "Cueillir",Chasser, Ramener Ressource  sont accessible dès le lancement de la simulation puisqu'ils sont activé par les cognitons "Chasse", "Recolte" et "SacPlein".\\
 
-schema Faim et manger\\
+\begin{figure}[H]
+\center
+\includegraphics[width = 16cm]{img/SchemaFaimChasserRessource.png}
+\caption{Schéma des cognitons et plans présent chez un agent au lancement de la simulation.}
+\end{figure}
 
 On remarquera cette foi que le cogniton "Faim" a un trigger qui permettra d'enclencher l'action lorsque l'agent en a vraiment besoin.\\
 
@@ -1313,11 +1310,16 @@ En plus de ces Plan, nous avons aussi plusieurs plan qui permettent de gérer l'é
 \item Le plan "Déménager" qui va permettre au agent de lancer une élection pour savoir si la communauté est favorable pour déplacer le campement. Si ce vote est positif alors un groupe de nomade est crée. Nous présenterons comment le vote est effectuer lors de la présentation du groupe.\\
 \end{itemize}
 
-schema Peche / agriculture / Déménager\\
+\begin{figure}[H]
+\center
+\includegraphics[width = 16cm]{img/Demenager.png}
+\caption{Schéma des cognitons et plans possible autre que les default chez un agent.}
+\end{figure}
+
 
 On remarquera que le plan "Pêcher" et "Agriculture" sont bien relier a un cogniton pourtant ont ne les a pas nommer lors des plan originaux. En effet ces plan vont être découvert. Cette découverte s'effectue dans le "Auto Plan", lorsque un agent se déplace sur un littoral il a une chance de découvrir la compétence permet "peche" activant son cogniton du même nom. A la découverte de ce Cogniton le plan est activer et utilisable par l'agent. Il en va de même pour "Agriculture" lorsque un agent se trouve sur un patch de type prairie.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \center
 \includegraphics[width = 10cm]{img/planDansMetaciv2.png}
 \caption{Représentation des cognitons et plans associés dans MetaCiv pour la Pêche, agriculture et déménager.}
@@ -1330,9 +1332,9 @@ Lorsque plusieurs agents ont besoin de réaliser une taches a plusieurs ou bien o
 
 \subsubsection*{"Leader"}
 
-Dans les societes nomade il a exister beaucoups de modele d'organisation different par le passer et aujourd'hui encore ou 1,4\% de la population mondiale serait nomade.
+Dans les societes nomade il a exister beaucoups de modele d'organisation different par le passer et aujourd'hui encore ou 1,4\% de la population mondiale serait nomade.\\
 
-Dans le cas de cette modelisation nous avons decider d'avoir une organisation diriger vers une societer sans veritable chef mais plutot des individue qui se demarque en proposant des initiatives et en fonction de leur qualite ( charisme, competence) les autres membres de la tribu vont decider de les suivres ou pas.
+Dans le cas de cette modelisation nous avons decider d'avoir une organisation diriger vers une societer sans veritable chef mais plutot des individue qui se demarque en proposant des initiatives et en fonction de leur qualite ( charisme, competence) les autres membres de la tribu vont decider de les suivres ou pas.\\
 
 On a vu que lorsque un agent enclanche le plan demenager il va y avoir un vote. Celui-ci est la pour decider si la tribu deplace le campement ou pas. Pour ce faire le vote se deroule comme suit :\\
 
@@ -1371,14 +1373,22 @@ On a vu que lorsque un agent enclanche le plan demenager il va y avoir un vote. 
 
 Lorsque le groupe est crée, le demandeur du vote devient le leader du groupe obtiens le rôle de "leader". La fonction principale de cet agent est de récupérer les stocks de ressources restante et de guider son groupe vers un nouveaux lieu.\\ 
 
-Schema\\
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm]{img/leader.png}
+\caption{Représentation du culturon Leader et plans associés dans MetaCiv.}
+\end{figure}
 
 
 \subsubsection*{Les "Follower"}
 
 Lorsque l'élection est réussite les votant rejoignent aussi le groupe, mais en tant que "follower". Les "follower" ont un rôle relativement simpliste. Leur seul objectif étant de suivre le leader et de se maintenir en vie.\\
 
-schema\\
+\begin{figure}[H]
+\center
+\includegraphics[width = 10cm]{img/follower.png}
+\caption{Représentation du culturon Follower et plans associés dans MetaCiv.}
+\end{figure}
 
 \subsubsection{Les aménagement}
 
