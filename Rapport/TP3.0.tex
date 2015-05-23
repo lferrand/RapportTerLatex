@@ -343,7 +343,7 @@ Ce modèle va servir à générer une société basée sur la cueillette, l'artisanat e
 Toutes les constantes mentionnées dans ce modèle sont données dans la section "\hyperref[constantes]{Constantes}".
 Les agents sont initialement au nombre de $81$ lors du lancement de la modélisation.
 
-\subsubsection{L'environnement}
+\subsubsection{L'environnement du modèle}
 \label{environnement}
 En premier lieu, l'environnement dans lequel nos agents se déplacent est un espace fermé de $\mathbb{R}^{2}$. Il existe un total de quatre types de patches présents : Mer, Prairie, Terre Sterile et Forêt. Le modèle étant relativement basique, il n'existe que deux types de ressources disponibles : Les baies et le bois. Le tableau suivant donne le récapitulatif des différents patches et ressources disponibles.
 
@@ -370,7 +370,7 @@ Un patch de terre stérile ne produit pas de ressources alors que les patches Pra
 Le point d'apparition des agents se situe au milieu de l'environnement et plusieurs prairies sont présentes aux alentours. On peut aussi distinguer une grande forêt dans la partie droite de l'environnement.
 \begin{figure}[H]
 \center
-\includegraphics[height=10 cm]{img/terrain.png}
+\includegraphics[height=8 cm]{img/terrain.png}
 \caption{environnement de la modélisation}
 \end{figure}
 
@@ -378,7 +378,7 @@ Il convient de remarquer que lorsque les agents apparaissent dans l'environnemen
 
 
 
-\subsubsection{Les attributs}
+\subsubsection{Les attributs du modèle}
 \label{attributs}
 Il existe six attributs dans ce modèle : Vie, Age, CompetenceArtisanat, Energie, CompetenceCueilleur et EsperanceDeVie.
 \begin{itemize}
@@ -387,7 +387,7 @@ Il existe six attributs dans ce modèle : Vie, Age, CompetenceArtisanat, Energie,
 \item La compétence en artisanat reflette la dextérité d'un individu pour l'artisanat et n'est augmentée qu'après avoir fabriqué divers objets.
 \item L'attribut "CompetenceCueilleur" reflette l'aptitude d'un individu pour la recherche et la récolte de baies et n'est augmentée qu'après avoir ramené des baies au village.
 \item La vie d'un individu est utilisée lors des combats entre deux agents. (Non implémentée pour l'instant).
-\item \label{EsperanceDeVie}L'attribut EsperanceDeVie est initialisée dans le "BirthPlan". Ce plan est lancé automatiquement à la création d'un agent et permet l'initialisation de plusieurs paramètres. Cet attribut fixe l'âge à partir duquel l'agent est susceptible de mourir. Afin de donner une espérance de vie à chacun des agents, nous générons la fonction de masse de la loi de Poisson de paramètre $k$ = 20 et $\lambda = 10$.
+\item \label{EsperanceDeVie}L'attribut EsperanceDeVie est initialisée dans le "BirthPlan". Ce plan est lancé automatiquement à la création d'un agent et permet l'initialisation de plusieurs paramètres. Cet attribut fixe l'âge à partir duquel l'agent est susceptible de mourir. Afin de donner une espérance de vie propre à chacun des agents, nous générons la fonction de masse de la loi de Poisson de paramètre $k$ = 20 et $\lambda = 10$.
 
 \begin{figure}[H]
 \center
@@ -409,12 +409,13 @@ Pour avoir une valeur légèrement plus précise, on trouve le nombre approché $i'$
 
 Enfin, pour avoir une espérance de vie plus acceptable, nous posons :
 \begin{equation*}
-	EsperanceDeVie = 5 * i'
+	EsperanceDeVie = 5 * i' \\
+	\text{ avec }i'\in [0,20]
 \end{equation*}
 
 \begin{figure}[H]
 \center
-\includegraphics[width = 10 cm]{img/cumul.png}
+\includegraphics[width = 8 cm]{img/cumul.png}
 \caption{Représentation de la fonction de répartition de la loi de Poisson de paramètre $\lambda = 10$ et $k=20$.}
 \end{figure}
 
@@ -1232,7 +1233,7 @@ Pour implémenter cette architecture de schéma cognitifs, nous avons procédés en 
 \end{figure}
 
 \item Nous avons mis au point ce que nous appelons des fabriques pour permettre la gestion de ces schémas. Ces fabriques sont des classes à mi-chemin entre le pattern fabrique abstraite et singleton. Elles génèrent des objets schémas cognitifs et civilisation par des méthodes statiques et les conservent dans une liste statique. Nous pouvons maintenant créer de nouveaux objets, les charger à partir d'un répertoire, les sauvegarder et les cloner en les renommant .
-\item Nous avons modifié l'interface de MetaCiv pour rajouter les barres d'outils permettant de gérer l'édition des schémas cognitifs
+\item Nous avons modifié l'interface de MetaCiv pour rajouter les barres d'outils permettant de gérer l'édition des schémas cognitifs.
 \end{itemize}
 
 \begin{figure}[H]
@@ -1249,8 +1250,8 @@ Pour implémenter cette architecture de schéma cognitifs, nous avons procédés en 
 
 \begin{figure}[H]
 \center
-\includegraphics[width=10cm]{img/interface_schema_cognitif-3.png}
-\caption{ajout d'un sélecteur du schéma cognitif à utiliser dans l'interface de gestion des civilisations}
+\includegraphics[width=8cm]{img/interface_schema_cognitif-3.png}
+\caption{Ajout d'un sélecteur du schéma cognitif à utiliser dans l'interface de gestion des civilisations.}
 \end{figure}
 
 

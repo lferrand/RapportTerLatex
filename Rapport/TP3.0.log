@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.6)  23 MAY 2015 00:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.6)  23 MAY 2015 02:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -980,7 +980,8 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \@input{source/configuration_style.aux}
 \openout2 = `source/configuration_style.aux'.
 
-(./source/configuration_style.tex) (./TP3.0.aux)
+(./source/configuration_style.tex)
+No file TP3.0.aux.
 \openout1 = `TP3.0.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
@@ -1003,7 +1004,6 @@ Package frenchb.ldf Info: Setting StandardEnumerateEnv=true for
 (frenchb.ldf)             compatibility with enumerate package,
 (frenchb.ldf)              on input line 72.
 LaTeX Info: Redefining \up on input line 72.
-
 ABD: EveryShipout initializing macros
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1056,8 +1056,6 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 72.
 LaTeX Info: Redefining \pageref on input line 72.
 LaTeX Info: Redefining \nameref on input line 72.
-
-(./TP3.0.out) (./TP3.0.out)
 \@outlinefile=\write5
 \openout5 = `TP3.0.out'.
 
@@ -1097,7 +1095,7 @@ LaTeX Info: Redefining \nameref on input line 72.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<img/logo.png, id=191, 265.9536pt x 86.724pt>
+<img/logo.png, id=7, 265.9536pt x 86.724pt>
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
 Package pdftex.def Info: img/logo.png used on input line 80.
@@ -1126,13 +1124,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
-<img/quadrants.png, id=212, 1017.8025pt x 536.0025pt>
+<img/quadrants.png, id=27, 1017.8025pt x 536.0025pt>
 File: img/quadrants.png Graphic file (type png)
  <use img/quadrants.png>
 Package pdftex.def Info: img/quadrants.png used on input line 125.
 (pdftex.def)             Requested size: 284.52756pt x 149.84248pt.
 
-<img/MetaCivMASQL.jpg, id=213, 512.66531pt x 331.99031pt>
+<img/MetaCivMASQL.jpg, id=28, 512.66531pt x 331.99031pt>
 File: img/MetaCivMASQL.jpg Graphic file (type jpg)
 
 <use img/MetaCivMASQL.jpg>
@@ -1144,14 +1142,18 @@ been already used, duplicate ignored
                    \relax 
 l.137 
        [1 <./img/quadrants.png>]
-<img/exdecision.PNG, id=221, 295.70474pt x 252.34274pt>
+
+LaTeX Warning: Hyper reference `quadrant' on page 2 undefined on input line 142
+.
+
+<img/exdecision.PNG, id=37, 295.70474pt x 252.34274pt>
 File: img/exdecision.PNG Graphic file (type png)
 
 <use img/exdecision.PNG>
 Package pdftex.def Info: img/exdecision.PNG used on input line 146.
 (pdftex.def)             Requested size: 284.52756pt x 242.81613pt.
  [2 <./img/MetaCivMASQL.jpg>]
-<img/fonctionnementMetaCiv.png, id=227, 1135.24126pt x 1176.64594pt>
+<img/fonctionnementMetaCiv.png, id=44, 1135.24126pt x 1176.64594pt>
 File: img/fonctionnementMetaCiv.png Graphic file (type png)
 
 <use img/fonctionnementMetaCiv.png>
@@ -1161,320 +1163,347 @@ Package pdftex.def Info: img/fonctionnementMetaCiv.png used on input line 155.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5] [6] <img/Aaction.png, id=254, 437.635pt x 117.43875pt>
+[5] [6] <img/Aaction.png, id=76, 437.635pt x 117.43875pt>
 File: img/Aaction.png Graphic file (type png)
 
 <use img/Aaction.png>
 Package pdftex.def Info: img/Aaction.png used on input line 294.
 (pdftex.def)             Requested size: 284.52756pt x 76.35397pt.
- <img/Laction.png, id=255, 482.80376pt x 128.48pt>
+ <img/Laction.png, id=77, 482.80376pt x 128.48pt>
 File: img/Laction.png Graphic file (type png)
 
 <use img/Laction.png>
 Package pdftex.def Info: img/Laction.png used on input line 300.
 (pdftex.def)             Requested size: 284.52756pt x 75.71823pt.
- <img/plan.png, id=256, 268.00125pt x 252.945pt>
+ <img/plan.png, id=78, 268.00125pt x 252.945pt>
 File: img/plan.png Graphic file (type png)
 
 <use img/plan.png>
 Package pdftex.def Info: img/plan.png used on input line 306.
 (pdftex.def)             Requested size: 284.52756pt x 268.54112pt.
- [7 <./img/Aaction.png> <./img/Laction.png>] [8 <./img/plan.png>] <img/mer.png,
- id=272, 24.09pt x 23.08624pt>
+ [7 <./img/Aaction.png> <./img/Laction.png>] [8 <./img/plan.png>]
+
+LaTeX Warning: Hyper reference `constantes' on page 9 undefined on input line 3
+43.
+
+<img/mer.png, id=97, 24.09pt x 23.08624pt>
 File: img/mer.png Graphic file (type png)
  <use img/mer.png>
 Package pdftex.def Info: img/mer.png used on input line 356.
 (pdftex.def)             Requested size: 14.84483pt x 14.22636pt.
 
-<img/sterile.png, id=273, 29.10875pt x 28.105pt>
+<img/sterile.png, id=98, 29.10875pt x 28.105pt>
 File: img/sterile.png Graphic file (type png)
  <use img/sterile.png>
 Package pdftex.def Info: img/sterile.png used on input line 358.
 (pdftex.def)             Requested size: 14.73466pt x 14.22636pt.
 
-<img/prairie.png, id=274, 17.06375pt x 19.07124pt>
+<img/prairie.png, id=99, 17.06375pt x 19.07124pt>
 File: img/prairie.png Graphic file (type png)
  <use img/prairie.png>
 Package pdftex.def Info: img/prairie.png used on input line 360.
 (pdftex.def)             Requested size: 12.72928pt x 14.22636pt.
 
-<img/foret.png, id=275, 19.07124pt x 20.075pt>
+<img/foret.png, id=100, 19.07124pt x 20.075pt>
 File: img/foret.png Graphic file (type png)
  <use img/foret.png>
 Package pdftex.def Info: img/foret.png used on input line 362.
 (pdftex.def)             Requested size: 13.51534pt x 14.22636pt.
 
-<img/terrain.png, id=276, 252.945pt x 251.94125pt>
+<img/terrain.png, id=101, 252.945pt x 251.94125pt>
 File: img/terrain.png Graphic file (type png)
  <use img/terrain.png>
 Package pdftex.def Info: img/terrain.png used on input line 373.
-(pdftex.def)             Requested size: 285.66241pt x 284.52756pt.
+(pdftex.def)             Requested size: 228.52838pt x 227.62204pt.
 
 [9 <./img/mer.png> <./img/sterile.png> <./img/prairie.png> <./img/foret.png>]
-<img/poisson.png, id=289, 608.2725pt x 464.73625pt>
+<img/poisson.png, id=116, 608.2725pt x 464.73625pt>
 File: img/poisson.png Graphic file (type png)
  <use img/poisson.png>
 Package pdftex.def Info: img/poisson.png used on input line 394.
 (pdftex.def)             Requested size: 199.16928pt x 152.165pt.
 
-[10 <./img/terrain.png>] <img/cumul.png, id=297, 590.205pt x 428.60126pt>
+[10 <./img/terrain.png>] <img/cumul.png, id=125, 590.205pt x 428.60126pt>
 File: img/cumul.png Graphic file (type png)
 
 <use img/cumul.png>
-Package pdftex.def Info: img/cumul.png used on input line 417.
-(pdftex.def)             Requested size: 284.52756pt x 206.62222pt.
- [11 <./img/poisson.png>]
-<img/EsperanceDeVie.png, id=308, 610.28pt x 375.4025pt>
+Package pdftex.def Info: img/cumul.png used on input line 418.
+(pdftex.def)             Requested size: 227.62204pt x 165.29648pt.
+ <img/EsperanceDeVie.png, id=126, 610.28pt x 375.4025pt>
 File: img/EsperanceDeVie.png Graphic file (type png)
 
 <use img/EsperanceDeVie.png>
-Package pdftex.def Info: img/EsperanceDeVie.png used on input line 423.
+Package pdftex.def Info: img/EsperanceDeVie.png used on input line 424.
 (pdftex.def)             Requested size: 284.52756pt x 175.02434pt.
- [12 <./img/cumul.png> <./img/EsperanceDeVie.png>]
-<img/default.png, id=318, 324.21124pt x 215.80624pt>
+ [11 <./img/poisson.png> <./img/cumul.png>]
+<img/default.png, id=139, 324.21124pt x 215.80624pt>
 File: img/default.png Graphic file (type png)
  <use img/default.png>
-Package pdftex.def Info: img/default.png used on input line 464.
+Package pdftex.def Info: img/default.png used on input line 465.
 (pdftex.def)             Requested size: 227.62204pt x 151.51447pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Hyper reference `EsperanceDeVie' on page 12 undefined on input l
+ine 488.
+
 Missing character: There is no ; in font nullfont!
+[12 <./img/EsperanceDeVie.png>]
+Overfull \vbox (17.37389pt too high) has occurred while \output is active []
+
 
 [13 <./img/default.png>] [14]
-<img/hunger.png, id=332, 382.42876pt x 255.95625pt>
+<img/hunger.png, id=160, 382.42876pt x 255.95625pt>
 File: img/hunger.png Graphic file (type png)
  <use img/hunger.png>
-Package pdftex.def Info: img/hunger.png used on input line 619.
+Package pdftex.def Info: img/hunger.png used on input line 620.
 (pdftex.def)             Requested size: 284.52756pt x 190.43962pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15] <img/cueilleur1.png, id=338, 365.365pt x 286.06876pt>
+[15] <img/cueilleur1.png, id=167, 365.365pt x 286.06876pt>
 File: img/cueilleur1.png Graphic file (type png)
 
 <use img/cueilleur1.png>
-Package pdftex.def Info: img/cueilleur1.png used on input line 641.
+Package pdftex.def Info: img/cueilleur1.png used on input line 642.
 (pdftex.def)             Requested size: 170.71652pt x 133.66661pt.
- <img/cueilleur2.png, id=339, 423.5825pt x 327.2225pt>
+ <img/cueilleur2.png, id=168, 423.5825pt x 327.2225pt>
 File: img/cueilleur2.png Graphic file (type png)
 
 <use img/cueilleur2.png>
-Package pdftex.def Info: img/cueilleur2.png used on input line 642.
+Package pdftex.def Info: img/cueilleur2.png used on input line 643.
 (pdftex.def)             Requested size: 170.71652pt x 131.88028pt.
  [16 <./img/hunger.png>]
-Overfull \hbox (0.63815pt too wide) in paragraph at lines 779--780
+Overfull \hbox (0.63815pt too wide) in paragraph at lines 780--781
 [][] 
  []
 
 [17 <./img/cueilleur1.png> <./img/cueilleur2.png>] [18]
-Overfull \hbox (2.96054pt too wide) in paragraph at lines 790--791
+Overfull \hbox (2.96054pt too wide) in paragraph at lines 791--792
 []\T1/cmr/m/n/10 Si l'agent pos-sède une hutte, le co-gni-ton "Pas-Be-soin-Hutt
 e" est ajouté si-non une hutte est construite
  []
 
-<img/artisan1.png, id=359, 313.17pt x 284.06125pt>
+<img/artisan1.png, id=190, 313.17pt x 284.06125pt>
 File: img/artisan1.png Graphic file (type png)
  <use img/artisan1.png>
-Package pdftex.def Info: img/artisan1.png used on input line 795.
+Package pdftex.def Info: img/artisan1.png used on input line 796.
 (pdftex.def)             Requested size: 170.71652pt x 154.85147pt.
 
-<img/artisan2.png, id=360, 341.275pt x 193.72375pt>
+<img/artisan2.png, id=191, 341.275pt x 193.72375pt>
 File: img/artisan2.png Graphic file (type png)
  <use img/artisan2.png>
-Package pdftex.def Info: img/artisan2.png used on input line 796.
+Package pdftex.def Info: img/artisan2.png used on input line 797.
 (pdftex.def)             Requested size: 170.71652pt x 96.90892pt.
 
-Overfull \hbox (2.78825pt too wide) in paragraph at lines 870--872
+Overfull \hbox (2.78825pt too wide) in paragraph at lines 871--873
  [][][][]\T1/cmr/bx/n/10 JaiUnePelle 
  []
 
 [19 <./img/artisan1.png> <./img/artisan2.png>]
-<img/agriculteur1.png, id=369, 320.69812pt x 63.73813pt>
+<img/agriculteur1.png, id=199, 320.69812pt x 63.73813pt>
 File: img/agriculteur1.png Graphic file (type png)
 
 <use img/agriculteur1.png>
-Package pdftex.def Info: img/agriculteur1.png used on input line 908.
+Package pdftex.def Info: img/agriculteur1.png used on input line 909.
 (pdftex.def)             Requested size: 170.71652pt x 33.92984pt.
 
-<img/agriculteur2.png, id=370, 389.455pt x 119.44624pt>
+<img/agriculteur2.png, id=200, 389.455pt x 119.44624pt>
 File: img/agriculteur2.png Graphic file (type png)
 
 <use img/agriculteur2.png>
-Package pdftex.def Info: img/agriculteur2.png used on input line 909.
+Package pdftex.def Info: img/agriculteur2.png used on input line 910.
 (pdftex.def)             Requested size: 170.71652pt x 52.35783pt.
  [20]
-Overfull \hbox (1.01785pt too wide) in paragraph at lines 918--920
+Overfull \hbox (1.01785pt too wide) in paragraph at lines 919--921
  [][][][]\T1/cmr/bx/n/10 Agriculteur 
  []
 
-<img/village.png, id=376, 65.24374pt x 65.24374pt>
+<img/village.png, id=207, 65.24374pt x 65.24374pt>
 File: img/village.png Graphic file (type png)
  <use img/village.png>
-Package pdftex.def Info: img/village.png used on input line 970.
+Package pdftex.def Info: img/village.png used on input line 971.
 (pdftex.def)             Requested size: 21.33936pt x 21.33955pt.
 
-<img/hutte.png, id=377, 83.31125pt x 80.3pt>
+<img/hutte.png, id=208, 83.31125pt x 80.3pt>
 File: img/hutte.png Graphic file (type png)
  <use img/hutte.png>
-Package pdftex.def Info: img/hutte.png used on input line 972.
+Package pdftex.def Info: img/hutte.png used on input line 973.
 (pdftex.def)             Requested size: 22.13965pt x 21.33955pt.
 
-<img/champ.png, id=378, 104.39pt x 103.38625pt>
+<img/champ.png, id=209, 104.39pt x 103.38625pt>
 File: img/champ.png Graphic file (type png)
  <use img/champ.png>
-Package pdftex.def Info: img/champ.png used on input line 974.
+Package pdftex.def Info: img/champ.png used on input line 975.
 (pdftex.def)             Requested size: 21.54662pt x 21.33955pt.
  [21 <./img/agriculteur1.png> <./img/agriculteur2.png>]
-<img/initial.png, id=387, 449.68pt x 427.5975pt>
+<img/initial.png, id=219, 449.68pt x 427.5975pt>
 File: img/initial.png Graphic file (type png)
  <use img/initial.png>
-Package pdftex.def Info: img/initial.png used on input line 986.
+Package pdftex.def Info: img/initial.png used on input line 987.
 (pdftex.def)             Requested size: 149.60934pt x 142.26378pt.
 
-<img/fondementGroupe.png, id=388, 529.98pt x 439.6425pt>
+<img/fondementGroupe.png, id=220, 529.98pt x 439.6425pt>
 File: img/fondementGroupe.png Graphic file (type png)
 
 <use img/fondementGroupe.png>
-Package pdftex.def Info: img/fondementGroupe.png used on input line 996.
+Package pdftex.def Info: img/fondementGroupe.png used on input line 997.
 (pdftex.def)             Requested size: 171.48936pt x 142.26378pt.
  [22 <./img/village.png> <./img/hutte.png> <./img/champ.png> <./img/initial.png
 >]
-<img/cueillette.png, id=399, 287.0725pt x 273.02pt>
+<img/cueillette.png, id=233, 287.0725pt x 273.02pt>
 File: img/cueillette.png Graphic file (type png)
  <use img/cueillette.png>
-Package pdftex.def Info: img/cueillette.png used on input line 1006.
+Package pdftex.def Info: img/cueillette.png used on input line 1007.
 (pdftex.def)             Requested size: 149.58517pt x 142.26378pt.
 
-<img/champs.png, id=400, 559.08875pt x 486.81876pt>
+<img/champs.png, id=234, 559.08875pt x 486.81876pt>
 File: img/champs.png Graphic file (type png)
  <use img/champs.png>
-Package pdftex.def Info: img/champs.png used on input line 1016.
+Package pdftex.def Info: img/champs.png used on input line 1017.
 (pdftex.def)             Requested size: 163.3771pt x 142.26378pt.
 
 [23 <./img/fondementGroupe.png> <./img/cueillette.png>]
-<img/artisan.png, id=409, 366.36874pt x 345.29pt>
+<img/artisan.png, id=245, 366.36874pt x 345.29pt>
 File: img/artisan.png Graphic file (type png)
  <use img/artisan.png>
-Package pdftex.def Info: img/artisan.png used on input line 1026.
+Package pdftex.def Info: img/artisan.png used on input line 1027.
 (pdftex.def)             Requested size: 150.95007pt x 142.26378pt.
 
-<img/agriculteurPelle.png, id=410, 388.45125pt x 385.44pt>
+<img/agriculteurPelle.png, id=246, 388.45125pt x 385.44pt>
 File: img/agriculteurPelle.png Graphic file (type png)
 
 <use img/agriculteurPelle.png>
-Package pdftex.def Info: img/agriculteurPelle.png used on input line 1032.
+Package pdftex.def Info: img/agriculteurPelle.png used on input line 1033.
 (pdftex.def)             Requested size: 143.37498pt x 142.26378pt.
  [24 <./img/champs.png> <./img/artisan.png>]
-<img/pop.png, id=420, 762.34813pt x 142.5325pt>
+<img/pop.png, id=257, 762.34813pt x 142.5325pt>
 File: img/pop.png Graphic file (type png)
  <use img/pop.png>
-Package pdftex.def Info: img/pop.png used on input line 1043.
+Package pdftex.def Info: img/pop.png used on input line 1044.
 (pdftex.def)             Requested size: 369.88582pt x 69.15427pt.
 
-<img/poparti.png, id=421, 759.33687pt x 144.54pt>
+<img/poparti.png, id=258, 759.33687pt x 144.54pt>
 File: img/poparti.png Graphic file (type png)
  <use img/poparti.png>
-Package pdftex.def Info: img/poparti.png used on input line 1050.
+Package pdftex.def Info: img/poparti.png used on input line 1051.
 (pdftex.def)             Requested size: 369.88582pt x 70.40837pt.
 
-<img/popartiagri.png, id=422, 748.7975pt x 142.5325pt>
+<img/popartiagri.png, id=259, 748.7975pt x 142.5325pt>
 File: img/popartiagri.png Graphic file (type png)
 
 <use img/popartiagri.png>
-Package pdftex.def Info: img/popartiagri.png used on input line 1057.
+Package pdftex.def Info: img/popartiagri.png used on input line 1058.
 (pdftex.def)             Requested size: 369.88582pt x 70.40698pt.
  [25 <./img/agriculteurPelle.png> <./img/pop.png> <./img/poparti.png>] <img/pop
-2.png, id=433, 761.34438pt x 145.04187pt>
+2.png, id=272, 761.34438pt x 145.04187pt>
 File: img/pop2.png Graphic file (type png)
 
 <use img/pop2.png>
-Package pdftex.def Info: img/pop2.png used on input line 1068.
+Package pdftex.def Info: img/pop2.png used on input line 1069.
 (pdftex.def)             Requested size: 369.88582pt x 70.46693pt.
- <img/poparti2.png, id=434, 757.32938pt x 144.03813pt>
+ <img/poparti2.png, id=273, 757.32938pt x 144.03813pt>
 File: img/poparti2.png Graphic file (type png)
 
 <use img/poparti2.png>
-Package pdftex.def Info: img/poparti2.png used on input line 1077.
+Package pdftex.def Info: img/poparti2.png used on input line 1078.
 (pdftex.def)             Requested size: 369.88582pt x 70.35071pt.
  [26 <./img/popartiagri.png> <./img/pop2.png> <./img/poparti2.png>] <img/popart
-iagri2.png, id=445, 754.82pt x 143.53625pt>
+iagri2.png, id=285, 754.82pt x 143.53625pt>
 File: img/popartiagri2.png Graphic file (type png)
 
 <use img/popartiagri2.png>
-Package pdftex.def Info: img/popartiagri2.png used on input line 1086.
+Package pdftex.def Info: img/popartiagri2.png used on input line 1087.
 (pdftex.def)             Requested size: 369.88582pt x 70.33775pt.
- <img/pop3.png, id=446, 762.34813pt x 145.04187pt>
+ <img/pop3.png, id=286, 762.34813pt x 145.04187pt>
 File: img/pop3.png Graphic file (type png)
 
 <use img/pop3.png>
-Package pdftex.def Info: img/pop3.png used on input line 1100.
+Package pdftex.def Info: img/pop3.png used on input line 1101.
 (pdftex.def)             Requested size: 369.88582pt x 70.37177pt.
- <img/poparti3.png, id=447, 747.29187pt x 143.53625pt>
+ <img/poparti3.png, id=287, 747.29187pt x 143.53625pt>
 File: img/poparti3.png Graphic file (type png)
 
 <use img/poparti3.png>
-Package pdftex.def Info: img/poparti3.png used on input line 1109.
+Package pdftex.def Info: img/poparti3.png used on input line 1110.
 (pdftex.def)             Requested size: 369.88582pt x 71.04518pt.
  [27 <./img/popartiagri2.png> <./img/pop3.png>]
-<img/popartiagri3.png, id=456, 766.865pt x 144.03813pt>
+<img/popartiagri3.png, id=297, 766.865pt x 144.03813pt>
 File: img/popartiagri3.png Graphic file (type png)
 
 <use img/popartiagri3.png>
-Package pdftex.def Info: img/popartiagri3.png used on input line 1118.
+Package pdftex.def Info: img/popartiagri3.png used on input line 1119.
 (pdftex.def)             Requested size: 369.88582pt x 69.47597pt.
  [28 <./img/poparti3.png> <./img/popartiagri3.png>]
-[29] <img/uml-SC.jpg, id=470, 756.17242pt x 443.50958pt>
+[29] <img/uml-SC.jpg, id=314, 756.17242pt x 443.50958pt>
 File: img/uml-SC.jpg Graphic file (type jpg)
  <use img/uml-SC.jpg>
-Package pdftex.def Info: img/uml-SC.jpg used on input line 1220.
+Package pdftex.def Info: img/uml-SC.jpg used on input line 1221.
 (pdftex.def)             Requested size: 398.33858pt x 233.63103pt.
 
-[30] <img/Dev-Civ-getPlan.png, id=476, 203.25937pt x 42.1575pt>
+[30] <img/Dev-Civ-getPlan.png, id=325, 203.25937pt x 42.1575pt>
 File: img/Dev-Civ-getPlan.png Graphic file (type png)
 
 <use img/Dev-Civ-getPlan.png>
-Package pdftex.def Info: img/Dev-Civ-getPlan.png used on input line 1230.
+Package pdftex.def Info: img/Dev-Civ-getPlan.png used on input line 1231.
 (pdftex.def)             Requested size: 227.62204pt x 47.21219pt.
 
-<img/interface_schema_cognitif-1.png, id=477, 627.84563pt x 226.59656pt>
+<img/interface_schema_cognitif-1.png, id=326, 627.84563pt x 226.59656pt>
 File: img/interface_schema_cognitif-1.png Graphic file (type png)
 
 <use img/interface_schema_cognitif-1.png>
 Package pdftex.def Info: img/interface_schema_cognitif-1.png used on input line
- 1240.
+ 1241.
 (pdftex.def)             Requested size: 398.33858pt x 143.76273pt.
  [31 <./img/uml-SC.jpg> <./img/Dev-Civ-getPlan.png>]
-<img/interface_schema_cognitif-2.png, id=484, 201.00093pt x 136.25906pt>
+<img/interface_schema_cognitif-2.png, id=333, 201.00093pt x 136.25906pt>
 File: img/interface_schema_cognitif-2.png Graphic file (type png)
 
 <use img/interface_schema_cognitif-2.png>
 Package pdftex.def Info: img/interface_schema_cognitif-2.png used on input line
- 1246.
+ 1247.
 (pdftex.def)             Requested size: 170.71652pt x 115.72925pt.
 
-<img/interface_schema_cognitif-3.png, id=485, 316.93407pt x 240.9pt>
+<img/interface_schema_cognitif-3.png, id=334, 316.93407pt x 240.9pt>
 File: img/interface_schema_cognitif-3.png Graphic file (type png)
 
 <use img/interface_schema_cognitif-3.png>
 Package pdftex.def Info: img/interface_schema_cognitif-3.png used on input line
- 1252.
-(pdftex.def)             Requested size: 284.52756pt x 216.28601pt.
+ 1253.
+(pdftex.def)             Requested size: 227.62204pt x 173.01778pt.
  [32 <./img/interface_schema_cognitif-1.png> <./img/interface_schema_cognitif-2
-.png>] [33 <./img/interface_schema_cognitif-3.png>] [34] [35]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1332.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1332.
+.png> <./img/interface_schema_cognitif-3.png>] [33] [34]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1333.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1333.
  (./TP3.0.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1332.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1332.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1333.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1333.
 
-Package rerunfilecheck Info: File `TP3.0.out' has not changed.
-(rerunfilecheck)             Checksum: 6BE8C9A9E2E97118D60506D69FBB3120;3680.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1332.
+
+
+Package rerunfilecheck Warning: File `TP3.0.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `TP3.0.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  0062CA3549C858493561170EB689E86F;3706.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1333.
  ) 
 Here is how much of TeX's memory you used:
- 34252 strings out of 493117
- 770696 string characters out of 6135433
- 964572 words of memory out of 5000000
- 36985 multiletter control sequences out of 15000+600000
+ 34198 strings out of 493117
+ 769786 string characters out of 6135433
+ 962448 words of memory out of 5000000
+ 36938 multiletter control sequences out of 15000+600000
  17014 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,76p,1159b,987s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1498,10 +1527,10 @@ ve/2014/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2014/te
 xmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2014/texm
 f-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on TP3.0.pdf (36 pages, 1706512 bytes).
+Output written on TP3.0.pdf (35 pages, 1703386 bytes).
 PDF statistics:
- 597 PDF objects out of 1000 (max. 8388607)
- 448 compressed objects within 5 object streams
- 131 named destinations out of 1000 (max. 500000)
- 616 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 303 compressed objects within 4 object streams
+ 130 named destinations out of 1000 (max. 500000)
+ 248 words of extra memory for PDF output out of 10000 (max. 10000000)
 
