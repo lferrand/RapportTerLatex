@@ -1584,11 +1584,29 @@ Pour implémenter cette architecture de schéma cognitifs, nous avons procédés en 
 \caption{interface de paramètrage d'une action, on peut choisir l'utilisation de la valeur directe ou d'une constante à l'aide du bouton radio, la combo box "linked constant" propose toutes les constantes du schéma cognitif en cours d'édition}
 \end{figure} 
 
-A FAIRE : PARLER DES CONSTANTES DANS LES TRIGGERS
+	Nous avons étendu ce principe aux triggers
+	
+\begin{figure}[H]
+\center
+\includegraphics[width=5cm]{img/Dev-Const-Trig.png}
+\caption{interface de paramètrage des triggers d'un cogniton.
+le premier utilise une constante , le second une valeur directe}
+\end{figure} 	
+	
+	
 		
 \subsubsection{Sauvegarde incrémentale}
-	besoins : - lol
+besoins : 
+\begin{itemize}
+\item restaurer une sauvegarde corrompue.
+\item ne pas solliciter d'actions supplémentaires de la part de l'utilisateur en cas de fonctionnement normal.
+\item ne pas saturer le disque dur.
+\end{itemize}	
 	
+	avant de lancer d'écraser les fichiers avec la nouvelle sauvegarde , on effectue une copie des fichiers d'origine dans un dossier backup situé a coté du dossier du modèle.
+	le nombre de sauvegardes ainsi conservées est limité par une constante, la sauvegarde la plus ancienne est remplacée par la nouvelle
+		
+		
 \subsubsection{Defines}
 	besoins : - centraliser les valeurs constantes utilisés dans le code du programme afin de faciliter les modifications éventuelles
 	
@@ -1630,8 +1648,7 @@ création d'un type de plan spécial qui conduit à l'évaluation d'un nouveau group
 \end{figure} 
 	
 \subsubsection{Objets uniques / stackables}
-Séparer les Objets en deux catégories : 
-- A FAIRE
+Séparer les Objets en deux catégories : les objets uniques qui possèdent des attributs comme l'usure de l'objet et les objets dits "stackables" (litt. "empilable") qui resteront toujours identiques , par exemple les ressources alimentaires.
 
 	
 \subsection{Stabilisation du noyau}
