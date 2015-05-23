@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.21)  23 MAY 2015 19:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.21)  23 MAY 2015 19:24
 entering extended mode
 **TP3.0.tex
 (C:\Users\Lionel\Documents\GitHub\RapportTerLatex\Rapport\TP3.0.tex
@@ -1004,11 +1004,8 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \@input{source/configuration_style.aux}
 
 (C:\Users\Lionel\Documents\GitHub\RapportTerLatex\Rapport\source/configuration_
-style.tex) (C:\Users\Lionel\Documents\GitHub\RapportTerLatex\Rapport\TP3.0.aux
-
-LaTeX Warning: Label `constantes' multiply defined.
-
-)
+style.tex)
+No file TP3.0.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
 LaTeX Font Info:    ... okay on input line 72.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
@@ -1026,7 +1023,7 @@ LaTeX Font Info:    ... okay on input line 72.
 LaTeX Info: Redefining \degres on input line 72.
 LaTeX Info: Redefining \dots on input line 72.
 LaTeX Info: Redefining \up on input line 72.
- ABD: EveryShipout initializing macros
+ABD: EveryShipout initializing macros
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count180
@@ -1064,9 +1061,6 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 72.
 LaTeX Info: Redefining \pageref on input line 72.
 LaTeX Info: Redefining \nameref on input line 72.
-
-(C:\Users\Lionel\Documents\GitHub\RapportTerLatex\Rapport\TP3.0.out)
-(C:\Users\Lionel\Documents\GitHub\RapportTerLatex\Rapport\TP3.0.out)
 \@outlinefile=\write5
 \c@lstlisting=\count187
 
@@ -1104,7 +1098,7 @@ LaTeX Info: Redefining \nameref on input line 72.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<img/logo.png, id=186, 265.9536pt x 86.724pt>
+<img/logo.png, id=6, 265.9536pt x 86.724pt>
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
 Package pdftex.def Info: img/logo.png used on input line 80.
@@ -1129,15 +1123,13 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Lionel/Documents
 /GitHub/RapportTerLatex/Rapport/img/logo.png>]
-(C:\Users\Lionel\Documents\GitHub\RapportTerLatex\Rapport\TP3.0.tocpdfTeX warni
-ng (ext4): destination with the same identifier (name{page.1}) has been already
- used, duplicate ignored
+\tf@toc=\write6
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.44 ...rline {3.5}Conclusion}{48}{subsection.3.5}
-                                                   [1])
-\tf@toc=\write6
- [2]
+l.110 \newpage
+               [1]
 Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
@@ -1157,122 +1149,130 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
-[3]
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
 
-<img/quadrants.png, id=263, 1017.8025pt x 536.0025pt>
+<img/quadrants.png, id=34, 1017.8025pt x 536.0025pt>
 File: img/quadrants.png Graphic file (type png)
  <use img/quadrants.png>
 Package pdftex.def Info: img/quadrants.png used on input line 138.
 (pdftex.def)             Requested size: 284.52756pt x 149.84248pt.
 
-<img/MetaCivMASQL.jpg, id=264, 512.66531pt x 331.99031pt>
+<img/MetaCivMASQL.jpg, id=35, 512.66531pt x 331.99031pt>
 File: img/MetaCivMASQL.jpg Graphic file (type jpg)
 
 <use img/MetaCivMASQL.jpg>
 Package pdftex.def Info: img/MetaCivMASQL.jpg used on input line 147.
 (pdftex.def)             Requested size: 284.52756pt x 184.25172pt.
- [4 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/quadrants.png
+ [3 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/quadrants.png
 >]
-<img/exdecision.PNG, id=272, 295.70474pt x 252.34274pt>
+
+LaTeX Warning: Hyper reference `quadrant' on page 4 undefined on input line 155
+.
+
+<img/exdecision.PNG, id=44, 295.70474pt x 252.34274pt>
 File: img/exdecision.PNG Graphic file (type png)
 
 <use img/exdecision.PNG>
 Package pdftex.def Info: img/exdecision.PNG used on input line 159.
 (pdftex.def)             Requested size: 284.52756pt x 242.81613pt.
- [5 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/MetaCivMASQL.
+ [4 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/MetaCivMASQL.
 jpg>]
-<img/fonctionnementMetaCiv.png, id=278, 1135.24126pt x 1176.64594pt>
+<img/fonctionnementMetaCiv.png, id=51, 1135.24126pt x 1176.64594pt>
 File: img/fonctionnementMetaCiv.png Graphic file (type png)
 
 <use img/fonctionnementMetaCiv.png>
 Package pdftex.def Info: img/fonctionnementMetaCiv.png used on input line 168.
 (pdftex.def)             Requested size: 284.52756pt x 294.89688pt.
- [6 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/exdecision.PN
-G>] [7 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/fonctionne
+ [5 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/exdecision.PN
+G>] [6 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/fonctionne
 mentMetaCiv.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8] [9] <img/Aaction.png, id=305, 437.635pt x 117.43875pt>
+[7] [8] <img/Aaction.png, id=83, 437.635pt x 117.43875pt>
 File: img/Aaction.png Graphic file (type png)
 
 <use img/Aaction.png>
 Package pdftex.def Info: img/Aaction.png used on input line 307.
 (pdftex.def)             Requested size: 284.52756pt x 76.35397pt.
- <img/Laction.png, id=306, 482.80376pt x 128.48pt>
+ <img/Laction.png, id=84, 482.80376pt x 128.48pt>
 File: img/Laction.png Graphic file (type png)
 
 <use img/Laction.png>
 Package pdftex.def Info: img/Laction.png used on input line 313.
 (pdftex.def)             Requested size: 284.52756pt x 75.71823pt.
- <img/plan.png, id=307, 268.00125pt x 252.945pt>
+ <img/plan.png, id=85, 268.00125pt x 252.945pt>
 File: img/plan.png Graphic file (type png)
 
 <use img/plan.png>
 Package pdftex.def Info: img/plan.png used on input line 319.
 (pdftex.def)             Requested size: 284.52756pt x 268.54112pt.
- [10 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/Aaction.png>
- <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/Laction.png>] [1
-1 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/plan.png>] <img
-/mer.png, id=323, 24.09pt x 23.08624pt>
+ [9 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/Aaction.png> 
+<C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/Laction.png>] [10
+ <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/plan.png>]
+
+LaTeX Warning: Hyper reference `constantes' on page 11 undefined on input line 
+356.
+
+<img/mer.png, id=104, 24.09pt x 23.08624pt>
 File: img/mer.png Graphic file (type png)
  <use img/mer.png>
 Package pdftex.def Info: img/mer.png used on input line 369.
 (pdftex.def)             Requested size: 14.84483pt x 14.22636pt.
 
-<img/sterile.png, id=324, 29.10875pt x 28.105pt>
+<img/sterile.png, id=105, 29.10875pt x 28.105pt>
 File: img/sterile.png Graphic file (type png)
  <use img/sterile.png>
 Package pdftex.def Info: img/sterile.png used on input line 371.
 (pdftex.def)             Requested size: 14.73466pt x 14.22636pt.
 
-<img/prairie.png, id=325, 17.06375pt x 19.07124pt>
+<img/prairie.png, id=106, 17.06375pt x 19.07124pt>
 File: img/prairie.png Graphic file (type png)
  <use img/prairie.png>
 Package pdftex.def Info: img/prairie.png used on input line 373.
 (pdftex.def)             Requested size: 12.72928pt x 14.22636pt.
 
-<img/foret.png, id=326, 19.07124pt x 20.075pt>
+<img/foret.png, id=107, 19.07124pt x 20.075pt>
 File: img/foret.png Graphic file (type png)
  <use img/foret.png>
 Package pdftex.def Info: img/foret.png used on input line 375.
 (pdftex.def)             Requested size: 13.51534pt x 14.22636pt.
 
-<img/terrain.png, id=327, 252.945pt x 251.94125pt>
+<img/terrain.png, id=108, 252.945pt x 251.94125pt>
 File: img/terrain.png Graphic file (type png)
  <use img/terrain.png>
 Package pdftex.def Info: img/terrain.png used on input line 386.
 (pdftex.def)             Requested size: 228.52838pt x 227.62204pt.
 
-[12 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/mer.png> <C:/
+[11 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/mer.png> <C:/
 Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/sterile.png> <C:/User
 s/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/prairie.png> <C:/Users/Li
 onel/Documents/GitHub/RapportTerLatex/Rapport/img/foret.png>]
-<img/poisson.png, id=341, 608.2725pt x 464.73625pt>
+<img/poisson.png, id=123, 608.2725pt x 464.73625pt>
 File: img/poisson.png Graphic file (type png)
  <use img/poisson.png>
 Package pdftex.def Info: img/poisson.png used on input line 407.
 (pdftex.def)             Requested size: 199.16928pt x 152.165pt.
 
-[13 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/terrain.png>]
-<img/cumul.png, id=349, 590.205pt x 428.60126pt>
+[12 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/terrain.png>]
+<img/cumul.png, id=133, 590.205pt x 428.60126pt>
 File: img/cumul.png Graphic file (type png)
  <use img/cumul.png>
 Package pdftex.def Info: img/cumul.png used on input line 431.
 (pdftex.def)             Requested size: 227.62204pt x 165.29648pt.
 
-<img/EsperanceDeVie.png, id=350, 610.28pt x 375.4025pt>
+<img/EsperanceDeVie.png, id=134, 610.28pt x 375.4025pt>
 File: img/EsperanceDeVie.png Graphic file (type png)
 
 <use img/EsperanceDeVie.png>
 Package pdftex.def Info: img/EsperanceDeVie.png used on input line 437.
 (pdftex.def)             Requested size: 284.52756pt x 175.02434pt.
- [14 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/poisson.png>
+ [13 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/poisson.png>
  <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/cumul.png>] <img
-/default.png, id=363, 324.21124pt x 215.80624pt>
+/default.png, id=147, 324.21124pt x 215.80624pt>
 File: img/default.png Graphic file (type png)
 
 <use img/default.png>
@@ -1282,14 +1282,18 @@ Package pdftex.def Info: img/default.png used on input line 478.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+
+LaTeX Warning: Hyper reference `EsperanceDeVie' on page 14 undefined on input l
+ine 501.
+
 Missing character: There is no ; in font nullfont!
-[15 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/EsperanceDeVi
+[14 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/EsperanceDeVi
 e.png>]
 Overfull \vbox (11.37389pt too high) has occurred while \output is active []
 
 
-[16 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/default.png>]
-[17] <img/hunger.png, id=383, 382.42876pt x 255.95625pt>
+[15 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/default.png>]
+[16] <img/hunger.png, id=167, 382.42876pt x 255.95625pt>
 File: img/hunger.png Graphic file (type png)
  <use img/hunger.png>
 Package pdftex.def Info: img/hunger.png used on input line 633.
@@ -1298,33 +1302,33 @@ Package pdftex.def Info: img/hunger.png used on input line 633.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18] <img/cueilleur1.png, id=390, 365.365pt x 286.06876pt>
+[17] <img/cueilleur1.png, id=174, 365.365pt x 286.06876pt>
 File: img/cueilleur1.png Graphic file (type png)
 
 <use img/cueilleur1.png>
 Package pdftex.def Info: img/cueilleur1.png used on input line 654.
 (pdftex.def)             Requested size: 170.71652pt x 133.66661pt.
- <img/cueilleur2.png, id=391, 423.5825pt x 327.2225pt>
+ <img/cueilleur2.png, id=175, 423.5825pt x 327.2225pt>
 File: img/cueilleur2.png Graphic file (type png)
 
 <use img/cueilleur2.png>
 Package pdftex.def Info: img/cueilleur2.png used on input line 655.
 (pdftex.def)             Requested size: 170.71652pt x 131.88028pt.
- [19 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/hunger.png>]
+ [18 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/hunger.png>]
 
 Overfull \hbox (0.63815pt too wide) in paragraph at lines 792--793
 [][] 
  []
 
-[20 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/cueilleur1.pn
+[19 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/cueilleur1.pn
 g> <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/cueilleur2.png
->] [21] <img/artisan1.png, id=410, 313.17pt x 284.06125pt>
+>] [20] <img/artisan1.png, id=195, 313.17pt x 284.06125pt>
 File: img/artisan1.png Graphic file (type png)
 
 <use img/artisan1.png>
 Package pdftex.def Info: img/artisan1.png used on input line 808.
 (pdftex.def)             Requested size: 170.71652pt x 154.85147pt.
- <img/artisan2.png, id=411, 341.275pt x 193.72375pt>
+ <img/artisan2.png, id=196, 341.275pt x 193.72375pt>
 File: img/artisan2.png Graphic file (type png)
 
 <use img/artisan2.png>
@@ -1335,414 +1339,473 @@ Overfull \hbox (2.78825pt too wide) in paragraph at lines 883--885
  [][][][]\T1/cmr/bx/n/10 JaiUnePelle 
  []
 
-[22 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/artisan1.png>
+[21 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/artisan1.png>
  <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/artisan2.png>]
-<img/agriculteur1.png, id=419, 320.69812pt x 63.73813pt>
+<img/agriculteur1.png, id=204, 320.69812pt x 63.73813pt>
 File: img/agriculteur1.png Graphic file (type png)
 
 <use img/agriculteur1.png>
 Package pdftex.def Info: img/agriculteur1.png used on input line 921.
 (pdftex.def)             Requested size: 170.71652pt x 33.92984pt.
 
-<img/agriculteur2.png, id=420, 389.455pt x 119.44624pt>
+<img/agriculteur2.png, id=205, 389.455pt x 119.44624pt>
 File: img/agriculteur2.png Graphic file (type png)
 
 <use img/agriculteur2.png>
 Package pdftex.def Info: img/agriculteur2.png used on input line 922.
 (pdftex.def)             Requested size: 170.71652pt x 52.35783pt.
- [23]
+ [22]
 Overfull \hbox (1.01785pt too wide) in paragraph at lines 931--933
  [][][][]\T1/cmr/bx/n/10 Agriculteur 
  []
 
-<img/village.png, id=426, 65.24374pt x 65.24374pt>
+<img/village.png, id=211, 65.24374pt x 65.24374pt>
 File: img/village.png Graphic file (type png)
  <use img/village.png>
 Package pdftex.def Info: img/village.png used on input line 983.
 (pdftex.def)             Requested size: 21.33936pt x 21.33955pt.
 
-<img/hutte.png, id=427, 83.31125pt x 80.3pt>
+<img/hutte.png, id=212, 83.31125pt x 80.3pt>
 File: img/hutte.png Graphic file (type png)
  <use img/hutte.png>
 Package pdftex.def Info: img/hutte.png used on input line 985.
 (pdftex.def)             Requested size: 22.13965pt x 21.33955pt.
 
-<img/champ.png, id=428, 104.39pt x 103.38625pt>
+<img/champ.png, id=213, 104.39pt x 103.38625pt>
 File: img/champ.png Graphic file (type png)
  <use img/champ.png>
 Package pdftex.def Info: img/champ.png used on input line 987.
 (pdftex.def)             Requested size: 21.54662pt x 21.33955pt.
- [24 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/agriculteur1
+ [23 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/agriculteur1
 .png> <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/agriculteur
 2.png>]
-<img/initial.png, id=438, 449.68pt x 427.5975pt>
+<img/initial.png, id=223, 449.68pt x 427.5975pt>
 File: img/initial.png Graphic file (type png)
  <use img/initial.png>
 Package pdftex.def Info: img/initial.png used on input line 999.
 (pdftex.def)             Requested size: 149.60934pt x 142.26378pt.
 
-<img/fondementGroupe.png, id=439, 529.98pt x 439.6425pt>
+<img/fondementGroupe.png, id=224, 529.98pt x 439.6425pt>
 File: img/fondementGroupe.png Graphic file (type png)
 
 <use img/fondementGroupe.png>
 Package pdftex.def Info: img/fondementGroupe.png used on input line 1009.
 (pdftex.def)             Requested size: 171.48936pt x 142.26378pt.
- [25 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/village.png>
+ [24 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/village.png>
  <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/hutte.png> <C:/U
 sers/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/champ.png> <C:/Users/L
 ionel/Documents/GitHub/RapportTerLatex/Rapport/img/initial.png>] <img/cueillett
-e.png, id=450, 287.0725pt x 273.02pt>
+e.png, id=237, 287.0725pt x 273.02pt>
 File: img/cueillette.png Graphic file (type png)
 
 <use img/cueillette.png>
 Package pdftex.def Info: img/cueillette.png used on input line 1019.
 (pdftex.def)             Requested size: 149.58517pt x 142.26378pt.
- <img/champs.png, id=451, 559.08875pt x 486.81876pt>
+ <img/champs.png, id=238, 559.08875pt x 486.81876pt>
 File: img/champs.png Graphic file (type png)
 
 <use img/champs.png>
 Package pdftex.def Info: img/champs.png used on input line 1029.
 (pdftex.def)             Requested size: 163.3771pt x 142.26378pt.
- [26 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/fondementGro
+ [25 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/fondementGro
 upe.png> <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/cueillet
-te.png>] <img/artisan.png, id=460, 366.36874pt x 345.29pt>
+te.png>] <img/artisan.png, id=248, 366.36874pt x 345.29pt>
 File: img/artisan.png Graphic file (type png)
 
 <use img/artisan.png>
 Package pdftex.def Info: img/artisan.png used on input line 1039.
 (pdftex.def)             Requested size: 150.95007pt x 142.26378pt.
 
-<img/agriculteurPelle.png, id=461, 388.45125pt x 385.44pt>
+<img/agriculteurPelle.png, id=249, 388.45125pt x 385.44pt>
 File: img/agriculteurPelle.png Graphic file (type png)
 
 <use img/agriculteurPelle.png>
 Package pdftex.def Info: img/agriculteurPelle.png used on input line 1045.
 (pdftex.def)             Requested size: 143.37498pt x 142.26378pt.
- [27 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/champs.png> 
+ [26 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/champs.png> 
 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/artisan.png>] <im
-g/pop.png, id=470, 762.34813pt x 142.5325pt>
+g/pop.png, id=258, 762.34813pt x 142.5325pt>
 File: img/pop.png Graphic file (type png)
 
 <use img/pop.png>
 Package pdftex.def Info: img/pop.png used on input line 1056.
 (pdftex.def)             Requested size: 369.88582pt x 69.15427pt.
- <img/poparti.png, id=471, 759.33687pt x 144.54pt>
+ <img/poparti.png, id=259, 759.33687pt x 144.54pt>
 File: img/poparti.png Graphic file (type png)
 
 <use img/poparti.png>
 Package pdftex.def Info: img/poparti.png used on input line 1063.
 (pdftex.def)             Requested size: 369.88582pt x 70.40837pt.
- <img/popartiagri.png, id=472, 748.7975pt x 142.5325pt>
+ <img/popartiagri.png, id=260, 748.7975pt x 142.5325pt>
 File: img/popartiagri.png Graphic file (type png)
 
 <use img/popartiagri.png>
 Package pdftex.def Info: img/popartiagri.png used on input line 1070.
 (pdftex.def)             Requested size: 369.88582pt x 70.40698pt.
- [28 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/agriculteurP
+ [27 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/agriculteurP
 elle.png> <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/pop.png
 > <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/poparti.png>] <
-img/pop2.png, id=483, 761.34438pt x 145.04187pt>
+img/pop2.png, id=272, 761.34438pt x 145.04187pt>
 File: img/pop2.png Graphic file (type png)
 
 <use img/pop2.png>
 Package pdftex.def Info: img/pop2.png used on input line 1081.
 (pdftex.def)             Requested size: 369.88582pt x 70.46693pt.
- <img/poparti2.png, id=484, 757.32938pt x 144.03813pt>
+ <img/poparti2.png, id=273, 757.32938pt x 144.03813pt>
 File: img/poparti2.png Graphic file (type png)
 
 <use img/poparti2.png>
 Package pdftex.def Info: img/poparti2.png used on input line 1090.
 (pdftex.def)             Requested size: 369.88582pt x 70.35071pt.
- [29 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/popartiagri.
+ [28 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/popartiagri.
 png> <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/pop2.png> <C
 :/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/poparti2.png>] <img
-/popartiagri2.png, id=495, 754.82pt x 143.53625pt>
+/popartiagri2.png, id=284, 754.82pt x 143.53625pt>
 File: img/popartiagri2.png Graphic file (type png)
 
 <use img/popartiagri2.png>
 Package pdftex.def Info: img/popartiagri2.png used on input line 1099.
 (pdftex.def)             Requested size: 369.88582pt x 70.33775pt.
- <img/pop3.png, id=496, 762.34813pt x 145.04187pt>
+ <img/pop3.png, id=285, 762.34813pt x 145.04187pt>
 File: img/pop3.png Graphic file (type png)
 
 <use img/pop3.png>
 Package pdftex.def Info: img/pop3.png used on input line 1113.
 (pdftex.def)             Requested size: 369.88582pt x 70.37177pt.
- <img/poparti3.png, id=497, 747.29187pt x 143.53625pt>
+ <img/poparti3.png, id=286, 747.29187pt x 143.53625pt>
 File: img/poparti3.png Graphic file (type png)
 
 <use img/poparti3.png>
 Package pdftex.def Info: img/poparti3.png used on input line 1122.
 (pdftex.def)             Requested size: 369.88582pt x 71.04518pt.
- [30 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/popartiagri2
+ [29 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/popartiagri2
 .png> <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/pop3.png>] 
-<img/popartiagri3.png, id=507, 766.865pt x 144.03813pt>
+<img/popartiagri3.png, id=295, 766.865pt x 144.03813pt>
 File: img/popartiagri3.png Graphic file (type png)
 
 <use img/popartiagri3.png>
 Package pdftex.def Info: img/popartiagri3.png used on input line 1131.
 (pdftex.def)             Requested size: 369.88582pt x 69.47597pt.
- [31 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/poparti3.png
+ [30 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/poparti3.png
 > <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/popartiagri3.pn
-g>] [32]
+g>] [31]
 File: img/mer.png Graphic file (type png)
  <use img/mer.png>
-Package pdftex.def Info: img/mer.png used on input line 1219.
+Package pdftex.def Info: img/mer.png used on input line 1220.
 (pdftex.def)             Requested size: 14.84483pt x 14.22636pt.
 
-<img/montagne.png, id=521, 16.26076pt x 16.863pt>
+<img/montagne.png, id=313, 16.26076pt x 16.863pt>
 File: img/montagne.png Graphic file (type png)
  <use img/montagne.png>
-Package pdftex.def Info: img/montagne.png used on input line 1221.
+Package pdftex.def Info: img/montagne.png used on input line 1222.
 (pdftex.def)             Requested size: 13.71873pt x 14.22636pt.
 File: img/prairie.png Graphic file (type png)
 
 <use img/prairie.png>
-Package pdftex.def Info: img/prairie.png used on input line 1223.
+Package pdftex.def Info: img/prairie.png used on input line 1224.
 (pdftex.def)             Requested size: 12.72928pt x 14.22636pt.
 File: img/foret.png Graphic file (type png)
  <use img/foret.png>
-Package pdftex.def Info: img/foret.png used on input line 1225.
+Package pdftex.def Info: img/foret.png used on input line 1226.
 (pdftex.def)             Requested size: 13.51534pt x 14.22636pt.
 
-<img/littoral.PNG, id=522, 15.6585pt x 14.454pt>
+<img/littoral.PNG, id=314, 15.6585pt x 14.454pt>
 File: img/littoral.PNG Graphic file (type png)
  <use img/littoral.PNG>
-Package pdftex.def Info: img/littoral.PNG used on input line 1227.
+Package pdftex.def Info: img/littoral.PNG used on input line 1228.
 (pdftex.def)             Requested size: 15.41257pt x 14.22636pt.
 
-<img/environnement.PNG, id=523, 361.35pt x 360.1455pt>
+<img/environnement.PNG, id=315, 361.35pt x 360.1455pt>
 File: img/environnement.PNG Graphic file (type png)
 
 <use img/environnement.PNG>
-Package pdftex.def Info: img/environnement.PNG used on input line 1238.
+Package pdftex.def Info: img/environnement.PNG used on input line 1239.
 (pdftex.def)             Requested size: 228.38503pt x 227.62204pt.
- [33 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/montagne.png
+ [32 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/montagne.png
 > <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/littoral.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1242--1243
+Underfull \hbox (badness 10000) in paragraph at lines 1243--1244
 
  []
 
-[34 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/environnement
+[33 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/environnement
 .PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1283--1284
+Underfull \hbox (badness 10000) in paragraph at lines 1284--1285
 
  []
 
-<img/planDansMetaciv.png, id=537, 321.6015pt x 227.04825pt>
+<img/planDansMetaciv.png, id=331, 321.6015pt x 227.04825pt>
 File: img/planDansMetaciv.png Graphic file (type png)
 
 <use img/planDansMetaciv.png>
-Package pdftex.def Info: img/planDansMetaciv.png used on input line 1288.
+Package pdftex.def Info: img/planDansMetaciv.png used on input line 1289.
 (pdftex.def)             Requested size: 284.52756pt x 200.87704pt.
- [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1293--1294
+ [34]
+Underfull \hbox (badness 10000) in paragraph at lines 1294--1295
 
  []
 
-<img/SchemaFaimChasserRessource.png, id=543, 963.6pt x 722.7pt>
+<img/SchemaFaimChasserRessource.png, id=338, 963.6pt x 722.7pt>
 File: img/SchemaFaimChasserRessource.png Graphic file (type png)
 
 <use img/SchemaFaimChasserRessource.png>
 Package pdftex.def Info: img/SchemaFaimChasserRessource.png used on input line 
-1297.
+1298.
 (pdftex.def)             Requested size: 455.24408pt x 341.43344pt.
 
-Overfull \hbox (4.22615pt too wide) in paragraph at lines 1297--1298
+Overfull \hbox (4.22615pt too wide) in paragraph at lines 1298--1299
  [] 
  []
 
-[36 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/planDansMetac
+[35 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/planDansMetac
 iv.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1301--1302
+Underfull \hbox (badness 10000) in paragraph at lines 1302--1303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1304--1305
+Underfull \hbox (badness 10000) in paragraph at lines 1305--1306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1309--1310
+Underfull \hbox (badness 10000) in paragraph at lines 1310--1311
 
  []
 
-<img/Demenager.png, id=551, 963.6pt x 722.7pt>
+<img/Demenager.png, id=345, 963.6pt x 722.7pt>
 File: img/Demenager.png Graphic file (type png)
  <use img/Demenager.png>
-Package pdftex.def Info: img/Demenager.png used on input line 1314.
+Package pdftex.def Info: img/Demenager.png used on input line 1315.
 (pdftex.def)             Requested size: 455.24408pt x 341.43344pt.
 
-Overfull \hbox (4.22615pt too wide) in paragraph at lines 1314--1315
+Overfull \hbox (4.22615pt too wide) in paragraph at lines 1315--1316
  [] 
  []
 
-[37 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/SchemaFaimCha
+[36 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/SchemaFaimCha
 sserRessource.png>]
-<img/planDansMetaciv2.png, id=558, 245.11575pt x 139.11975pt>
+<img/planDansMetaciv2.png, id=353, 245.11575pt x 139.11975pt>
 File: img/planDansMetaciv2.png Graphic file (type png)
 
 <use img/planDansMetaciv2.png>
-Package pdftex.def Info: img/planDansMetaciv2.png used on input line 1323.
+Package pdftex.def Info: img/planDansMetaciv2.png used on input line 1324.
 (pdftex.def)             Requested size: 284.52756pt x 161.50212pt.
- [38 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/Demenager.pn
+ [37 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/Demenager.pn
 g>]
-Underfull \hbox (badness 10000) in paragraph at lines 1334--1335
+Underfull \hbox (badness 10000) in paragraph at lines 1335--1336
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1336--1337
+Underfull \hbox (badness 10000) in paragraph at lines 1337--1338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1338--1339
+Underfull \hbox (badness 10000) in paragraph at lines 1339--1340
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1342--1343
+Underfull \hbox (badness 10000) in paragraph at lines 1343--1344
 
  []
 
-[39 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/planDansMetac
+[38 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/planDansMetac
 iv2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1370--1371
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1372
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1373--1374
+Underfull \hbox (badness 10000) in paragraph at lines 1374--1375
 
  []
 
-<img/leader.png, id=571, 292.09125pt x 257.763pt>
+<img/leader.png, id=367, 292.09125pt x 257.763pt>
 File: img/leader.png Graphic file (type png)
  <use img/leader.png>
-Package pdftex.def Info: img/leader.png used on input line 1377.
+Package pdftex.def Info: img/leader.png used on input line 1378.
 (pdftex.def)             Requested size: 284.52756pt x 251.11142pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1384--1385
+Underfull \hbox (badness 10000) in paragraph at lines 1385--1386
 
  []
 
-[40 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/leader.png>]
-<img/follower.png, id=578, 269.808pt x 258.9675pt>
+[39 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/leader.png>]
+<img/follower.png, id=374, 269.808pt x 258.9675pt>
 File: img/follower.png Graphic file (type png)
  <use img/follower.png>
-Package pdftex.def Info: img/follower.png used on input line 1388.
+Package pdftex.def Info: img/follower.png used on input line 1389.
 (pdftex.def)             Requested size: 284.52756pt x 273.12119pt.
 File: img/village.png Graphic file (type png)
 
 <use img/village.png>
-Package pdftex.def Info: img/village.png used on input line 1402.
+Package pdftex.def Info: img/village.png used on input line 1403.
 (pdftex.def)             Requested size: 21.33936pt x 21.33955pt.
 File: img/champ.png Graphic file (type png)
  <use img/champ.png>
-Package pdftex.def Info: img/champ.png used on input line 1404.
+Package pdftex.def Info: img/champ.png used on input line 1405.
 (pdftex.def)             Requested size: 21.54662pt x 21.33955pt.
 
-<img/initialNomade.PNG, id=579, 360.1455pt x 361.35pt>
+<img/initialNomade.PNG, id=375, 360.1455pt x 361.35pt>
 File: img/initialNomade.PNG Graphic file (type png)
 
 <use img/initialNomade.PNG>
-Package pdftex.def Info: img/initialNomade.PNG used on input line 1416.
+Package pdftex.def Info: img/initialNomade.PNG used on input line 1417.
 (pdftex.def)             Requested size: 141.79155pt x 142.26378pt.
- [41 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/follower.png
+ [40 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/follower.png
 >]
-<img/recolte.PNG, id=587, 187.29974pt x 141.52875pt>
+<img/recolte.PNG, id=385, 187.29974pt x 141.52875pt>
 File: img/recolte.PNG Graphic file (type png)
  <use img/recolte.PNG>
-Package pdftex.def Info: img/recolte.PNG used on input line 1426.
+Package pdftex.def Info: img/recolte.PNG used on input line 1427.
 (pdftex.def)             Requested size: 188.28812pt x 142.26378pt.
 
-<img/migration.PNG, id=588, 245.718pt x 163.20975pt>
+<img/migration.PNG, id=386, 245.718pt x 163.20975pt>
 File: img/migration.PNG Graphic file (type png)
  <use img/migration.PNG>
-Package pdftex.def Info: img/migration.PNG used on input line 1436.
+Package pdftex.def Info: img/migration.PNG used on input line 1437.
 (pdftex.def)             Requested size: 214.1891pt x 142.26378pt.
 
-[42 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/initialNomade
+[41 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/initialNomade
 .PNG> <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/recolte.PNG
 >]
 File: img/migration.PNG Graphic file (type png)
  <use img/migration.PNG>
-Package pdftex.def Info: img/migration.PNG used on input line 1446.
+Package pdftex.def Info: img/migration.PNG used on input line 1447.
 (pdftex.def)             Requested size: 214.1891pt x 142.26378pt.
 
-<img/finMigration.PNG, id=598, 317.988pt x 188.50426pt>
+<img/finMigration.PNG, id=395, 317.988pt x 188.50426pt>
 File: img/finMigration.PNG Graphic file (type png)
 
 <use img/finMigration.PNG>
-Package pdftex.def Info: img/finMigration.PNG used on input line 1456.
+Package pdftex.def Info: img/finMigration.PNG used on input line 1457.
 (pdftex.def)             Requested size: 239.9897pt x 142.26378pt.
- [43 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/migration.PN
-G>] [44 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/finMigrat
+ [42 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/migration.PN
+G>] [43 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/finMigrat
 ion.PNG>]
-<img/uml-SC.jpg, id=614, 756.17242pt x 443.50958pt>
+<img/uml-SC.jpg, id=413, 756.17242pt x 443.50958pt>
 File: img/uml-SC.jpg Graphic file (type jpg)
  <use img/uml-SC.jpg>
-Package pdftex.def Info: img/uml-SC.jpg used on input line 1527.
+Package pdftex.def Info: img/uml-SC.jpg used on input line 1528.
 (pdftex.def)             Requested size: 398.33858pt x 233.63103pt.
 
-[45 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/uml-SC.jpg>]
-<img/Dev-Civ-getPlan.png, id=620, 203.25937pt x 42.1575pt>
+[44 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/uml-SC.jpg>]
+<img/Dev-Civ-getPlan.png, id=424, 203.25937pt x 42.1575pt>
 File: img/Dev-Civ-getPlan.png Graphic file (type png)
 
 <use img/Dev-Civ-getPlan.png>
-Package pdftex.def Info: img/Dev-Civ-getPlan.png used on input line 1537.
+Package pdftex.def Info: img/Dev-Civ-getPlan.png used on input line 1538.
 (pdftex.def)             Requested size: 227.62204pt x 47.21219pt.
 
-<img/interface_schema_cognitif-1.png, id=621, 627.84563pt x 226.59656pt>
+<img/interface_schema_cognitif-1.png, id=425, 627.84563pt x 226.59656pt>
 File: img/interface_schema_cognitif-1.png Graphic file (type png)
 
 <use img/interface_schema_cognitif-1.png>
 Package pdftex.def Info: img/interface_schema_cognitif-1.png used on input line
- 1547.
+ 1548.
 (pdftex.def)             Requested size: 398.33858pt x 143.76273pt.
 
-<img/interface_schema_cognitif-2.png, id=622, 201.00093pt x 136.25906pt>
+<img/interface_schema_cognitif-2.png, id=426, 201.00093pt x 136.25906pt>
 File: img/interface_schema_cognitif-2.png Graphic file (type png)
 
 <use img/interface_schema_cognitif-2.png>
 Package pdftex.def Info: img/interface_schema_cognitif-2.png used on input line
- 1553.
+ 1554.
 (pdftex.def)             Requested size: 170.71652pt x 115.72925pt.
- [46 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/Dev-Civ-getP
+ [45 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/Dev-Civ-getP
 lan.png> <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/interfac
 e_schema_cognitif-1.png>]
-<img/interface_schema_cognitif-3.png, id=629, 316.93407pt x 240.9pt>
+<img/interface_schema_cognitif-3.png, id=433, 316.93407pt x 240.9pt>
 File: img/interface_schema_cognitif-3.png Graphic file (type png)
 
 <use img/interface_schema_cognitif-3.png>
 Package pdftex.def Info: img/interface_schema_cognitif-3.png used on input line
- 1559.
+ 1560.
 (pdftex.def)             Requested size: 227.62204pt x 173.01778pt.
- [47 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/interface_sc
+
+<img/DEV-interfaceConstant.jpg, id=434, 324.46219pt x 188.20313pt>
+File: img/DEV-interfaceConstant.jpg Graphic file (type jpg)
+
+<use img/DEV-interfaceConstant.jpg>
+Package pdftex.def Info: img/DEV-interfaceConstant.jpg used on input line 1578.
+
+(pdftex.def)             Requested size: 227.62204pt x 132.0342pt.
+ [46 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/interface_sc
 hema_cognitif-2.png> <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/
 img/interface_schema_cognitif-3.png>]
-[48] [49]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1639.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1639.
- (C:\Users\Lionel\Documents\GitHub\RapportTerLatex\Rapport\TP3.0.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1639.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1639.
+<img/DEV-Const-LoadParam.png, id=442, 451.6875pt x 202.50656pt>
+File: img/DEV-Const-LoadParam.png Graphic file (type png)
 
-Package rerunfilecheck Info: File `TP3.0.out' has not changed.
-(rerunfilecheck)             Checksum: 547D24FD64FF0C393F984462FE9595F2;3498.
+<use img/DEV-Const-LoadParam.png>
+Package pdftex.def Info: img/DEV-Const-LoadParam.png used on input line 1586.
+(pdftex.def)             Requested size: 341.43306pt x 153.08463pt.
+
+<img/DEV-Const-InterfaceAction.png, id=443, 345.54094pt x 145.29282pt>
+File: img/DEV-Const-InterfaceAction.png Graphic file (type png)
+
+<use img/DEV-Const-InterfaceAction.png>
+Package pdftex.def Info: img/DEV-Const-InterfaceAction.png used on input line 1
+594.
+(pdftex.def)             Requested size: 341.43306pt x 143.56763pt.
+ [47 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/DEV-interfac
+eConstant.jpg> <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/DE
+V-Const-LoadParam.png>]
+<img/DEV-DefinePath.png, id=450, 490.08093pt x 348.55219pt>
+File: img/DEV-DefinePath.png Graphic file (type png)
+
+<use img/DEV-DefinePath.png>
+Package pdftex.def Info: img/DEV-DefinePath.png used on input line 1610.
+(pdftex.def)             Requested size: 227.62204pt x 161.8836pt.
+ [48 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/DEV-Const-In
+terfaceAction.png> <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/im
+g/DEV-DefinePath.png>]
+<img/DEV-ID-strategies.jpg, id=461, 663.98062pt x 304.88907pt>
+File: img/DEV-ID-strategies.jpg Graphic file (type jpg)
+
+<use img/DEV-ID-strategies.jpg>
+Package pdftex.def Info: img/DEV-ID-strategies.jpg used on input line 1635.
+(pdftex.def)             Requested size: 341.43306pt x 156.78003pt.
+
+<img/DEV-ID-reflexes.jpg, id=462, 680.5425pt x 446.41782pt>
+File: img/DEV-ID-reflexes.jpg Graphic file (type jpg)
+
+<use img/DEV-ID-reflexes.jpg>
+Package pdftex.def Info: img/DEV-ID-reflexes.jpg used on input line 1643.
+(pdftex.def)             Requested size: 341.43306pt x 223.97127pt.
+ [49 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/DEV-ID-strat
+egies.jpg>] [50 <C:/Users/Lionel/Documents/GitHub/RapportTerLatex/Rapport/img/D
+EV-ID-reflexes.jpg>] [51]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1707.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1707.
+
+(C:\Users\Lionel\Documents\GitHub\RapportTerLatex\Rapport\TP3.0.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1707.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1707.
 
 
-LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1639.
+Package rerunfilecheck Warning: File `TP3.0.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `TP3.0.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  C956C316C923E2CED0FCA340D6C45D24;3813.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1707.
  ) 
 Here is how much of TeX's memory you used:
- 34256 strings out of 493921
- 779287 string characters out of 3144873
- 969673 words of memory out of 3000000
- 36769 multiletter control sequences out of 15000+200000
+ 34243 strings out of 493921
+ 778974 string characters out of 3144873
+ 968694 words of memory out of 3000000
+ 36747 multiletter control sequences out of 15000+200000
  17014 words of font info for 40 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,12n,77p,1159b,987s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1767,9 +1830,9 @@ pe1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
 lic/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
 msfonts/symbols/msbm10.pfb>
-Output written on TP3.0.pdf (50 pages, 1984410 bytes).
+Output written on TP3.0.pdf (52 pages, 2154952 bytes).
 PDF statistics:
- 1101 PDF objects out of 1200 (max. 8388607)
- 161 named destinations out of 1000 (max. 500000)
- 673 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 944 PDF objects out of 1000 (max. 8388607)
+ 172 named destinations out of 1000 (max. 500000)
+ 343 words of extra memory for PDF output out of 10000 (max. 10000000)
 

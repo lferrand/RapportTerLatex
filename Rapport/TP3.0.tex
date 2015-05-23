@@ -350,7 +350,7 @@ Lorsque plusieurs agents se rassemblent pour former un groupe, chaque agent de c
 
 \subsection{Le modèle "Cueilleur-Artisan-Agriculteur"}
 
-Ce modèle va servir à générer une société basée sur la cueillette, l'artisanat et l'agriculture. Elle aura comme particularité d'attribuer un rôle spécifique à chacun des agents dans le but d'observer l'émergence d'un comportement collaboratif au sein même d'une civilisation et ses conséquences sur la population.
+Ce modèle va servir à générer une société basée sur la cueillette, l'artisanat et l'agriculture. Elle aura comme particularité d'attribuer un rôle spécifique à chacun des agents dans le but d'"Observer" l'émergence d'un comportement collaboratif au sein même d'une civilisation et ses conséquences sur la population.
 
 
 Toutes les constantes mentionnées dans ce modèle sont données dans la section "\hyperref[constantes]{Constantes}".
@@ -712,7 +712,7 @@ On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par
 	\end{itemize}
 };
 
-\node [state, right of= Recruter , node distance = 5cm, text width = 6cm] (recruter)
+\node [state, right of= Recruter, node distance = 5cm, text width = 6cm] (recruter)
 {
 	\textbf{recruter} \\
 	S'il y a un agent sans groupe sur mon patch, le recruter dans mon groupe.
@@ -782,7 +782,7 @@ On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par
           (BonEnArtisanat) 	edge[bend left=30]  node[anchor=south,right]{$+$} (DevenirArtisan2.east)
           (PasBesoinDeVillage) 	edge[bend left=30]  node[anchor=south,right]{$-$} (Construire.east)
           (TropDansMonSac) 	edge[bend left=30]  node[anchor=south,right]{$-$} (Cueillir.east)
-          (Cueillir) 	edge[bend left=20, color = blue , line width = 1pt]  node[anchor=south,right]{$+$} (TropDansMonSac)
+          (Cueillir) 	edge[bend left=20, color = blue, line width = 1pt]  node[anchor=south,right]{$+$} (TropDansMonSac)
           (Construire.north east) 	edge[bend left=20, color = blue, line width=1pt]  node[anchor=south,right]{} (PasBesoinDeVillage)
            (DevenirAgriculteur2.north west) 	edge[bend right=10, color = blue, line width=1pt]  node[anchor=south,right]{$-$} (DevenirAgriculteur)
            (DevenirArtisan2.north west) 	edge[bend right=7, color = blue, line width=1pt]  node[anchor=south,right]{$-$} (DevenirArtisan)
@@ -843,7 +843,7 @@ Les artisans sont des agents qui construisent leurs huttes et partent à la reche
 	\end{itemize}
 };
 
-\node [state, below of=ChercherBois , node distance = 2cm, text width = 6cm] (ConstruireHutte)
+\node [state, below of=ChercherBois, node distance = 2cm, text width = 6cm] (ConstruireHutte)
 {
 	\textbf{ConstruireHutte} \\
 	\begin{itemize}
@@ -853,7 +853,7 @@ Les artisans sont des agents qui construisent leurs huttes et partent à la reche
 
 };
 
-\node [state,  below of=ConstruireHutte , node distance = 3.5cm, text width = 6cm] (ConstruirePelle)
+\node [state,  below of=ConstruireHutte, node distance = 3.5cm, text width = 6cm] (ConstruirePelle)
 {
 	\textbf{ConstruirePelle}\\
 	\begin{itemize}
@@ -948,7 +948,7 @@ La seule fonction des agriculteurs est de récolter des baies dans leurs champs o
 	\end{itemize}
 };
 
-\node [state, below of=Agriculter , node distance = 5cm, text width = 6cm] (DonnerNaissanceSiJ'aiPasFaim)
+\node [state, below of=Agriculter, node distance = 5cm, text width = 6cm] (DonnerNaissanceSiJ'aiPasFaim)
 {
 	\textbf{DonnerNaissanceSiJaiPasFaim} 
 
@@ -1200,11 +1200,12 @@ AgeParTick & 0.02 \\
 
 \subsubsection{Conclusion}
 
-On constate que le modèle est non seulement cohérent mais permet également d'observer des comportement de groupe. L'émergence de certains individus ayant différents rôles permet à toute la société de survivre plus longtemps. C'est en attribuant de façon permanent un rôle à un individu que l'on est capable d'obtenir une civilisation efficace. Cette modélisation a un niveau de paramétrage élevé qui laisse peu de place au hasard. En effet, on constate que puisque les agents sont enfermés dans leurs plans, il y a peu d'hésitation dans ce qu'il y a a faire pour que la société fonctionne. Du coup, elle est pratique pour observer un comportement voulu et est très sensible à la modification de ses paramètres.
+On constate que le modèle est non seulement cohérent mais permet également d'"Observer" des comportement de groupe. L'émergence de certains individus ayant différents rôles permet à toute la société de survivre plus longtemps. C'est en attribuant de façon permanent un rôle à un individu que l'on est capable d'obtenir une civilisation efficace. Cette modélisation a un niveau de paramétrage élevé qui laisse peu de place au hasard. En effet, on constate que puisque les agents sont enfermés dans leurs plans, il y a peu d'hésitation dans ce qu'il y a a faire pour que la société fonctionne. Du coup, elle est pratique pour "Observer" un comportement voulu et est très sensible à la modification de ses paramètres.
 
 \subsection{Le modèle "Nomade-Sédentaire"}
 
-Dans ce modèle, on réalise une émergence de civilisation à travers une société dépendante de son environnement. L'objectif est de montrer qu'une société peut à travers l'observation et l'adaptation à son environnement survivre, s'adapter et évoluer. Pour ce faire, on a décidé de simuler une société nomade sans chefs et très dépendante de son environnement, on devra réusir a faire naitre le besoin de faire de l'agriculture une fois que la population devient trop élever pour être soutenu par un système nomade. La spécialisation des agents sera basé sur le renforcement de leurs cognitons à travers l'expérience de la réalisation ou de l'échec de leurs plans.
+
+Dans ce modèle, on réalise une émergence de civilisation à travers une société dépendante de son environnement. L'objectif est de montrer qu'une société peut à travers l'observation et l'adaptation à son environnement survivre, s'adapter et évoluer. Pour ce faire, on a décidé de simuler une société nomade sans chefs et très dépendante de son environnement, on devra réussir a faire naitre le besoin de faire de l'agriculture une fois que la population devient trop élever pour être soutenu par un système nomade. La spécialisation des agents sera basé sur le renforcement de leurs cognitons à travers l'expérience de la réalisation ou de l'échec de leurs plans.
 
 \subsubsection{L'environnement}
 
@@ -1326,7 +1327,7 @@ On remarquera que le plan "Pêcher" et "Agriculture" sont bien relier a un cognit
 
 \subsubsection{Les groupes - Les Nomades}
 
-Lorsque plusieurs agents ont besoin de réaliser une taches a plusieurs ou bien ont besoin d'obtenir un rôle spécifique dans la communauté ont peut utiliser l'outil de groupe. Dans le cas de cette modélisation nous avons voulu limiter le plus possible l'utilisation de ces groupes pour observer comment les agents aller se spécialiser eux même en fonction de leur environnement. Il y a tout de même une action de groupe qui nécessite cette notion. Lorsque le groupe décide qu'il faut déplacer le campement.
+Lorsque plusieurs agents ont besoin de réaliser une taches a plusieurs ou bien ont besoin d'obtenir un rôle spécifique dans la communauté ont peut utiliser l'outil de groupe. Dans le cas de cette modélisation nous avons voulu limiter le plus possible l'utilisation de ces groupes pour "Observer" comment les agents aller se spécialiser eux même en fonction de leur environnement. Il y a tout de même une action de groupe qui nécessite cette notion. Lorsque le groupe décide qu'il faut déplacer le campement.
 
 
 \subsubsection*{"Leader"}
@@ -1506,14 +1507,14 @@ AgeParTick & 0.02 \\
 
 \subsection{Introduction}
 
-	MetaCiv est un projet qui a été développé par des groupes successifs d'étudiants. Développé autour de Turtlekit et Madkit, le programme possède une base solide , mais les ajouts successifs de fonctionnalités sans avoir établit de normes et de méthodes au préalable a conduit à un logiciel instable et un code source peu compréhensible.
+	MetaCiv est un projet qui a été développé par des groupes successifs d'étudiants. Développé autour de Turtlekit et Madkit, le programme possède une base solide, mais les ajouts successifs de fonctionnalités sans avoir établit de normes et de méthodes au préalable a conduit à un logiciel instable et un code source peu compréhensible.
 
 	Nous avons essayé de produire un code plus clair lors de l'ajout de nos fonctionnalités en produisant un code réutilisable avec une approche plus orienté objet et en utilisant quelques design patterns.
 
 
-\subsection{Fonctionnalités}
+\subsection{Fonctionnalités implémentés}
 
-\subsubsection{Schéma cognitif}
+\subsubsection{Le schéma cognitif}
 
 Un schéma cognitif est une nouvelle classe qui englobe tout ce qui relève du comportement des agents. L'implémentation d'une telle classe permet d'introduire plusieurs nouvelles fonctionnalités:
 \begin{itemize}
@@ -1551,7 +1552,7 @@ Pour implémenter cette architecture de schéma cognitifs, nous avons procédés en 
 \begin{figure}[H]
 \center
 \includegraphics[width=6cm]{img/interface_schema_cognitif-2.png}
-\caption{Fenêtre de création d'un nouveau schéma cognitif , possibilité de cloner un schéma existant en le renommant}
+\caption{Fenêtre de création d'un nouveau schéma cognitif, possibilité de cloner un schéma existant en le renommant}
 \end{figure}
 
 \begin{figure}[H]
@@ -1561,48 +1562,115 @@ Pour implémenter cette architecture de schéma cognitifs, nous avons procédés en 
 \end{figure}
 
 
-\subsubsection{Constantes}
-	besoins : - centraliser les constantes utilisés à plusieurs endroits dans les plans pour simplifier le travail de réglage du modèle
-	
-\subsubsection{Sauvegarde incrémentale}
-	besoins : - lol
-	
-\subsubsection{Defines}
-	besoins : - lol
-	
-\subsubsection{Autres}
+\subsubsection{Les constantes}
+
+Les constantes sont un ensemble de paramètres numériques de la simulation. Elles peuvent être prise en paramètre d'une ou plusieurs actions mais ne peuvent être modifiés que par l'utilisateur du simulateur. Elles permettent de:
 \begin{itemize}
- \item Permettre la suppression d'éléments du schéma cognitif
- \item Ajout d'un bouton qui permet une fermeture propre du programme (sans laisser de zombies)
- \item barres de scroll pour les listes d'éléments (attributs , constantes , actions d'un plan ...)
+\item Centraliser les constantes utilisés à plusieurs endroits dans les plans pour simplifier le travail de réglage du modèle.
+\item Prendre en compte une mise à jour de la valeur des constantes pendant l'exécution de la simulation.
+\item Choisir entre l'utilisation des constantes et l'utilisation d'une valeur unique dans une action.
+\item Assurer la rétro-compatibilité des actions tout en donnant la possibilité de les adapter avec un minimum de changements.\end{itemize}	
+	
+Pour mettre en place les constantes, nous avons  introduit le design pattern "Observer". Nous avons crée une classe "MCConstant" qui hérite de "Observable" et qui contient la valeur numérique de la constante, cette classe est manipulée directement par l'interface de gestion des constantes.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=8cm]{img/DEV-interfaceConstant.jpg}
+\caption{Interface de gestion des constantes, agit directement sur les variables de type MCConstant}
+\end{figure}
+
+Nous avons ensuite crée les classes "MCDoubleParameter" et "MCIntegerParameter" qui implémentent l'interface "Observer". Ces classes sont utilisés dans le code des actions et remplacent les variables double et int. Elles sont initialisés à l'aide de la méthode "loadParam" de la classe "Action", dont toutes les actions héritent.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{img/DEV-Const-LoadParam.png}
+\caption{Méthode d'initialisation. On peut voir l'initialisation de la valeur numérique à la première ligne, puis si une constante à été spécifié, la valeur est changé pour celle de la constante et le lien "Observable-Observer" est mis en place.}
+\end{figure} 
+
+Pour ne pas avoir à dupliquer les actions entre celles qui utilisent les constantes et celles qui utilisent les valeurs directes, nous proposons systématiquement l'utilisation d'une constante dans l'interface pour tout les paramètres de type numériques. Si l'action n'a pas été mise à niveau, la constante sera simplement ignorée et la valeur directe sera prise en compte ce qui assure la rétro-compatibilité.
+	
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{img/DEV-Const-InterfaceAction.png}
+\caption{Interface de d'édition d'une action, on peut choisir l'utilisation de la valeur directe ou d'une constante à l'aide du bouton radio, le menu déroulant "linked constant" propose toutes les constantes du schéma cognitif courant.}
+\end{figure} 
+
+A FAIRE : PARLER DES CONSTANTES DANS LES TRIGGERS
+		
+\subsubsection{La sauvegarde incrémentale}
+	besoins : - lol
+	
+\subsubsection{Les defines}
+
+Les defines sont un ensemble de classes ("DefinePath" et "DefineConstant") qui permettent de centraliser les valeurs constantes utilisées dans le code du programme afin de faciliter les modifications éventuelles.
+Les classes defines contiennent des variables statiques qui sont appelées à différents endroits du programme.
+	
+\begin{figure}[H]
+\center
+\includegraphics[width=8cm]{img/DEV-DefinePath.png}
+\caption{Capture partielle de la classe DefinePath qui liste les chemins d'accès aux ressources}
+\end{figure} 
+	
+	
+\subsubsection{Autres fonctionnalités implémentées}
+\begin{itemize}
+ \item Permettre la suppression d'éléments des cognitons, culturons, plans.
+ \item Ajout d'un bouton qui permet une fermeture propre du programme (sans laisser de "processus zombie").
+ \item Barres de scroll pour les listes d'éléments (attributs, constantes, actions d'un plan...).
 \end{itemize}
 
 		
 \subsection{Fonctionnalités envisagés}
 
+\subsubsection{Init-plan}
+
+Un "Init-plan" serait un plan qui s'exécuterait au premiers instants de la simulation, pour chaque agent. Une des applications serait de modifier l'âge de départ des agents de manière aléatoire pour représenter le fait que la population de départ a déjà vécu un certain temps et est composée d'individus d'ages différents.
+
+\subsubsection{Hiérarchie de cognitons}
+
+La hiérarchie de cognitons est un nouveau système de prise de décision qui se base sur l'ancien système mais rajoute la notion de MetaPlan. Un MetaPlan est un plan qui conduit à l'évaluation d'un nouveau groupe de cognitons. A chaque fois qu'un agent cherchera à prendre une décision, un MetaPlan spécial noté "racine" sera lancé.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{img/DEV-ID-strategies.jpg}
+\caption{Application à une répartition en sous rôles: si le plan spécial "chasser" est décidé, l'agent n'évaluera plus que les cognitons "rabatteur" et "archer".}
+\end{figure} 
+
+Dans l'exemple précédent, on remarque que les cognitons et les plans peuvent se représenter sous forme d'un arbre. Les plans sont les feuilles, le MetaPlan "racine" est la racine de l'arbre et les cognitons et Metaplans sont les noeuds. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{img/DEV-ID-reflexes.jpg}
+\caption{Application système de subsomption : les besoins essentiels sont évalués à la première étape comme la faim ou le sommeil, si ces besoins sont satisfaits, le cogniton satisfait prends le dessus et déclenche le mode 2 qui évalue des actions plus complexes}
+\end{figure} 
+	
+\subsubsection{Objets uniques / stackables}
+Séparer les Objets en deux catégories : 
+- A FAIRE
+
 	
 \subsection{Stabilisation du noyau}
-	au cours de l'avancée de la modélisation , quelques dizaines de bugs ont été découverts. Nous vous en présentons quelques uns en précisant le dysfonctionnement constaté , sa raison et la correction effectuée
+	au cours de l'avancée de la modélisation, quelques dizaines de bugs ont été découverts. Nous vous en présentons quelques uns en précisant le dysfonctionnement constaté, sa raison et la correction effectuée
 
 \begin{itemize}
-\item gestion des plans : au chargement , certains plans sont ajoutés deux fois (mais la simulation fonctionne quand même)
+\item gestion des plans : au chargement, certains plans sont ajoutés deux fois (mais la simulation fonctionne quand même)
 	\begin{itemize}    
     \item un test toujours vrai dans le chainage des plans cause l'ajout en double
-    \item nettoyage du code , le problème apparait clairement et est résolu (note : amélioration sensible des performances)
+    \item nettoyage du code, le problème apparait clairement et est résolu (note : amélioration sensible des performances)
 
 \end{itemize}
 
 \item gestion des triggers : la modification des triggers ne semble pas avoir d'effet
 	\begin{itemize}    
-    \item présence de deux listes représentant les triggers : une est utilisé par les agents , l'autre par l'interface.
-    \item regroupement en une seule liste , modification de la liste au lieu de détruire et reconstruire (permet la modification des valeurs pendant l'exécution)
+    \item présence de deux listes représentant les triggers : une est utilisé par les agents, l'autre par l'interface.
+    \item regroupement en une seule liste, modification de la liste au lieu de détruire et reconstruire (permet la modification des valeurs pendant l'exécution)
 
 \end{itemize}
 
-\item esprit de l'agent : certain cognitons sont présent en double , ce qui fausse le calcul de l'action à effectuer
+\item esprit de l'agent : certain cognitons sont présent en double, ce qui fausse le calcul de l'action à effectuer
      \begin{itemize}   
      \item les Starting cognitons sont ajoutés en plus de la liste de tous les cognitons qui les contient déjà 
-     \item sécurisation de la liste des cognitons d'un agent à travers un accesseur , si le cogniton est déjà présent , l'ajout est ignoré
+     \item sécurisation de la liste des cognitons d'un agent à travers un accesseur, si le cogniton est déjà présent, l'ajout est ignoré
 
 \end{itemize}
 
@@ -1615,9 +1683,9 @@ Pour implémenter cette architecture de schéma cognitifs, nous avons procédés en 
 \end{itemize}
 
 \subsection{Conclusion}
-	Metaciv est un logiciel puissant qui repose sur de bonnes bases ,par exemple le système d'injection d'actions personnalisée sous forme de code java est très bien conçut et le moteur du simulateur est fiable, ce qui encourage à enrichir le projet de nouvelles fonctionnalités dans l'avenir. 
+	Metaciv est un logiciel puissant qui repose sur de bonnes bases,par exemple le système d'injection d'actions personnalisée sous forme de code java est très bien conçut et le moteur du simulateur est fiable, ce qui encourage à enrichir le projet de nouvelles fonctionnalités dans l'avenir. 
 	En revanche, le code des interfaces est très désorganisé dû aux ajouts des différents groupes qui se sont succédés (dont le notre) et devrait être repris avec de bonnes méthodes.
-	du point de vue de l'utilisation , l'interface manque de sécurisation et de retour utilisateur en cas de commande invalide , ce qui causait bien souvent la corruption du modèle sans que l'on comprenne pourquoi. Régler ce problème de retour d'information à l'utilisateur est une étape très importante pour pouvoir amener MetaCiv à un plus grand public.
+	du point de vue de l'utilisation, l'interface manque de sécurisation et de retour utilisateur en cas de commande invalide, ce qui causait bien souvent la corruption du modèle sans que l'on comprenne pourquoi. Régler ce problème de retour d'information à l'utilisateur est une étape très importante pour pouvoir amener MetaCiv à un plus grand public.
 
 \section{Gestion de projet}
 
@@ -1627,8 +1695,8 @@ MetaCiv permet de modéliser un grand nombre de situation (interactions entres mo
 \begin{itemize}
 \item L'ajout des constantes est un atout majeur pour l'utilisateur facilitant ainsi la modification des paramètres de la simulation. On peut ainsi voir en temps réel l'impact d'un paramètre sur la simulation.
 \item La sauvegarde automatique des dernières versions fonctionnelles d'un modèle permet d'économiser énormément de temps lorsque l'on travaille sur une modélisation. En effet, il n'est pas rare de changer un paramètre, sauvegarder et de ne plus être capable de lancer son modèle, le rendant alors inutilisable.
-\item L'interface de gestion des agents est un outil agréable à utiliser, on voit directement les paramètres importants de chaque agent: cognitons, plans, attributs, groupe. Il n'est cependant pas assez efficace si l'on veut observer un type d'agent particulier dans une grande population.
-\item Il serait intéressant de pouvoir sauvegarder la modélisation à un instant donné et ainsi pouvoir la relancer avec différents paramètres. En effet, lorsque l'on modélise une société avec plusieurs niveaux technologiques, on perd énormément de temps à repasser le début du modèle pour observer l'impact d'un changement.
+\item L'interface de gestion des agents est un outil agréable à utiliser, on voit directement les paramètres importants de chaque agent: cognitons, plans, attributs, groupe. Il n'est cependant pas assez efficace si l'on veut "Observer" un type d'agent particulier dans une grande population.
+\item Il serait intéressant de pouvoir sauvegarder la modélisation à un instant donné et ainsi pouvoir la relancer avec différents paramètres. En effet, lorsque l'on modélise une société avec plusieurs niveaux technologiques, on perd énormément de temps à repasser le début du modèle pour "Observer" l'impact d'un changement.
 \item La construction d'un plan est très intuitive, on imbrique des actions les unes dans les autres. Les descriptions des actions sont claires et précises. Il n'en reste que construire un plan ou le modifier prend beaucoup de temps puisqu'il faut à chaque fois sélectionner l'action dans un menu déroulant. Une autre interface serait à envisager.
 \end{itemize}
 
