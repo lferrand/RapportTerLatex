@@ -44,7 +44,7 @@ colorlinks=false}
 \usepackage{titlesec, blindtext, color}
 \usepackage[left=2.5cm]{geometry}
 \usepackage{fancyvrb}
-
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
@@ -1672,37 +1672,67 @@ Il serait intéressant de séparer les objets en deux catégories :
 On remarquera que pour l'instant tous les objets sont pour l'instant "stackables" et possèdent un attribut "qualité".
 
 \subsection{Stabilisation du noyau}
-	au cours de l'avancée de la modélisation, quelques dizaines de bugs ont été découverts. Nous vous en présentons quelques uns en précisant le dysfonctionnement constaté, sa raison et la correction effectuée
 
-\begin{itemize}
-\item gestion des plans : au chargement, certains plans sont ajoutés deux fois (mais la simulation fonctionne quand même)
-	\begin{itemize}    
-    \item un test toujours vrai dans le chainage des plans cause l'ajout en double
-    \item nettoyage du code, le problème apparait clairement et est résolu (note : amélioration sensible des performances)
+Dans cette partie, nous vous présenterons quelques dysfonctionnements, leurs raisons et les corrections effectuées.
 
-\end{itemize}
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|C{12cm}|}
+\hline
+\text{Problème} & Gestion des plans : au chargement, certains plans sont ajoutés deux fois (mais la simulation fonctionne quand même) \\
+\hline
+\text{Raison} & Un test toujours vrai dans le chainage des plans et cause l'ajout d'un double du plan. \\
+\hline
+\text{Correction} & Nettoyage du code, le problème apparait clairement et est résolu (note : amélioration sensible des performances \\
+\hline
+\end{tabular}
+\caption{Exemple de correctif sur la gestion des plans.}
+\end{figure}
 
-\item gestion des triggers : la modification des triggers ne semble pas avoir d'effet
-	\begin{itemize}    
-    \item présence de deux listes représentant les triggers : une est utilisé par les agents, l'autre par l'interface.
-    \item regroupement en une seule liste, modification de la liste au lieu de détruire et reconstruire (permet la modification des valeurs pendant l'exécution)
 
-\end{itemize}
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|C{12cm}|}
+\hline
+\text{Problème} & Gestion des triggers : la modification des triggers ne semble pas avoir d'effet. \\
+\hline
+\text{Raison} & Présence de deux listes représentant les triggers: une est utilisé par les agents, l'autre par l'interface. \\
+\hline
+\text{Correction} & Regroupement des deux listes en une seule, modification de la liste au lieu et reconstruction (permet la modification des valeurs pendant l'exécution)\\
+\hline
+\end{tabular}
+\caption{Exemple de correctif sur la gestion des triggers.}
+\end{figure}
 
-\item esprit de l'agent : certain cognitons sont présent en double, ce qui fausse le calcul de l'action à effectuer
-     \begin{itemize}   
-     \item les Starting cognitons sont ajoutés en plus de la liste de tous les cognitons qui les contient déjà 
-     \item sécurisation de la liste des cognitons d'un agent à travers un accesseur, si le cogniton est déjà présent, l'ajout est ignoré
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|C{12cm}|}
+\hline
+\text{Problème} & Esprit de l'agent : certain cognitons sont présents en double, ce qui fausse le calcul de l'action à effectuer. \\
+\hline
+\text{Raison} & Les starting cognitons sont ajoutés en plus de la liste de tous les cognitons qui les contient déjà.\\
+\hline
+\text{Correction} & Sécurisation de la liste des cognitons d'un agent à travers un accesseur, si le cogniton est déjà présent, l'ajout est ignoré. \\
+\hline
+\end{tabular}
+\caption{Exemple de correctif sur l'Esprit des agents.}
+\end{figure}
 
-\end{itemize}
+\begin{figure}[H]
+\center
+\begin{tabular}{|c|C{12cm}|}
+\hline
+\text{Problème} & Sauvegarde : la sauvegarde sous windows corrompt certain modèles (pas sur mac). \\
+\hline
+\text{Raison} & Pas de vérification des caractères interdits dans le nom des éléments qui sont utilisés pour nommer le fichier correspondant. \\
+\hline
+\text{Correction} & Utilisation de "URLencoder" sur toutes les chaines servant comme nom de fichier. \\
+\hline
+\end{tabular}
+\caption{Exemple de correctif sur la gestion des sauvegardes.}
+\end{figure}
+	 
 
-\item Sauvegarde : la sauvegarde sous windows corrompt certain modèles (pas sur mac)
-	\begin{itemize}    
-    \item pas de vérification des caractères interdits dans le nom des éléments qui sont utilisés pour nommer le fichier correspondant
-	\item utilisation de URLencoder sur toutes les chaines servant comme nom de fichier 
-
-\end{itemize}
-\end{itemize}
 
 \subsection{Conclusion}
 	Metaciv est un logiciel puissant qui repose sur de bonnes bases,par exemple le système d'injection d'actions personnalisée sous forme de code java est très bien conçut et le moteur du simulateur est fiable, ce qui encourage à enrichir le projet de nouvelles fonctionnalités dans l'avenir. 
