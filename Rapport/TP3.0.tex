@@ -21,7 +21,7 @@
 \usepackage{hyperref}
 \hypersetup{backref,  
 pdfpagemode=FullScreen,  
-colorlinks=true}
+colorlinks=false}
 \tikzset{
     state/.style={
            rectangle,
@@ -107,11 +107,22 @@ colorlinks=true}
 \end{titlepage}
 
 \tableofcontents
+\newpage 
 
 \section*{Introduction}
 
-%%A FAIRE
+Par le passé, le monde de l'informatique privilégiait des intelligences artificielles centralisées. Les difficultés rencontrées par l'utilisation d'une telle méthode a engendré la recherche de solutions différentes notamment à travers l'étude de phénomènes sociaux collectif, c'est la naissance des systèmes multi-agents. \\
 
+\indent Un système multi-agents est un système composé d'un ensemble d'agents, situés dans un certain environnement et interagissant selon certaines relations. Un agent est une entité caractérisée par le fait qu'elle est, au moins partiellement, autonome. Cette méthode est utilisé dans de nombreux domaines: le cinéma, l'industrie, la recherche, etc...
+Dans le cadre de notre projet de recherche, nous serrons amenés à utiliser et à modifier le logiciel MetaCiv. Cette plateforme permet de simuler des civilisations notamment humaine en utilisant les systèmes multi-agents. Elle a pour but de ne pas seulement être utilisé dans le domaine de l'informatique mais aussi de pouvoir favoriser la recherche dans d'autres domaines comme la sociologie ou l'archéologie. \\
+
+\indent Ce projet porte sur l'élaboration d'une intelligence artificielle simulant des civilisations proches de celles existantes chez l'humain en utilisant les systèmes multi-agents. Nous avions besoin de créer une nouvelle modélisation grâce au logiciel MetaCiv et dans ce but nous avons fait évoluer ce logiciel. La simulation de phénomènes sociaux humains étant très complexe, nous avons réalisé des modèles basés sur des sociétés qu'on pouvait retrouver dans la préhistoire et l'antiquité. Malgré que ces modèles soient basiques, il nous fallait tout de même modifier le logiciel pour améliorer sa stabilité et ajouter des outils facilitant la création de civilisations. Pendant toute la réalisation de ce projet, nous avons dû travailler en collaboration avec un autre groupe pour leurs fournir les outils nécessaire à la réalisation de leur recherche. \\
+
+\indent Nous avons réalisés deux modèles ayant pour but de montrer l'émergence de façon différente. Un modèle basé sur les fonctionnalités de groupe et l'attribution aléatoire d'une spécialisation des membres d'une communauté. Un autre basé sur le renforcement d'une compétence à travers la réalisation ou l'échec d'une activité ainsi que l'observation de son environment. Pour permettre le travail de modélisation, nous avons commencé par sécuriser les sauvegardes des modèles puis nous avons ajouté diverses fonctionnalités dont le système de gestion des constantes qui nous permet un paramétrage plus efficace des modèles ainsi que les schéma cognitifs qui permettent de séparer le modèle de comportement des agents de l'environnement unique du modèle. \\
+
+\indent Dans ce document, nous reviendrons sur les difficultés rencontrés lors de notre initiation à MetaCiv et à ses codes sources. Nous expliquerons l'organisation de notre groupe pendant la réalisation de ce projet et nous conclurons sur le travail effectué ainsi que fournir des pistes d'évolutions futures du logiciel MetaCiv.
+
+\newpage
 \section{Présentation de la plateforme MetaCiv}
 
 Il existe aujourd'hui de nombreuses plateformes de modélisation de systèmes complexes se basant sur la programmation par agents. Dans l'équipe de travail SMILE, plusieurs plateformes ont déjà été mises au point, Turtlekit [Mic02] et Madkit [GFM00] largement inspirées des plateformes basées sous StarLogo (http ://education.mit.edu/starlogo/). Cela fait bien plus d'une année qu'une plateforme spécifique dénommée MetaCiv à vu le jour. Nous allons rappeler très rapidement ses principes et concepts.
@@ -623,9 +634,8 @@ On remarquera que le plan "RamenerBaiesAuVillage" permet aux agriculteurs de réc
 \caption{Représentation des cognitons et plans associés dans MetaCiv.}
 \end{figure}
 
-
-
-\subsubsection{Le cueilleur}
+\subsubsection{Les rôles du modèle}
+\subsubsection*{Le cueilleur}
 \label{cueilleur}
 Lorsqu'un groupe est créé, le premier individu de ce groupe est un $cueilleur$. La fonction principale de cet agent est bien sûr de cueillir mais aussi de recruter d'autres agents n'ayant pas de groupe et de construire le village du groupe (s'il n'y en a pas déjà un). Il possède également la capacité de devenir un $Agriculteur$ ou un $Artisan$. 
 
@@ -783,7 +793,7 @@ On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par
 \caption{Figure des plans d'un cueilleur et des interactions avec les cognitons associés.}
 \end{figure}
 
-\subsubsection{Les artisans}
+\subsubsection*{Les artisans}
 \label{artisans}
 Les artisans sont des agents qui construisent leurs huttes et partent à la recherche de bois pour construire des outils (ici des pelles) pour augmenter la production des agriculteurs. En contre-partie, ceux-ci reçoivent des baies supplémentaires du village. Ils possèdent quatre plans qui leurs sont associés: ChercherBois, RamenerPelleAuVillage, ConstruirePelle et ConstruireHutte.
 \begin{itemize}
@@ -902,7 +912,7 @@ Les artisans sont des agents qui construisent leurs huttes et partent à la reche
 \caption{Figure des plans d'un artisan et des interactions avec les cognitons associés.}
 \end{figure}
 
-\subsubsection{Les agriculteurs}
+\subsubsection*{Les agriculteurs}
 \label{agriculteurs}
 La seule fonction des agriculteurs est de récolter des baies dans leurs champs ou de construire un champs s'ils n'en possèdent pas. Ils ont donc un seul plan: Agriculter. Si l'agent n'a pas d'aménagement "Champs", il choisi un emplacement libre pour en construire un. Sinon, il se positionne sur son champ pour récolter "NombreDeBaiesRecolteesParTick" baies s'il n'a pas de pelles et "NombreDeBaiesSupplementairesPelles" baies s'il en a une. Lorsque l'agent possède plus de "SeuilRamenerBaiesAgriculteur" baies dans son inventaire, le poids du cogniton "TropDansMonSac" est augmenté.
  
@@ -960,7 +970,7 @@ La seule fonction des agriculteurs est de récolter des baies dans leurs champs o
 \end{figure}
 
 
-\subsection{Les aménagement}
+\subsubsection{Les aménagement}
 \label{amenagements}
 Les aménagements sont des marques déposées sur des patches et sont repérés par leurs positions. Ils ont un inventaire qui permet aux agents de déposer ou retirer des objets à l'intérieur. Le tableau suivant récapitule les aménagements de la modélisation.
 
@@ -980,7 +990,7 @@ Les aménagements sont des marques déposées sur des patches et sont repérés par l
 \caption{Tableau récapitulatif des aménagements.}
 \end{figure}
 
-\subsection{Les étapes de la modélisation}
+\subsubsection{Les étapes de la modélisation}
 \label{etapesmodelisation}
 Au début de la modélisation, les agents sont dispersés autour du point d'apparition. Ils sont immobiles puisqu'ils ne possèdent aucun plan permettant le mouvement (on peut facilement l'ajouter).
 
@@ -990,7 +1000,7 @@ Au début de la modélisation, les agents sont dispersés autour du point d'apparit
 \caption{Situation initiale}
 \end{figure}
 
-\subsubsection{La création des groupes et des villages}
+\subsubsection*{La création des groupes et des villages}
 \label{apparitionvillages}
  Puis, grâce à leurs plans "Standard", certains agents fondent leur groupe en partant à la recherche d'autres agents. Bien sûr, lorsque les agents détectent qu'ils n'ont pas de village, ils en construisent un.
  
@@ -1000,7 +1010,7 @@ Au début de la modélisation, les agents sont dispersés autour du point d'apparit
 \caption{Fondement des groupes et création des villages}
 \end{figure}
 
-\subsubsection{La cueillette}
+\subsubsection*{La cueillette}
 \label{cueillette}
 Les cueilleurs ayant construit leur village, ils partent alors à la recherche de ressources dans les zones avoisinantes pour remplir le village en ressources. Ceux n'ayant pas réussi à en trouver survivent en se fournissant au village.
 
@@ -1020,7 +1030,7 @@ Lorsque des cueilleurs ramènent des ressources au village, leurs attributs "Comp
 \caption{Apparition des premiers champs et agriculteurs}
 \end{figure}
 
-\subsubsection{L'apparition des artisans}
+\subsubsection*{L'apparition des artisans}
 \label{apparitionartisans}
 Certains $Cueilleurs$ ont la possibilité de se convertir en $Artisan$. Leur rôle est de récolter du bois et de revenir à leurs huttes pour produire des outils, ici, des pelles. Ils ramènent ensuite ces pelles au villages pour que les agriculteurs puissent s'en servir.
 
@@ -1036,9 +1046,9 @@ Certains $Cueilleurs$ ont la possibilité de se convertir en $Artisan$. Leur rôle
 \caption{Exemple d'un agriculteur ayant récupéré une pelle au village.}
 \end{figure}
 
-\subsection{L'évolution de la population selon les âges.}
+\subsubsection{L'évolution de la population selon les âges.}
 \label{evolutionpop}
-\subsubsection{L'évolution de la population avec la constante "ChancesAvoirDesEnfants" égale à 0.5}
+\subsubsection*{L'évolution de la population avec la constante "ChancesAvoirDesEnfants" égale à 0.5}
 
 Dans cette partie, la reproduction des agents ne produit que des cueilleurs. On effectue une première simulation qui ne contient que des cueilleurs.
 \begin{figure}[H]
@@ -1063,7 +1073,7 @@ Puis on rajoute la possibilité qu'un cueilleur devienne un agriculteur.
 
 Après observation de plusieurs graphes, on conclu que les graphes précédents ne donnent pas de résultats significatifs car la population est trop peu nombreuse et le taux de reproduction trop faible. Une modification de la constante "ChancesAvoirDesEnfants" pourrait potentiellement résoudre ce problème.
 
-\subsubsection{L'évolution de la population avec la constante "ChancesAvoirDesEnfants" égale à 1.}
+\subsubsection*{L'évolution de la population avec la constante "ChancesAvoirDesEnfants" égale à 1.}
 
 Dans cette partie, la reproduction des agents ne produit que des cueilleurs et la constante "ChancesAvoirDesEnfants" a été fixé à 1. On remarque après plusieurs lancements que cette modification de constante permet d'avoir des graphes plus significatifs et plus homogènes entre chaque simulation. On effectue une première simulation qui ne contient que des cueilleurs.
 \begin{figure}[H]
@@ -1094,7 +1104,7 @@ On remarque que la diminution de la population due à la famine a été déplacée ve
 
 Une solution serait alors d'introduire le fait qu'un agent ait une probabilité que ses enfants aient le même rôle que lui, cela règlerait hypothétiquement le problème du manque d'agriculteurs.
 
-\subsubsection{L'évolution de la population avec la constante "ChancesAvoirDesEnfants" égale à 1 et l'héritage des rôles.}
+\subsubsection*{L'évolution de la population avec la constante "ChancesAvoirDesEnfants" égale à 1 et l'héritage des rôles.}
 
 Dans cette partie, les agents ont une probabilité (ChancesEnfantMemeRole) d'avoir un enfant ayant le même rôle. On effectue une première simulation qui ne comporte que des cueilleurs.
 
