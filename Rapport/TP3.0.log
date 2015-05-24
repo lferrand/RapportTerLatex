@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.6)  24 MAY 2015 17:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.6)  24 MAY 2015 18:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1720,32 +1720,27 @@ File: img/DEV-ID-reflexes.jpg Graphic file (type jpg)
 <use img/DEV-ID-reflexes.jpg>
 Package pdftex.def Info: img/DEV-ID-reflexes.jpg used on input line 1665.
 (pdftex.def)             Requested size: 341.43306pt x 223.97127pt.
- [52 <./img/DEV-ID-strategies.jpg>] [53 <./img/DEV-ID-reflexes.jpg>] [54]
-Underfull \hbox (badness 10000) in paragraph at lines 1756--1757
+ [52 <./img/DEV-ID-strategies.jpg>] [53 <./img/DEV-ID-reflexes.jpg>] [54] [55]
+Underfull \hbox (badness 10000) in paragraph at lines 1758--1759
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1762--1764
+Underfull \hbox (badness 10000) in paragraph at lines 1764--1766
 
  []
 
-<img/Scrum.png, id=748, 2007.5pt x 1003.75pt>
+<img/Scrum.png, id=752, 2007.5pt x 1003.75pt>
 File: img/Scrum.png Graphic file (type png)
  <use img/Scrum.png>
-Package pdftex.def Info: img/Scrum.png used on input line 1767.
+Package pdftex.def Info: img/Scrum.png used on input line 1769.
 (pdftex.def)             Requested size: 341.43306pt x 170.71182pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1775--1776
-
- []
-
-[55 <./img/Scrum.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 1777--1778
 
  []
 
-
+[56 <./img/Scrum.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 1779--1780
 
  []
@@ -1755,18 +1750,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 1781--1782
 
  []
 
-<img/trello.png, id=755, 803.0pt x 255.95625pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1783--1784
+
+ []
+
+<img/trello.png, id=759, 803.0pt x 255.95625pt>
 File: img/trello.png Graphic file (type png)
  <use img/trello.png>
-Package pdftex.def Info: img/trello.png used on input line 1793.
+Package pdftex.def Info: img/trello.png used on input line 1795.
 (pdftex.def)             Requested size: 227.62204pt x 72.55382pt.
- [56]
-<img/github.png, id=760, 582.175pt x 230.8625pt>
+ [57]
+<img/github.png, id=764, 582.175pt x 230.8625pt>
 File: img/github.png Graphic file (type png)
  <use img/github.png>
-Package pdftex.def Info: img/github.png used on input line 1803.
+Package pdftex.def Info: img/github.png used on input line 1805.
 (pdftex.def)             Requested size: 227.62204pt x 90.26146pt.
- [57 <./img/trello.png> <./img/github.png>] [58] [59] [60]
+ [58 <./img/trello.png> <./img/github.png>] [59] [60] [61]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1862.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1862.
  (./TP3.0.aux)
@@ -1782,8 +1782,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1862.
  ) 
 Here is how much of TeX's memory you used:
- 34451 strings out of 493117
- 774566 string characters out of 6135433
+ 34452 strings out of 493117
+ 774573 string characters out of 6135433
  965581 words of memory out of 5000000
  37092 multiletter control sequences out of 15000+600000
  17014 words of font info for 40 fonts, out of 8000000 for 9000
@@ -1809,10 +1809,10 @@ ve/2014/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2014/te
 xmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2014/texm
 f-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on TP3.0.pdf (61 pages, 2357477 bytes).
+Output written on TP3.0.pdf (62 pages, 2350933 bytes).
 PDF statistics:
- 889 PDF objects out of 1000 (max. 8388607)
- 674 compressed objects within 7 object streams
- 197 named destinations out of 1000 (max. 500000)
+ 893 PDF objects out of 1000 (max. 8388607)
+ 677 compressed objects within 7 object streams
+ 198 named destinations out of 1000 (max. 500000)
  819 words of extra memory for PDF output out of 10000 (max. 10000000)
 
