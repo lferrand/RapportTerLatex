@@ -31,34 +31,142 @@ La signature de l'action est A\_withdrawObjectInAmenagementLargeQuantity(Modifie
 
 \subsection{Les actions relatives au cognitons}
 
-A\_ChangeCognitonWeightInteger
+\subsubsection{A\_ChangeCognitonWeightInteger}
+
+Cette action permet d'ajouter N au poids d'un cogniton dans l'esprit de l'agent.
+La signature de l'action est A\_ChangeCognitonWeightInteger(Modified Cogniton, N) :
+\begin{itemize}
+\item Modified Cogniton, le cogniton dont le poids est à modifier.
+\item N, le nombre à ajouter au poids du cogniton dans l'esprit de l'agent.
+\end{itemize}
 
 \subsection{Les actions relatives aux déplacements}
 
-A\_GoToGroupFaicility
+\subsubsection{A\_GoToGroupFaicility}
+
+Cette action ramène l'agent à un aménagement d'un des membres de son groupe.
+La signature de l'action est A\_GoToGroupFaicility(Facility) :
+\begin{itemize}
+\item Facility, le type d'aménagement vers lequel l'agent doit se diriger.
+\end{itemize}
 
 \subsection{Les actions relatives aux agents}
 
-A\_HireForRole
-A\_AskRandomMemberToChangeRoleForAnother
-A\_BirthGroupAndRole
-A\_ChangeAttributeDouble
-A\_ChangeRoleForAnother
-A\_DieAndRemoveFacilities
-A\_DieAndRemoveSpecificFacility
-A\_setPoissonLaw
+\subsubsection{A\_HireForRole}
+
+Cette action recrute un agent sans groupe se trouvant sur le même patch que l'agent et lui donne un rôle dans son groupe.
+La signature de l'action est A\_HireForRole(Role) :
+\begin{itemize}
+\item Role, le rôle dans lequel le nouvel agent recruté sera affecté dans le groupe.
+\end{itemize}
+
+\subsubsection{A\_AskRandomMemberToChangeRoleForAnother}
+
+Cette action change le rôle d'un des membre du groupe de l'agent pour un autre rôle spécifié (s'il n'est pas déjà dans ce rôle).
+La signature de l'action est A\_AskRandomMemberToChangeRoleForAnother(Role):
+\begin{itemize}
+\item Role, le rôle vers lequel un membre du groupe se convertira.
+\end{itemize}
+
+\subsubsection{A\_BirthGroupAndRole}
+
+Cette action ressemble à l'action A\_Birth, elle créer un nouvel agent en appelant le BirthPlan puis ajoute le nouveau membre au groupe en lui affectant un rôle.
+La signature de l'action est A\_BirthGroupAndRole(Role):
+\begin{itemize}
+\item Role, le rôle vers lequel le nouvel agent sera affecté dans le groupe.
+\end{itemize}
+
+\subsubsection{A\_ChangeAttributeDouble}
+
+Cette action ressemble à l'action A\_ChangeAttribute, elle permet de modifier l'attribut d'un agent en ajoutant un N (double) à la valeur de l'attribut.
+La signature de l'action est A\_ChangeAttributeDouble(Modified Attribute, N):
+\begin{itemize}
+\item Modified Attribute, attribut de l'agent à modifier.
+\item N, la valeur à ajouter à la valeur de l'attribut.
+\end{itemize}
+
+\subsubsection{A\_ChangeRoleForAnother}
+
+Cette action change le rôle de l'agent pour un autre rôle du groupe.
+La signature de l'action est A\_ChangeRoleForAnother(Role):
+\begin{itemize}
+\item Role, le rôle vers lequel l'agent se convertira.
+\end{itemize}
+
+\subsubsection{A\_DieAndRemoveFacilities}
+
+Cette action fait mourir l'agent et efface tous ses aménagements.
+Cette action ne possède pas d'arguments.
+
+\subsubsection{A\_DieAndRemoveSpecificFacility}
+
+Cette action fait mourir l'agent et n'efface qu'un type d'aménagement.
+La signature de l'action est A\_DieAndRemoveSpecificFacility(Facility):
+\begin{itemize}
+\item Facility, le type d'aménagements supprimés à la mort de l'agent.
+\end{itemize}
+
+
+\subsubsection{A\_setPoissonLaw}
+
+Cette action modifie un attribut et lui donne la valeur d'un nombre suivant un loi de poisson de paramètre $\lambda = 10$ et $n=20$ et multiplié par 5.
+La signature de l'action est A\_setPoissonLaw(Modified Attribute):
+\begin{itemize}
+\item Modified Attribute, est l'attribut modifié.
+\end{itemize}
 
 \section{Les action L}
 
 \subsection{Les Tests}
 
-L\_CompareAttributeToAttribute
-L\_CompareAttributeToConstant
-L\_CompareGroupAttributeToPopulation
+\subsubsection{L\_CompareAttributeToAttribute}
+
+La condition porte sur les valeurs de deux attributs de l'agent, elles sont comparés par un comparateur.
+La signature de cette action est L\_CompareAttributeToAttribute(Attribute1, comparator, Attribute2):
+\begin{itemize}
+\item Attribute1 est le premier attribut concerné.
+\item comparator est l'opérateur de comparaison $<, >, \leq, \geq, == $.
+\item Attribute2 est le deuxième attribut concerné.
+\end{itemize}
+
+\subsubsection{L\_CompareAttributeToConstant}
+
+La condition porte sur la valeur d'un attribut par rapport à une constante.
+La signature de cette action est L\_CompareAttributeToConstant(Attribute, comparator, Constant):
+\begin{itemize}
+\item Attribute est l'attribut concerné.
+\item comparator est l'opérateur de comparaison $<, >, \leq, \geq, == $.
+\item Constant est la constante concernée.
+\end{itemize}
+
+\subsubsection{L\_CompareGroupAttributeToPopulation}
+
+La condition porte sur un la somme des attributs des membres d'un groupe par rapport au nombre d'individus de ce groupe.
+La signature de cette action est L\_CompareGroupAttributeToPopulation(Attribute, comparator):
+\begin{itemize}
+\item Attribute, est l'attribut de groupe à comparer.
+\item comparator est l'opérateur de comparaison $<, >, \leq, \geq, == $.
+\end{itemize}
+
 %L\_CompareNombreObjets
 %L\_CompareNombreObjetsInGroupAmenagement
-L\_CompareRoleMembers
-L\_IsInThatGropInThatRole
+
+\subsubsection{L\_CompareRoleMembers}
+
+La condition porte sur le nombre d'individus du groupe par rapport à un nombre N.
+La signature de cette action est L\_CompareRoleMembers(N, comparator):
+\begin{itemize}
+\item N est le nombre à comparer à la population du groupe.
+\item comparator est l'opérateur de comparaison $<, >, \leq, \geq, == $.
+\end{itemize}
+
+\subsubsection{L\_IsInThatGropInThatRole}
+
+La condition porte sur le rôle de l'agent dans son groupe.
+La signature de cette action est L\_IsInThatGropInThatRole(Role):
+\begin{itemize}
+\item Role, le rôle à comparer avec le rôle de l'agent.
+\end{itemize}
 
 \subsection{Les algorithmiques}
 
