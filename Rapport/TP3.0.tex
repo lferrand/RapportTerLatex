@@ -171,6 +171,7 @@ Pour pouvoir exécuter ces plans il faut disposer des cognitons Compétence agricu
 
 Nous retrouvons donc le fait qu'un agent dispose d'un esprit constitué de cognitons. Ceux ci sont liés aux plans que peut exécuter l'agent par des liens conditionnels ou d'influences. Les actions prélèvent des ressources dans les patches et influent sur les cognitons de l'agent. Les perceptions de l'environnement se font aussi grâce aux cognitons. Les extensions sur lesquelles nous allons réfléchir, la lueur de la bibliographie, concernent le niveau groupe et la transmission de la connaissance communautaire d'une part, et d'autre part les relations spatio temporelles au niveau de l'environnement (celui ci ne se cantonnant plus au rôle de support).
 
+\newpage 
 \section{Modélisations de civilisations}
 
 \subsection{Introduction}
@@ -1462,10 +1463,6 @@ Les agents ayant fini leur migration un campement est a nouveau construit. Leur 
 
 Un agent découvre l'agriculture. Son manque personnel de ressource diminue, malgré cela les migrations vont continuer quelque temps. Mais puisqu'il manque moins souvent de nourriture il a plus de chance de se reproduire souvent et par conséquent puisque ses enfants auront la compétence d'agriculture il y aura de plus en plus d'agriculteur. Plus y aura d'agriculteur moins de chance le vote de migration sera accepter et celle-ci arrêteront.
 
- \begin{figure}[H]
-\center
-\caption{Découverte de l'agriculture.}
-\end{figure}
 
 \subsubsection*{Debut de village}
 
@@ -1509,6 +1506,7 @@ Une fois encore, on constate que le modèle est cohérent. Il permet d'observer ra
 
 Après la réalisation de nos modèles, nous arrivons à la conclusion qu'il n'y a pas une seule bonne façon de créer les systèmes multi-agent. A travers des méthodes d'émergences différentes, nous sommes capable de pouvoir observer plus facilement l'influence des paramètres d'une civilisation dans une et l'influence de l'environment dans l'autre. Bien qu'on aurait voulu aller plus loin dans nos modélisations, on a réalisé notre objectif qui était de simuler des sociétés viables proches des sociétés humaines en faisant apparaître des méthodes d'émergence différentes.
 
+\newpage 
 \section{Le simulateur}
 
 \subsection{Introduction}
@@ -1752,7 +1750,7 @@ MetaCiv est un logiciel puissant qui repose sur de bonnes bases. Par exemple, le
 
 \end{itemize}
 
-
+\newpage 
 \section{Gestion de projet}
 
 La gestion de projet a joué un rôle important dans le développement des nouvelles technologies au cours du 20$^{ieme}$ et 21 $^{ieme}$ siècle. Si important qu'au vu du très grand nombre d'échecs de projet que dans les années 1990, il fût décidé de rechercher des méthodes différentes aux méthodes traditionnelles, comme la méthode dite de "Waterfall", pour gérer des projets informatiques. C'est la naissance de la méthode Agile et de son manifeste qui décrit les douze principes et quatre valeurs a respecter.\\
@@ -1763,6 +1761,12 @@ Nous commencerons par introduire la méthode Agile pour ensuite décrire le déroul
 
 La méthode agile repose sur des cycles de développements itératifs et adaptatifs en fonction des besoins évolutifs du client. Elle permet notamment d'impliquer l'ensemble des membres du groupe ainsi que les responsables du sujet dans le développement du projet.
 Cette méthode permet généralement de mieux répondre aux attentes du client en un temps limité (en partie grâce à l'implication de ce dernier) tout en permettant au groupe d'acquérir de nouvelles compétences. Cette méthode constitue donc un gain en productivité pour les deux côtés, ainsi qu'une flexibilité accrue.\\
+
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{img/Scrum.png}
+\caption{Exemple de "sprint" de la méthodologie Scrum, un framework de la méthode Agile.}
+\end{figure} 
 
 Pour ce projet nous avons opté pour un sprint entre chaque réunion de groupe avec les tuteurs. MétaCiv étant déjà existant, dès les premières réunions nous avons pu présenter des modélisations, pointer du doigt certains problèmes, s'organiser pour les résoudre et redéfinir les objectifs soulevés.
 
@@ -1783,12 +1787,26 @@ De plus, les avancées du logiciel que nous réalisions servaient également au deu
 
 \subsection{Trello}
 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=8cm]{img/trello.png}
+\caption{Logo de Trello}
+\end{figure} 
+
 Pour nous assister dans l'organisation des tâches à faire, nous avons utilisé un outil de gestion de projet en ligne, Trello. Ce programme est basé sur une organisation des projets en planches listant des cartes (tâches à faire, sorte de Post It virtuel). Les cartes sont assignables à des utilisateurs et sont mobiles d'une planche à l'autre, traduisant leur avancement. Ainsi, nous avons pu organiser le travail à faire en catégorie, pour connaître les tâches restantes et indiquer les fonctionnalités que l'on souhaitait voir, tout en ayant la possibilité de cibler le destinataire du message tout étant visible par tous.
 
 \subsection{GitHub}
 
+\begin{figure}[H]
+\center
+\includegraphics[width=8cm]{img/github.png}
+\caption{Logo de GitHub}
+\end{figure} 
+
 Pour le développement des avancées de MetaCiv, nous avons utilisé GitHub. GitHub est un service web pour les projets de développement de logiciels qui utilisent le système de contrôle de révision Git. Un système de contrôle de révision est la gestion des modifications apportées aux documents, programmes informatiques et autres collections d'informations. Les changements sont généralement identifiés par un code numérique ou alphabétique, appelé le "numéro de révision", "niveau de révision", ou simplement «révision». Par exemple, un ensemble initial de fichiers est "révision 1". Lorsque le premier changement est effectué, l'ensemble résultant est "révision 2", et ainsi de suite. Chaque révision est associée à un horodatage et à la personne qui fait le changement. Les révisions peuvent être comparés, restaurés, et avec certains types de fichiers, fusionnées. Il est un outil obligatoire pour les équipes de développement aujourd'hui.
 
+\newpage 
 \section{Perspectives d'évolution}
 
 MetaCiv permet de modéliser un grand nombre de situation (interactions entres molécules, sociétés, etc...) si l'on est capable de coder les actions nécessaires et la gestion des plans par des cognitons est une alternative originale à la modélisation des modèles par la subsomption. Bien qu'il possède de grande possibilités d'évolution, nous sommes conscient que l'ajout de nouvelle fonctionnalité ne doit pas rendre le logiciel plus complexe mais le rendre plus simple et facile d'utilisation pour le grand public.
@@ -1833,7 +1851,7 @@ CONSTANTES DE GROUPE
 VARIABLE DE GROUPE ?
 
 
-
+\newpage 
 \section{Conclusion}
 
 IMPRESSION PROJET
