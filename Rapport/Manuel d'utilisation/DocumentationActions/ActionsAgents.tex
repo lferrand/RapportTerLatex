@@ -81,3 +81,86 @@ la deuxième action interne sinon la première.
 	\end{itemize}
 	
 	\textit{Remarque : un agent peut appartenir à plusieurs groupes}
+	
+	
+	\subsubsection{A\_DisbandGoup}
+
+Cette action détruit un groupe et retire tout les membres de celui-ci
+La signature de l'action est A\_DisbandGoup(Groupe) :
+\begin{itemize}
+\item Groupe, le nom du groupe auquel appartient l'agent qui détruit le groupe.
+\end{itemize}
+
+\subsubsection{A\_CreatedElectedGroup}
+
+Cette action a pour but la création d'un groupe a travers un vote. Si 50\% des votants approuve la motion, alors tout les votant rejoingne le groupe dans un certain role et le demander du vote dans un autre. 
+La signature de l'action est A\_CreatedElectedGroup(Role, Role, cogniton, attribut) :
+\begin{itemize}
+\item Role, le nom du role dont le demandeur va rejoindre.
+\item Role, le nom du role dont les votant vont rejoindre.
+\item cogniton, le cogniton surlequel se base le vote.
+\item attribut, le nom de l'attribut qui conditionnent le vote des votant.\end{itemize}
+
+
+\subsubsection{A\_HireForRole}
+
+Cette action recrute un agent sans groupe se trouvant sur le même patch que l'agent et lui donne un rôle dans son groupe.
+La signature de l'action est A\_HireForRole(Role) :
+\begin{itemize}
+\item Role, le rôle dans lequel le nouvel agent recruté sera affecté dans le groupe.
+\end{itemize}
+
+\subsubsection{A\_AskRandomMemberToChangeRoleForAnother}
+
+Cette action change le rôle d'un des membre du groupe de l'agent pour un autre rôle spécifié (s'il n'est pas déjà dans ce rôle).
+La signature de l'action est A\_AskRandomMemberToChangeRoleForAnother(Role):
+\begin{itemize}
+\item Role, le rôle vers lequel un membre du groupe se convertira.
+\end{itemize}
+
+\subsubsection{A\_BirthGroupAndRole}
+
+Cette action ressemble à l'action A\_Birth, elle créer un nouvel agent en appelant le BirthPlan puis ajoute le nouveau membre au groupe en lui affectant un rôle.
+La signature de l'action est A\_BirthGroupAndRole(Role):
+\begin{itemize}
+\item Role, le rôle vers lequel le nouvel agent sera affecté dans le groupe.
+\end{itemize}
+
+\subsubsection{A\_ChangeAttributeDouble}
+
+Cette action ressemble à l'action A\_ChangeAttribute, elle permet de modifier l'attribut d'un agent en ajoutant un N (double) à la valeur de l'attribut.
+La signature de l'action est A\_ChangeAttributeDouble(Modified Attribute, N):
+\begin{itemize}
+\item Modified Attribute, attribut de l'agent à modifier.
+\item N, la valeur à ajouter à la valeur de l'attribut.
+\end{itemize}
+
+\subsubsection{A\_ChangeRoleForAnother}
+
+Cette action change le rôle de l'agent pour un autre rôle du groupe.
+La signature de l'action est A\_ChangeRoleForAnother(Role):
+\begin{itemize}
+\item Role, le rôle vers lequel l'agent se convertira.
+\end{itemize}
+
+\subsubsection{A\_DieAndRemoveFacilities}
+
+Cette action fait mourir l'agent et efface tous ses aménagements.
+Cette action ne possède pas d'arguments.
+
+\subsubsection{A\_DieAndRemoveSpecificFacility}
+
+Cette action fait mourir l'agent et n'efface qu'un type d'aménagement.
+La signature de l'action est A\_DieAndRemoveSpecificFacility(Facility):
+\begin{itemize}
+\item Facility, le type d'aménagements supprimés à la mort de l'agent.
+\end{itemize}
+
+
+\subsubsection{A\_setPoissonLaw}
+
+Cette action modifie un attribut et lui donne la valeur d'un nombre suivant un loi de poisson de paramètre $\lambda = 10$ et $n=20$ et multiplié par 5.
+La signature de l'action est A\_setPoissonLaw(Modified Attribute):
+\begin{itemize}
+\item Modified Attribute, est l'attribut modifié.
+\end{itemize}

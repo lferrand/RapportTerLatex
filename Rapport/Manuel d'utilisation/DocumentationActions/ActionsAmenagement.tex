@@ -28,5 +28,29 @@ Cette action permet à l'agent l'usage de l'aménagement (à condition qu'il soi
 	\item \texttt{Facility}, le type d'aménagement à utiliser
 	\end{itemize}
 	
-	
-	
+\subsubsection{A\_DepositObjectInAmenagementLargeQuantity}
+
+L'action permet de déposer N objets 	dans un aménagement d'un agent du groupe si l'on se trouve sur l'aménagement en question. 
+La signature de l'action est A\_DepositObjectInAmenagementLargeQuantity(Modified Object, N) :
+\begin{itemize}
+\item Modified Object, type de l'objet à déposer dans l'aménagement.
+\item N, le nombre d'objets à déposer.
+\end{itemize}
+
+\subsubsection{A\_withdrawObjectInAmenagementLargeQuantity}
+
+L'action permet de retirer N objets dans un aménagement d'un agent du groupe si l'on se trouve sur l'aménagement en question. 
+La signature de l'action est A\_withdrawObjectInAmenagementLargeQuantity(Modified Object, N) :
+\begin{itemize}
+\item Modified Object, type de l'objet à retirer de l'aménagement.
+\item N, le nombre d'objets à retirer.
+\end{itemize}
+
+\subsubsection{A\_withdrawObjectInAmenagementHereLargeQuantity}
+
+L'action permet de retirer N objets dans un aménagement d'un agent si l'on se trouve sur l'aménagement en question. 
+La signature de l'action est A\_withdrawObjectInAmenagementHereLargeQuantity(Modified Object, N) :
+\begin{itemize}
+\item Modified Object, type de l'objet à retirer de l'aménagement.
+\item N, le nombre d'objets à retirer.
+\end{itemize}

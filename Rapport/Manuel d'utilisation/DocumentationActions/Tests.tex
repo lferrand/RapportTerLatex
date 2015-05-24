@@ -90,3 +90,60 @@ La signature de cette action est L\_OwnObject(object) :
 	\item \texttt{object},  le type d'objet testé.
 	\end{itemize}	
 
+\subsubsection{L\_IsAmenagementInCommunity}
+
+La condition porte sur la présence d'un aménagement dans la civilisation. Il s'agit de tester si ce type d'aménagement est présent.
+La signature de cette action est L\_CompareAttributeToAttribute(TypeAmenagement):
+\begin{itemize}
+\item TypeAmenagement est le type d'aménagement attribut concerné.
+\end{itemize}
+
+
+\subsubsection{L\_CompareAttributeToAttribute}
+
+La condition porte sur les valeurs de deux attributs de l'agent, elles sont comparés par un comparateur.
+La signature de cette action est L\_CompareAttributeToAttribute(Attribute1, comparator, Attribute2):
+\begin{itemize}
+\item Attribute1 est le premier attribut concerné.
+\item comparator est l'opérateur de comparaison $<, >, \leq, \geq, == $.
+\item Attribute2 est le deuxième attribut concerné.
+\end{itemize}
+
+\subsubsection{L\_CompareAttributeToConstant}
+
+La condition porte sur la valeur d'un attribut par rapport à une constante.
+La signature de cette action est L\_CompareAttributeToConstant(Attribute, comparator, Constant):
+\begin{itemize}
+\item Attribute est l'attribut concerné.
+\item comparator est l'opérateur de comparaison $<, >, \leq, \geq, == $.
+\item Constant est la constante concernée.
+\end{itemize}
+
+\subsubsection{L\_CompareGroupAttributeToPopulation}
+
+La condition porte sur un la somme des attributs des membres d'un groupe par rapport au nombre d'individus de ce groupe.
+La signature de cette action est L\_CompareGroupAttributeToPopulation(Attribute, comparator):
+\begin{itemize}
+\item Attribute, est l'attribut de groupe à comparer.
+\item comparator est l'opérateur de comparaison $<, >, \leq, \geq, == $.
+\end{itemize}
+
+%L\_CompareNombreObjets
+%L\_CompareNombreObjetsInGroupAmenagement
+
+\subsubsection{L\_CompareRoleMembers}
+
+La condition porte sur le nombre d'individus du groupe par rapport à un nombre N.
+La signature de cette action est L\_CompareRoleMembers(N, comparator):
+\begin{itemize}
+\item N est le nombre à comparer à la population du groupe.
+\item comparator est l'opérateur de comparaison $<, >, \leq, \geq, == $.
+\end{itemize}
+
+\subsubsection{L\_IsInThatGropInThatRole}
+
+La condition porte sur le rôle de l'agent dans son groupe.
+La signature de cette action est L\_IsInThatGropInThatRole(Role):
+\begin{itemize}
+\item Role, le rôle à comparer avec le rôle de l'agent.
+\end{itemize}

@@ -29,6 +29,18 @@ La signature de l'action est A\_withdrawObjectInAmenagementLargeQuantity(Modifie
 \item N, le nombre d'objets à retirer.
 \end{itemize}
 
+\subsubsection{A\_withdrawObjectInAmenagementHereLargeQuantity}
+
+L'action permet de retirer N objets dans un aménagement d'un agent si l'on se trouve sur l'aménagement en question. 
+La signature de l'action est A\_withdrawObjectInAmenagementHereLargeQuantity(Modified Object, N) :
+\begin{itemize}
+\item Modified Object, type de l'objet à retirer de l'aménagement.
+\item N, le nombre d'objets à retirer.
+\end{itemize}
+
+
+
+
 \subsection{Les actions relatives au cognitons}
 
 \subsubsection{A\_ChangeCognitonWeightInteger}
@@ -50,7 +62,42 @@ La signature de l'action est A\_GoToGroupFaicility(Facility) :
 \item Facility, le type d'aménagement vers lequel l'agent doit se diriger.
 \end{itemize}
 
+\subsubsection{A\_GoToAmenagementInCommunity}
+
+L'action de se rendre a l'aménagement demandé le plus proche de la civilisation. 
+La signature de l'action est A\_GoToAmenagementInCommunity(Modified Object, N) :
+\begin{itemize}
+\item TypeAmenagement, type de l'aménagement auquel il faut se rendre.
+\end{itemize}
+
+\subsubsection{A\_FollowRoleInGroup}
+
+L'action permet a l'agent de suivre un agent qui possède un certain rôle dans un groupe.
+La signature de l'action est A\_FollowRoleInGroup(Role) :
+\begin{itemize}
+\item Role, de l'agent a suivre.
+\end{itemize}
+
 \subsection{Les actions relatives aux agents}
+
+\subsubsection{A\_DisbandGoup}
+
+Cette action détruit un groupe et retire tout les membres de celui-ci
+La signature de l'action est A\_DisbandGoup(Groupe) :
+\begin{itemize}
+\item Groupe, le nom du groupe auquel appartient l'agent qui détruit le groupe.
+\end{itemize}
+
+\subsubsection{A\_CreatedElectedGroup}
+
+Cette action a pour but la création d'un groupe a travers un vote. Si 50\% des votants approuve la motion, alors tout les votant rejoingne le groupe dans un certain role et le demander du vote dans un autre. 
+La signature de l'action est A\_CreatedElectedGroup(Role, Role, cogniton, attribut) :
+\begin{itemize}
+\item Role, le nom du role dont le demandeur va rejoindre.
+\item Role, le nom du role dont les votant vont rejoindre.
+\item cogniton, le cogniton surlequel se base le vote.
+\item attribut, le nom de l'attribut qui conditionnent le vote des votant.\end{itemize}
+
 
 \subsubsection{A\_HireForRole}
 
@@ -118,6 +165,15 @@ La signature de l'action est A\_setPoissonLaw(Modified Attribute):
 \section{Les action L}
 
 \subsection{Les Tests}
+
+\subsubsection{L\_IsAmenagementInCommunity}
+
+La condition porte sur la présence d'un aménagement dans la civilisation. Il s'agit de tester si ce type d'aménagement est présent.
+La signature de cette action est L\_CompareAttributeToAttribute(TypeAmenagement):
+\begin{itemize}
+\item TypeAmenagement est le type d'aménagement attribut concerné.
+\end{itemize}
+
 
 \subsubsection{L\_CompareAttributeToAttribute}
 
