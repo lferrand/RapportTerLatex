@@ -1,0 +1,65 @@
+\documentclass{article}
+
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+
+\begin{document}
+
+\section{Les actions A}
+
+\subsection{Les actions relatives aux objets}
+
+\subsection{Les actions relatives aux aménagements}
+
+\subsubsection{A\_DepositObjectInAmenagementLargeQuantity}
+
+L'action permet de déposer N objets 	dans un aménagement d'un agent du groupe si l'on se trouve sur l'aménagement en question. 
+La signature de l'action est A\_DepositObjectInAmenagementLargeQuantity(Modified Object, N) :
+\begin{itemize}
+\item Modified Object, type de l'objet à déposer dans l'aménagement.
+\item N, le nombre d'objets à déposer.
+\end{itemize}
+
+\subsubsection{A\_withdrawObjectInAmenagementLargeQuantity}
+
+L'action permet de retirer N objets dans un aménagement d'un agent du groupe si l'on se trouve sur l'aménagement en question. 
+La signature de l'action est A\_withdrawObjectInAmenagementLargeQuantity(Modified Object, N) :
+\begin{itemize}
+\item Modified Object, type de l'objet à retirer de l'aménagement.
+\item N, le nombre d'objets à retirer.
+\end{itemize}
+
+\subsection{Les actions relatives au cognitons}
+
+A\_ChangeCognitonWeightInteger
+
+\subsection{Les actions relatives aux déplacements}
+
+A\_GoToGroupFaicility
+
+\subsection{Les actions relatives aux agents}
+
+A\_HireForRole
+A\_AskRandomMemberToChangeRoleForAnother
+A\_BirthGroupAndRole
+A\_ChangeAttributeDouble
+A\_ChangeRoleForAnother
+A\_DieAndRemoveFacilities
+A\_DieAndRemoveSpecificFacility
+A\_setPoissonLaw
+
+\section{Les action L}
+
+\subsection{Les Tests}
+
+L\_CompareAttributeToAttribute
+L\_CompareAttributeToConstant
+L\_CompareGroupAttributeToPopulation
+%L\_CompareNombreObjets
+%L\_CompareNombreObjetsInGroupAmenagement
+L\_CompareRoleMembers
+L\_IsInThatGropInThatRole
+
+\subsection{Les algorithmiques}
+
+\end{document}
