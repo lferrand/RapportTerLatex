@@ -61,4 +61,26 @@
 	\item \texttt{Resource To Collect}, correspond à la ressource recherchée.
 	\end{itemize}
 	
-	
+	\subsubsection{A\_GoToGroupFaicility}
+
+Cette action ramène l'agent à un aménagement d'un des membres de son groupe.
+La signature de l'action est A\_GoToGroupFaicility(Facility) :
+\begin{itemize}
+\item Facility, le type d'aménagement vers lequel l'agent doit se diriger.
+\end{itemize}
+
+\subsubsection{A\_GoToAmenagementInCommunity}
+
+L'action de se rendre a l'aménagement demandé le plus proche de la civilisation. 
+La signature de l'action est A\_GoToAmenagementInCommunity(Modified Object, N) :
+\begin{itemize}
+\item TypeAmenagement, type de l'aménagement auquel il faut se rendre.
+\end{itemize}
+
+\subsubsection{A\_FollowRoleInGroup}
+
+L'action permet a l'agent de suivre un agent qui possède un certain rôle dans un groupe.
+La signature de l'action est A\_FollowRoleInGroup(Role) :
+\begin{itemize}
+\item Role, de l'agent a suivre.
+\end{itemize}
