@@ -1741,14 +1741,16 @@ Au total , c'est plusieurs dizaines de bugs qui ont été corrigés.
 \subsection{Conclusion}
 
 MetaCiv est un logiciel puissant qui repose sur de bonnes bases. Par exemple, le système d'injection d'actions personnalisé sous forme de code java est très bien conçu et le moteur du simulateur est fiable. Cela encourage à l'enrichissement du projet à de nouvelles fonctionnalités pour l'avenir.
+	
 	En revanche, le code des interfaces est désorganisé dû aux ajouts des différents groupes qui se sont succédés (dont le notre) et devrait être repris avec de bonnes méthodes.
+	
 	Du point de vue de l'utilisation, l'interface manque de sécurité et de retour utilisateur en cas de commande invalide, ce qui causait bien souvent la corruption du modèle sans que l'on comprenne pourquoi. En effet, régler ce problème de retour d'information à l'utilisateur est une étape très importante pour pouvoir amener MetaCiv à un plus grand public.
 
-\begin{itemize}
-\item L'ajout des constantes est un atout majeur pour l'utilisateur facilitant ainsi la modification des paramètres de la simulation. On peut ainsi voir en temps réel l'impact d'un paramètre sur la simulation.
-\item La sauvegarde automatique des dernières versions fonctionnelles d'un modèle permet d'économiser énormément de temps lorsque l'on travaille sur une modélisation. En effet, il n'est pas rare de changer un paramètre, sauvegarder et de ne plus être capable de lancer son modèle, le rendant alors inutilisable.
+	L'ajout des constantes est un atout majeur pour l'utilisateur facilitant ainsi la modification des paramètres de la simulation. On peut ainsi voir en temps réel l'impact d'un paramètre sur la simulation.
 
-\end{itemize}
+	La sauvegarde automatique des dernières versions fonctionnelles d'un modèle permet d'économiser énormément de temps lorsque l'on travaille sur une modélisation. En effet, il n'est pas rare de changer un paramètre, sauvegarder et de ne plus être capable de lancer son modèle, le rendant alors inutilisable.
+
+	Enfin, l'ajout du système de gestion de schémas cognitif est un point important de notre effort de développement, ouvrant de nombreuses possibilités aux futurs modélisateurs.
 
 \newpage 
 \section{Gestion de projet}
@@ -1842,11 +1844,9 @@ Le but de MetaCiv est d'être utilisé par un public certes initié mais pas toujou
 
 \subsection{Noyaux}
 
-
-CONSTANTES DE GROUPE 
-VARIABLE DE GROUPE ?
-
-
+	Les évolutions à apporter au noyau découlent des besoins évoqués ci-dessus, la pluspart des attentes des modélisateurs peuvent être satisfaites par l'instauration d'un système de messages entre agents, que ce soit pour le commerce ou l'éducation.
+	Pour modéliser les différences entre groupes ou civilisation, nécessaires à l'émergence de certains comportements comme par exemple les conflits, nous avons envisagé d'avoir des attributs de groupe qui représenterai les codes et normes de ces groupes, par exemple les croyance religieuses, les idéaux politiques ou encore la morale. Ces attributs de groupes peuvent êtres fluctuants et aussi servir à représenter différents états, pensez à l'opinion publique, ou aux effets de foules comme des manifestations qui dégénèrent à cause d'un incident n'impliquant que quelques uns des participants.
+	
 \newpage 
 \section{Conclusion}
 
