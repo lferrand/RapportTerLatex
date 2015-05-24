@@ -1,0 +1,92 @@
+
+
+La structure générale des actions logiques de type Test est :
+
+\begin{algorithm}
+\Begin{
+       
+    \If{ condition }
+  			 { 
+  		 		action interne 1 
+  		 		
+   			}	   
+        	\Else
+        	{
+        		action interne 2 
+        		    	
+        	}
+   }  
+  
+\end{algorithm}
+
+\newpage
+\textit{Remarque : ces actions logiques sont toutes composées de deux actions internes (qui peuvent elles-mêmes être composites).}
+
+Les diverses actions suivantes vont préciser le type de condition.
+
+\subsubsection{L\_CompareAttribute}
+La condition porte sur la valeur d'un attribut de l'agent.
+
+La signature de cette action est L\_CompareAttribute(attributTocompare, comparator, n) :
+\begin{itemize}
+	\item \texttt{attributTocompare}, est l'attribut concerné,
+	\item \texttt{comparator} l'opérateur de comparaison $<$, $>$, $<=$,$ >=$,$ ==$,
+	\item \texttt{n} la valeur de comparaison.
+	\end{itemize}
+
+\subsubsection{L\_CompareObject}
+La condition porte sur le nombre d'objets d'un type donné possédés.
+
+La signature de cette action est L\_CompareObject(objectTocompare, comparator, n) :
+\begin{itemize}
+	\item \texttt{objectTocompare}, est le type d'objet concerné,
+	\item \texttt{comparator} l'opérateur de comparaison $<$, $>$, $<=$,$ >=$,$ ==$,
+	\item \texttt{n} le nombre d'objets.
+	\end{itemize}
+\subsubsection{L\_CompareResource}
+La condition porte sur la valeur de la ressource présente sur le patch où est situé  l'agent.
+
+La signature de cette action est L\_CompareResource(resourceTocompare, comparator, n) :
+\begin{itemize}
+	\item \texttt{resourceTocompare}, est le type de la ressource concernée,
+	\item \texttt{comparator} l'opérateur de comparaison $<$, $>$, $<=$,$ >=$,$ ==$,
+	\item \texttt{n} la valeur de la ressource.
+	\end{itemize}
+	
+	
+\subsubsection{L\_IsFacilityHere}
+
+La condition teste la présence de l'aménagement \textit{(facility)} concerné sur le patch  où est situé  l'agent.
+
+La signature de cette action est L\_IsFacilityHere(facility) :
+\begin{itemize}
+	\item \texttt{facility},  le type d'aménagement testé.
+	\end{itemize}	
+	
+\subsubsection{L\_IsAnyFacilityHere}
+La condition teste la présence d'un aménagement de n'importe quel type sur le patch  où est situé  l'agent.
+
+\subsubsection{L\_OwnFacility}
+
+La condition teste la possession d'un aménagement donné.
+
+La signature de cette action est L\_OwnFacility(facility) :
+\begin{itemize}
+	\item \texttt{facility},  le type d'aménagement testé.
+	\end{itemize}	
+\subsubsection{L\_OwnCogniton}
+La condition teste la possession d'un cognition.
+
+La signature de cette action est L\_OwnCogniton(cogniton) :
+\begin{itemize}
+	\item \texttt{cogniton},  le type de cogniton testé.
+	\end{itemize}	
+\subsubsection{L\_OwnObject}
+
+La condition teste la possession d'un objet. 
+
+La signature de cette action est L\_OwnObject(object) :
+\begin{itemize}
+	\item \texttt{object},  le type d'objet testé.
+	\end{itemize}	
+

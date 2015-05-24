@@ -1,0 +1,18 @@
+
+\section{Les plans}
+
+Les plans sont des successions d'actions.
+Nous distinguons trois formes de plans :
+\begin{itemize}
+\item  l'\textit{autoplan} qui s'exécute en toile de fond à chaque tick ; il sert à décrire des plans relatifs à la physiologie de l'agent. Il a un label bleu dans l'interface.
+\item le\textit{ birthplan} s'exécute à la création de l'agent (soit à l'initialisation des peuplements, soit après la création par un agent ultérieurement). Il a un label rouge dans l'interface.
+
+\textit{Remarque : autoplan et birthplan ne sont pas liés à des cognitons}
+\item les \textit{plans} proprement dits, influencés et conditionnés par les cognitons. Un plan doit obligatoirement être conditionné par un ou plusieurs cognitons (qui doivent être dans l'esprit de l'agent pour pouvoir s'exécuter), il peut aussi être influencés par d'autres cognitons (l'influence ne s'exercera que si le cogniton origine de celle-ci est dans l'esprit de l'agent). Ils ont un label noir dans l'interface.
+\end{itemize}
+
+
+\input{DocumentationActions/Actions}
+	
+	
+	

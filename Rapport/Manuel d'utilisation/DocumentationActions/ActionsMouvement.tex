@@ -1,0 +1,64 @@
+	\subsubsection{A\_MoveTowards}  
+	
+	L'action permet à l'agent de se déplacer vers une cible spécifiée.
+	
+	\textit{Remarque : la cible aura été définie par l'action A\_GetAnotherSettlementPatch.}
+	 	
+ 	
+ 	\subsubsection{A\_MoveRandomly} 
+	
+	L' action permet à l'agent d'effectuer un pas  dans une direction aléatoire.
+
+\textit{Remarque : la longueur du pas dépend de la facilité de traversée du patch (cf. passability)}
+
+	\subsubsection{A\_DoNothing}
+	
+	Cette action permet à l'agent de n'exécuter aucune action.
+	
+	\subsubsection{A\_ CreateSettlement}   
+	
+	Cette action permet à l'agent de se déplacer aléatoirement jusqu'à ce qu'il trouve un ensemble de patchs (les 8 patchs voisins immédiats)  dépeuplé de manière à créer un nouveau \textit{Settlement}.
+	
+	%\textit{Remarque : voir la terminologie }
+	
+	
+	
+	\subsubsection{A\_GetAnotherSettlementPatch}  
+	
+	Cette action définie la cible utilisée dans l'action A\_MoveTowards comme étant un des \textit{Settlement} pris au hasard dans l'ensemble des \textit{Settlement} existants.
+	
+	\subsubsection{A\_GoBackHome}
+	
+	Cette action permet à l'agent de se déplacer d'un pas vers son lieu de création s'il s'agit d'un des agents des peuplements initiaux, sinon vers le lieu où se trouvait l'agent qui l'a engendré.
+	
+	\subsubsection{A\_Move}
+	
+	Cette action déplace l'agent d'un pas dans une direction donnée.
+	
+	 La signature de cette action est A\_Move(String) :
+	
+	\begin{itemize}
+	\item \texttt{String}, "NORTH","SOUTH","WEST","EAST" correspond à la direction que prendra  l'agent
+	\end{itemize}
+	
+	\subsubsection{A\_SearchForResources} 
+	
+	Cette action permet à l'agent de rechercher autour de lui (dans son champ de vision)  la ressource passée en paramètre,  pour cela il se dirigera vers le patch le plus proche et  possédant cette ressource en quantité maximum. S'il ne trouve pas de patch contenant cette ressource, il se déplacera aléatoirement de un pas.
+	
+	 La signature de cette action est A\_SearchForResources(Resource To Collect) :
+	
+	\begin{itemize}
+	\item \texttt{Resource To Collect}, correspond à la ressource recherchée.
+	\end{itemize}
+	
+	\subsubsection{A\_SmellAndMove}
+	
+	Cette action permet à l'agent de chercher dans son voisinage immédiat le patch contenant la ressource passée en paramètre en plus grande quantité et de faire un pas dans sa direction. 
+	
+	La signature de cette action est A\_SmellAndMove(Resource To Collect) :
+	
+	\begin{itemize}
+	\item \texttt{Resource To Collect}, correspond à la ressource recherchée.
+	\end{itemize}
+	
+	

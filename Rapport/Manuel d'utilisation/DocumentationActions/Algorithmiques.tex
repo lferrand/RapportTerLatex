@@ -1,0 +1,30 @@
+Ces actions logiques composites sont associées à des structures standard algorithmique.
+
+
+
+\subsubsection{L\_Instant}
+
+Cette action composite effectue la globalité de ses actions internes en un seul tick.
+
+
+
+\subsubsection{L\_Random}
+Cette action composite effectue une seule de ses actions internes choisie aléatoirement en un seul tick.
+
+
+\subsubsection{L\_RandomPercent}
+
+Cette action composite n'a que deux actions internes et choisit selon le pourcentage l'action interne à exécuter.
+
+La signature de cette action est L\_RandomPercent(n) :
+\begin{itemize}
+	\item \texttt{n},  le pourcentage de chance qu'à l'action interne 1 de s'exécuter.
+	\end{itemize}	
+	
+\subsubsection{L\_Repeat}
+Cette action composite ne comporte qu'une action interne qu'elle va exécuter n fois en n tick.
+
+La signature de cette action est L\_Repeat(n) :
+\begin{itemize}
+	\item \texttt{n},  le nombre d'itérations.
+	\end{itemize}	

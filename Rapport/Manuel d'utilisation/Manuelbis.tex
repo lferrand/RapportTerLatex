@@ -1,0 +1,251 @@
+\documentclass[a4paper,oneside,12 pt]{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{algorithm2e}
+
+\title{Autour de Metaciv}
+\author {Gautier Maillé, Thérèse Libourel, Jacques Ferber, Julien Nigon}
+\date{}
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\tableofcontents %\clearpage$
+
+\newpage
+
+\part{Généralités}
+\section{Introduction}
+MetaCiv est un framework de développement de simulations d'évolution de sociétés humaines. Il se distingue des plateformes de simulation multi-agent générales telles que Repast, NetLogo, Gama et TurtleKit, en proposant un ensemble de constructions eco-socio-cognitives génériques permettant de gérer des agents vivant socialement dans un environnement physique en évolution.
+
+Les principes structurels ayant guidé la conception de MetaCiv sont les suivants :
+
+\begin{enumerate}
+  \item Intégrer les aspects réactifs et cognitifs des simulations multi-agents, en disposant d’une architecture générique d’agents à base de \emph{cognitons} \cite{jacques1995systemes}.. Elle se distingue des architectures hybrides en ce sens qu’elle ne différencie pas un niveau réactif et un niveau cognitif mais qu’elle fusionne tous les facteurs aussi bien réactifs que cognitifs permettant à un agent de prendre une décision (croyances, percepts, compétences, motivations, drives, etc.). Les décisions sont prises par un système de combinaison d’influences ou poids qui déterminent la prise de décision.
+  \item Utiliser les déplacements des agents comme des points d'ancrages de dynamiques émergentes, pour favoriser l'apparition de routes, de places de marchés, de lieux de rencontre, etc. On inclut, lors de la prise de décision des déplacements, des algorithmes de type A* qui prennent en compte ces lieux et constructions. Ainsi, toute modification du paysage produit une modification des comportements pouvant donner lieu à d'autres modifications du paysage (stigmergie).
+  \item Intégrer les dynamiques des objets et des espaces, lesquels ont des effets en retour sur l'état des agents et des lieux.
+  \item Intégrer les aspects sociaux et culturels en utilisant une extension du modèle AGR, qui fusionne les aspects culturels des groupes (normes, croyances collectives), au niveau de la prise de décision de chaque agent. Cela permet ainsi d'avoir une vision de la culture et des normes comme une motivation qui vient influencer le comportement de l'agent, et non comme des règles à prendre en compte lors d'un raisonnement.
+  \item Définir et utiliser des sous-frameworks d'interaction pour modéliser le commerce, les combats, les rencontres sociales, etc.
+  \item Permettre d'implémenter facilement des \emph{design patterns} cognitivo-eco-sociaux reliant les états mentaux des agents, leurs comportement, les demandes sociales, les organisations et la dynamique de l'environnement.
+\end{enumerate}
+
+
+\section{Méta-Modèle}
+
+Inspiré par le modèle des \textit{quadrants}, la plateforme Metaciv est fondé sur le  méta-modèle suivant.
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[scale=0.6]{modele.pdf}
+\caption[Modele]{MétaModèle \\}
+\label{ex1}
+\end{center}
+\end{figure} 
+\section{Agent}
+Les agents sont vus sous l'angle de \textit{l'intériorité }comme dotés d'un esprit (ensemble de cognitons) qui leur permet d'établir des plans (ensemble d'actions) ;  vus sous l'angle \textit{extériorité} ils sont dotés d'un ensemble de caractéristiques (corps) et peuvent manipuler des objets. Ils évoluent dans un environnement collectif agrégat de \textit{patches}. Côté spatialisation, ont été rajoutés les concepts de zones agrégats de patches liées par des relations spatiales (cf. relations d'Egenhofer). Sur les patches comme sur les zones l'agent peut déposer des aménagements (\textit{facility}).
+Les cognitions vont influencer les plans, de manière pondérée (selon l'importance que le modélisateur leur accorde), de manière positive (renforcement) ou négative (affaiblissement).
+L'environnement ainsi que les actions effectuées peuvent affecter les caractéristiques d'un agent et de ce fait influer sur ses cognitons.
+De même les actions peuvent directement ou indirectement via les objets influer sur les cognitons.
+\subsection{Cognition}
+
+\subsubsection{Notion de cognitons}
+
+	Les agents étant amenés à devoir opérer des choix dans un large panel d'actions ceux ci doivent donc disposer de capacité de réflexion et de choix suffisamment développée.
+	
+	Dans cette optique, l'idée retenue consiste à pondérer les différentes actions possibles pour les agents, et  ce afin de les faire choisir en fonction de ces poids. 
+	Les poids des actions sont déterminés par différents facteurs : ce que voient, pensent, croient les agents… L'ensemble de ces facteurs est regroupé sous le terme de \textit{cogniton} dans ce projet, en reprenant le néologisme proposé par J. Ferber. Le cogniton est donc une « unité de pensée » qui influe sur les choix de l'agent. 	
+	
+	Les cognitons peuvent se cumuler, et ne sont donc pas des « états » mentaux. En fait, c'est la somme des cognitons qui représente réellement l'état mental de l'agent.
+	
+\subsubsection{Catégorisation des cognitons}
+
+	Pour mieux structurer l'organisation des cognitons, ceux-ci sont catégorisés en cinq types :\textit{ Skills, Traits, Beliefs, Percepts, Mèmes}. Cette distinction permet de séparer des comportements différents entre ces cognitons, et de les traiter au mieux par la suite.
+	
+	
+	\textit{Remarque : la catégorisatio, pour l'instant, est juste réalisée via une caractéristique du cogniton, à partir de laquelle il est possible de moduler les actions.}
+	% revoir si cela est fait
+\begin{itemize}
+
+
+\item 	Les\textit{ Skills} (signifiant compétences en anglais) représentent les compétences, savoir-faire et connaissances techniques ou scientifiques des agents. Comme exemples de ce type de cognitons, on peut proposer : Agriculture, Navigation, Fabrication d'outils… La plupart des skills ont la particularité d'être transmissibles d'un agent à l'autre, d'être permanents (ils ne disparaissent pas une fois acquis) et d'être des prérequis indispensables à certaines actions. 
+	
+	Par exemple, même si d'autres cognitons l'influencent, un agent ne peut pas fabriquer un outil s'il ne dispose pas de Fabrication d'outils. Enfin, les skills sont héréditaires. Ici, on parle de l'hérédité au sens de la transmission entre les générations, ce qui représente de manière simple l'apprentissage et la transmission des connaissances.
+
+\item 	Les \textit{Traits} représentent les spécificités individuelles de l'agent, ses traits de caractères, ses façons d'être. Des exemples possibles de ce type de cognitons sont : Ouvert, Renfermé, Paresseux…
+	
+	Cette catégorie n'est pas la plus importante du point de vue de la simulation et du réalisme, mais est un outil simple pour faire varier le comportement des agents si l'on veut envisager des scénarii spécifiques (des civilisations très agressives, des agents peu travailleurs, etc…). Les traits ne sont pas transmissibles d'agents à agents, sauf de manière héréditaire occasionnellement, ce qui représente l'imitation et l'éducation.
+
+\item 	Les \textit{Beliefs} (Croyances en anglais) représentent ce que l'agent sait ou croit savoir de son environnement et de lui même. Cette catégorie est vaste, et peut regrouper des cognitons aussi variés que : Je porte une pioche, Nous sommes en guerre avec la civilisation 3, Je possède un champ. Ces cognitons ne sont généralement pas transmissibles entre agents, et ne sont pas héréditaires.
+
+\item 	Les \textit{Percepts} représentent ce que l'agent voit, entend ou ressent (physiquement) au moment considéré. Des exemples de percepts sont : J'ai faim, Un ennemi est proche, Je suis près de l'eau. Ce type de cogniton est constamment retiré ou ajouté, contrairement aux autres types qui sont plus stables. Les percepts ne sont pas transmissibles, ils sont propres à l'agent considéré.
+
+\item 	Les \textit{Mèmes}, d'après le terme inventé par R.Dawkins [2].
+% y a t'il une biblio ?
+
+ Son sens varie suivant les sources. Dans notre cas, nous définissons un mème comme étant une croyance ou un comportement culturel transmissible. Ainsi, les mèmes pourraient être : Je crois que l'argent est une fin en soi, je crois en l'existence d'un dieu, je crois que la démocratie est une bonne chose. Typiquement, les opinions religieuses et politiques sont des mèmes. Par définition, les mèmes sont transmissibles, et ils sont potentiellement héréditaires.
+	
+Les cognitons ont un poids qui par défaut est 1 (et qui peut être modifié par une action ou  par l'effet d'un objet ou par les culturons)
+\end{itemize}
+
+\subsection{Objets}
+Les objets peuvent être créés, selon les besoins, par les agents (à partir de concepts d'objets précédemment définis : parmi ces concepts on distingue les objets simples et composites). Les objets feront ensuite partie de l'inventaire d'un agent. Les objets peuvent avoir un effet sur des caractéristiques d'un agent ou sur des actions. 
+
+\subsection{Plan et actions}
+Les plans sont des ensembles d'actions et sont liés à des cognitons qui les influencent.
+
+\subsection{Groupe et rôle}
+Les agents peuvent aussi appartenir à des groupes au sein desquels ils possèdent différents rôles. Le rôle d'un agent dans un groupe lui permet d'accéder à des cognitons dits \textit{ culturons} c'est-à-dire , commun à tous les agents ayant le même rôle que lui dans ce groupe. 
+\newpage
+\part{Le  logiciel}
+\section{Préambule}
+MetaCiv, dans sa forme actuelle est un \textit{framework} permettant de mettre en place des modèles de simulation de sociétés/civilisations. Il repose sur MadKit (qui offre un mécanisme de gestion multi-agents) et TurtleKit (qui fournit en particulier l’interface et la gestion « physique » des agents).
+
+Les principaux outils fournis par MetaCiv sont :
+\begin{itemize}
+\item un Système « cognitif » pour les agents
+\item un outil de Gestion de l’environnement à base de ressources (Cf. phéromones de Turtle Kit)
+\item des Outils de visualisation
+\item des Outils d’édition graphique
+\end{itemize}
+
+\section{Installation}
+
+Il faut disposer du langage de programmation Java (version au moins 1.7) et récupérer le dossier Metaciv qui contient le dossier \textit{Launcher} ainsi que divers modèles exemples dans le Dropbox.
+
+Ouvrir de dossier \textit{Launcher}, double clic sur le module \textit{Metaciv+numversion.jar}
+
+
+Une fenêtre s'ouvre, il faut alors rechercher et ouvrir le fichier de paramètres initiaux  \texttt{parametres.metaciv} dans le modèle choisi. (Chaque modèle a un fichier de paramétrage)
+
+
+
+\begin{figure}[hbtp]
+\begin{center}
+ \includegraphics [scale=0.4] {ecran1.png}
+\end{center}
+ \caption{Le choix du fichier de paramétrage initial}
+\end{figure}
+
+%\newpage
+
+Deux fenêtres, constituant l'environnement de fonctionnement de Metaciv  s'ouvrent alors : 
+\begin{itemize}
+\item l'une \textit{worldviewer} propose un fond cartographique par défaut (environnement d'évolution)
+
+\begin{figure}[hbtp]
+\begin{center}
+ \includegraphics [scale=0.5] {worldviewer.png}
+\end{center}
+ \caption{La vision de l'environnement de simulation}
+\end{figure}
+\newpage
+\item l'autre \textit{wiewertab} 
+
+\begin{figure}[hbtp]
+\begin{center}
+ \includegraphics [scale=0.5] {viewertabbed.png}
+\end{center}
+ \caption{La vision de la fenêtre entrée / sortie pour le modélisateur}
+\end{figure}
+
+
+\end{itemize}
+
+
+
+
+Les onglets de la ligne supérieure sont réservés aux experts \textit{turtlekit}.
+%\newpage
+
+
+
+La ligne suivante propose des onglets permettant d'accéder à différents détails :
+\begin{figure}[hbtp]
+\begin{center}
+ \includegraphics [scale=0.5] {Onglets.pdf}
+\end{center}
+ \caption{Les onglets accessibles }
+\end{figure}
+
+
+\begin{itemize}
+\item L'onglet\textit{ Simulation} dispose d'une palette d'icônes permettant la création du modèle et  la modification de la simulation (cf. Figure \ref{IC}).
+
+\begin{figure}[hbtp]
+\begin{center}
+ \includegraphics [scale=0.6] {icone.pdf}
+\end{center}
+ \caption{Les icônes de l'onglet Simulation }
+ \label{IC}
+\end{figure}
+
+
+%Cet onglet contient deux barres d’outils, la barre du haut varie en fonction du domaine de la simulation que l’on souhaite éditer, celle de gauche permet de naviguer grâce à des icônes parmi les différents domaines éditables.
+
+% à voir
+Le détail de ces icônes :
+
+\begin{enumerate}
+\item Les deux premières icônes : \texttt{Save} disquette permet de sauvegarder la simulation dans sa globalité, \texttt{Make copy of current save} et double disquette permet de dupliquer la dernière sauvegarde.
+\item L'icône \texttt{Edit cognitive scheme}
+Permet de créer et modifier cogniton et plans.
+\item L'onglet \texttt{Edit Environment}
+Utilisé pour  créer et modifier  les différents terrains des patches.
+\item L'onglet \texttt{Edit Item}
+Utilisé pour  créer et modifier les différents objets et leurs effets.
+\item L'icône \texttt{Edit civilizations}
+Permet de créer et modifier plusieurs populations mais constituée d'agents initialement identiques. Chaque population a un nom et un nombre d'agents.
+%Par défaut il présente un ensemble d'agents homogènes ( 1 ou n) situé initialement sur un patch ou zone choisie sur l'environnement (clic droit). On peut donc au départ 
+
+\item L'onglet \texttt{Edit Attributes}
+Utilisé pour  créer et modifier pour chacune des caractéristiques (attribut) son nom et sa valeur initiale (exemple  vie 100)
+\item L'onglet \texttt{Manage Groupe}
+Cet onglet permet de structurer les populations initiales.
+\item L'onglet \texttt{Edit Aménagement}
+Cet onglet permet de créer et modifier les aménagements.
+\item L'onglet \texttt{Edit Configuration}
+Cet onglet permet de modifier les paramètres : nombre de messages de passages nécessaires sur un patch pour créer une route, nombre de messages de passages à enlever tous les 75 ticks (les messages sont assimilés à des phéromones et peuvent s'évaporer), nombre de patches visibles par l'agent depuis le patch où il est situé \textit{(vision)}.  % (à compléter )
+\end{enumerate}
+
+
+
+
+\item L'onglet \textit{Agent} : affiche des informations sur les agents, permet de sélectionner l’agent à observer.
+%\item Communautés : Onglet obsolète (qui sera amené à être amélioré).
+\item L'onglet \textit{Options} : permet de positionner différentes options (en particulier d’affichage). 
+
+\item  L'onglet \textit{Performances} : présente différentes informations sur la consommation mémoire.
+\item L'onglet \textit{Tableau de bord} : offre quelques outils de visualisation, par exemple le ratio des cognitons (sous forme de camembert)
+\item L'onglet \textit{Charts} : présente des graphiques de synthèse et le poids des plans 
+
+\end{itemize}
+
+\vspace{10mm}
+
+\textbf{Le modélisateur doit donc créer toutes entités nécessaires à son modèle (ce qui nécessite une phase de réflexion et la connaissance d'un méta-langage afin d'invoquer des codes préexistants).}
+
+
+Lorsque l'univers est créé, revenir sur la fenêtre \textit{worldviewer} et cliquer sur l'icône Play (on peut régler la vitesse d'exécution) et éventuellement passer en mode pas à pas.
+Il est possible d'effectuer des Zooms sur l'environnement  avec la souris 
+A noter la présence du bouton fin qui clôt la simulation (impératif) et quitter le \textit{CivLauncher}.
+
+\newpage
+\part{Documentation des actions}
+	\input{documentation_A}
+\newpage
+\part{Outils de création d'un modèle}
+	\input{DocumentationSimulation/Simul1}
+\newpage
+\part{Exemple de simulation }
+\Large{\emph{La simulation AgriculteurMaisonBois2}}
+ 	\section{Le modèle}
+		\input{DocumentationSimulation/simul_agriculteur_maison_bois2}
+		\clearpage
+	\section{Observation de la simulation}
+		\input{DocumentationSimulation/observ_agriculteur_maison_bois2}
+\end{document}

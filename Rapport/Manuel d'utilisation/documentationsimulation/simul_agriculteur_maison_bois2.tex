@@ -1,0 +1,114 @@
+\subsection{Peuplement et environnement}
+Dans cette simulation, un seul peuplement Civ1 avec une centaine d'agents.
+
+Ceux-ci, ont initialement tous les mêmes caractéristiques : sommeil (50) et vie (20).
+
+La simulation aura lieu dans un environnement constitués de \textit{patches} de deux types de  terrains : forêt et prairie de \textit{passability} 25 et 35.
+
+Après chargement de l'environnement Test.metaciv, on dispose de l'environnement et de la localisation de départ de Civ1 (cf. Figure \ref{loca})
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.5]{DocumentationSimulation/locas1.pdf}
+\caption[loca]{Environnement \\}
+\label{loca}
+\end{center}
+\end{figure} 
+
+L'inventaire des agents pourrait potentiellement comporter les objets Baton, Céréale, Outil.
+
+Céréale a l'effet possession qui ajoutera 0.2 au poids du cogniton \textit{Produireautrechose  }à chaque fois qu'un agent ajoutera un objet céréale à son inventaire.
+
+En ce qui concerne les aménagements \textit{(facility)}, on trouve Champ et Maison.
+Champ a un effet permanent \textit{Renforcer agriculture } qui ajoute  0.05 au poids du cogniton \textit{Agriculteur} à chaque fois qu'il utilise le champ.
+
+Maison a un effet permanent \textit{Dormir} qui ajoute 40.0 à l'attribut \textit{Sommeil} de l'agent à chaque fois qu'il utilise cet aménagement.
+
+\subsection{Cogniton, Plan, Actions}
+
+
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.5]{DocumentationSimulation/CogPl.pdf}
+\caption[CP]{Environnement \\}
+\label{CP}
+\end{center}
+\end{figure} 
+
+La figure \ref{CP} présente la \textit{cognition} : l'ensemble des cognitons (Agriculteur, EnvieExplorer, MonChezMoi, ProduireAutreChose) et plans (Autoplan et Agriculter, ConstruireMaison, ConstruireOutil, Explorer) ainsi que les liens conditionnels (bleu) et d'influence (noir).
+
+Les billes vertes correspondent à une influence positive, les rouges à une influence négative et leur quantité dénonce le poids.
+
+Par exemple, Agriculter est lié conditionnellement au cogniton Agriculteur (qui influence aussi positivement ce plan) ; par contre  le cogniton EnvieExplorer influence négativement ce même plan.
+
+Un clic droit sur chaque cogniton donne le détail sur celui-ci (nom, type et pourcentage d'agent qui auront ce cogniton à leur création) et sur les liens le concernant.
+
+\textit{Remarque : le dosage du pourcentage est important dans le modèle et pour la simulation}
+
+Pour accéder à la description des actions d'un plan (clic gauche), si les actions L double cliquer sur elles jusqu'à déploiement complet des actions du plan.
+
+
+\begin{flushleft}
+\textbf{Autoplan}
+\end{flushleft}
+
+	2 actions A\_ChangeAttribute (portant sur sommeil et vie)
+	
+	
+\begin{flushleft}
+\textbf{Plan ConstruireMaison}
+\end{flushleft}
+
+L'arbre des actions déployé est représenté sur la figure \ref{PL}.
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.5]{DocumentationSimulation/planex.pdf}
+\caption[PL]{Arbre des actions du plan ConstruireMaison \\}
+\label{PL}
+\end{center}
+\end{figure} 
+
+\begin{algorithm}
+\caption{Plan ConstruireMaison}
+\label{Com}
+
+\Begin{
+   
+     
+    \If{j'ai une maison (n'importe où) }
+   {
+        \If{j'ai une maison sur le patch où je suis}
+  		 	{   
+  		 		\texttt{action interne 1 niveau 1}
+  		 		
+       		 	j'utilise cette maison (et par suite je gagne 40 de sommeil)
+   			}	   
+        	\Else
+        	{
+        		\texttt{action interne 2 niveau 1  }
+        		
+        		je me déplace vers le patch de ma maison la plus proche
+        	}
+   }    
+
+    \Else
+    {
+       		\If{sur le patch où je suis, existe un quelconque aménagement }
+  		 	{
+  		 		\texttt{action interne 1 niveau 2 }
+  		 		
+       		 	 j'avance aléatoirement d'un pas (le patch étant occupé)
+   			}	   
+        	\Else
+        	{
+        		\texttt{action interne 2 niveau 2} 
+        		
+        		je crée une maison sur le patch
+        	}
+   }    
+ }
+\end{algorithm}
+
+Cette action permet à l'agent de construire l'aménagement souhaité si celui n'en possède pas déjà un et qu'il n'y a pas d'aménagements sur le patch sur lequel il se trouve. Si le patch est occupé il ira en chercher un libre plus loin. Si l'agent possède déjà cet aménagement il ira l'utiliser.
+
+Les autres actions de constructions sont construites de la même manière.

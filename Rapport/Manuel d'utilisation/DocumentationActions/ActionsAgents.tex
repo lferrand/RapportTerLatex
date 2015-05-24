@@ -1,0 +1,83 @@
+	\subsubsection{A\_GiveBirth} 
+	
+	L'action permet à l'agent qui l'exécute de créer un nouvel agent sur le patch où il se situe : cet agent sera identique à ceux du peuplement initial.
+	
+	\subsubsection{A\_Die}
+	
+	L'action permet à l'agent qui l'exécute de se supprimer.
+	
+	\subsubsection{A\_DieIfAttributeUnderZero}
+	
+	L'action supprime l'agent qui l'exécute si la valeur de l'attribut (ou caractéristique) passé en paramètre descend en dessous de zéro. La signature de cette action est A\_DieIfAttributeUnderZero(attributeToCompare) :
+	
+	
+	\begin{itemize}
+	\item \texttt{attributeToCompare}, correspond à l'attribut à vérifier
+	\end{itemize}	
+	
+	\subsubsection{A\_ChangeAttribute} 
+	
+	L'action modifie une caractéristique de l'agent. 
+	
+	La signature de l'action est A\_ChangeAttribute(Modified attribute, n) ;
+	
+	\begin{itemize}
+	\item \texttt{Modified attribute}, correspond à la caractéristique à modifier
+	\item \texttt{n}, donne la valeur à ajouter à la caractéristique
+	\end{itemize}
+	
+	\subsubsection{A\_Trade} 
+	
+	L'action A\_Trade  comporte deux actions internes, elle correspond à un échange conditionnel,  car elle suppose que si après un temps fixé (\textit{turns}) l'agent n'a pas réussi à trouver un partenaire il exécute 
+la deuxième action interne sinon la première.
+
+	La signature de l'action est A\_Trade(turns, objectToGive, nObjectToGive, objectToTake, nObjectToTake, myTag, compatibleTag) ;
+	
+		\begin{itemize}
+	\item \texttt{turns}, correspond au nombre de ticks durant lequel l'agent attend sur son patch un autre agent pour réaliser un échange,
+	\item \texttt{objectToGive}  donne l'objet que l'agent échange,
+	\item\texttt{nobjectToGive} correspond au nombre n d'objets à échanger,
+	\item \texttt{objectToTake}  précise l'objet reçu en échange,
+	\item \texttt{nobjectToTake} correspond au nombre n d'objets reçus,
+	\item \texttt{mytag}, message que l'agent passe à l'attention des autres,
+	\item \texttt{compatibletag} message recherché chez le partenaire échangeur potentiel.
+	\end{itemize}
+	
+	\subsubsection{A\_TravelTrade} 
+	
+	L'action A\_TravelTrade  comporte deux actions internes, elle correspond à un échange conditionnel,  car elle suppose que si après un temps fixé (\textit{turns}) l'agent n'a pas réussi à trouver un partenaire il exécute la deuxième action interne sinon la première.
+
+	La signature de l'action est A\_TravelTrade(turns, objectToGive, nObjectToGive, objectToTake, nObjectToTake, myTag, compatibleTag) ;
+	
+		\begin{itemize}
+	\item \texttt{turns}, correspond au nombre de ticks durant lequel l'agent cherche des partenaires commerciaux dans son voisinage et se déplace vers eux,
+	\item \texttt{objectToGive}  donne l'objet que l'agent échange,
+	\item\texttt{nobjectToGive} correspond au nombre n d'objets à échanger,
+	\item \texttt{objectToTake}  précise l'objet reçu en échange,
+	\item \texttt{nobjectToTake} correspond au nombre n d'objets reçus,
+	\item \texttt{mytag}, message que l'agent passe à l'attention des autres,
+	\item \texttt{compatibletag} message recherché chez le partenaire échangeur potentiel.
+	\end{itemize}
+	
+	
+	\subsubsection{A\_CreateGroup}
+	
+	L'action permet à l'agent  de créer un groupe. 
+	
+	La signature de l'action  est A\_CreateGroup(GroupToCreate) : 
+	
+	\begin{itemize}
+	\item \texttt{GroupToCreate}, donne le type du groupe à créer.
+	\end{itemize}
+	
+	\subsubsection{A\_HireForRole}
+	
+	L'action permet à l'agent exécutant d'ajouter un agent présent sur le même patch que lui à son groupe . 
+	
+	La signature de l'action est A\_HireForRole(GroupToCreate) :
+	
+	\begin{itemize}
+	\item \texttt{GroupToCreate}, donne  le type du groupe dans lequel  l'agent sera admis
+	\end{itemize}
+	
+	\textit{Remarque : un agent peut appartenir à plusieurs groupes}

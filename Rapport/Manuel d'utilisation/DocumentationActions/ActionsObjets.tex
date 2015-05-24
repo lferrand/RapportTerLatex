@@ -1,0 +1,82 @@
+\subsubsection{A\_CreateObject} 
+
+% modification complète de Changed Object en Modified Object
+
+Cette action crée un objet conformément au processus de fabrication (recette ou \textit{recipe}) défini au préalable. 
+
+La signature de l'action  est A\_CreateObject(Created Object) :
+	\begin{itemize}
+	\item \texttt{Created Object}, est l'objet à fabriquer.
+	\end{itemize}
+	
+Exemple (pour un agent agriculteur) A\_CreateObject(Houe) lance la recette de fabrication de la Houe qui nécessite un bâton pour le manche et un soc (pièce métallique).
+	%Cette action permet a l'agent de fabriquer un objet a partir d'autres objets présents dans son inventaire. 
+	Si l'agent ne possède pas les deux objets requis pour fabriquer la houe l'action ne fera rien, sinon, elle fabriquera 1 unité de cet objet et l'ajoutera à l'inventaire de l'agent exécutant l'action. Les objets élémentaires ayant servi à la fabrication seront supprimés de l'inventaire.
+
+\subsubsection{A\_AddObject}
+Action permettant d'ajouter N objets à l'inventaire de l'agent.  
+
+La signature de l'action est A\_AddObject(Modified Object, N) :
+	\begin{itemize}
+	\item \texttt{Modified Object}, précise le type d'objet utilisé pour créer directement l'objet à ajouter à l'inventaire de l'agent (sans utiliser la recette)
+	\item \texttt{N}, le nombre d'objets à ajouter.
+	\end{itemize}
+	
+	
+\subsubsection{A\_DropObject}  
+Action permettant de supprimer N objets de l'inventaire de l'agent.  
+
+La signature de l'action est A\_DropItem(Modified Object, N) :	
+	
+	\begin{itemize}
+	\item \texttt{Modified Object}, type de l'objet à retirer de l'inventaire de l'agent,
+	\item \texttt{N}, le nombre d'objets à retirer.
+	\end{itemize}
+	
+\subsubsection{A\_Transform} 
+
+Cette action transforme une ressource prélévée sur un patch en objet.
+
+La signature de l'action est A\_Transform (Resource to Collect, Modified Object) :
+%\textit{Remarque : la ressource est appelée phéromone (hérité de Turtle Kit)}
+
+	
+	\begin{itemize}
+	\item \texttt{Resource to Collect}, le type de la ressource que l'agent prélève,
+	\item \texttt{Changed Object}, l'objet correspondant (pour le modélisateur) à ajouter à l'inventaire de l'agent.
+	\end{itemize}
+	
+Exemple : un agent exécute 	 A\_Transform (Blé, Meule).
+
+\subsubsection{A\_UseObject}
+Cette action correspond à l'usage d'un objet. 
+
+
+La signature de l'action est A\_UseObject(Modified Object, N) :
+	\begin{itemize}
+	\item \texttt{Modified Object}, le type d'objet à utiliser,
+	\item \texttt{N}, le nombre.
+	\end{itemize}
+	
+		
+\subsubsection{A\_AddObjectXCogniton}
+
+La signature de l'action est A\_AddObjectXCogniton(Modified Object, variation,base, Cogniton) :
+\begin{itemize}
+	\item \texttt{Modified object}, le type d'objet à ajouter,
+	\item \texttt{variation}, la variation du nombre d'objets à ajouter,
+	\item \texttt{base}, le nombre d'objets à ajouter par défaut,
+	\item \texttt{Cogniton}, le cogniton référence.
+	\end{itemize}
+	
+Cette action, suite à l'existence d'un Cogniton dans l'esprit de l'agent, ajoute  des objets à l'inventaire de l'agent en fonction de paramètres contextuel :
+\begin{itemize}
+\item  si le cogniton n'existe pas dans l'esprit de l'agent, l'action ajoute  \textit{base} objets à l'inventaire,
+ \item si le cogniton existe dans l'esprit de l'agent, l'action ajoute \textit{base} + (\textit{variation} * poids de \textit{Cogniton}) objets à l'inventaire.
+ \end{itemize}
+	
+
+Exemple  : un agent qui possède le Cogniton Artisan avec un poids de 2,  exécute l'action
+A\_AddObjectXCogniton(Houe, 0.5,1, Artisan) ce qui lui permet d'ajouter 1+ 0.5*2 c'est-à-dire 2 Houes à son inventaire ; si l'agent ne possède pas le Cogniton Artisan l'exécution ajoute 1 seule Houe à son inventaire.
+	
+	

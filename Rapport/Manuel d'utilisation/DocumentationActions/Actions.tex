@@ -1,0 +1,41 @@
+	
+	Les actions sont exécutées à chaque pas de temps (\textit{tick}) et sur le \textit{patch} où se situe l'agent au moment de leur exécution.
+	
+	\textit{Remarque : il existe cependant une action logique L\_Instant qui permet d'exécuter plusieurs actions en un seul tick.}
+	
+	Les actions se spécialisent en actions proprement dites (préfixe A) ainsi qu'en actions logiques (préfixe L) qui regroupent des actions et d'autres actions logiques (cf. Figure \ref{HA}).
+	
+	\begin{figure}[!h]
+	\begin{center}
+	\includegraphics[scale=0.5]{DocumentationActions/HA.pdf}
+	\caption[HA]{Hiérarchie des actions \\}
+	\label{HA}
+	\end{center}
+	\end{figure}
+\newpage
+\section{Les actions A}
+	\subsection{Les actions relatives aux objets}
+	\input{DocumentationActions/ActionsObjets}
+	
+	\subsection{Les actions relatives aux aménagements}
+	\input{DocumentationActions/ActionsAmenagement}
+	
+	\subsection{Les actions relatives aux cognitons}
+	\input{DocumentationActions/ActionsCognitons}
+	
+	\subsection{Les actions relatives aux déplacements}
+	\input{DocumentationActions/ActionsMouvement}
+
+	\subsection{Les actions relatives aux agents}
+	\input{DocumentationActions/ActionsAgents}
+	
+\section{Les actions L}
+
+\subsection{Tests}
+\input{DocumentationActions/Tests}
+
+\subsection{Algorithmiques}
+
+\input{DocumentationActions/Algorithmiques}
+
+
