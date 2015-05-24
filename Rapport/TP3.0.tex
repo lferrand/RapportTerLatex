@@ -1507,6 +1507,8 @@ Une fois encore, on constate que le modèle est cohérent. Il permet d'observer ra
 
 \subsection{Observations}
 
+Après la réalisation de nos modèles, nous arrivons à la conclusion qu'il n'y a pas une seule bonne façon de créer les systèmes multi-agent. A travers des méthodes d'émergences différentes, nous sommes capable de pouvoir observer plus facilement l'influence des paramètres d'une civilisation dans une et l'influence de l'environment dans l'autre. Bien qu'on aurait voulu aller plus loin dans nos modélisations, on a réalisé notre objectif qui était de simuler des sociétés viables proches des sociétés humaines en faisant apparaître des méthodes d'émergence différentes.
+
 \section{Le simulateur}
 
 \subsection{Introduction}
@@ -1741,8 +1743,15 @@ Au total , c'est plusieurs dizaines de bugs qui ont été corrigés.
 \subsection{Conclusion}
 
 MetaCiv est un logiciel puissant qui repose sur de bonnes bases. Par exemple, le système d'injection d'actions personnalisé sous forme de code java est très bien conçu et le moteur du simulateur est fiable. Cela encourage à l'enrichissement du projet à de nouvelles fonctionnalités pour l'avenir.
-	En revanche, le code des interfaces est très désorganisé dû aux ajouts des différents groupes qui se sont succédés (dont le notre) et devrait être repris avec de bonnes méthodes.
+	En revanche, le code des interfaces est désorganisé dû aux ajouts des différents groupes qui se sont succédés (dont le notre) et devrait être repris avec de bonnes méthodes.
 	Du point de vue de l'utilisation, l'interface manque de sécurité et de retour utilisateur en cas de commande invalide, ce qui causait bien souvent la corruption du modèle sans que l'on comprenne pourquoi. En effet, régler ce problème de retour d'information à l'utilisateur est une étape très importante pour pouvoir amener MetaCiv à un plus grand public.
+
+\begin{itemize}
+\item L'ajout des constantes est un atout majeur pour l'utilisateur facilitant ainsi la modification des paramètres de la simulation. On peut ainsi voir en temps réel l'impact d'un paramètre sur la simulation.
+\item La sauvegarde automatique des dernières versions fonctionnelles d'un modèle permet d'économiser énormément de temps lorsque l'on travaille sur une modélisation. En effet, il n'est pas rare de changer un paramètre, sauvegarder et de ne plus être capable de lancer son modèle, le rendant alors inutilisable.
+
+\end{itemize}
+
 
 \section{Gestion de projet}
 
@@ -1767,7 +1776,7 @@ Nos premières expériences de modélisation se soldaient souvent par des modèles c
 
 Une fois cette étape atteinte, excluant tout risque de perte de travail, nous avons conservé cette séparation des tâches pour continuer la correction des nombreuses instabilités de MetaCiv. Avec un besoin croissant d'évolution dans le logiciel, il nous fallait donc un outil pour facilement faire le relai entre les équipes et avoir un suivis efficace des tâches à accomplir. Nous avons décidé d'utiliser Trello, un logiciel de Post-It en ligne que nous expliquerons plus en detail plus tard.\\
 
-Les ambitions du projet ont donc été revu à la baisse tout en maximisant le travail qui était faisable avec les moyens et le temps que l'on disposait.
+Nous nous sommes fixés des objectifs réalisables dans un soucis de respecter la logique de la méthode Agile qui est de fournir un produit fonctionnel avant tout autre considération.
 
 En somme, le développement a été conduit pour les besoins de l'équipe de modélisation.
 De plus, les avancées du logiciel que nous réalisions servaient également au deuxième groupe. Mais alors, que la partie développement avait prise une place plus importante que prévu nous avons aussi pensé à la pérennité du projet en fournissant un code plus clair, en séparant bien chaque chose et en évitant les fonctions de plusieurs centaines de ligne sans nécessité, maximisant les bonnes pratiques des approches plus orienté objet et en utilisant des design patterns.
@@ -1782,18 +1791,58 @@ Pour le développement des avancées de MetaCiv, nous avons utilisé GitHub. GitHub
 
 \section{Perspectives d'évolution}
 
-MetaCiv permet de modéliser un grand nombre de situation (interactions entres molécules, sociétés, etc...) si l'on est capable de coder les actions nécessaires et la gestion des plans par des cognitons est une alternative originale à la modélisation des modèles par la subsomption. Voici quelques remarques que nous avons eu tout au long de notre modélisation: 
+MetaCiv permet de modéliser un grand nombre de situation (interactions entres molécules, sociétés, etc...) si l'on est capable de coder les actions nécessaires et la gestion des plans par des cognitons est une alternative originale à la modélisation des modèles par la subsomption. Bien qu'il possède de grande possibilités d'évolution, nous sommes conscient que l'ajout de nouvelle fonctionnalité ne doit pas rendre le logiciel plus complexe mais le rendre plus simple et facile d'utilisation pour le grand public.
+
+\subsection{Modélisation}
+
+Nous avons vu que la réalisation de modèles de sociétés était un travail compliqué mais nous développerons ci-dessous certaines idées de modélisations possible avec MetaCiv:
 \begin{itemize}
-\item L'ajout des constantes est un atout majeur pour l'utilisateur facilitant ainsi la modification des paramètres de la simulation. On peut ainsi voir en temps réel l'impact d'un paramètre sur la simulation.
-\item La sauvegarde automatique des dernières versions fonctionnelles d'un modèle permet d'économiser énormément de temps lorsque l'on travaille sur une modélisation. En effet, il n'est pas rare de changer un paramètre, sauvegarder et de ne plus être capable de lancer son modèle, le rendant alors inutilisable.
-\item L'interface de gestion des agents est un outil agréable à utiliser, on voit directement les paramètres importants de chaque agent: cognitons, plans, attributs, groupe. Il n'est cependant pas assez efficace si l'on veut "Observer" un type d'agent particulier dans une grande population.
+\item Une des premières interactions sociales qu'on peut rajouter à nos modèles dans MetaCiv serait un système d'échange entre agents. Ce système d'échange pourrait ensuite évoluer vers la notion de commerce, du troc au système monétaire. 
+\item Une composante importante pour l'évolution des communautés humaines est la transmission des connaissances. Simuler un système d'éducation est indispensable pour les émergences futures.
+\item L'apparition d'échanges et d'éducation fera naître des disparités au sein même de la communauté entrainant des conflits entre agents en cas de tensions dû à l'environnement.
+\item Avec l'apparition de phénomènes sociologiques complexes apparaît la nécessité d'arrivé à simuler un système à base de lois qu'on pourrait appeler la justice.
+\item Dans le but d'obtenir des sociétés similaires à ce que l'humanité à pu connaître dans le passé ou dans le présent, il est important d'arriver à imaginer une façon de modéliser les religions.
+\item Plus la civilisation se développe, plus la nécessité d'avoir des dirigeants devient importante. De la chefferie à la nation, tant de notion qu'il faut aborder pour aller plus loin dans la modélisation d'organisation humaines. 
+\end{itemize}
+On peut étendre ces phénomènes sociaux pour les rendre possibles dans le cadre d'interactions entre civilisations. 
+
+\subsection{Interface utilisateur}
+
+CREATION PLAN (glisser déplacer, copier coller)
+FEEDBACK ERREUR
+MEILLEURE ICONES
+
+Le but de MetaCiv est d'être utilisé par un public certes initié mais pas toujours du domaine de l'informatique. Au vu de l'état actuel de l'interface utilisateur, il est indispensable d'arriver à la simplifier et la rendre plus agréable à utiliser. Pour ce faire, il y a beaucoup d'évolutions possible pour l'interface utilisateur dont quelques uns sont cités ci-après:
+\begin{itemize}
+\item L'interface d'observation des agents est un outil agréable à utiliser, on voit directement les paramètres importants de chaque agent: cognitons, plans, attributs, groupe,etc... Il n'est cependant pas assez efficace si l'on veut "Observer" un type d'agent particulier dans une grande population. Il serait donc intéressant d'avoir la possibilité de pouvoir observer un agent selon plusieurs paramètres:
+\begin{itemize}
+\item Selon son ID unique.
+\item Selon la valeur d'un attribut.
+\item Selon son groupe ou son rôle.
+\item Selon ses cognitons.
+\end{itemize}
 \item Il serait intéressant de pouvoir sauvegarder la modélisation à un instant donné et ainsi pouvoir la relancer avec différents paramètres. En effet, lorsque l'on modélise une société avec plusieurs niveaux technologiques, on perd énormément de temps à repasser le début du modèle pour "Observer" l'impact d'un changement.
-\item La construction d'un plan est très intuitive, on imbrique des actions les unes dans les autres. Les descriptions des actions sont claires et précises. Il n'en reste que construire un plan ou le modifier prend beaucoup de temps puisqu'il faut à chaque fois sélectionner l'action dans un menu déroulant. Une autre interface serait à envisager.
+\item La construction d'un plan est très intuitive, on imbrique des actions les unes dans les autres. Les descriptions des actions sont claires et précises. Il n'en reste que construire un plan ou le modifier prend beaucoup de temps puisqu'il faut à chaque fois sélectionner l'action dans un menu déroulant. Une autre interface serait à envisager, notamment une interface permettant de glisser/déplacer ou copier/coller une ou plusieurs actions dans un même plan.
+\item L'interface générale manque de visibilité vis-à-vis de l'utilisateur. Il serait intéressant d'améliorer les feedbacks que le logiciel donne à ses utilisateurs. Pour ce faire, il faudrait augmenter le nombre de messages d'erreurs dont les messages préventifs pour éviter des erreurs importantes de l'utilisateur ainsi que des infobulles permettant une meilleure compréhension des outils à sa disposition.
 \end{itemize}
 
-MetaCiv possède de grande possibilités d'évolution, nous sommes conscient que l'ajout de nouvelle fonctionnalité ne doit pas rendre le logiciel plus complexe mais le rendre plus simple et facile d'utilisation pour le grand public.
+\subsection{Noyaux}
+
+
+CONSTANTES DE GROUPE 
+VARIABLE DE GROUPE ?
+
+
 
 \section{Conclusion}
+
+IMPRESSION PROJET
+	SATISFAIT ? PK ?
+RESULTATS
+VOULU CHANGER (ce qu'on changerai)
+CE QUE CA A APPORTE
+EVOLUTION PERSONNELLES ET DU PROJET
+	FUTUR ?
 
 
 \end{document}
