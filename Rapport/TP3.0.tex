@@ -169,7 +169,7 @@ Pour pouvoir exécuter ces plans il faut disposer des cognitons Compétence agricu
 \caption{Schéma de fonctionnement de MetaCiv.}
 \end{figure}
 
-Nous retrouvons donc le fait qu'un agent dispose d'un esprit constitué de cognitons. Ceux ci sont liés aux plans que peut exécuter l'agent par des liens conditionnels ou d'influences. Les actions prélèvent des ressources dans les patches et influent sur les cognitons de l'agent. Les perceptions de l'environnement se font aussi grâce aux cognitons. Les extensions sur lesquelles nous allons réfléchir, la lueur de la bibliographie, concernent le niveau groupe et la transmission de la connaissance communautaire d'une part, et d'autre part les relations spatio temporelles au niveau de l'environnement (celui ci ne se cantonnant plus au rôle de support).
+Nous retrouvons donc le fait qu'un agent dispose d'un esprit constitué de cognitons. Ceux ci sont liés aux plans que peut exécuter l'agent par des liens conditionnels ou d'influences. Les actions prélèvent des ressources dans les patchs et influent sur les cognitons de l'agent. Les perceptions de l'environnement se font aussi grâce aux cognitons. Les extensions sur lesquelles nous allons réfléchir, la lueur de la bibliographie, concernent le niveau groupe et la transmission de la connaissance communautaire d'une part, et d'autre part les relations spatio temporelles au niveau de l'environnement (celui ci ne se cantonnant plus au rôle de support).
 
 \newpage 
 \section{Modélisations de civilisations}
@@ -182,7 +182,7 @@ Le premier modèle, "Cueilleur-Artisan-Agriculteur" va chercher à faire fonctionn
 
 \subsubsection{Les agents}
 \label{agents}
-Les agents sont vus sous l'angle \textit{intériorité }comme dotés d'un esprit (ensemble de cognitons) qui leur permet d'établir des plans (ensemble d'actions) ;  vus sous l'angle \textit{extériorité} ils sont dotés d'un ensemble de caractéristiques (corps) et peuvent manipuler des objets, interagir avec leur environnement et construire des aménagements. Ils évoluent dans un environnement collectif agrégat de \textit{patches}.
+Les agents sont vus sous l'angle \textit{intériorité }comme dotés d'un esprit (ensemble de cognitons) qui leur permet d'établir des plans (ensemble d'actions) ;  vus sous l'angle \textit{extériorité} ils sont dotés d'un ensemble de caractéristiques (corps) et peuvent manipuler des objets, interagir avec leur environnement et construire des aménagements. Ils évoluent dans un environnement collectif agrégat de \textit{patchs}.
 Les cognitions vont influencer les plans, de manière pondérée (selon l'importance que l'utilisateur leur accorde), de manière positive (renforcement) ou négative (affaiblissement). 
 L'environnement ainsi que les actions effectuées peuvent affecter les caractéristiques d'un agent et de ce fait influer sur ses cognitons. De même les actions peuvent directement ou indirectement via les objets ajouter ou influer les cognitons. 
 
@@ -359,7 +359,7 @@ Les agents sont initialement au nombre de $81$ lors du lancement de la modélisat
 
 \subsubsection{L'environnement du modèle}
 \label{environnement}
-En premier lieu, l'environnement dans lequel nos agents se déplacent est un espace fermé de $\mathbb{R}^{2}$. Il existe un total de quatre types de patches présents : Mer, Prairie, Terre Sterile et Forêt. Le modèle étant relativement basique, il n'existe que deux types de ressources disponibles : Les baies et le bois. Le tableau suivant donne le récapitulatif des différents patches et ressources disponibles.
+En premier lieu, l'environnement dans lequel nos agents se déplacent est un espace fermé de $\mathbb{R}^{2}$. Il existe un total de quatre types de patchs présents : Mer, Prairie, Terre Sterile et Forêt. Le modèle étant relativement basique, il n'existe que deux types de ressources disponibles : Les baies et le bois. Le tableau suivant donne le récapitulatif des différents patchs et ressources disponibles.
 
 \begin{figure}[H]
 \center
@@ -376,10 +376,10 @@ En premier lieu, l'environnement dans lequel nos agents se déplacent est un espa
 \text{Forêts} \includegraphics[height=0.5 cm]{img/foret.png}& \text{Baies} & \text{Bois} & 10 & 2 & 0.1 & 0.2 & \text{Oui} 	\\
 \hline
 \end{tabular}
-\caption{Tableau récapitulatif des patches et des ressources.}
+\caption{Tableau récapitulatif des patchs et des ressources.}
 \end{figure}
 
-Un patch de terre stérile ne produit pas de ressources alors que les patches Prairie et Forêts produisent en permanence des baies. On pourra remarquer que seules les forêts produisent du bois même si les prairies possèdent une valeur en bois initiale. Un patch peut être récolté dès lors que les ressources en bois ou en baies sont supérieures ou égales à 1. Une ressource "baies" est alors transformée en un objet baie (de même pour le bois).
+Un patch de terre stérile ne produit pas de ressources alors que les patchs Prairie et Forêts produisent en permanence des baies. On pourra remarquer que seules les forêts produisent du bois même si les prairies possèdent une valeur en bois initiale. Un patch peut être récolté dès lors que les ressources en bois ou en baies sont supérieures ou égales à 1. Une ressource "baies" est alors transformée en un objet baie (de même pour le bois).
 
 Le point d'apparition des agents se situe au milieu de l'environnement et plusieurs prairies sont présentes aux alentours. On peut aussi distinguer une grande forêt dans la partie droite de l'environnement.
 \begin{figure}[H]
@@ -798,7 +798,7 @@ On remarquera que le plan "DonnerNaissanceSiJ'aiPasFaim" qui était influencé par
 \label{artisans}
 Les artisans sont des agents qui construisent leurs huttes et partent à la recherche de bois pour construire des outils (ici des pelles) pour augmenter la production des agriculteurs. En contre-partie, ceux-ci reçoivent des baies supplémentaires du village. Ils possèdent quatre plans qui leurs sont associés: ChercherBois, RamenerPelleAuVillage, ConstruirePelle et ConstruireHutte.
 \begin{itemize}
-\item Le plan "ChercherBois" consiste à se déplacer vers les patches les plus riches en bois et à transformer cette ressource en objet bois.
+\item Le plan "ChercherBois" consiste à se déplacer vers les patchs les plus riches en bois et à transformer cette ressource en objet bois.
 \item Le plan "RamenerPelleAuVillage" ramène l'agent au village pour y déposer la ou les pelles que l'agent possède. Il retire ensuite un bonus de baies en contre-parti et baisse le cogniton "JaiUnePelle".
 \item Le plan "ConstruirePelle" fait construire une pelle à l'agent s'il possède au moins NombreDeBoisPourFaireUnePelle unités de bois dans son inventaire. S'il dispose d'une pelle, le cogniton "JaiUnePelle" est augmenté.
 \item Si l'agent possède une hutte, le cogniton "PasBesoinHutte" est ajouté sinon une hutte est construite sur un emplacement libre.
@@ -839,7 +839,7 @@ Les artisans sont des agents qui construisent leurs huttes et partent à la reche
 {
 	\textbf{ChercherBois} \\
 	\begin{itemize}
-	\item Se déplacer vers les patches ayant plus de bois.
+	\item Se déplacer vers les patchs ayant plus de bois.
 	\item Récolter le bois.
 	\end{itemize}
 };
@@ -973,7 +973,7 @@ La seule fonction des agriculteurs est de récolter des baies dans leurs champs o
 
 \subsubsection{Les aménagement}
 \label{amenagements}
-Les aménagements sont des marques déposées sur des patches et sont repérés par leurs positions. Ils ont un inventaire qui permet aux agents de déposer ou retirer des objets à l'intérieur. Le tableau suivant récapitule les aménagements de la modélisation.
+Les aménagements sont des marques déposées sur des patchs et sont repérés par leurs positions. Ils ont un inventaire qui permet aux agents de déposer ou retirer des objets à l'intérieur. Le tableau suivant récapitule les aménagements de la modélisation.
 
 \begin{figure}[H]
 \center
@@ -1210,7 +1210,7 @@ Dans ce modèle, on réalise une émergence de civilisation à travers une société d
 
 \subsubsection{L'environnement}
 
-L'environnement dans lequel nos agents se déplacent est un espace fermé de $\mathbb{R}^{2}$. Il y a en tout 6 types de patches présents : Mer, Prairie, Forêt, Littoral et Montagne. Le modèle étant relativement basique, il n' y a que trois types de ressources disponibles : Les baies, le poisson et le gibier. Le tableau suivant donne le récapitulatif des différents patches et des ressources disponibles.
+L'environnement dans lequel nos agents se déplacent est un espace fermé de $\mathbb{R}^{2}$. Il y a en tout 6 types de patchs présents : Mer, Prairie, Forêt, Littoral et Montagne. Le modèle étant relativement basique, il n' y a que trois types de ressources disponibles : Les baies, le poisson et le gibier. Le tableau suivant donne le récapitulatif des différents patchs et des ressources disponibles.
 
 \begin{figure}[H]
 \center
@@ -1229,7 +1229,7 @@ L'environnement dans lequel nos agents se déplacent est un espace fermé de $\mat
 \text{Littoral} \includegraphics[height=0.5 cm]{img/littoral.PNG}& \multicolumn{2}{|c|}{\text{Poisson}} &  \multicolumn{2}{|c|}{10} & \multicolumn{2}{|c|}{0.2} & \text{Oui} 	\\
 \hline
 \end{tabular}
-\caption{Tableau récapitulatif des patches et des ressources.}
+\caption{Tableau récapitulatif des patchs et des ressources.}
 \end{figure}
 
 
@@ -1393,7 +1393,7 @@ Lorsque l'élection est réussite les votant rejoignent aussi le groupe, mais en t
 
 \subsubsection{Les aménagement}
 
-Les aménagements sont des marques déposées sur des patches et sont repérés par leurs positions. Ils ont un inventaire qui permet aux agents de déposer ou retirer des objets à l'intérieur. Le tableau suivant récapitule les aménagements de la modélisation.
+Les aménagements sont des marques déposées sur des patchs et sont repérés par leurs positions. Ils ont un inventaire qui permet aux agents de déposer ou retirer des objets à l'intérieur. Le tableau suivant récapitule les aménagements de la modélisation.
 
 \begin{figure}[H]
 \center
@@ -1850,34 +1850,14 @@ Le but de MetaCiv est d'être utilisé par un public certes initié mais pas toujou
 \newpage 
 \section{Conclusion}
 
-Ce projet nous avait vraiment plu dès le départ puisque nous avons tous été très intéressé par la programmation orienté objet depuis notre première approche avec WarBot. 
-Nos impressions négatives sur le projet:
-\begin{itemize}
-\item Les planages successifs sans aucun rapport d'erreur rendaient la modélisation difficile.
-\item Temps d'adaption un peu lent
-\item La lenteur inexpliqué sur certains oridnateur
-\end{itemize}
+Ce projet nous as interpellé dès le départ puisque nous étions tous déjà intéressés par la programmation orienté agent depuis notre première approche avec WarBot (une introduction au système multi-agent du module FMIN207 de Monsieur Ferber). L'idée de créer une forme de vie artificielle et des sociétés proches de celles de l'homme est un sujet passionnant.  De plus, le projet a indubitablement un côté ludique de part sa ressemblance à certains jeux vidéos de gestion et voir nos agents prendre vie suscite toujours de l'émerveillement. \\
 
-Nos impressions positives :
-\begin{itemize}
-\item Les actions étaient très facile à implémenter ce qui était un plus pour la modélisation.
-\item 
-\end{itemize}
+Même si le sujet nous a paru simple au premier abord, il en n'est pas moins vaste et pluridisciplinaire. Les solutions logicielles apportés à MetaCiv sont chargés d'implications sociologiques, qui demandent de réfléchir plus loin que la simple programmation. Il faut parfois arriver à trouver des architectures logicielles plus complexes pour s'approcher au plus près de la réalité des sociétés en restant dans les limites physiques des machines. A cela s'ajoute le travail de modélisation qui nous a amené à réfléchir au delà du domaine de l'informatique. Les modélisations et leurs limites, nous ont montré qu'une société peut franchir une étape uniquement lorsqu'elle est en période de crise provoquant ainsi l'émergence d'agents ou d'évènements résolvant cette crise.\\
 
-Les résultats:
-\begin{itemize}
-\item 
-\end{itemize}
+Reprendre un projet en cours de développement est toujours difficile, surtout quand de nombreux groupes se sont succédés, ayant chacun ses habitudes et son approche de la programmation. Toutefois, le travail déjà accompli n'était pas négligeable. Sans celui-ci nous n'aurions pu répondre au sujet de notre projet.\\
 
-On aurait voulu changer:
-\begin{itemize}
-
-\end{itemize}
-
-CE QUE CA A APPORTE
-
-EVOLUTION PERSONNELLES ET DU PROJET
-	FUTUR ?
-
+L'utilisation de Java pour le projet fut un choix judicieux, d'une part car il permet au programme de fonctionner sous les différents systèmes d'exploitations utilisés par notre équipe, et d'autre part parce qu'il est un langage moderne et bien documenté sur lequel il est facile de se former. Cependant, nous avons pu constater de grandes différences de performances entre les différentes plates-formes. Outre les problèmes de performance ralentissant certaine personne nous aurions aimé avoir une documentation à jour et plus complète, même si effectivement les différents exemples de modèles fournis au début de notre projet nous ont permis d'avoir une première idée du fonctionnement de MetaCiv une meilleur documentation nous aurait permis une meilleur prise en mains du Logiciel et un gain de temps considérable sur le travail d'apprentissage et accélérer le déroulement de notre propres réalisation. Les corruptions de modèles sans aucun rapport d'erreur rendaient la modélisation difficile, particulièrement avant la mise en place du système de sauvegardes incrémentale, ont induit un temps d'adaptation plus long.\\
+	
+Malgré toutes les difficultés rencontrés nous sommes assez satisfaits de nos résultats, en effet nous arrivons à des modélisations correctes, un logiciel plus stable ayant de nouvelles fonctionnalités. Lorsque on compare le logiciel tel que nous l'avons récupéré et son état actuel nous pensons que celui-ci est plus propice a une utilisation régulière et sérieuse, permettant le développement de modélisations avancées. Nous ne pouvons qu'imaginer l'état dans lequel pourrait être le logiciel MetaCiv si nous avions eu plus de temps.
 
 \end{document}
