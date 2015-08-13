@@ -36,21 +36,28 @@ Les principes structurels ayant guidé la conception de MetaCiv sont les suivant
 \end{enumerate}
 
 
+\newpage
 \section{Méta-Modèle}
 
 Inspiré par le modèle des \textit{quadrants}, la plateforme Metaciv est fondé sur le  méta-modèle suivant.
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[scale=0.6]{modele.pdf}
+\includegraphics[scale=0.6]{modele_update08_2015.png}
 \caption[Modele]{MétaModèle \\}
 \label{ex1}
 \end{center}
 \end{figure} 
+
+\newpage
 \section{Agent}
 Les agents sont vus sous l'angle de \textit{l'intériorité }comme dotés d'un esprit (ensemble de cognitons) qui leur permet d'établir des plans (ensemble d'actions) ;  vus sous l'angle \textit{extériorité} ils sont dotés d'un ensemble de caractéristiques (corps) et peuvent manipuler des objets. Ils évoluent dans un environnement collectif agrégat de \textit{patches}. Côté spatialisation, ont été rajoutés les concepts de zones agrégats de patches liées par des relations spatiales (cf. relations d'Egenhofer). Sur les patches comme sur les zones l'agent peut déposer des aménagements (\textit{facility}).
 Les cognitions vont influencer les plans, de manière pondérée (selon l'importance que le modélisateur leur accorde), de manière positive (renforcement) ou négative (affaiblissement).
 L'environnement ainsi que les actions effectuées peuvent affecter les caractéristiques d'un agent et de ce fait influer sur ses cognitons.
 De même les actions peuvent directement ou indirectement via les objets influer sur les cognitons.
+
+\subsection{Schéma cognitif}
+	Le schéma cognitif est un terme qui désigne l'ensemble des caractéristiques physiques , mentales et sociales (décrites ci-après) qui constituent les agents. On considère que tout les membres d'une société ont le même schéma cognitif.
+	  
 \subsection{Cognition}
 
 \subsubsection{Notion de cognitons}
@@ -92,14 +99,27 @@ De même les actions peuvent directement ou indirectement via les objets influer
 Les cognitons ont un poids qui par défaut est 1 (et qui peut être modifié par une action ou  par l'effet d'un objet ou par les culturons)
 \end{itemize}
 
-\subsection{Objets}
-Les objets peuvent être créés, selon les besoins, par les agents (à partir de concepts d'objets précédemment définis : parmi ces concepts on distingue les objets simples et composites). Les objets feront ensuite partie de l'inventaire d'un agent. Les objets peuvent avoir un effet sur des caractéristiques d'un agent ou sur des actions. 
-
 \subsection{Plan et actions}
 Les plans sont des ensembles d'actions et sont liés à des cognitons qui les influencent.
 
 \subsection{Groupe et rôle}
 Les agents peuvent aussi appartenir à des groupes au sein desquels ils possèdent différents rôles. Le rôle d'un agent dans un groupe lui permet d'accéder à des cognitons dits \textit{ culturons} c'est-à-dire , commun à tous les agents ayant le même rôle que lui dans ce groupe. 
+
+\subsection{Attributs}
+Les attribut sont des variables propres à chaque agent. Ils ont une valeur initiale et peuvent être modifiés pendant la simulation. Les attributs peuvent servir, par exemple, à représenter la fatigue , la faim, l'âge , ou encore le statut social d'un agent.
+
+\subsection{Constantes}
+Les constates sont des variables globales à un schéma cognitif qui peuvent être modifiés par le modélisateur lors d'un réglage du modèle , mais pas par les agents ou l'environnement. Elles servent généralement à représenter des seuils, par exemple , à partir de quel niveau de fatigue les agents doivent-ils se reposer ou encore à partir de quel niveau de faim les agents doivent-ils se nourrir. 
+
+\section{Environnement}
+
+\subsection{Objets}
+Les objets peuvent être créés, selon les besoins, par les agents (à partir de concepts d'objets précédemment définis : parmi ces concepts on distingue les objets simples et composites). Les objets feront ensuite partie de l'inventaire d'un agent. Les objets peuvent avoir un effet sur des caractéristiques d'un agent ou sur des actions. 
+
+\subsection{Aménagements}
+Les aménagements peuvent être construits sur un patch de l'environnement par les agents. Si une recette a été définie , l'agent constructeur de l'aménagement devra posséder tout les ingrédients. Ils ont des effets qui peuvent être activés par les agents , par exemple, dans le cas de l'utilisation d'une ferme l'effet peut être de donner du blé a l'agent. Les aménagements possèdent un inventaire dans lequel les agents peuvent retirer et déposer des objets. On distingue les aménagements privés qui ne peuvent être utilisés que par l'agent propriétaire , des aménagement de groupes qui peuvent être utilisés par tout les membres d'un groupe.
+
+
 \newpage
 \part{Le  logiciel}
 \section{Préambule}

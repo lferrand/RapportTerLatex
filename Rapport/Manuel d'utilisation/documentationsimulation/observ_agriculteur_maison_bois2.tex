@@ -82,3 +82,100 @@ L'onglet \textit{Tableau de bord} permet, en cliquant sur l'icône \textit{Mettr
 
 Enfin l'onglet \textit{Charts} permet de voir l'évolution de la moyenne des poids de chaque plan dans l'esprit des agents composants la simulation, de même pour les attributs.
 
+\subsection{La fenêtre d'observation avancée}
+
+Dans l'onglet Charts se trouves aussi un bouton qui donnes accès à l'observation avancée de la simulation
+
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.5]{DocumentationSimulation/images/accesAdvStats.png}
+\caption[observe]{Accès à la fenêtre d'observation avancée\\}
+\label{observe5}
+\end{center}
+\end{figure} 
+
+
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.5]{DocumentationSimulation/images/ADVS_Exemple.png}
+\caption[observe]{Exemple de visualisation\\}
+\label{observe6}
+\end{center}
+\end{figure} 
+\newpage
+\subsubsection{Exemple de mise en place}
+
+Tout d'abord , il est recommandé de créer un onglet dédié à ce que nous souhaitons observer.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.8]{DocumentationSimulation/images/ADVS_tabs.png}
+\caption[observe]{Menu de gestion des onglets\\}
+\label{observe7}
+\end{center}
+\end{figure} 
+
+Le menu de gestion des onglets permet de créer un nouvel onglet , de sauvegarder le modèle d'onglet courant , ou de sauvegarder tous les modèles d'onglets ouverts
+
+La création d'un onglet demandes d'entrer un nom pour l'onglet
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.8]{DocumentationSimulation/images/ADVS_newTab.png}
+\caption[observe]{Un nouvel onglet vierge\\}
+\label{observe8}
+\end{center}
+\end{figure} 
+
+Le menu des sondes (add probe) permet choisir différents types de sondes
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.8]{DocumentationSimulation/images/ADVS_ProbeMenu.png}
+\caption[observe]{Le menu des sondes\\}
+\label{observe9}
+\end{center}
+\end{figure} 
+
+\begin{itemize}
+\item  Create plan probe : permet d'observer le poids des plans dans l'esprit des agents
+\item  Create cogniton probe : permet d'observer le poids des cognitons dans l'esprit des agents
+\item  Create attribute probe : permet d'observer la valeur des attributs dans des agents
+\item  Create object probe : permet d'observer la quantité d'objets dans l'inventaire des agents
+\item  Create population probe : permet compter le nombre d'agents
+\end{itemize}
+
+Nous allons créer une sonde sur les population.
+Dans les options de toutes les sondes se trouves un onglet filtre social qui permet d'effectuer les observations de la sonde sur différents groupes sociaux du modèle.
+\newpage
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.7]{DocumentationSimulation/images/ADVS_SocFilter.png}
+\caption[observe]{Le filtre social\\}
+\label{observe10}
+\end{center}
+\end{figure} 
+
+A la racine de l'arbre se trouves l'option Total In World qui créé un compte pour tout les agents du modèle, ainsi qu'un noeud pour chaque civilisation présente dans le modèle.
+\\
+Dans chaque noeuds civilisation se trouve l'option Total in civilisation qui crée un compte pour tout les membres de la civilisation concernée. Dans le noeud groupe sont listés tous les types de groupes.
+\\ Pour chaque groupe l'option total for group type créé un compte qui regroupes tous les agent qui appartiennent à un groupe du type sélectionné. L'option separate count for instance permet de créer un compte différent pour chaque groupe concret qui sera identifié par son type et son nom unique. Dans le noeud Roles sont listés tous les types de role du type de groupe sélectionné.
+\\ Enfin ,  pour chaque role l'option Total for group type permet de créer un compte pour tout les agents ayant le role sélectionné dans tous les groupes de type sélectionné. l'option Separate count for instances permet de faire un compte séparé pour chaque instance de groupes.
+
+\newpage
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.6]{DocumentationSimulation/images/ADVS_PopProbe.png}
+\caption[observe]{Une sonde sur les populations\\}
+\label{observe11}
+\end{center}
+\end{figure} 
+
+
+
+Sur la figure précédente on peut voir grâce à la légende que total in civilisation a été sélectionné pour "Civ"1 (Civ1 Total), l'option total for groupe type pour le type Village (Civ1 Village Total),l'option separate count for instance pour le type Village (Civ1 Village inst: Village\_ XX), l'option total for groupe type pour le role Chef (Civ1 Village Chef Total) et enfin l'option separate count for instance pour le role Chef(Civ1 Village inst: Village\_ XX role: Chef) 
+
+
+
